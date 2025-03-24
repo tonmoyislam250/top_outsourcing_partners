@@ -153,3 +153,37 @@ p {
     font-size: 18px;
     margin-right: 10px;
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    p {
+        font-size: 16px;
+    }
+    .reviews {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .review-box {
+        max-width: 100%;
+    }
+    .features {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .feature-box {
+        max-width: 100%;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section {
+        min-width: 100%;
+        text-align: center;
+    }
+}
