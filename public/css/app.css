@@ -246,6 +246,7 @@ nav {
 
 .slider-menu .social-links {
     margin-top: 2rem;
+    margin-left: 5rem;
     display: flex;
     justify-content: center;
     gap: 1rem;
