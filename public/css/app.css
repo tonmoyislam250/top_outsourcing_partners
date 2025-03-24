@@ -253,33 +253,64 @@ nav {
 
 @media (max-width: 768px) {
     nav {
-        display: none;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
     }
     .menu-icon {
         display: block;
         font-size: 1.5rem;
         cursor: pointer;
     }
-    nav {
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-    }
     .logo {
         margin-left: 0;
         margin-bottom: 1rem;
     }
     .nav-links {
-        flex-direction: column;
-        gap: 1rem;
+        display: none; /* Hide nav-links in mobile layout */
     }
     .social-links {
-        margin-right: 0;
-        margin-top: 1rem;
+        display: none;
     }
     .hero {
         height: auto;
         padding: 2rem 0;
+    }
+    .floating-group {
+        width: 50px; /* Adjust size for mobile */
+        height: 50px; /* Adjust size for mobile */
+    }
+    .floating-group:nth-child(1) {
+        top: 10%;
+        left: 20%;
+    }
+    .floating-group:nth-child(2) {
+        top: 15%;
+        left: 60%;
+    }
+    .floating-group:nth-child(3) {
+        top: 5%;
+        left: 50%;
+    }
+    .floating-group:nth-child(4) {
+        top: 20%;
+        left: 15%;
+    }
+    .floating-group:nth-child(5) {
+        top: 10%;
+        left: 70%;
+    }
+    .floating-group:nth-child(6) {
+        top: 25%;
+        left: 35%;
+    }
+    .floating-group:nth-child(7) {
+        top: 10%;
+        left: 80%;
+    }
+    .floating-group:nth-child(8) {
+        top: 15%;
+        left: 10%;
     }
     .content h1 {
         font-size: 2rem;

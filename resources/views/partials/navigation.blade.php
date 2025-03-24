@@ -1,6 +1,21 @@
 <nav>
+    <div class="menu-icon" onclick="toggleMenu()" style="display: none;">&#9776;</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function checkMobileLayout() {
+                var menuIcon = document.querySelector('.menu-icon');
+                if (window.innerWidth <= 768) {
+                    menuIcon.style.display = 'block';
+                } else {
+                    menuIcon.style.display = 'none';
+                }
+            }
+
+            checkMobileLayout();
+            window.addEventListener('resize', checkMobileLayout);
+        });
+    </script>
     <a class="logo">SpringBoard</a>
-    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     <div class="nav-links">
         <a>Home</a>
         <a>About us</a>
