@@ -55,7 +55,7 @@
                     splashScreen.style.display = 'none';
                     document.getElementById('main-content').style.display = 'block';
                 }, 1000); // Match this timeout with the CSS transition duration
-            }, 3000); 
+            }, 2000); 
         });
     </script>
 </body>

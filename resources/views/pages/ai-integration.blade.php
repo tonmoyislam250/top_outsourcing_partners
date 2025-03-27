@@ -2,7 +2,10 @@
 
 @section('content')
 <section class="section">
-  <h1>Finance & Accounting</h1>
+  <div class="section-header">
+    <img src="{{ asset('images/icons/ai-icon.svg') }}" alt="AI Icon" class="section-icon">
+    <h1 class="section-title">AI Integration in Business</h1>
+  </div>
 <div class="grid">
     <div class="card">
         <img src="{{ asset('images/ai/frame1.svg') }}" alt="analytics">
