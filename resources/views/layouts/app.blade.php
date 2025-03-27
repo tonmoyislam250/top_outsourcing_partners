@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/finance.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
 
 </head>
 <body>
@@ -40,6 +41,13 @@
 
     <div id="main-content" style="display: none;">
         @include('partials.navigation')
+        
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
         @yield('content')
         @yield('footer')
     </div>

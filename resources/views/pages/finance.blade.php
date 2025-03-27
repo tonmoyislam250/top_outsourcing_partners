@@ -4,7 +4,7 @@
 <section class="section">
     <div class="section-header">
         <img src="{{ asset('images/finance/finance.svg') }}" alt="fin Icon" class="section-icon">
-        <h1>Finance & Accounting</h1>
+        <h1 class="section-title">Finance & Accounting</h1>
     </div>
     <div class="grid">
         <div class="card">
