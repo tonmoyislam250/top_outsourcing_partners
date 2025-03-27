@@ -22,9 +22,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 0;
-    background-color: rgba(248, 249, 250, 0.8); /* Transparent background */
+    background-color: #f8bbd0; /* Light pink for navigation */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 10rem 10rem;
+    border-radius: 0 0 3rem 3rem;
 }
 
 .logo {
@@ -76,12 +76,13 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
+    background-color: #e3f2fd; /* Light blue for hero section */
 }
 
 .floating-container {
     position: relative;
     width: 100%;
-    height: 40vh;
+    height: 30vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,6 +110,7 @@ nav {
     position: relative;
     width: 100%;
     margin-top: 8rem;
+    background-color: #fffde7; /* Light yellow for content section */
 }
 
 .content h1 {
@@ -219,7 +221,7 @@ nav {
     left: -100%;
     width: 250px;
     height: 100%;
-    background-color: #fff;
+    background-color: #ede7f6; /* Light purple for slider menu */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: left 0.3s ease;
     z-index: 1000;

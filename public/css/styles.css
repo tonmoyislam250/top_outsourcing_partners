@@ -100,7 +100,7 @@ p {
 
 
 .footer {
-    background-color: #111;
+    background-color: #111; /* Keep the footer background */
     color: white;
     border-top-left-radius: 30px; /* Add this line to make the upper left corner rounded */
     border-top-right-radius: 30px; /* Add this line to make the upper right corner rounded */

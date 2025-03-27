@@ -1,0 +1,189 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #000;
+  }
+  .section {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  .section h1 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .section h1::before {
+    content: url('https://img.icons8.com/ios-filled/50/4CAF50/combo-chart.png');
+    width: 24px;
+    height: 24px;
+    position: relative; /* Ensure proper positioning */
+    margin-right: 36px; /* Add spacing to prevent overlap */
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto 50px;
+  }
+  .card {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  .card img {
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  .card p {
+    margin: 0;
+    font-weight: 600;
+  }
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  .stat-box {
+    background: #e8f5e9;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 400px;
+    text-align: left;
+    flex: 1;
+  }
+  .stat-box h2 {
+    font-size: 32px;
+    color: #2e7d32;
+    margin-bottom: 10px;
+  }
+  .stat-box p {
+    font-size: 14px;
+    margin: 0;
+  }
+
+
+  .finance-section {
+    padding: 50px 20px;
+  }
+  .finance-service {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+  }
+  .finance-service.reverse {
+    flex-direction: row-reverse;
+  }
+  .finance-image-wrapper {
+    flex: 1;
+    position: relative;
+  }
+  .finance-image-wrapper img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+  }
+  .finance-badge {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .finance-badge img {
+    width: 32px;
+    height: 32px;
+  }
+  .finance-badge span {
+    font-size: 14px;
+    color: #444;
+  }
+  .finance-content {
+    flex: 1;
+  }
+  .finance-content h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  .finance-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #444;
+  }
+  .finance-content button {
+    background: #000;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    .finance-service {
+      flex-direction: column;
+    }
+    .finance-service.reverse {
+      flex-direction: column;
+    }
+    .finance-badge {
+      position: relative;
+      bottom: unset;
+      left: unset;
+      margin-top: 15px;
+    }
+  }
+
+.finance-badge.top-right {
+    top: -20px;
+    right: -20px;
+    left: unset;
+    bottom: unset;
+    padding: 10px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.finance-badge.top-right img {
+    width: 80px;
+    height: 80px;
+}
+
+.finance-badge.top-left {
+    top: -20px;
+    left: -20px;
+    right: unset;
+    bottom: unset;
+    padding: 10px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.finance-badge.top-left img {
+    width: 80px;
+    height: 80px;
+}
+  

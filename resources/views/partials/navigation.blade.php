@@ -15,11 +15,11 @@
             window.addEventListener('resize', checkMobileLayout);
         });
     </script>
-    <a class="logo">
+    <a class="logo" href="{{ url('/') }}">
         <img src="{{ asset('images/logo.svg') }}" alt="Logo">
     </a>
     <div class="nav-links">
-        <a>Home</a>
+        <a href="{{ url('/') }}">Home</a>
         <a>About us</a>
         <a>Services</a>
         <a>Resources</a>
@@ -36,7 +36,7 @@
 <div class="slider-menu" id="slider-menu">
     <span class="close-btn" onclick="toggleMenu()">&times;</span>
     <div class="nav-links">
-        <a>Home</a>
+        <a href="{{ url('/') }}">Home</a>
         <a>About us</a>
         <a>Services</a>
         <a>Resources</a>

@@ -21,7 +21,7 @@
         </div>
         <h1>Empowering Businesses with Smart Outsourcing Solutions</h1>
         <p>Customized accounting, finance, AI integration, ledger management, insurance, and third-party services to help your business grow.</p>
-        <a href="#" class="cta-button">Sign Up</a>
+        <a href="#" class="cta-button">Schedule for a Consultation</a>
     </div>
     @include('sections.second')
     @include('sections.services')
