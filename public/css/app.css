@@ -24,7 +24,7 @@ nav {
     padding: 1.5rem 0;
     background-color: rgba(248, 249, 250, 0.8); /* Transparent background */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 10rem; /* Rounded corners */
+    border-radius: 0 0 10rem 10rem;
 }
 
 .logo {

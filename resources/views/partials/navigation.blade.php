@@ -15,14 +15,15 @@
             window.addEventListener('resize', checkMobileLayout);
         });
     </script>
-    <a class="logo">SpringBoard</a>
+    <a class="logo">
+        <img src="{{ asset('images/logo.svg') }}" alt="Logo">
+    </a>
     <div class="nav-links">
         <a>Home</a>
         <a>About us</a>
-        <a>Courses</a>
-        <a>Solutions</a>
+        <a>Services</a>
         <a>Resources</a>
-        <a>Help</a>
+        <a>Industries</a>
         <a>Contact Us</a>
     </div>
     <div class="social-links">
