@@ -19,7 +19,8 @@
     <div class="nav-links">
         <a>Home</a>
         <a>About us</a>
-        <a>Services</a>
+        <a>Courses</a>
+        <a>Solutions</a>
         <a>Resources</a>
         <a>Help</a>
         <a>Contact Us</a>
