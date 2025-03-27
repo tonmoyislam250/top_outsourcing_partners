@@ -22,7 +22,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 0;
-    background-color: #f8bbd0; /* Light pink for navigation */
+    background-color: #a5d6a7; /* Light green for navigation */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 3rem 3rem;
 }
