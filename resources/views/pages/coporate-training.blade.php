@@ -8,38 +8,33 @@
   </div>
 
   <div class="grid">
-    <div class="card">
+    <div class="card" onclick="document.getElementById('legal-compliance').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/corporate/frame1.svg') }}" alt="analytics">
       <p>Legal & Compliance Training</p>
     </div>
-    <div class="card">
+    <div class="card" onclick="document.getElementById('itp-training').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/corporate/frame2.svg') }}" alt="chatbot">
       <p>Income Tax Practitioner (ITP) Training</p>
     </div>
-    <div class="card">
+    <div class="card" onclick="document.getElementById('leadership-development').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/corporate/frame3.svg') }}" alt="predictive">
       <p>Leadership & Management Development</p>
     </div>
-    <div class="card">
+    <div class="card" onclick="document.getElementById('cross-cultural').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/corporate/frame4.svg') }}" alt="automation">
-      <p> Cross-Cultural & Communication Training</p>
+      <p>Cross-Cultural & Communication Training</p>
     </div>
-    <div class="card">
+    <div class="card" onclick="document.getElementById('cybersecurity').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/corporate/frame5.svg') }}" alt="workflow">
       <p>Cybersecurity Awareness & Data Protection</p>
     </div>
-    <div class="card">
-      <img src="{{ asset('images/corporate/frame5.svg') }}" alt="cyber">
-      <p>Financial Management & Budgeting Training</p>
-    </div>
-  </div>
-  <div class="card">
+    <div class="card" onclick="document.getElementById('sales-mastery').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/corporate/frame5.svg') }}" alt="cyber">
       <p>Sales & Negotiation Mastery</p>
     </div>
   </div>
 
-  <div class="finance-service">
+  <div id="legal-compliance" class="finance-service">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/corporate/image1.png') }}" alt="Bookkeeping">
       <div class="finance-badge">
@@ -58,8 +53,7 @@
     </div>
   </div>
 
-  <!-- CFO Services -->
-  <div class="finance-service reverse">
+  <div id="itp-training" class="finance-service reverse">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/corporate/image2.png') }}" alt="CFO Services">
       <div class="finance-badge">
@@ -77,8 +71,7 @@
     </div>
   </div>
 
-  <!-- Accounts Payable (AP) Management -->
-  <div class="finance-service">
+  <div id="leadership-development" class="finance-service">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/corporate/image3.png') }}" alt="AP Management">
       <div class="finance-badge">
@@ -97,8 +90,7 @@
     </div>
   </div>
 
-  <!-- Accounts Receivable (AR) & Billing Services -->
-  <div class="finance-service reverse">
+  <div id="cross-cultural" class="finance-service reverse">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/corporate/image4.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">
@@ -116,7 +108,7 @@
     </div>
   </div>
 
-  <div class="finance-service">
+  <div id="cybersecurity" class="finance-service">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/corporate/image5.png') }}" alt="AP Management">
       <div class="finance-badge">
@@ -135,7 +127,7 @@ prevention, and risk management strategies.</p>
     </div>
   </div>
 
-  <div class="finance-service reverse">
+  <div id="sales-mastery" class="finance-service reverse">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/corporate/image4.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">

@@ -8,33 +8,33 @@
   </div>
 
   <div class="grid">
-    <div class="card">
+    <div class="card" onclick="document.getElementById('data-analytics').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/ai/frame1.svg') }}" alt="analytics">
       <p>AI Powered Data Analytics</p>
     </div>
-    <div class="card">
+    <div class="card" onclick="document.getElementById('chatbots').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/ai/frame2.svg') }}" alt="chatbot">
       <p>AI-Powered Chatbots & Customer Support</p>
     </div>
-    <div class="card">
+    <div class="card" onclick="document.getElementById('predictive-intelligence').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/ai/frame3.svg') }}" alt="predictive">
       <p>Predictive Business Intelligence</p>
     </div>
-    <div class="card">
+    <div class="card" onclick="document.getElementById('finance-automation').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/ai/frame4.svg') }}" alt="automation">
       <p>AI in Finance & Accounting Automation</p>
     </div>
-    <div class="card">
+    <div class="card" onclick="document.getElementById('workflow-optimization').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/ai/frame5.svg') }}" alt="workflow">
       <p>AI-Driven Process Automation & Workflow Optimization</p>
     </div>
-    <div class="card">
+    <div class="card" onclick="document.getElementById('cybersecurity').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/ai/frame5.svg') }}" alt="cyber">
       <p>Cybersecurity & AI Risk Management</p>
     </div>
   </div>
 
-  <div class="finance-service">
+  <div id="data-analytics" class="finance-service">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/ai/image1.png') }}" alt="Bookkeeping">
       <div class="finance-badge">
@@ -52,8 +52,7 @@
     </div>
   </div>
 
-  <!-- CFO Services -->
-  <div class="finance-service reverse">
+  <div id="chatbots" class="finance-service reverse">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/ai/image2.png') }}" alt="CFO Services">
       <div class="finance-badge">
@@ -71,8 +70,7 @@
     </div>
   </div>
 
-  <!-- Accounts Payable (AP) Management -->
-  <div class="finance-service">
+  <div id="predictive-intelligence" class="finance-service">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/ai/image3.png') }}" alt="AP Management">
       <div class="finance-badge">
@@ -90,8 +88,7 @@
     </div>
   </div>
 
-  <!-- Accounts Receivable (AR) & Billing Services -->
-  <div class="finance-service reverse">
+  <div id="finance-automation" class="finance-service reverse">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/ai/image4.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">
@@ -109,7 +106,7 @@
     </div>
   </div>
 
-  <div class="finance-service">
+  <div id="workflow-optimization" class="finance-service">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/ai/image5.png') }}" alt="AP Management">
       <div class="finance-badge">
@@ -129,7 +126,7 @@
     </div>
   </div>
 
-  <div class="finance-service reverse">
+  <div id="cybersecurity" class="finance-service reverse">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/ai/image4.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">

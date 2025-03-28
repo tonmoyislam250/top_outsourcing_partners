@@ -3,7 +3,7 @@
 @section('title', 'Contact Us')
 
 @section('content')
-<div class="contact-container">
+<div class="contact-container" style="max-width: 100%; padding: 0 15px; box-sizing: border-box;">
     <div class="form-section">
         <h2>Contact us</h2>
         <form action="{{ route('contact.send') }}" method="POST">

@@ -55,9 +55,9 @@
         <a href="{{ url('/contact') }}" style="font-size: 1.5rem; font-weight: 500; color: #333; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 0 10px rgba(51, 51, 51, 0.8)'" onmouseout="this.style.boxShadow='none'">Contact Us</a>
     </div>
     <div class="social-links" style="font-size: 2rem; margin-top: 1rem;">
-        <a style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
-        <a style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-twitter"></i></a>
-        <a style="color: #007bff;"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/RickAstley/" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://x.com/elonmusk" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.instagram.com/officialrickastley/" target="_blank" style="color: #007bff;"><i class="fa-brands fa-instagram"></i></a>
     </div>
 </nav>
 
@@ -91,9 +91,9 @@
         <a href="{{ url('/contact') }}" style="font-size: 1.2rem; font-weight: bold;">Contact Us</a>
     </div>
     <div class="social-links" style="font-size: 2rem; margin-top: 1rem;">
-        <a style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
-        <a style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-twitter"></i></a>
-        <a style="color: #007bff;"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/RickAstley/" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://x.com/elonmusk" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.instagram.com/officialrickastley/" target="_blank" style="color: #007bff;"><i class="fa-brands fa-instagram"></i></a>
     </div>
 </div>
 

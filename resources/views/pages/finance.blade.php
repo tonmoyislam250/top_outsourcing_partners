@@ -7,47 +7,29 @@
         <h1 class="section-title">Finance & Accounting</h1>
     </div>
     <div class="grid">
-        <div class="card">
+        <div class="card" onclick="document.getElementById('bookkeeping').scrollIntoView({ behavior: 'smooth' })">
             <img src="{{ asset('images/finance/frame1.svg') }}" alt="Bookkeeping">
             <p>Bookkeeping & Payroll Management</p>
         </div>
-        <div class="card">
+        <div class="card" onclick="document.getElementById('cfo-services').scrollIntoView({ behavior: 'smooth' })">
             <img src="{{ asset('images/finance/frame2.svg') }}" alt="CFO Services">
             <p>CFO Services (Virtual & On-Demand)</p>
         </div>
-        <div class="card">
+        <div class="card" onclick="document.getElementById('ap-management').scrollIntoView({ behavior: 'smooth' })">
             <img src="{{ asset('images/finance/frame3.svg') }}" alt="AP Management">
             <p>Accounts Payable (AP) Management</p>
         </div>
-        <div class="card">
+        <div class="card" onclick="document.getElementById('ar-billing').scrollIntoView({ behavior: 'smooth' })">
             <img src="{{ asset('images/finance/frame4.svg') }}" alt="AR Billing">
             <p>Accounts Receivable (AR) & Billing Services</p>
         </div>
-        <div class="card">
+        <div class="card" onclick="document.getElementById('tax-compliance').scrollIntoView({ behavior: 'smooth' })">
             <img src="{{ asset('images/finance/frame5.svg') }}" alt="Tax Compliance">
             <p>Tax Preparation & Compliance</p>
         </div>
     </div>
 
-    <div class="stats">
-        <div class="stat-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart">
-                <line x1="12" y1="20" x2="12" y2="10"></line>
-                <line x1="18" y1="20" x2="18" y2="4"></line>
-                <line x1="6" y1="20" x2="6" y2="16"></line>
-            </svg>
-            <h2>56%</h2>
-            <p>of CFOs say that finance outsourcing improves strategic decision-making</p>
-        </div>
-        <div class="stat-box">
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H15a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
-            <h2>44%</h2>
-            <p>reduction in operational costs is achieved through finance outsourcing</p>
-        </div>
-    </div>
-
-    <div class="finance-service">
+    <div id="bookkeeping" class="finance-service">
         <div class="finance-image-wrapper">
             <img src="{{ asset('images/finance/image1.png') }}" alt="Bookkeeping">
             <div class="finance-badge">
@@ -66,7 +48,7 @@
     </div>
 
     <!-- CFO Services -->
-    <div class="finance-service reverse">
+    <div id="cfo-services" class="finance-service reverse">
         <div class="finance-image-wrapper">
             <img src="{{ asset('images/finance/image2.png') }}" alt="CFO Services">
             <div class="finance-badge">
@@ -85,7 +67,7 @@
     </div>
 
     <!-- Accounts Payable (AP) Management -->
-    <div class="finance-service">
+    <div id="ap-management" class="finance-service">
         <div class="finance-image-wrapper">
             <img src="{{ asset('images/finance/image3.png') }}" alt="AP Management">
             <div class="finance-badge">
@@ -104,7 +86,7 @@
     </div>
 
     <!-- Accounts Receivable (AR) & Billing Services -->
-    <div class="finance-service reverse">
+    <div id="ar-billing" class="finance-service reverse">
         <div class="finance-image-wrapper">
             <img src="{{ asset('images/finance/image4.png') }}" alt="AR & Billing Services">
             <div class="finance-badge">
@@ -122,7 +104,7 @@
         </div>
     </div>
 
-    <div class="finance-service">
+    <div id="tax-compliance" class="finance-service">
         <div class="finance-image-wrapper">
             <img src="{{ asset('images/finance/image5.png') }}" alt="AP Management">
             <div class="finance-badge">
