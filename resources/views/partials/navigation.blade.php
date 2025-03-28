@@ -88,7 +88,7 @@
             }
         </script>
         <a href="{{ url('/solutions') }}" style="font-size: 1.2rem; font-weight: bold;">Solutions</a>
-        <a style="font-size: 1.2rem; font-weight: bold;">Contact Us</a>
+        <a href="{{ url('/contact') }}" style="font-size: 1.2rem; font-weight: bold;">Contact Us</a>
     </div>
     <div class="social-links" style="font-size: 2rem; margin-top: 1rem;">
         <a style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
