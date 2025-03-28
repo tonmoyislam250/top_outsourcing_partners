@@ -1,6 +1,12 @@
 <link rel="stylesheet" href="{{ asset('css/review.css') }}">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> <!-- Swiper styles -->
 
+<style>
+  .swiper-container {
+    overflow: hidden; /* Prevent hidden slides from affecting layout */
+  }
+</style>
+
 <div class="success-stories-heading">
   <h2>Success Stories</h2>
   <p>Meet our graduates working at top companies. Get inspired by the journeys of our students who have successfully transitioned into high-paying careers with the help of our courses and mentorship.</p>
