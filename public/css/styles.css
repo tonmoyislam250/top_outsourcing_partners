@@ -22,12 +22,15 @@ p {
 }
 .reviews {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap; /* Change to nowrap for sliding effect */
+    overflow-x: auto; /* Allow horizontal scrolling */
     gap: 20px;
     margin-top: 30px;
+    padding: 0 20px; /* Add padding for spacing on sides */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
 }
 .review-box {
+    flex: 0 0 auto; /* Prevent shrinking and allow horizontal alignment */
     background-color: white;
     padding: 20px;
     border-radius: 15px;
@@ -152,6 +155,42 @@ p {
     color: white;
     font-size: 18px;
     margin-right: 10px;
+}
+
+.solutions-section {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+
+.solutions-section .header h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.solutions-section .header p {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.solutions-section .solutions-content img {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.solutions-section .solutions-content h4 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+.solutions-section .solutions-content ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.solutions-section .solutions-content ul li {
+    margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {

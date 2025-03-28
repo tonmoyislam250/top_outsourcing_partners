@@ -48,7 +48,7 @@
     <div class="finance-content">
       <h2>AI Powered Data Analytics</h2>
       <p>Transform raw data into actionable insights with AI-driven analytics and machine learning models. Make smarter decisions with real-time reporting and trend predictions.</p>
-      <button>Schedule a Data Analytics Consultation</button>
+      <button onclick="window.location.href='{{ url('/consult') }}'">Schedule a Data Analytics Consultation</button>
     </div>
   </div>
 
@@ -61,13 +61,13 @@
         <span>Reduction in Customer Support<br><small>Response time with AI</small></span>
       </div>
       <div class="finance-badge top-left">
-        <img src="{{ asset('images/finance/tl1.svg') }}" alt="Icon">
+        <img src="{{ asset('images/ai/tl1.svg') }}" alt="Icon">
       </div>
     </div>
     <div class="finance-content">
       <h2>AI-Powered Chatbots & Customer Support</h2>
       <p>Enhance customer experience with AI-driven chatbots and virtual assistants that provide 24/7 support, instant responses, and multilingual interactions.</p>
-      <button>Book an AI Chatbot Consultation</button>
+      <button onclick="window.location.href='{{ url('/consult') }}'">Book an AI Chatbot Consultation</button>
     </div>
   </div>
 
@@ -86,7 +86,7 @@
     <div class="finance-content">
       <h2>Predictive Business Intelligence</h2>
       <p>Use AI to forecast market trends, customer behavior, and financial performance, helping businesses make proactive, data-driven decisions.</p>
-      <button>Schedule a Predictive Analytics Session</button>
+      <button onclick="window.location.href='{{ url('/consult') }}'">Schedule a Predictive Analytics Session</button>
     </div>
   </div>
 
@@ -105,7 +105,7 @@
     <div class="finance-content">
       <h2>AI in Finance & Accounting Automation</h2>
       <p>Increase efficiency in invoicing, expense tracking, payroll, and reconciliation with AI-powered automation, reducing errors and manual effort.</p>
-      <button>Book an AI Finance Strategy Call</button>
+      <button onclick="window.location.href='{{ url('/consult') }}'">Book an AI Finance Strategy Call</button>
     </div>
   </div>
 
@@ -125,7 +125,7 @@
       Optimization</h2>
       <p>AI automates repetitive business tasks, workflows, and approvals, streamlining
       operations and boosting productivity by up to 40%.</p>
-      <button>Talk to an AI Automation Specialist</button>
+      <button onclick="window.location.href='{{ url('/consult') }}'">Talk to an AI Automation Specialist</button>
     </div>
   </div>
 
@@ -143,7 +143,7 @@
     <div class="finance-content">
       <h2>Cybersecurity & AI Risk Management</h2>
       <p>Protect your business with AI-powered fraud detection, automated security monitoring, and real-time threat prevention against cyber risks.</p>
-      <button>Schedule a Cybersecurity Consultation</button>
+      <button onclick="window.location.href='{{ url('/consult') }}'">Schedule a Cybersecurity Consultation</button>
     </div>
   </div>
 </section>

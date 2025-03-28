@@ -17,16 +17,9 @@ class ContactController extends Controller
             'message' => 'required|string',
         ]);
 
-        Mail::send([], [], function ($message) use ($data) {
-            $message->to('your-email@example.com')
-                ->subject('New Contact Form Submission')
-                ->setBody("
-                    Name: {$data['name']}
-                    Email: {$data['email']}
-                    Phone: {$data['phone']}
-                    Fax: {$data['fax']}
-                    Message: {$data['message']}
-                ", 'text/plain');
+        Mail::send('emails.contact', ['data' => $data], function ($message) use ($data) {
+            $message->to('tonmoyk983@gmail.com')
+                ->subject('New Contact Form Submission');
         });
 
         return back()->with('success', 'Your message has been sent successfully!');

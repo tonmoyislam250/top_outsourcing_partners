@@ -21,21 +21,11 @@
         </div>
         <h1>Empowering Businesses with Smart Outsourcing Solutions</h1>
         <p>Customized accounting, finance, AI integration, ledger management, insurance, and third-party services to help your business grow.</p>
-        <a href="#" class="cta-button">Schedule for a Consultation</a>
+        <a href="{{ url('/consult') }}" class="cta-button">Schedule for a Consultation</a>
     </div>
     @include('sections.second')
     @include('sections.services')
-    @php
-        $reviews = [
-            ['avatar' => '👦', 'text' => 'Meet our graduates working at top companies. Get inspired by the journeys of our students.'],
-            ['avatar' => '👩‍🦱', 'text' => 'Meet our graduates working at top companies. Get inspired by the journeys of our students.Meet our graduates working at top companies. Get inspired by the journeys of our students.'],
-            ['avatar' => '👨‍🦰', 'text' => 'Meet our graduates working at top companies. Get inspired by the journeys of our students.'],
-            ['avatar' => '👩', 'text' => 'Meet our graduates working at top companies. Get inspired by the journeys of our students.'],
-            ['avatar' => '🧑‍🎤', 'text' => 'Meet our graduates working at top companies. Get inspired by the journeys of our students.Meet our graduates working at top companies. Get inspired by the journeys of our students.'],
-            ['avatar' => '👨‍🦱', 'text' => 'Meet our graduates working at top companies. Get inspired by the journeys of our students.'],
-        ];
-    @endphp
-    @include('components.success-stories', ['reviews' => $reviews])
+    @include('components.success-stories')
     @include('components.why-choose-us')
 
 @endsection

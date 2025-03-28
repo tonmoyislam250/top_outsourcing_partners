@@ -33,5 +33,5 @@
             <p>Proven Track Record</p>
         </div>
     </div>
-    <a href="#" class="button">Schedule a Free Consultation</a>
+    <a href="{{ url('/consult') }}" class="button">Schedule a Free Consultation</a>
 </div>

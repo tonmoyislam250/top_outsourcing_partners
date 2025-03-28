@@ -23,7 +23,7 @@
             <p>Address: 123 Global Solutions Drive, Innovation City, USA</p>
             <p>Phone: +1-800-123-4567</p>
             <p>Email: <a href="mailto:info@globaloutsourcingpartners.com">info@globaloutsourcingpartners.com</a></p>
-            <a class="footer-button">Get in touch</a>
+            <a href="contact" class="footer-button">Get in touch</a>
         </div>
     </div>
 </footer>

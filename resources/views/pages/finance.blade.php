@@ -61,7 +61,7 @@
         <div class="finance-content">
             <h2>Bookkeeping & Payroll Management</h2>
             <p>Stay ahead of your finances with accurate, real-time bookkeeping. Our experts handle ledger maintenance, bank reconciliations, and financial reporting so you can focus on growing your business.</p>
-            <button>Schedule a Bookkeeping Consultation</button>
+            <button onclick="window.location.href='{{ url('/consult') }}'">Schedule a Bookkeeping Consultation</button>
         </div>
     </div>
 
@@ -80,7 +80,7 @@
         <div class="finance-content">
             <h2>CFO Services (Virtual & On-Demand)</h2>
             <p>Access high-level financial strategy without the cost of a full-time CFO. We provide cash flow forecasting, profitability analysis, and financial planning tailored to your business goals.</p>
-            <button>Book a CFO Advisory Session</button>
+            <button onclick="window.location.href='{{ url('/consult') }}'">Book a CFO Advisory Session</button>
         </div>
     </div>
 
@@ -99,7 +99,7 @@
         <div class="finance-content">
             <h2>Accounts Payable (AP) Management</h2>
             <p>Stay ahead of your finances with accurate, real-time bookkeeping. Our experts handle ledger maintenance, bank reconciliations, and financial reporting so you can focus on growing your business.</p>
-            <button>Speak with an AP Specialist</button>
+            <button onclick="window.location.href='{{ url('/consult') }}'">Speak with an AP Specialist</button>
         </div>
     </div>
 
@@ -118,7 +118,7 @@
         <div class="finance-content">
             <h2>Accounts Receivable (AR) & Billing Services</h2>
             <p>Speed up payments and enhance cash flow with automated invoicing, payment tracking, and collections management. Get paid faster with reduced outstanding balances.</p>
-            <button>Book an AR Strategy Call</button>
+            <button onclick="window.location.href='{{ url('/consult') }}'">Book an AR Strategy Call</button>
         </div>
     </div>
 
@@ -136,7 +136,7 @@
         <div class="finance-content">
             <h2>Accounts Payable (AP) Management</h2>
             <p>Stay ahead of your finances with accurate, real-time bookkeeping. Our experts handle ledger maintenance, bank reconciliations, and financial reporting so you can focus on growing your business.</p>
-            <button>Speak with an AP Specialist</button>
+            <button onclick="window.location.href='{{ url('/consult') }}'">Speak with an AP Specialist</button>
         </div>
     </div>
 </section>

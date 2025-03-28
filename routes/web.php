@@ -11,4 +11,15 @@ Route::get('/contact', function () {
     return view('pages/contact');
 })->name('contact');
 
+Route::get('industries', function () {
+    return view('pages/industries');
+})->name('industries');
+
+
+Route::get('/solutions', function () {
+    return view('pages/solutions');
+});
+Route::get('/consult', function () {
+    return view('pages/schedule-consultation');
+})->name('consult');
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');

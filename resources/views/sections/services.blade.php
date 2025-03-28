@@ -10,6 +10,6 @@
     </div>
 
     <div class="cta" style="margin-top: 20px;">
-        <a href="{{ route('contact') }}" class="btn">Optimize Your Business Today!</a>
+        <a href="{{ url('/consult') }}" class="btn">Optimize Your Business Today!</a>
     </div>
 </section>

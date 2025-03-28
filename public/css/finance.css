@@ -149,35 +149,53 @@ body {
   }
 
 .finance-badge.top-right {
-    top: -20px;
-    right: -20px;
-    left: unset;
-    bottom: unset;
-    padding: 10px;
-    border-radius: 50%;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  top: -20px;
+  right: -20px;
+  left: unset;
+  bottom: unset;
+  padding: 10px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .finance-badge.top-right img {
-    width: 80px;
-    height: 80px;
+  width: 80px;
+  height: 80px;
 }
 
 .finance-badge.top-left {
-    top: -20px;
-    left: -20px;
-    right: unset;
-    bottom: unset;
-    padding: 10px;
-    border-radius: 50%;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  top: -20px;
+  left: -20px;
+  right: unset;
+  bottom: unset;
+  padding: 10px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .finance-badge.top-left img {
-    width: 80px;
-    height: 80px;
+  width: 80px;
+  height: 80px;
+}
+
+@media (max-width: 768px) {
+  .finance-badge.top-right,
+  .finance-badge.top-left {
+    top: unset;
+    right: unset;
+    left: unset;
+    bottom: unset;
+    margin: 10px auto;
+    position: relative;
+  }
+
+  .finance-badge.top-right img,
+  .finance-badge.top-left img {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 .section-header {
