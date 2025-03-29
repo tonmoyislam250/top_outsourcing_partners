@@ -62,8 +62,8 @@
                 setTimeout(function() {
                     splashScreen.style.display = 'none';
                     document.getElementById('main-content').style.display = 'block';
-                }, 1000); // Match this timeout with the CSS transition duration
-            }, 2000); 
+                }, 500); // Match this timeout with the CSS transition duration
+            }, 400); 
         });
     </script>
 </body>
