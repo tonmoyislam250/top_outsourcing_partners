@@ -108,7 +108,7 @@
 
   <div id="workflow-optimization" class="finance-service">
     <div class="finance-image-wrapper">
-      <img src="{{ asset('images/ai/image5.png') }}" alt="AP Management">
+      <img src="{{ asset('images/ai/image.png') }}" alt="AP Management">
       <div class="finance-badge">
         <img src="{{ asset('images/ai/prod.svg') }}" alt="Icon">
         <span>Productivity Increase<br><small>with AI-Driven Workflow Automation</small></span>
@@ -128,7 +128,7 @@
 
   <div id="cybersecurity" class="finance-service reverse">
     <div class="finance-image-wrapper">
-      <img src="{{ asset('images/ai/image4.png') }}" alt="AR & Billing Services">
+      <img src="{{ asset('images/ai/image.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">
         <img src="{{ asset('images/ai/fraud.svg') }}" alt="Icon">
         <span>Fraud Detection Effectiveness<br><small>with AI Automation</small></span>

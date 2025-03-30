@@ -109,15 +109,16 @@
             <img src="{{ asset('images/finance/image5.png') }}" alt="AP Management">
             <div class="finance-badge">
                 <img src="{{ asset('images/finance/tax.svg') }}" alt="Icon">
-                <span>Reduction in Late Payments<br><small>with AP Automation</small></span>
+                <span>Tax Error Reduction<br><small>with Professional Outsourcing</small></span>
             </div>
             <div class="finance-badge top-right">
                 <img src="{{ asset('images/finance/tr3.svg') }}" alt="Icon">
             </div>
         </div>
         <div class="finance-content">
-            <h2>Accounts Payable (AP) Management</h2>
-            <p>Stay ahead of your finances with accurate, real-time bookkeeping. Our experts handle ledger maintenance, bank reconciliations, and financial reporting so you can focus on growing your business.</p>
+            <h2>Tax Preparation & Compliance</h2>
+            <p>Ensure hassle-free tax compliance with corporate tax filing, VAT/GST reporting, and
+            regulatory adherence. Stay tax-ready while we handle the complexities for you.</p>
             <button onclick="window.location.href='{{ url('/consult') }}'">Speak with an AP Specialist</button>
         </div>
     </div>
