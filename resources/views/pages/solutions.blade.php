@@ -8,7 +8,7 @@
             <h1>Solutions</h1>
         </div>
         <div class="description text-center">
-            <p>At GlobalOutsourcingPartners, we specialize in providing customized solutions to meet the unique requirements of each client. Our flexible approach ensures that businesses receive the exact support they need, whether it’s hiring our in-house team or having us manage a dedicated team tailored to their needs.</p>
+            <p>At TopOutsourcingPartners, we specialize in providing customized solutions to meet the unique requirements of each client. Our flexible approach ensures that businesses receive the exact support they need, whether it’s hiring our in-house team or having us manage a dedicated team tailored to their needs.</p>
         </div>
         <div class="solutions-content features d-flex justify-content-between">
             <div class="feature-box text-center">

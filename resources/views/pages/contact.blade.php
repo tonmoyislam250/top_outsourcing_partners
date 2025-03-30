@@ -52,7 +52,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                     <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.708 2.825L15 11.383V5.383zM1 5.383v6l4.708-2.825L1 5.383zm5.354 3.354L1 12.617V13a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.383l-5.354-3.88L8 9.383l-1.646-1.646z"/>
                 </svg>
-                info@globaloutsourcingpartners.com
+                info@Topoutsourcingpartners.com
             </p>
         </div>
         <div class="info-block" style="text-align: left;">
@@ -71,7 +71,7 @@
                     <path d="M12.166 8.94c-.26.35-.578.75-.94 1.166-.73.84-1.578 1.75-2.226 2.516a.5.5 0 0 1-.8 0c-.648-.766-1.496-1.676-2.226-2.516-.362-.416-.68-.816-.94-1.166C4.07 7.84 3.5 6.5 3.5 5a4.5 4.5 0 1 1 9 0c0 1.5-.57 2.84-1.334 3.94zM8 15s6-5.686 6-10A6 6 0 1 0 2 5c0 4.314 6 10 6 10z"/>
                     <path d="M8 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
                 </svg>
-                123 Global Solutions Drive, Innovation City, USA
+                123 Top Solutions Drive, Innovation City, USA
             </p>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-section">
-            <h2>Global <br>OutSourcing <br>Partners</h2>
+            <h2>Top <br>OutSourcing <br>Partners</h2>
             <div class="social-icons">
                 <a><i class="fab fa-facebook"></i></a>
                 <a><i class="fab fa-twitter"></i></a>
@@ -20,9 +20,9 @@
         </div>
         <div class="footer-section">
             <h3>Contact</h3>
-            <p>Address: 123 Global Solutions Drive, Innovation City, USA</p>
+            <p>Address: 123 Top Solutions Drive, Innovation City, USA</p>
             <p>Phone: +1-800-123-4567</p>
-            <p>Email: <a href="mailto:info@globaloutsourcingpartners.com">info@globaloutsourcingpartners.com</a></p>
+            <p>Email: <a href="mailto:info@Topoutsourcingpartners.com">info@Topoutsourcingpartners.com</a></p>
             <a href="contact" class="footer-button">Get in touch</a>
         </div>
     </div>
