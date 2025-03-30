@@ -123,7 +123,7 @@
       <h2>Cybersecurity Awareness & Data Protection</h2>
       <p>Protect your business from cyber threats with training on data security, phishing
 prevention, and risk management strategies.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Protect your business from cyber threats with training on data security, phishing prevention, and risk management strategies.</button>
+      <button onclick="window.location.href='{{ url('/consult') }}'">Book a Cybersecurity Awareness Session</button>
     </div>
   </div>
 
