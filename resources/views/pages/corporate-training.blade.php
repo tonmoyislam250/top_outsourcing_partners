@@ -3,8 +3,8 @@
 @section('content')
 <section class="section">
   <div class="section-header">
-    <img src="{{ asset('images/corporate/coporate.svg') }}" alt="AI Icon" class="section-icon">
-    <h1 class="section-title">Corporate Training needed</h1>
+    <img src="{{ asset('images/corporate/corporate.svg') }}" alt="AI Icon" class="section-icon">
+    <h1 class="section-title">Corporate Training & Development</h1>
   </div>
 
   <div class="grid">
