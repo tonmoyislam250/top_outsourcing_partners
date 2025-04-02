@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    background-color: #f8f9fb;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  /* Hero Section */
+  .hero-outsourcing {
+    background: #f9f9f9;
+    min-height: 100vh; /* Ensure it occupies the full viewport height */
+    display: flex; /* Center content vertically */
+    align-items: center;
+  }
+  
+  .hero-outsourcing-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    }
+  
+  .hero-outsourcing-text {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .hero-outsourcing-image {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .hero-outsourcing-content img {
+    max-width: 400px;
+  }
+  
+  .hero-outsourcing-content h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .hero-outsourcing-content p {
+    margin-bottom: 20px;
+  }
+  
+  .hero-outsourcing-content button {
+    padding: 12px 25px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  /* Partner Section */
+  .partner-section {
+    background: #fff;
+  }
+  
+  .partner-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+.partner-text {
+    flex: 1;
+    text-align: left;
+}
+
+.partner-image {
+    flex: 1;
+    text-align: left;
+}
+  
+  .partner-wrapper img {
+    max-width: 300px;
+  }
+  
+  .partner-wrapper h2 {
+    margin-bottom: 15px;
+  }
+  
+  .partner-wrapper ul {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  
+  .partner-wrapper ul li {
+    margin-bottom: 10px;
+  }
+  
+  .partner-wrapper button {
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  /* Offerings Section */
+  .service-offerings {
+    background: #eaf6fb;
+  }
+  
+  .service-offerings h2 {
+    margin-bottom: 40px;
+  }
+  
+  .offerings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .offering-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  
+  .offering-card img {
+    width: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .offering-card h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .offering-card ul {
+    padding-left: 20px;
+  }
+  
+  .offering-card ul li {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  /* ROI Section */
+  .roi-section {
+    background: #f8fcff;
+  }
+  
+  .roi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .roi-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  
+  .roi-card img {
+    width: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .roi-card h4 {
+    margin-bottom: 10px;
+  }
+  
+  .roi-card p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .roi-section button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  /* Engagement Section */
+  .engagement-model {
+    background: #fff;
+  }
+  
+  .engagement-model h2 {
+    margin-bottom: 40px;
+  }
+  
+  .steps-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .step-box {
+    background: #fff;
+    border: 1px dashed #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    width: 80%;
+    max-width: 700px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    position: relative;
+  }
+  
+  .step-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  
+  .step-icon img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .step-content h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .connector {
+    width: 2px;
+    height: 30px;
+    background: transparent;
+    border-left: 2px dashed #ccc;
+  }
+  
+  .purple {
+    background: #8e44ad20;
+  }
+  
+  .green {
+    background: #2ecc7120;
+  }
+  
+  .maroon {
+    background: #80000020;
+  }
+  
+  .blue {
+    background: #3498db20;
+  }
+  
+  .purple-line {
+    border-left-color: #8e44ad;
+  }
+  
+  .green-line {
+    border-left-color: #2ecc71;
+  }
+  
+  .maroon-line {
+    border-left-color: #800000;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-outsourcing-content, .partner-wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .partner-wrapper ul, .partner-wrapper h2 {
+      text-align: center;
+    }
+  
+    .step-box {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .step-icon {
+      margin-bottom: 10px;
+    }
+  }

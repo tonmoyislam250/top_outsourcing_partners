@@ -35,13 +35,14 @@
     cursor: pointer;
   }
   
-  .hero {
+  .hero-managerial {
     background: #fff;
     position: relative;
-    padding: 60px 0;
+    padding: 0px 0;
+    min-height: 100vh;
   }
   
-  .hero-img {
+  .hero-managerial-img {
     max-width: 400px;
     margin-top: 30px;
   }
@@ -400,4 +401,3 @@
       flex-direction: column;
     }
   }
-  

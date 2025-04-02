@@ -9,7 +9,7 @@
         @endforeach
     </div>
 
-    <div class="cta" style="margin-top: 20px;">
-        <a href="{{ url('/consult') }}" class="btn">Optimize Your Business Today!</a>
+    <div class="call-to-action" style="margin-top: 30px; text-align: center;">
+        <a href="{{ url('/consult') }}" class="btn-primary" style="padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">Optimize Your Business Today!</a>
     </div>
 </section>

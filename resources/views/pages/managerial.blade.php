@@ -3,14 +3,14 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="hero">
+<section class="hero-managerial">
     <div class="container hero-flex">
         <div class="hero-text">
             <h1>Global Workforce, Hassle-Free – Build Your Dedicated Team Today!</h1>
             <p>Focus on your business while we manage your dedicated offshore team.</p>
             <button>Build the Dedicated Team Now!</button>
         </div>
-        <div class="hero-image">
+        <div class="hero-managerial-img">
             <img src="{{ asset('images/manager/hero.png') }}" alt="Team Illustration" class="hero-img">
         </div>
     </div>
@@ -25,7 +25,7 @@
     .hero-text {
         max-width: 50%;
     }
-    .hero-image {
+    .hero-managerial-img {
         max-width: 45%;
     }
     .hero-img {
@@ -302,12 +302,13 @@
 </section>
 
 <!-- Call to Action -->
-<section class="cta">
-  <div class="container">
-    <h2>Let’s Work Together!</h2>
-    <p>Outsourcing is no longer just an option—it’s a growth strategy for modern firms. Let Global Outsourcing Partners handle your accounting workload so you can focus on client success and firm growth.</p>
-    <button>Book a Free Financial Consultation</button>
-  </div>
+<section class="cta" style="background-color: #007b8f; padding: 40px; text-align: center; color: white;">
+    <h2 style="font-size: 2rem; margin-bottom: 20px;">Let’s Work Together!</h2>
+    <p style="font-size: 1.2rem; margin-bottom: 30px;">Outsourcing is no longer just an option—it's a growth strategy for modern firms. Let Global Outsourcing Partners handle your accounting workload so you can focus on client success and firm growth.</p>
+    <button style="background-color: white; color: #007b8f; padding: 10px 20px; border: none; border-radius: 20px; font-size: 1rem; cursor: pointer;">Book a Free Financial Consultation</button>
 </section>
 
+@endsection
+@section('footer')
+    @include('components.footer') 
 @endsection

@@ -27,3 +27,7 @@ Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.
 Route::get('/manager', function () {
     return view('pages/managerial');
 })->name('managerial');
+
+Route::get('/out', function () {
+    return view('pages/outsourcing');
+})->name('outsourcing');
