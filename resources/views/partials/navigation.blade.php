@@ -19,40 +19,40 @@
         <img src="{{ asset('images/logo.svg') }}" alt="Logo">
     </a>
     <div class="nav-links">
-        <a href="{{ url('/') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Home</a>
-        <a style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">About us</a>
+        <a href="{{ url('/') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Home</a>
+        <a style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">About us</a>
         <div class="services-dropdown">
-            <a class="services-link" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Services</a>
+            <a class="services-link" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Services</a>
             <div class="dropdown-menu" style="width: 600px;">
                 <div class="dropdown-row">
-                    <a href="{{ url('/services/finance') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
+                    <a href="{{ url('/services/finance') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
                         <img src="{{ asset('images/finance/finance.svg') }}" alt="Finance Icon" class="dropdown-icon">
                         Accounting & Finance Outsourcing
                     </a>
-                    <a href="{{ url('/services/ai-integration') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
+                    <a href="{{ url('/services/ai-integration') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
                         <img src="{{ asset('images/ai/ai-icon.svg') }}" alt="AI Icon" class="dropdown-icon">
                         AI Integration for Businesses
                     </a>
-                    <a href="{{ url('/services/corporate-training') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
+                    <a href="{{ url('/services/corporate-training') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
                         <img src="{{ asset('images/corporate/corporate.svg') }}" alt="Training Icon" class="dropdown-icon">
                         Corporate Training & Development
                     </a>
                 </div>
                 <div class="dropdown-row">
-                    <a href="{{ url('/services/third-party') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
+                    <a href="{{ url('/services/third-party') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
                         <img src="{{ asset('images/third-party/third-party.svg') }}" alt="Support Icon" class="dropdown-icon">
                         Third-Party Business Support
                     </a>
-                    <a href="{{ url('/services/hr-pay') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
+                    <a href="{{ url('/services/hr-pay') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
                         <img src="{{ asset('images/hr/hr.svg') }}" alt="Data Icon" class="dropdown-icon">
                         Data Entry & Administrative Support
                     </a>
                 </div>
             </div>
         </div>
-        <a href="{{ url('/solutions') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Solutions</a>
-        <a href="{{ url('/industries') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Industries</a>
-        <a href="{{ url('/contact') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Contact Us</a>
+        <a href="{{ url('/solutions') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 10px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Solutions</a>
+        <a href="{{ url('/industries') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 10px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Industries</a>
+        <a href="{{ url('/contact') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 10px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Contact Us</a>
     </div>
     <div class="social-links" style="font-size: 2rem; margin-top: 1rem;">
         <a href="https://www.facebook.com/RickAstley/" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
