@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{ asset('css/review.css') }}">
-<link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}"> <!-- Swiper styles -->
+<link rel="stylesheet" href="{{ asset('css/default/swiper-bundle.min.css') }}"> <!-- Swiper styles -->
 
 <style>
   .swiper-container {

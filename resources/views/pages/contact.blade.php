@@ -5,7 +5,7 @@
 @section('content')
 <div class="contact-container" style="max-width: 100%; padding: 0 15px; box-sizing: border-box;">
     <div class="form-section">
-        <h2>Contact us</h2>
+        <h2><strong>Contact us</strong></h2>
         <form id="contactForm" action="{{ route('contact.send') }}" method="POST">
             @csrf
             <div class="form-row">
@@ -45,7 +45,7 @@
     </div>
 
     <div class="contact-info">
-        <h3>Contact Via</h3>
+        <h3><strong>Contact Via</strong></h3>
         <div class="info-block" style="text-align: left;">
             <strong>EMAIL</strong>
             <p>
