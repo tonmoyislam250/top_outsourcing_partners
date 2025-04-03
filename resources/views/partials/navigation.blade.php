@@ -1,4 +1,8 @@
 <nav>
+    <head>
+        <!-- Add Animate.css -->
+        <link rel="stylesheet" href="{{ asset('css/default/animate.min.css') }}" />
+    </head>
     <div class="menu-icon" onclick="toggleMenu()" style="display: none;">&#9776;</div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -130,15 +134,11 @@
         border-radius: 0.5rem;
         padding: 0.5rem 1rem;
         z-index: 1000;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .services-dropdown:hover .dropdown-menu {
         display: flex; /* Show menu on hover */
-        opacity: 1;
-        transform: translateY(0);
+        animation: fadeInDown 0.5s; /* Use Animate.css animation */
     }
 
     .dropdown-row {

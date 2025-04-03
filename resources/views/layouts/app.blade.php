@@ -35,7 +35,8 @@
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
     <link rel="stylesheet" href="{{ asset('css/manager.css') }}">
     <link rel="stylesheet" href="{{ asset('css/out.css') }}">
-
+    <!-- Animate.css Library -->
+    <link rel="stylesheet" href="{{asset('css/default/animate.min.css')}}" />
 
 </head>
 <body>
@@ -68,6 +69,37 @@
                     document.getElementById('main-content').style.display = 'block';
                 }, 500); // Match this timeout with the CSS transition duration
             }, 400); 
+        });
+
+        // Add observe-me class to elements you want to animate on scroll
+        const animatedElements = document.querySelectorAll('.section-title, .service-card, .story-card, .reason-card');
+        
+        animatedElements.forEach(el => {
+            el.classList.add('observe-me');
+            // Remove initial animation classes and add them when scrolled into view
+            if (el.classList.contains('animate__animated')) {
+                const animationClass = Array.from(el.classList).find(cls => cls.startsWith('animate__') && cls !== 'animate__animated');
+                if (animationClass) {
+                    el.classList.remove(animationClass);
+                    el.setAttribute('data-animation', animationClass);
+                }
+            }
+        });
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const animationClass = entry.target.getAttribute('data-animation');
+                    if (animationClass) {
+                        entry.target.classList.add(animationClass);
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.observe-me').forEach(el => {
+            observer.observe(el);
         });
     </script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
