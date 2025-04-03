@@ -9,7 +9,7 @@
       <div class="hero-outsourcing-text">
         <h2>Outsourcing Solutions for Accounting Firms – Scale Your Operations with Confidence</h2>
         <p>We act as an extension of your firm, handling bookkeeping, accounting, and financial operations so you can focus on client advisory and revenue-generating activities.</p>
-        <button>Book a Free Consultation</button>
+        <button onclick="window.location.href='/consult'">Book a Free Consultation</button>
       </div>
       <div class="hero-outsourcing-image">
         <img src="{{ asset('images/out/hero.png') }}" alt="Accounting Illustration">
@@ -26,7 +26,7 @@
         <img src="{{ asset('images/out/hero2.png') }}" alt="Graph Image">
       </div>
       <div class="partner-text">
-        <h2>Why Partner with Us?</h2>
+        <h2><strong>Why Partner with Us?</strong></h2>
         <ul>
           <li>✔️ <strong>Free Up Your Team’s Time</strong> – Delegate routine accounting tasks and focus on client strategy.</li>
           <li>✔️ <strong>Scale Without Expanding In-House Staff</strong> – Grow your capacity without recruitment and training costs.</li>
@@ -42,11 +42,11 @@
 <!-- Service Offerings -->
 <section class="service-offerings">
   <div class="container">
-    <h2>Our Service Offerings</h2>
+    <h2><strong>Our Service Offerings</strong></h2>
     <div class="offerings-grid">
       <div class="offering-card">
         <img src="{{ asset('images/out/frame1.svg') }}" alt="Bookkeeping">
-        <h3>Bookkeeping Services</h3>
+        <h3><strong>Bookkeeping Services</strong></h3>
         <ul>
           <li>Month-end & year-end closing</li>
           <li>Transaction categorization & financial reporting</li>
@@ -55,7 +55,7 @@
       </div>
       <div class="offering-card">
         <img src="{{ asset('images/out/frame2.svg') }}" alt="Accounts Payable">
-        <h3>Accounts Payable & Receivable</h3>
+        <h3><strong>Accounts Payable & Receivable</strong></h3>
         <ul>
           <li>Payment scheduling & reconciliation</li>
           <li>Vendor management & expense tracking</li>
@@ -64,7 +64,7 @@
       </div>
       <div class="offering-card">
         <img src="{{ asset('images/out/frame3.svg') }}" alt="CFO Services">
-        <h3>CFO Services</h3>
+        <h3><strong>CFO Services</strong></h3>
         <ul>
           <li>Cash flow management & forecasting</li>
           <li>Profitability analysis & strategy</li>
@@ -73,7 +73,7 @@
       </div>
       <div class="offering-card">
         <img src="{{ asset('images/out/frame4.svg') }}" alt="Finance">
-        <h3>Finance & Accounting</h3>
+        <h3><strong>Finance & Accounting</strong></h3>
         <ul>
           <li>Expense tracking & cost-control strategies</li>
           <li>Financial statement preparation & reporting</li>
@@ -82,7 +82,7 @@
       </div>
       <div class="offering-card">
         <img src="{{ asset('images/out/frame5.svg') }}" alt="Process Automation">
-        <h3>Financial Process Automation</h3>
+        <h3><strong>Financial Process Automation</strong></h3>
         <ul>
           <li>Workflow automation for faster reporting</li>
           <li>AI-powered fraud detection & internal controls</li>
@@ -91,7 +91,7 @@
       </div>
       <div class="offering-card">
         <img src="{{ asset('images/out/frame6.svg') }}" alt="QuickBooks">
-        <h3>Sage to QuickBooks Migration</h3>
+        <h3><strong>Sage to QuickBooks Migration</strong></h3>
         <ul>
           <li>Full data migration & system setup</li>
           <li>Historical data validation & accuracy checks</li>
@@ -105,31 +105,31 @@
 <!-- ROI Section -->
 <section class="roi-section">
   <div class="container">
-    <h2>The ROI of Outsourcing</h2>
+    <h2><strong>The ROI of Outsourcing</strong></h2>
     <div class="roi-grid">
       <div class="roi-card">
         <img src="{{ asset('images/out/roi1.svg') }}" alt="Cost Savings">
-        <h4>Cost Savings</h4>
+        <h4><strong>Cost Savings</strong></h4>
         <p>Cut operational costs by up to 50% by reducing in-house staffing expenses.</p>
       </div>
       <div class="roi-card">
         <img src="{{ asset('images/out/roi2.svg') }}" alt="Efficiency">
-        <h4>Efficiency Boost</h4>
+        <h4><strong>Efficiency Boost</strong></h4>
         <p>Automate routine financial processes and eliminate inefficiencies.</p>
       </div>
       <div class="roi-card">
         <img src="{{ asset('images/out/roi3.svg') }}" alt="Scalability">
-        <h4>Scalability</h4>
+        <h4><strong>Scalability</strong></h4>
         <p>Expand service offerings without recruiting and training new employees.</p>
       </div>
       <div class="roi-card">
         <img src="{{ asset('images//out/roi4.svg') }}" alt="Security">
-        <h4>Data Security & Compliance</h4>
+        <h4><strong>Data Security & Compliance</strong></h4>
         <p>We adhere to U.S. financial regulations (GAAP, IRS, GDPR, and CCPA).</p>
       </div>
       <div class="roi-card">
         <img src="{{ asset('images/out/roi5.svg') }}" alt="Support">
-        <h4>24/7 Dedicated Support</h4>
+        <h4><strong>24/7 Dedicated Support</strong></h4>
         <p>Our expert team is available whenever you need us.</p>
       </div>
     </div>
@@ -140,15 +140,15 @@
 <!-- Engagement Model Section -->
 <section class="engagement-model">
   <div class="container">
-    <h2>How It Works: Our Engagement Model</h2>
+    <h2><strong>How It Works: Our Engagement Model</strong></h2>
     <div class="steps-wrapper">
       <div class="step-box">
         <div class="step-icon purple">
           <img src="{{ asset('images/out/eng1.svg') }}" alt="Consultation">
         </div>
         <div class="step-content">
-          <h3>Consultation & Needs Assessment</h3>
-          <p>We analyze your firm’s workload and outsourcing goals.</p>
+          <h3 style="font-weight: bold; text-align: left; font-size: 1.5rem;">Consultation & Needs Assessment</h3>
+          <p>We analyze your firm's workload and outsourcing goals.</p>
         </div>
       </div>
       <div class="connector purple-line"></div>
@@ -157,7 +157,7 @@
           <img src="{{ asset('images/out/eng2.svg') }}" alt="Onboarding">
         </div>
         <div class="step-content">
-          <h3>Seamless Onboarding & Secure Data Handling</h3>
+          <h3 style="font-weight: bold; text-align: left; font-size: 1.5rem;">Seamless Onboarding & Secure Data Handling</h3>
           <p>Ensuring smooth transitions with complete confidentiality.</p>
         </div>
       </div>
@@ -167,7 +167,7 @@
           <img src="{{ asset('images/out/eng3.svg') }}" alt="Service Plan">
         </div>
         <div class="step-content">
-          <h3>Customized Service Plan</h3>
+          <h3 style="font-weight: bold; text-align: left; font-size: 1.5rem;">Customized Service Plan</h3>
           <p>Outsourcing solutions that integrate seamlessly with your firm’s workflow.</p>
         </div>
       </div>
@@ -177,7 +177,7 @@
           <img src="{{ asset('images/out/eng4.svg') }}" alt="Support">
         </div>
         <div class="step-content">
-          <h3>Ongoing Support & Reporting</h3>
+          <h3 style="font-weight: bold; text-align: left; font-size: 1.5rem;">Ongoing Support & Reporting</h3>
           <p>Real-time updates, KPI tracking, and transparent communication.</p>
         </div>
       </div>

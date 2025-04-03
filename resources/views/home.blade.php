@@ -58,7 +58,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                     <div class="hero-outsourcing-text">
-                        <h2>Outsourcing Solutions for Accounting Firms – Scale Your Operations with Confidence</h2>
+                        <h2><strong>Outsourcing Solutions for Accounting Firms - Scale Your Operations with Confidence</strong></h2>
                         <p>We act as an extension of your firm, handling bookkeeping, accounting, and financial operations so you can focus on client advisory and revenue-generating activities.</p>
                         <a href="{{ url('/out') }}" class="cta-button">Go to Outsourcing Page</a>
                     </div>
@@ -74,11 +74,11 @@
         </div>
 
         <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" style="filter: invert(1); opacity: 0.8;">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" style="filter: invert(1); opacity: 0.8;">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
