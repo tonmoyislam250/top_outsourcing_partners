@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-inner">
             <!-- Slide 1: Homepage Hero -->
             <div class="carousel-item active">
