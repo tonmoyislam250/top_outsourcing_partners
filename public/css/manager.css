@@ -28,7 +28,7 @@
   
   button {
     padding: 12px 25px;
-    background-color: #0044cc;
+    background-color: #000000;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -386,7 +386,7 @@
     margin: 0 auto 25px;
   }
   
-  .cta button {
+  .cta {
     padding: 12px 25px;
     background: #fff;
     color: #007b8a;

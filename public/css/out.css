@@ -202,10 +202,13 @@
   /* Engagement Section */
   .engagement-model {
     background: #fff;
+    padding: 50px 0;
   }
   
   .engagement-model h2 {
+    font-size: 2rem;
     margin-bottom: 40px;
+    text-align: center;
   }
   
   .steps-wrapper {
@@ -217,37 +220,51 @@
   
   .step-box {
     background: #fff;
-    border: 1px dashed #ddd;
+    border: 1px solid #ddd;
     border-radius: 12px;
     padding: 20px;
-    width: 80%;
+    width: 100%;
     max-width: 700px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 30px;
     position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .zigzag-left {
+    flex-direction: row;
+  }
+
+  .zigzag-right {
+    flex-direction: row-reverse;
   }
   
   .step-icon {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     flex-shrink: 0;
     border-radius: 50%;
-    background: #eee;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 20px;
+    margin: 0 20px;
   }
   
   .step-icon img {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
   }
   
   .step-content h3 {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .step-content p {
+    font-size: 1rem;
+    color: #555;
   }
   
   .connector {
@@ -255,6 +272,7 @@
     height: 30px;
     background: transparent;
     border-left: 2px dashed #ccc;
+    margin: 0 auto;
   }
   
   .purple {
@@ -307,6 +325,10 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+    }
+
+    .zigzag-left, .zigzag-right {
+      flex-direction: column;
     }
   
     .step-icon {

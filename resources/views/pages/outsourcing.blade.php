@@ -3,17 +3,15 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="hero-outsourcing">
-  <div class="container">
-    <div class="hero-outsourcing-content">
-      <div class="hero-outsourcing-text">
-        <h2>Outsourcing Solutions for Accounting Firms – Scale Your Operations with Confidence</h2>
-        <p>We act as an extension of your firm, handling bookkeeping, accounting, and financial operations so you can focus on client advisory and revenue-generating activities.</p>
-        <button onclick="window.location.href='/consult'">Book a Free Consultation</button>
-      </div>
-      <div class="hero-outsourcing-image">
-        <img src="{{ asset('images/out/hero.png') }}" alt="Accounting Illustration">
-      </div>
+<section class="hero-outsourcing" style="width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; background-color: #f9f9f9;">
+  <div class="container" style="max-width: 1200px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+    <div class="hero-outsourcing-text" style="flex: 1; padding: 20px;">
+      <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 20px;">Outsourcing Solutions for Accounting Firms - Scale Your Operations with Confidence</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 20px;">We act as an extension of your firm, handling bookkeeping, accounting, and financial operations so you can focus on client advisory and revenue-generating activities.</p>
+      <button onclick="window.location.href='/consult'" style="padding: 10px 20px; font-size: 1rem; background-color: #00000; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Book a Free Consultation</button>
+    </div>
+    <div class="hero-outsourcing-image" style="flex: 1; padding: 20px; display: flex; align-items: center; justify-content: center;">
+      <img src="{{ asset('images/out/hero.png') }}" alt="Accounting Illustration" style="max-width: 80%; height: auto;">
     </div>
   </div>
 </section>
@@ -71,6 +69,9 @@
           <li>Risk assessment & compliance advisory</li>
         </ul>
       </div>
+    </div>
+    <div style="margin: 2rem 0;"></div>
+    <div class="offerings-grid">
       <div class="offering-card">
         <img src="{{ asset('images/out/frame4.svg') }}" alt="Finance">
         <h3><strong>Finance & Accounting</strong></h3>
@@ -102,10 +103,13 @@
   </div>
 </section>
 
+
 <!-- ROI Section -->
 <section class="roi-section">
   <div class="container">
     <h2><strong>The ROI of Outsourcing</strong></h2>
+    
+    <!-- Three Cards Row -->
     <div class="roi-grid">
       <div class="roi-card">
         <img src="{{ asset('images/out/roi1.svg') }}" alt="Cost Savings">
@@ -122,8 +126,15 @@
         <h4><strong>Scalability</strong></h4>
         <p>Expand service offerings without recruiting and training new employees.</p>
       </div>
+    </div>
+
+    <!-- Add spacing between rows -->
+    <div style="margin: 2rem 0;"></div>
+    
+    <!-- Two Cards Row -->
+    <div class="roi-grid">
       <div class="roi-card">
-        <img src="{{ asset('images//out/roi4.svg') }}" alt="Security">
+        <img src="{{ asset('images/out/roi4.svg') }}" alt="Security">
         <h4><strong>Data Security & Compliance</strong></h4>
         <p>We adhere to U.S. financial regulations (GAAP, IRS, GDPR, and CCPA).</p>
       </div>
@@ -142,42 +153,42 @@
   <div class="container">
     <h2><strong>How It Works: Our Engagement Model</strong></h2>
     <div class="steps-wrapper">
-      <div class="step-box">
+      <div class="step-box zigzag-left">
         <div class="step-icon purple">
           <img src="{{ asset('images/out/eng1.svg') }}" alt="Consultation">
         </div>
         <div class="step-content">
-          <h3 style="font-weight: bold; text-align: left; font-size: 1.5rem;">Consultation & Needs Assessment</h3>
+          <h3>Consultation & Needs Assessment</h3>
           <p>We analyze your firm's workload and outsourcing goals.</p>
         </div>
       </div>
       <div class="connector purple-line"></div>
-      <div class="step-box">
+      <div class="step-box zigzag-right">
         <div class="step-icon green">
           <img src="{{ asset('images/out/eng2.svg') }}" alt="Onboarding">
         </div>
         <div class="step-content">
-          <h3 style="font-weight: bold; text-align: left; font-size: 1.5rem;">Seamless Onboarding & Secure Data Handling</h3>
+          <h3>Seamless Onboarding & Secure Data Handling</h3>
           <p>Ensuring smooth transitions with complete confidentiality.</p>
         </div>
       </div>
       <div class="connector green-line"></div>
-      <div class="step-box">
+      <div class="step-box zigzag-left">
         <div class="step-icon maroon">
           <img src="{{ asset('images/out/eng3.svg') }}" alt="Service Plan">
         </div>
         <div class="step-content">
-          <h3 style="font-weight: bold; text-align: left; font-size: 1.5rem;">Customized Service Plan</h3>
+          <h3>Customized Service Plan</h3>
           <p>Outsourcing solutions that integrate seamlessly with your firm’s workflow.</p>
         </div>
       </div>
       <div class="connector maroon-line"></div>
-      <div class="step-box">
+      <div class="step-box zigzag-right">
         <div class="step-icon blue">
           <img src="{{ asset('images/out/eng4.svg') }}" alt="Support">
         </div>
         <div class="step-content">
-          <h3 style="font-weight: bold; text-align: left; font-size: 1.5rem;">Ongoing Support & Reporting</h3>
+          <h3>Ongoing Support & Reporting</h3>
           <p>Real-time updates, KPI tracking, and transparent communication.</p>
         </div>
       </div>
