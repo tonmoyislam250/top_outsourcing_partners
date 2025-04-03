@@ -45,7 +45,7 @@
                     </a>
                     <a href="{{ url('/services/hr-pay') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
                         <img src="{{ asset('images/hr/hr.svg') }}" alt="Data Icon" class="dropdown-icon">
-                        Data Entry & Administrative Support
+                        HR & Payroll Services
                     </a>
                 </div>
             </div>

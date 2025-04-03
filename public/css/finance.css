@@ -189,6 +189,9 @@ body {
     bottom: unset;
     margin: 10px auto;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .finance-badge.top-right img,
