@@ -33,7 +33,7 @@
           <li>✔️ <strong>Enhance Accuracy & Compliance</strong> – Reduce audit risks with expert-led financial operations.</li>
           <li>✔️ <strong>Seamless Integration</strong> – We work with QuickBooks, Sage, Xero, Tally, and other accounting platforms.</li>
         </ul>
-        <button>Schedule a Free Strategy Call</button>
+        <button onclick="window.location.href='/consult'">Schedule a Free Strategy Call</button>
       </div>
     </div>
   </div>
@@ -133,7 +133,7 @@
         <p>Our expert team is available whenever you need us.</p>
       </div>
     </div>
-    <button>Book a Free Financial Consultation</button>
+    <button onclick="window.location.href='/consult'">Book a Free Financial Consultation</button>
   </div>
 </section>
 
