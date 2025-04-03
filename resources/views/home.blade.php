@@ -42,7 +42,7 @@
                         <div class="hero-text ms-md-4">
                         <h1>Global Workforce, Hassle-Free - Build Your Dedicated Team Today!</h1>
                         <p>Focus on your business while we manage your dedicated offshore team.</p>
-                        <a href="{{ url('/manager') }}" class="cta-button">Go to Managerial Page</a>
+                        <a href="{{ url('/manager') }}" class="cta-button">Discover How We Can Optimize Your Operations</a>
                         </div>
                     </div>
                     </div>
@@ -60,7 +60,7 @@
                     <div class="hero-outsourcing-text">
                         <h2><strong>Outsourcing Solutions for Accounting Firms - Scale Your Operations with Confidence</strong></h2>
                         <p>We act as an extension of your firm, handling bookkeeping, accounting, and financial operations so you can focus on client advisory and revenue-generating activities.</p>
-                        <a href="{{ url('/out') }}" class="cta-button">Go to Outsourcing Page</a>
+                        <a href="{{ url('/out') }}" class="cta-button">Learn How We Can Support Your Firm</a>
                     </div>
                     </div>
                     <div class="col-md-6">

@@ -3,15 +3,15 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="hero-outsourcing" style="width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; background-color: #f9f9f9;">
-  <div class="container" style="max-width: 1200px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-    <div class="hero-outsourcing-text" style="flex: 1; padding: 20px;">
-      <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 20px;">Outsourcing Solutions for Accounting Firms - Scale Your Operations with Confidence</h2>
-      <p style="font-size: 1.2rem; margin-bottom: 20px;">We act as an extension of your firm, handling bookkeeping, accounting, and financial operations so you can focus on client advisory and revenue-generating activities.</p>
-      <button onclick="window.location.href='/consult'" style="padding: 10px 20px; font-size: 1rem; background-color: #00000; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Book a Free Consultation</button>
+<section class="hero-outsourcing">
+  <div class="container hero-outsourcing-content">
+    <div class="hero-outsourcing-text">
+      <h2>Outsourcing Solutions for Accounting Firms - Scale Your Operations with Confidence</h2>
+      <p>We act as an extension of your firm, handling bookkeeping, accounting, and financial operations so you can focus on client advisory and revenue-generating activities.</p>
+      <button onclick="window.location.href='/consult'">Book a Free Consultation</button>
     </div>
-    <div class="hero-outsourcing-image" style="flex: 1; padding: 20px; display: flex; align-items: center; justify-content: center;">
-      <img src="{{ asset('images/out/hero.png') }}" alt="Accounting Illustration" style="max-width: 80%; height: auto;">
+    <div class="hero-outsourcing-image">
+      <img src="{{ asset('images/out/hero.png') }}" alt="Accounting Illustration">
     </div>
   </div>
 </section>
@@ -61,7 +61,7 @@
         </ul>
       </div>
       <div class="offering-card">
-        <img src="{{ asset('images/out/frame3.svg') }}" alt="CFO Services">
+        <img src="{{ asset('images/out/frame3.svg') }}"alt="CFO Services">
         <h3><strong>CFO Services</strong></h3>
         <ul>
           <li>Cash flow management & forecasting</li>

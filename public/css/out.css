@@ -20,48 +20,59 @@
   
   /* Hero Section */
   .hero-outsourcing {
-    background: #f9f9f9;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
   }
   
   .hero-outsourcing-content {
+    max-width: 1200px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
     flex-wrap: wrap;
-    }
+  }
   
   .hero-outsourcing-text {
     flex: 1;
-    text-align: left;
+    padding: 20px;
+  }
+  
+  .hero-outsourcing-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .hero-outsourcing-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-outsourcing-text button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
   
   .hero-outsourcing-image {
     flex: 1;
-    text-align: right;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
-  .hero-outsourcing-content img {
-    max-width: 400px;
-  }
-  
-  .hero-outsourcing-content h2 {
-    font-size: 28px;
-    font-weight: bold ;
-    margin-bottom: 15px;
-  }
-  
-  .hero-outsourcing-content p {
-    margin-bottom: 20px;
-  }
-  
-  .hero-outsourcing-content button {
-    padding: 12px 25px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
+  .hero-outsourcing-image img {
+    max-width: 80%;
+    height: auto;
   }
   
   /* Partner Section */
@@ -338,5 +349,27 @@
     .hero-outsourcing-content img {
       max-width: 100%; /* Ensure the image doesn't exceed the container width */
       height: auto; /* Maintain aspect ratio */
+    }
+
+    .hero-outsourcing {
+      padding: 20px 0;
+    }
+
+    .hero-outsourcing-text {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .hero-outsourcing-text h2 {
+      font-size: 1.5rem;
+    }
+
+    .hero-outsourcing-text p {
+      font-size: 1rem;
+    }
+
+    .hero-outsourcing-image img {
+      max-width: 100%;
+      height: auto;
     }
   }
