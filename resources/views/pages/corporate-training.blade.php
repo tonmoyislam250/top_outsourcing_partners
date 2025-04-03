@@ -2,39 +2,39 @@
 
 @section('content')
 <section class="section">
-  <div class="section-header">
+  <div class="section-header animate__animated animate__fadeInDown">
     <img src="{{ asset('images/corporate/corporate.svg') }}" alt="AI Icon" class="section-icon">
     <h1 class="section-title">Corporate Training & Development</h1>
   </div>
 
   <div class="grid">
-    <div class="card" onclick="document.getElementById('legal-compliance').scrollIntoView({ behavior: 'smooth' })">
+    <div class="card animate__animated animate__bounceIn animate__delay-1s" onclick="document.getElementById('legal-compliance').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/corporate/frame1.svg') }}" alt="analytics">
       <p><b>Legal & Compliance Training</b></p>
     </div>
-    <div class="card" onclick="document.getElementById('itp-training').scrollIntoView({ behavior: 'smooth' })">
+    <div class="card animate__animated animate__bounceIn animate__delay-1s" onclick="document.getElementById('itp-training').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/corporate/frame2.svg') }}" alt="chatbot">
       <p><b>Income Tax Practitioner (ITP) Training</b></p>
     </div>
-    <div class="card" onclick="document.getElementById('leadership-development').scrollIntoView({ behavior: 'smooth' })">
+    <div class="card animate__animated animate__bounceIn animate__delay-1s" onclick="document.getElementById('leadership-development').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/corporate/frame3.svg') }}" alt="predictive">
       <p><b>Leadership & Management Development</b></p>
     </div>
-    <div class="card" onclick="document.getElementById('cross-cultural').scrollIntoView({ behavior: 'smooth' })">
+    <div class="card animate__animated animate__bounceIn animate__delay-2s" onclick="document.getElementById('cross-cultural').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/corporate/frame4.svg') }}" alt="automation">
       <p><b>Cross-Cultural & Communication Training</b></p>
     </div>
-    <div class="card" onclick="document.getElementById('cybersecurity').scrollIntoView({ behavior: 'smooth' })">
+    <div class="card animate__animated animate__bounceIn animate__delay-2s" onclick="document.getElementById('cybersecurity').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/corporate/frame5.svg') }}" alt="workflow">
       <p><b>Cybersecurity Awareness & Data Protection</b></p>
     </div>
-    <div class="card" onclick="document.getElementById('sales-mastery').scrollIntoView({ behavior: 'smooth' })">
+    <div class="card animate__animated animate__bounceIn animate__delay-2s" onclick="document.getElementById('sales-mastery').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/corporate/frame5.svg') }}" alt="cyber">
       <p><b>Sales & Negotiation Mastery</b></p>
     </div>
   </div>
 
-  <div id="legal-compliance" class="finance-service">
+  <div id="legal-compliance" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/corporate/image1.png') }}" alt="Bookkeeping">
       <div class="finance-badge">
@@ -53,7 +53,7 @@
     </div>
   </div>
 
-  <div id="itp-training" class="finance-service reverse">
+  <div id="itp-training" class="finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/corporate/image2.png') }}" alt="CFO Services">
       <div class="finance-badge">
@@ -71,7 +71,7 @@
     </div>
   </div>
 
-  <div id="leadership-development" class="finance-service">
+  <div id="leadership-development" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/corporate/image3.png') }}" alt="AP Management">
       <div class="finance-badge">
@@ -90,7 +90,7 @@
     </div>
   </div>
 
-  <div id="cross-cultural" class="finance-service reverse">
+  <div id="cross-cultural" class="finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/corporate/image4.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">
@@ -108,7 +108,7 @@
     </div>
   </div>
 
-  <div id="cybersecurity" class="finance-service">
+  <div id="cybersecurity" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/corporate/image5.png') }}" alt="AP Management">
       <div class="finance-badge">
@@ -127,7 +127,7 @@
     </div>
   </div>
 
-  <div id="sales-mastery" class="finance-service reverse">
+  <div id="sales-mastery" class="finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/corporate/image4.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">
@@ -146,7 +146,7 @@
     </div>
   </div>
 
-  <div class="finance-service">
+  <div class="finance-service animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/corporate/image5.png') }}" alt="AP Management">
       <div class="finance-badge">

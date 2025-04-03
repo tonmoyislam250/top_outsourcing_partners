@@ -2,35 +2,35 @@
 
 @section('content')
 <section class="section">
-  <div class="section-header">
+  <div class="section-header animate__animated animate__fadeInDown">
     <img src="{{ asset('images/hr/hr.svg') }}" alt="AI Icon" class="section-icon">
     <h1 class="section-title">HR & Payroll Services</h1>
   </div>
 
   <div class="grid">
-    <div class="card" data-target="#payroll">
+    <div class="card animate__animated animate__fadeInUp animate__delay-1s" data-target="#payroll">
       <img src="{{ asset('images/hr/frame1.svg') }}" alt="analytics">
       <p><b>Payroll Management Services</b></p>
     </div>
-    <div class="card" data-target="#benefits">
+    <div class="card animate__animated animate__fadeInUp animate__delay-1s" data-target="#benefits">
       <img src="{{ asset('images/hr/frame2.svg') }}" alt="chatbot">
       <p><b>Employee Benefits Administration</b></p>
     </div>
-    <div class="card" data-target="#recruitment">
+    <div class="card animate__animated animate__fadeInUp animate__delay-1s" data-target="#recruitment">
       <img src="{{ asset('images/hr/frame3.svg') }}" alt="predictive">
       <p><b>Recruitment & Talent Acquisition</b></p>
     </div>
-    <div class="card" data-target="#compliance">
+    <div class="card animate__animated animate__fadeInUp animate__delay-2s" data-target="#compliance">
       <img src="{{ asset('images/hr/frame4.svg') }}" alt="automation">
       <p><b>HR Outsourcing & Compliance Management</b></p>
     </div>
-    <div class="card" data-target="#automation">
+    <div class="card animate__animated animate__fadeInUp animate__delay-2s" data-target="#automation">
       <img src="{{ asset('images/hr/frame5.svg') }}" alt="workflow">
       <p><b>Workforce Management & HR Automation</b></p>
     </div>
   </div>
 
-  <div id="payroll" class="finance-service">
+  <div id="payroll" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/hr/image1.png') }}" alt="Bookkeeping">
       <div class="finance-badge">
@@ -50,7 +50,7 @@ reporting seamlessly.</p>
     </div>
   </div>
 
-  <div id="benefits" class="finance-service reverse">
+  <div id="benefits" class="finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/hr/image2.png') }}" alt="CFO Services">
       <div class="finance-badge">
@@ -69,7 +69,7 @@ reporting seamlessly.</p>
     </div>
   </div>
 
-  <div id="recruitment" class="finance-service">
+  <div id="recruitment" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/hr/image3.png') }}" alt="AP Management">
       <div class="finance-badge">
@@ -89,7 +89,7 @@ needs.</p>
     </div>
   </div>
 
-  <div id="compliance" class="finance-service reverse">
+  <div id="compliance" class="finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/hr/image4.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">
@@ -108,7 +108,7 @@ needs.</p>
     </div>
   </div>
 
-  <div id="automation" class="finance-service">
+  <div id="automation" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/hr/image5.png') }}" alt="AP Management">
       <div class="finance-badge">

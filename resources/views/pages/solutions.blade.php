@@ -3,15 +3,15 @@
 @section('content')
 <section class="solutions-section">
     <div class="container">
-        <div class="solutions-header text-center">
+        <div class="solutions-header text-center animate__animated animate__fadeInDown">
             <img src="{{ asset('images/solutions/frame.svg') }}" >
             <h1>Solutions</h1>
         </div>
-        <div class="description text-center">
+        <div class="description text-center animate__animated animate__fadeIn animate__delay-1s">
             <p>At TopOutsourcingPartners, we specialize in providing customized solutions to meet the unique requirements of each client. Our flexible approach ensures that businesses receive the exact support they need, whether it’s hiring our in-house team or having us manage a dedicated team tailored to their needs.</p>
         </div>
         <div class="solutions-content features d-flex justify-content-between">
-            <div class="feature-box text-center">
+            <div class="feature-box text-center animate__animated animate__fadeInLeft animate__delay-2s">
                 <img src="{{ asset('images/solutions/image1.png') }}" alt="Customized Teams" class="feature-image" style="width: 100%; max-width: 300px;">
                 <h4>Customized Teams</h4>
                 <ul class="text-left">
@@ -19,7 +19,7 @@
                     <li>Choose from a pool of experts with skills tailored to your industry and project demands.</li>
                 </ul>
             </div>
-            <div class="feature-box text-center">
+            <div class="feature-box text-center animate__animated animate__fadeInUp animate__delay-2s">
                 <img src="{{ asset('images/solutions/image2.png') }}" alt="Remote Teams" class="feature-image" style="width: 100%; max-width: 300px;">
                 <h4>Remote Teams</h4>
                 <ul class="text-left">
@@ -27,7 +27,7 @@
                     <li>We handle recruitment, training, and daily operations while ensuring seamless collaboration with your internal teams.</li>
                 </ul>
             </div>
-            <div class="feature-box text-center">
+            <div class="feature-box text-center animate__animated animate__fadeInRight animate__delay-2s">
                 <img src="{{ asset('images/solutions/image3.png') }}" alt="Training for Excellence" class="feature-image" style="width: 100%; max-width: 300px;">
                 <h4>Training for Excellence</h4>
                 <ul class="text-left">

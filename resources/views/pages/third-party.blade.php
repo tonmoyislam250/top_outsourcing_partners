@@ -2,39 +2,39 @@
 
 @section('content')
 <section class="section">
-  <div class="section-header">
+  <div class="section-header animate__animated animate__fadeInDown">
     <img src="{{ asset('images/third-party/third-party.svg') }}" alt="AI Icon" class="section-icon">
     <h1 class="section-title">Third-Party Business Support</h1>
   </div>
 
   <div class="grid">
-    <div class="card" data-target="#hro">
+    <div class="card animate__animated animate__fadeInUp animate__delay-1s" data-target="#hro">
       <img src="{{ asset('images/third-party/frame1.svg') }}" alt="analytics">
       <p><b>Human Resource Outsourcing (HRO)</b></p>
     </div>
-    <div class="card" data-target="#lpo">
+    <div class="card animate__animated animate__fadeInUp animate__delay-1s" data-target="#lpo">
       <img src="{{ asset('images/third-party/frame2.svg') }}" alt="chatbot">
       <p><b>Legal Process Outsourcing (LPO)</b></p>
     </div>
-    <div class="card" data-target="#marketing">
+    <div class="card animate__animated animate__fadeInUp animate__delay-1s" data-target="#marketing">
       <img src="{{ asset('images/third-party/frame3.svg') }}" alt="predictive">
       <p><b>Marketing & Brand Management</b></p>
     </div>
-    <div class="card" data-target="#finance">
+    <div class="card animate__animated animate__fadeInUp animate__delay-2s" data-target="#finance">
       <img src="{{ asset('images/third-party/frame4.svg') }}" alt="automation">
       <p><b>Accounting & Financial Process Outsourcing</b></p>
     </div>
-    <div class="card" data-target="#customer-support">
+    <div class="card animate__animated animate__fadeInUp animate__delay-2s" data-target="#customer-support">
       <img src="{{ asset('images/third-party/frame5.svg') }}" alt="workflow">
       <p><b>Customer Support & Call Center Services</b></p>
     </div>
-    <div class="card" data-target="#ecommerce">
+    <div class="card animate__animated animate__fadeInUp animate__delay-2s" data-target="#ecommerce">
       <img src="{{ asset('images/third-party/frame5.svg') }}" alt="cyber">
       <p><b>E-commerce & Marketplace Support</b></p>
     </div>
   </div>
 
-  <div id="hro" class="finance-service">
+  <div id="hro" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/third-party/image1.png') }}" alt="Bookkeeping">
       <div class="finance-badge">
@@ -53,7 +53,7 @@
     </div>
   </div>
 
-  <div id="lpo" class="finance-service reverse">
+  <div id="lpo" class="finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/third-party/image2.png') }}" alt="CFO Services">
       <div class="finance-badge">
@@ -71,7 +71,7 @@
     </div>
   </div>
 
-  <div id="marketing" class="finance-service">
+  <div id="marketing" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/third-party/image3.png') }}" alt="AP Management">
       <div class="finance-badge">
@@ -89,7 +89,7 @@
     </div>
   </div>
 
-  <div id="finance" class="finance-service reverse">
+  <div id="finance" class="finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/third-party/image4.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">
@@ -108,7 +108,7 @@
     </div>
   </div>
 
-  <div id="customer-support" class="finance-service">
+  <div id="customer-support" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/third-party/image5.png') }}" alt="AP Management">
       <div class="finance-badge">
@@ -127,7 +127,7 @@
     </div>
   </div>
 
-  <div id="ecommerce" class="finance-service reverse">
+  <div id="ecommerce" class="finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/third-party/image4.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">

@@ -2,39 +2,39 @@
 
 @section('content')
 <section class="section">
-  <div class="section-header">
+  <div class="section-header animate__animated animate__fadeInDown">
     <img src="{{ asset('images/ai/ai-icon.svg') }}" alt="AI Icon" class="section-icon">
     <h1 class="section-title">AI Integration in Business</h1>
   </div>
 
   <div class="grid">
-    <div class="card" onclick="document.getElementById('data-analytics').scrollIntoView({ behavior: 'smooth' })">
+    <div class="card animate__animated animate__tada animate__delay-1s" onclick="document.getElementById('data-analytics').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/ai/frame1.svg') }}" alt="analytics">
       <p><b>AI Powered Data Analytics</b></p>
     </div>
-    <div class="card" onclick="document.getElementById('chatbots').scrollIntoView({ behavior: 'smooth' })">
+    <div class="card animate__animated animate__tada animate__delay-1s" onclick="document.getElementById('chatbots').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/ai/frame2.svg') }}" alt="chatbot">
       <p><b>AI-Powered Chatbots & Customer Support</b></p>
     </div>
-    <div class="card" onclick="document.getElementById('predictive-intelligence').scrollIntoView({ behavior: 'smooth' })">
+    <div class="card animate__animated animate__tada animate__delay-1s" onclick="document.getElementById('predictive-intelligence').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/ai/frame3.svg') }}" alt="predictive">
       <p><b>Predictive Business Intelligence</b></p>
     </div>
-    <div class="card" onclick="document.getElementById('finance-automation').scrollIntoView({ behavior: 'smooth' })">
+    <div class="card animate__animated animate__tada animate__delay-2s" onclick="document.getElementById('finance-automation').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/ai/frame4.svg') }}" alt="automation">
       <p><b>AI in Finance & Accounting Automation</b></p>
     </div>
-    <div class="card" onclick="document.getElementById('workflow-optimization').scrollIntoView({ behavior: 'smooth' })">
+    <div class="card animate__animated animate__tada animate__delay-2s" onclick="document.getElementById('workflow-optimization').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/ai/frame5.svg') }}" alt="workflow">
       <p><b>AI-Driven Process Automation & Workflow Optimization</b></p>
     </div>
-    <div class="card" onclick="document.getElementById('cybersecurity').scrollIntoView({ behavior: 'smooth' })">
+    <div class="card animate__animated animate__tada animate__delay-2s" onclick="document.getElementById('cybersecurity').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/ai/frame5.svg') }}" alt="cyber">
       <p><b>Cybersecurity & AI Risk Management</b></p>
     </div>
   </div>
 
-  <div id="data-analytics" class="finance-service">
+  <div id="data-analytics" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/ai/image1.png') }}" alt="Bookkeeping">
       <div class="finance-badge">
@@ -52,7 +52,7 @@
     </div>
   </div>
 
-  <div id="chatbots" class="finance-service reverse">
+  <div id="chatbots" class="finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/ai/image2.png') }}" alt="CFO Services">
       <div class="finance-badge">
@@ -70,7 +70,7 @@
     </div>
   </div>
 
-  <div id="predictive-intelligence" class="finance-service">
+  <div id="predictive-intelligence" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/ai/image3.png') }}" alt="AP Management">
       <div class="finance-badge">
@@ -88,7 +88,7 @@
     </div>
   </div>
 
-  <div id="finance-automation" class="finance-service reverse">
+  <div id="finance-automation" class="finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/ai/image4.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">
@@ -106,7 +106,7 @@
     </div>
   </div>
 
-  <div id="workflow-optimization" class="finance-service">
+  <div id="workflow-optimization" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/ai/image5.png') }}" alt="AP Management">
       <div class="finance-badge">
@@ -124,7 +124,7 @@
     </div>
   </div>
 
-  <div id="cybersecurity" class="finance-service reverse">
+  <div id="cybersecurity" class="finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/ai/image6.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">

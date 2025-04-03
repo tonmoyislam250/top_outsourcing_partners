@@ -5,12 +5,12 @@
 <!-- Hero Section -->
 <section class="hero-managerial">
     <div class="container hero-flex">
-        <div class="hero-text">
+        <div class="hero-text animate__animated animate__fadeInLeft">
             <h1>Global Workforce, Hassle-Free - Build Your Dedicated Team Today!</h1>
             <p>Focus on your business while we manage your dedicated offshore team.</p>
-            <button onclick="window.location.href='/consult'">Build the Dedicated Team Now!</button>
+            <button onclick="window.location.href='/consult'" class="animate__animated animate__pulse animate__infinite animate__slower">Build the Dedicated Team Now!</button>
         </div>
-        <div class="hero-managerial-img">
+        <div class="hero-managerial-img animate__animated animate__fadeInRight">
             <img src="{{ asset('images/manager/hero.png') }}" alt="Team Illustration" class="hero-img">
         </div>
     </div>
@@ -37,9 +37,9 @@
 <!-- Why Choose Us Section -->
 <section class="why-choose">
   <div class="container">
-    <h2 style="font-weight: bold; font-size: 30px;">Why Choose Our Employee Managerial Service?</h2>
+    <h2 style="font-weight: bold; font-size: 30px;" class="animate__animated animate__fadeInDown animate__delay-1s">Why Choose Our Employee Managerial Service?</h2>
     <div class="features-grid">
-      <div class="feature-item">
+      <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s">
         <img src="{{ asset('images/manager/image1.png') }}" alt="Dedicated Team" style="width: 80%; height: auto;">
         <h3 style="font-weight: bold; text-align: left;">A Dedicated Team That Works Only for You</h3>
         <ul style="text-align: left;">
@@ -47,7 +47,7 @@
           <li>Seamless integration with your operations, culture, and work processes.</li>
         </ul>
       </div>
-      <div class="feature-item">
+      <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s">
         <img src="{{ asset('images/manager/image2.png') }}" alt="Cost Saving" style="width: 80%; height: auto;">
         <h3 style="font-weight: bold; text-align: left;">Massive Cost Saving Without Compromising Quality</h3>
         <ul style="text-align: left;">
@@ -57,7 +57,7 @@
       </div>
     </div>
     <div class="features-grid">
-      <div class="feature-item">
+      <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s">
         <img src="{{ asset('images/manager/image3.png') }}" alt="No Obligation" style="width: 100%; height: auto;">
         <h3 style="font-weight: bold; text-align: left;">No Obligation, No Problem!</h3>
         <ul style="text-align: left;">
@@ -65,7 +65,7 @@
           <li>We take care of all employment logistics, so you stay focused on your business.</li>
         </ul>
       </div>
-      <div class="feature-item">
+      <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s">
         <img src="{{ asset('images/manager/image4.png') }}" alt="Guaranteed Productivity" style="width: 100%; height: auto;">
         <h3 style="font-weight: bold; text-align: left;">Guaranteed Workforce Continuity - No Disruption</h3>
         <ul style="text-align: left;">
@@ -73,7 +73,7 @@
           <li>No recruitment headaches—we ensure seamless transitions and onboarding.</li>
         </ul>
       </div>
-      <div class="feature-item">
+      <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s">
         <img src="{{ asset('images/manager/image5.png') }}" alt="Flexible Hiring Options" style="width: 100%; height: auto;">
         <h3 style="font-weight: bold; text-align: left;">Flexible Hiring Options</h3>
         <ul style="text-align: left;">
@@ -88,11 +88,11 @@
 
 <section class="enhancements">
   <div class="container">
-    <h2>New Enhancements to Maximize Your Experience!</h2>
+    <h2 class="animate__animated animate__fadeInDown animate__delay-2s">New Enhancements to Maximize Your Experience!</h2>
 
     <div class="enhancement-grid">
       <!-- Enhancement 1 -->
-      <div class="enhancement-card" style="flex: 1; padding: 20px; box-sizing: border-box;">
+      <div class="enhancement-card animate__animated animate__fadeInLeft animate__delay-2s" style="flex: 1; padding: 20px; box-sizing: border-box;">
         <img src="{{ asset('images/manager/en1.svg') }}" alt="Performance Monitoring" style="width: 80px; height: 80px; margin-bottom: 15px;">
         <div>
           <h3 style="text-align: left; font-weight: bold;">Dedicated Team Performance Monitoring & Reporting</h3>
@@ -105,7 +105,7 @@
       </div>
 
       <!-- Enhancement 2 -->
-      <div class="enhancement-card" style="flex: 1; padding: 20px; box-sizing: border-box;">
+      <div class="enhancement-card animate__animated animate__fadeInLeft animate__delay-2s" style="flex: 1; padding: 20px; box-sizing: border-box;">
         <img src="{{ asset('images/manager/en2.svg') }}" alt="Legal Compliance" style="width: 80px; height: 80px; margin-bottom: 15px;">
         <div>
           <h3 style="text-align: left; font-weight: bold;">Legal & Compliance Advisory for Overseas Companies</h3>
@@ -120,7 +120,7 @@
 
     <div class="enhancement-grid">
       <!-- Enhancement 3 -->
-      <div class="enhancement-card" style="flex: 1; padding: 20px; box-sizing: border-box;">
+      <div class="enhancement-card animate__animated animate__fadeInLeft animate__delay-2s" style="flex: 1; padding: 20px; box-sizing: border-box;">
         <img src="{{ asset('images/manager/en3.svg') }}" alt="Workforce Training" style="width: 80px; height: 80px; margin-bottom: 15px;">
         <div>
           <h3 style="text-align: left; font-weight: bold;">Specialized Workforce Training & Upskilling Programs</h3>
@@ -133,7 +133,7 @@
       </div>
 
       <!-- Enhancement 4 -->
-      <div class="enhancement-card" style="flex: 1; padding: 20px; box-sizing: border-box;">
+      <div class="enhancement-card animate__animated animate__fadeInLeft animate__delay-2s" style="flex: 1; padding: 20px; box-sizing: border-box;">
         <img src="{{ asset('images/manager/en4.svg') }}" alt="Client Branding" style="width: 80px; height: 80px; margin-bottom: 15px;">
         <div>
           <h3 style="text-align: left; font-weight: bold;">Client–Branded Workspaces & Team Integration</h3>
@@ -152,11 +152,11 @@
 
 <section class="how-it-works">
   <div class="container">
-    <h2 style="font-weight: bold;">How It Works - Simple, Fast, & Hassle-Free!</h2>
+    <h2 style="font-weight: bold;" class="animate__animated animate__fadeInDown animate__delay-3s">How It Works - Simple, Fast, & Hassle-Free!</h2>
 
     <div class="steps-wrapper">
       <!-- Step 1 -->
-      <div class="step-box">
+      <div class="step-box animate__animated animate__fadeInLeft animate__delay-3s">
         <div class="step-icon purple">
           <img src="{{ asset('images/manager/step1.svg') }}" alt="Step 1">
         </div>
@@ -173,7 +173,7 @@
       <div class="connector purple-line"></div>
 
       <!-- Step 2 -->
-      <div class="step-box">
+      <div class="step-box animate__animated animate__fadeInLeft animate__delay-3s">
         <div class="step-icon green">
           <img src="{{ asset('images/manager/step2.svg') }}" alt="Step 2">
         </div>
@@ -190,7 +190,7 @@
       <div class="connector green-line"></div>
 
       <!-- Step 3 -->
-      <div class="step-box">
+      <div class="step-box animate__animated animate__fadeInLeft animate__delay-3s">
         <div class="step-icon maroon">
           <img src="{{ asset('images/manager/step3.svg') }}" alt="Step 3">
         </div>
@@ -207,7 +207,7 @@
       <div class="connector maroon-line"></div>
 
       <!-- Step 4 -->
-      <div class="step-box">
+      <div class="step-box animate__animated animate__fadeInLeft animate__delay-3s">
         <div class="step-icon blue">
           <img src="{{ asset('images/manager/step4.svg') }}" alt="Step 4">
         </div>

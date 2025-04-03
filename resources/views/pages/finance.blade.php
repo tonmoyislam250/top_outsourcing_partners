@@ -2,34 +2,34 @@
 
 @section('content')
 <section class="section">
-    <div class="section-header">
+    <div class="section-header animate__animated animate__fadeInDown">
         <img src="{{ asset('images/finance/finance.svg') }}" alt="fin Icon" class="section-icon">
         <h1 class="section-title">Finance & Accounting</h1>
     </div>
     <div class="grid">
-        <div class="card" onclick="document.getElementById('bookkeeping').scrollIntoView({ behavior: 'smooth' })">
+        <div class="card animate__animated animate__flipInY animate__delay-1s" onclick="document.getElementById('bookkeeping').scrollIntoView({ behavior: 'smooth' })">
             <img src="{{ asset('images/finance/frame1.svg') }}" alt="Bookkeeping">
             <p><strong>Bookkeeping & Payroll Management</strong></p>
         </div>
-        <div class="card" onclick="document.getElementById('cfo-services').scrollIntoView({ behavior: 'smooth' })">
+        <div class="card animate__animated animate__flipInY animate__delay-1s" onclick="document.getElementById('cfo-services').scrollIntoView({ behavior: 'smooth' })">
             <img src="{{ asset('images/finance/frame2.svg') }}" alt="CFO Services">
             <p><strong>CFO Services (Virtual & On-Demand)</strong></p>
         </div>
-        <div class="card" onclick="document.getElementById('ap-management').scrollIntoView({ behavior: 'smooth' })">
+        <div class="card animate__animated animate__flipInY animate__delay-1s" onclick="document.getElementById('ap-management').scrollIntoView({ behavior: 'smooth' })">
             <img src="{{ asset('images/finance/frame3.svg') }}" alt="AP Management">
             <p><strong>Accounts Payable (AP) Management</strong></p>
         </div>
-        <div class="card" onclick="document.getElementById('ar-billing').scrollIntoView({ behavior: 'smooth' })">
+        <div class="card animate__animated animate__flipInY animate__delay-2s" onclick="document.getElementById('ar-billing').scrollIntoView({ behavior: 'smooth' })">
             <img src="{{ asset('images/finance/frame4.svg') }}" alt="AR Billing">
             <p><strong>Accounts Receivable (AR) & Billing Services</strong></p>
         </div>
-        <div class="card" onclick="document.getElementById('tax-compliance').scrollIntoView({ behavior: 'smooth' })">
+        <div class="card animate__animated animate__flipInY animate__delay-2s" onclick="document.getElementById('tax-compliance').scrollIntoView({ behavior: 'smooth' })">
             <img src="{{ asset('images/finance/frame5.svg') }}" alt="Tax Compliance">
             <p><strong>Tax Preparation & Compliance</strong></p>
         </div>
     </div>
 
-    <div id="bookkeeping" class="finance-service">
+    <div id="bookkeeping" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
         <div class="finance-image-wrapper">
             <img src="{{ asset('images/finance/image1.png') }}" alt="Bookkeeping">
             <div class="finance-badge">
@@ -48,7 +48,7 @@
     </div>
 
     <!-- CFO Services -->
-    <div id="cfo-services" class="finance-service reverse">
+    <div id="cfo-services" class="finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
         <div class="finance-image-wrapper">
             <img src="{{ asset('images/finance/image2.png') }}" alt="CFO Services">
             <div class="finance-badge">
@@ -67,7 +67,7 @@
     </div>
 
     <!-- Accounts Payable (AP) Management -->
-    <div id="ap-management" class="finance-service">
+    <div id="ap-management" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
         <div class="finance-image-wrapper">
             <img src="{{ asset('images/finance/image3.png') }}" alt="AP Management">
             <div class="finance-badge">
@@ -86,7 +86,7 @@
     </div>
 
     <!-- Accounts Receivable (AR) & Billing Services -->
-    <div id="ar-billing" class="finance-service reverse">
+    <div id="ar-billing" class="finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
         <div class="finance-image-wrapper">
             <img src="{{ asset('images/finance/image4.png') }}" alt="AR & Billing Services">
             <div class="finance-badge">
@@ -104,7 +104,7 @@
         </div>
     </div>
 
-    <div id="tax-compliance" class="finance-service">
+    <div id="tax-compliance" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
         <div class="finance-image-wrapper">
             <img src="{{ asset('images/finance/image5.png') }}" alt="AP Management">
             <div class="finance-badge">
