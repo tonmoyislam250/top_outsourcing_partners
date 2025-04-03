@@ -7,15 +7,21 @@
     <div class="Schedule_header text-center">
         <h1>Schedule Consultation</h1>
     </div>
-    <form action="#" method="POST" class="form">
+    <form id="consultationForm" action="{{ route('consultation.send') }}" method="POST" class="form">
         @csrf
         <div class="form-group">
             <label for="first_name">First Name</label>
             <input type="text" id="first_name" name="first_name" placeholder="e.g., Abdun Nur" required>
+            @error('first_name')
+                <span class="error-message">{{ $message }}</span>
+            @enderror
         </div>
         <div class="form-group">
             <label for="last_name">Last Name</label>
             <input type="text" id="last_name" name="last_name" placeholder="e.g., Wasit" required>
+            @error('last_name')
+                <span class="error-message">{{ $message }}</span>
+            @enderror
         </div>
         <div class="form-group">
             <label for="company_name">Company Name</label>
@@ -67,12 +73,58 @@
         <div class="form-group full">
             <label for="additional_info">Anything else you'd like to share before the meeting?</label>
             <textarea id="additional_info" name="additional_info" rows="4" placeholder="You can explain your query and ask here"></textarea>
+            @error('additional_info')
+                <span class="error-message">{{ $message }}</span>
+            @enderror
         </div>
         <div class="submit-btn full text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.getElementById('consultationForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value,
+                'Accept': 'application/json',
+            },
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: data.message,
+                    confirmButtonColor: '#3085d6',
+                });
+                form.reset();
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                });
+            }
+        })
+        .catch(error => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'An error occurred while sending your consultation request.',
+            });
+        });
+    });
+</script>
 @endsection
 
 @section('footer')

@@ -6,7 +6,7 @@
 <div class="contact-container" style="max-width: 100%; padding: 0 15px; box-sizing: border-box;">
     <div class="form-section">
         <h2>Contact us</h2>
-        <form action="{{ route('contact.send') }}" method="POST">
+        <form id="contactForm" action="{{ route('contact.send') }}" method="POST">
             @csrf
             <div class="form-row">
                 <div class="form-group">
@@ -77,6 +77,52 @@
     </div>
 </div>
 @endsection
+
 @section('footer')
     @include('components.footer')
+@endsection
+
+@section('scripts')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value,
+                'Accept': 'application/json',
+            },
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: data.message,
+                    confirmButtonColor: '#3085d6',
+                });
+                form.reset();
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                });
+            }
+        })
+        .catch(error => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'An error occurred while sending your message.',
+            });
+        });
+    });
+</script>
 @endsection

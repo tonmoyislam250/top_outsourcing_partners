@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\ConsultationController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/services/{slug}', [HomeController::class, 'show'])->name('services.show');
@@ -31,3 +32,5 @@ Route::get('/manager', function () {
 Route::get('/out', function () {
     return view('pages/outsourcing');
 })->name('outsourcing');
+
+Route::post('/consultation/send', [ConsultationController::class, 'send'])->name('consultation.send');
