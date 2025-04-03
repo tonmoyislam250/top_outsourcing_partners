@@ -73,7 +73,7 @@
                 <a href="{{ url('/services/ai-integration') }}" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">AI Integration for Businesses</a>
                 <a href="{{ url('/services/corporate-training') }}" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">Corporate Training & Development</a>
                 <a href="{{ url('/services/third-party') }}" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">Third-Party Business Support</a>
-                <a href="{{ url('/services/hr-pay') }}" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">Data Entry & Administrative Support</a>
+                <a href="{{ url('/services/hr-pay') }}" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">HR & Payroll Services</a>
             </div>
         </div>
 
