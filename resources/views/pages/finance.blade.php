@@ -20,7 +20,7 @@
             <p><strong>Accounts Payable (AP) Management</strong></p>
         </div>
     </div>
-    <div class="grid">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto 50px;">
         <div class="card animate__animated animate__flipInY animate__delay-2s" onclick="document.getElementById('ar-billing').scrollIntoView({ behavior: 'smooth' })">
             <img src="{{ asset('images/finance/frame4.svg') }}" alt="AR Billing">
             <p><strong>Accounts Receivable (AR) & Billing Services</strong></p>
