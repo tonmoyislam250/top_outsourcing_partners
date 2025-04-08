@@ -1,7 +1,8 @@
 <div class="container">
     <h1 class="animate__animated animate__fadeInDown">Why Choose Top Outsourcing Partners?</h1>
-    <p class="animate__animated animate__fadeIn animate__delay-1s">A structured learning path designed to take you from beginner to professional with real-world projects.</p>
+    <p class="animate__animated animate__fadeIn animate__delay-1s">A Structured learning path designed to take you from beginner to professional with real-world projects.</p>
     <div class="features">
+        <!-- First 3 features -->
         <div class="feature-box animate__animated animate__fadeInUp animate__delay-1s">
             <div class="feature-icon yellow">
                 <img src="{{ asset('images/home1.svg') }}" alt="Scalability Icon">
@@ -20,6 +21,9 @@
             </div>
             <p>Security & Compliance Assurance</p>
         </div>
+    </div>
+    <!-- Separate section for 2 additional features -->
+    <div class="features" style="margin-top: 30px;">
         <div class="feature-box animate__animated animate__fadeInUp animate__delay-1s">
             <div class="feature-icon green">
                 <img src="{{ asset('images/home4.svg') }}" alt="24/7 Support Icon">

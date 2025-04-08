@@ -1,7 +1,7 @@
 <section class="services-section">
     <div class="container">
         <h2 class="section-title text-center mb-5 animate__animated animate__fadeIn" style="font-weight: bold;">Transform your business with us</h2>
-        <p class="text-center">{{ __('Welcome to TopOutsourcingPartners, your trusted partner for efficient, scalable, and innovative outsourcing solutions. With years of industry expertise, we empower businesses to achieve operational excellence, reduce costs, and drive growth by leveraging cutting-edge technology and skilled professionals. Whether you\'re a small business or a global enterprise, we\'re here to unlock your potential.') }}</p>
+        <p class="text-center">{{ __('Welcome to Top Outsourcing Partners, your trusted partner for efficient, scalable, and innovative outsourcing solutions. With years of industry expertise, we empower businesses to achieve operational excellence, reduce costs, and drive growth by leveraging cutting-edge technology and skilled professionals. Whether you\'re a small business or a global enterprise, we\'re here to unlock your potential.') }}</p>
         <h2 class="section-title text-center mb-5 animate__animated animate__fadeIn" style="font-weight: bold;">OUR KEY SERVICES</h2>
         <div class="row justify-content-center">
             @foreach($services ?? [] as $service)

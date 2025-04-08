@@ -102,10 +102,11 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    text-align: left; /* Align text to the left */
   }
   .finance-badge img {
-    width: 32px;
-    height: 32px;
+    width: 50px;
+    height: 60.finance-badge.top-rightpx;
   }
   .finance-badge span {
     font-size: 14px;
@@ -149,14 +150,13 @@ body {
   }
 
 .finance-badge.top-right {
-  top: -20px;
-  right: -20px;
+  top: 2px;
+  right: -2px;
   left: unset;
   bottom: unset;
   padding: 10px;
-  border-radius: 50%;
-  background: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: none; /* Remove background */
+  box-shadow: none; /* Remove shadow */
 }
 
 .finance-badge.top-right img {
@@ -171,8 +171,8 @@ body {
   bottom: unset;
   padding: 10px;
   border-radius: 50%;
-  background: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: none; /* Remove background */
+  box-shadow: none; /* Remove shadow */
 }
 
 .finance-badge.top-left img {
@@ -192,7 +192,7 @@ body {
     display: inline-block;
     justify-content: center;
     align-items: center;
-  }
+  }finance-badge
 
   .finance-badge.top-right img,
   .finance-badge.top-left img {
@@ -217,4 +217,11 @@ body {
 
 .section-header .section-title {
     margin: 0; /* Remove any default margin for alignment */
+}
+
+.section-header .section-description {
+    font-size: 16px;
+    color: #666; /* Slightly lighter color for description */
+    max-width: 600px; /* Limit width for better readability */
+    text-align: center; /* Center align the description */
 }

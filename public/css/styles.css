@@ -140,8 +140,8 @@ p {
     color: white;
 }
 .footer-button {
-    background-color: brown; /* Change background to black */
-    color: white; /* Make text white */
+    background-color: white; /* Change background to white */
+    color: black !important; /* Ensure text is black */
     padding: 10px 20px;
     border-radius: 20px;
     display: inline-block;

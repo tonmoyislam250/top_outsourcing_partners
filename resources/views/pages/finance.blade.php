@@ -30,22 +30,39 @@
             <p><strong>Tax Preparation & Compliance</strong></p>
         </div>
     </div>
+    
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 50px auto; max-width: 1000px;">
+        <div style="flex: 1 1 300px; background: #E8F8E8; padding: 20px; border-radius: 10px; display: flex; align-items: center;">
+            <img src="{{ asset('images/finance/stat1.svg') }}" alt="Stat Icon" style="width: 300px;">
+            <div>
+                <div style="font-size: 2rem; font-weight: bold;">56%</div>
+                <p style="margin: 10px 0; font-size: 1rem;">of CFOs say that finance outsourcing improves strategic decision-making</p>
+            </div>
+        </div>
+        <div style="flex: 1 1 300px; background: #E8F8E8; padding: 20px; border-radius: 10px; display: flex; align-items: center;">
+            <img src="{{ asset('images/finance/stat2.svg') }}" alt="Stat Icon" style="width: 300px;">
+            <div>
+                <div style="font-size: 2rem; font-weight: bold;">44%</div>
+                <p style="margin: 10px 0; font-size: 1rem;">reduction in operational costs is achieved through finance outsourcing</p>
+            </div>
+        </div>
+    </div>
 
     <div id="bookkeeping" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
         <div class="finance-image-wrapper">
             <img src="{{ asset('images/finance/image1.png') }}" alt="Bookkeeping">
             <div class="finance-badge">
                 <img src="{{ asset('images/finance/clock.svg') }}" alt="Icon">
-                <span><strong>Time Saved</strong><br><small><strong>with Outsourced</strong></small></span>
+                <span><strong>Time Saved</strong><br><small>with Outsourced</small></span>
             </div>
             <div class="finance-badge top-right">
                 <img src="{{ asset('images/finance/tr1.svg') }}" alt="Icon">
             </div>
         </div>
         <div class="finance-content">
-            <h2><strong>Bookkeeping & Payroll Management</strong></h2>
-            <p>Stay ahead of your finances with accurate, real-time bookkeeping. Our experts handle ledger maintenance, bank reconciliations, and financial reporting so you can focus on growing your business.</p>
-            <button onclick="window.location.href='{{ url('/consult') }}'">Schedule a Bookkeeping Consultation</button>
+            <h2 style="text-align: left;"><strong>Bookkeeping & Payroll Management</strong></h2>
+            <p style="text-align: left;">Stay ahead of your finances with accurate, real-time bookkeeping. Our experts handle ledger maintenance, bank reconciliations, and financial reporting so you can focus on growing your business.</p>
+            <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Schedule a Bookkeeping Consultation</button>
         </div>
     </div>
 
@@ -55,16 +72,16 @@
             <img src="{{ asset('images/finance/image2.png') }}" alt="CFO Services">
             <div class="finance-badge">
                 <img src="{{ asset('images/finance/idea.svg') }}" alt="Icon">
-                <span><strong>Profitability Increase</strong><br><small><strong>After Implementing CFO Strategies</strong></small></span>
+                <span><strong>Profitability Increase</strong><br><small>After Implementing CFO Strategies</small></span>
             </div>
             <div class="finance-badge top-left">
                 <img src="{{ asset('images/finance/tl1.svg') }}" alt="Icon">
             </div>
         </div>
         <div class="finance-content">
-            <h2><strong>CFO Services (Virtual & On-Demand)</strong></h2>
-            <p>Access high-level financial strategy without the cost of a full-time CFO. We provide cash flow forecasting, profitability analysis, and financial planning tailored to your business goals.</p>
-            <button onclick="window.location.href='{{ url('/consult') }}'">Book a CFO Advisory Session</button>
+            <h2 style="text-align: left;"><strong>CFO Services (Virtual & On-Demand)</strong></h2>
+            <p style="text-align: left;">Access high-level financial strategy without the cost of a full-time CFO. We provide cash flow forecasting, profitability analysis, and financial planning tailored to your business goals.</p>
+            <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Book a CFO Advisory Session</button>
         </div>
     </div>
 
@@ -74,16 +91,16 @@
             <img src="{{ asset('images/finance/image3.png') }}" alt="AP Management">
             <div class="finance-badge">
                 <img src="{{ asset('images/finance/reduction.svg') }}" alt="Icon">
-                <span><strong>Reduction in Late Payments</strong><br><small><strong>with AP Automation</strong></small></span>
+                <span><strong>Reduction in Late Payments</strong><br><small>with AP Automation</small></span>
             </div>
             <div class="finance-badge top-right">
                 <img src="{{ asset('images/finance/tr2.svg') }}" alt="Icon">
             </div>
         </div>
         <div class="finance-content">
-            <h2><strong>Accounts Payable (AP) Management</strong></h2>
-            <p>Stay ahead of your finances with accurate, real-time bookkeeping. Our experts handle ledger maintenance, bank reconciliations, and financial reporting so you can focus on growing your business.</p>
-            <button onclick="window.location.href='{{ url('/consult') }}'">Speak with an AP Specialist</button>
+            <h2 style="text-align: left;"><strong>Accounts Payable (AP) Management</strong></h2>
+            <p style="text-align: left;">Stay ahead of your finances with accurate, real-time bookkeeping. Our experts handle ledger maintenance, bank reconciliations, and financial reporting so you can focus on growing your business.</p>
+            <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Speak with an AP Specialist</button>
         </div>
     </div>
 
@@ -93,16 +110,16 @@
             <img src="{{ asset('images/finance/image4.png') }}" alt="AR & Billing Services">
             <div class="finance-badge">
                 <img src="{{ asset('images/finance/faster.svg') }}" alt="Icon">
-                <span><strong>Faster Invoice Collection</strong><br><small><strong>with AR Automation</strong></small></span>
+                <span><strong>Faster Invoice Collection</strong><br><small>with AR Automation</small></span>
             </div>
             <div class="finance-badge top-left">
                 <img src="{{ asset('images/finance/tl2.svg') }}" alt="Icon">
             </div>
         </div>
         <div class="finance-content">
-            <h2><strong>Accounts Receivable (AR) & Billing Services</strong></h2>
-            <p>Speed up payments and enhance cash flow with automated invoicing, payment tracking, and collections management. Get paid faster with reduced outstanding balances.</p>
-            <button onclick="window.location.href='{{ url('/consult') }}'">Book an AR Strategy Call</button>
+            <h2 style="text-align: left;"><strong>Accounts Receivable (AR) & Billing Services</strong></h2>
+            <p style="text-align: left;">Speed up payments and enhance cash flow with automated invoicing, payment tracking, and collections management. Get paid faster with reduced outstanding balances.</p>
+            <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Book an AR Strategy Call</button>
         </div>
     </div>
 
@@ -111,17 +128,17 @@
             <img src="{{ asset('images/finance/image5.png') }}" alt="AP Management">
             <div class="finance-badge">
                 <img src="{{ asset('images/finance/tax.svg') }}" alt="Icon">
-                <span><strong>Tax Error Reduction</strong><br><small><strong>with Professional Outsourcing</strong></small></span>
+                <span><strong>Tax Error Reduction</strong><br><small>with Professional Outsourcing</small></span>
             </div>
             <div class="finance-badge top-right">
                 <img src="{{ asset('images/finance/tr3.svg') }}" alt="Icon">
             </div>
         </div>
         <div class="finance-content">
-            <h2><strong>Tax Preparation & Compliance</strong></h2>
-            <p>Ensure hassle-free tax compliance with corporate tax filing, VAT/GST reporting, and
+            <h2 style="text-align: left;"><strong>Tax Preparation & Compliance</strong></h2>
+            <p style="text-align: left;">Ensure hassle-free tax compliance with corporate tax filing, VAT/GST reporting, and
             regulatory adherence. Stay tax-ready while we handle the complexities for you.</p>
-            <button onclick="window.location.href='{{ url('/consult') }}'">Speak with an AP Specialist</button>
+            <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Speak with an AP Specialist</button>
         </div>
     </div>
 </section>
