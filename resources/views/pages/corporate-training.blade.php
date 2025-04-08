@@ -39,7 +39,7 @@
       <img src="{{ asset('images/corporate/image1.png') }}" alt="Bookkeeping">
       <div class="finance-badge">
         <img src="{{ asset('images/corporate/reduction.svg') }}" alt="Icon">
-        <span><b>Reduction in Compliance Violations</b><br><small><b>with Outsourced</b></small></span>
+        <span><b>Reduction in Compliance Violations</b><br><small>with Outsourced</small></span>
       </div>
       <div class="finance-badge top-right">
         <img src="{{ asset('images/corporate/tr1.svg') }}" alt="Icon">
@@ -58,7 +58,7 @@
       <img src="{{ asset('images/corporate/image2.png') }}" alt="CFO Services">
       <div class="finance-badge">
         <img src="{{ asset('images/corporate/imp.svg') }}" alt="Icon">
-        <span><b>Book an ITP Training Session</b><br><small><b>After Training</b></small></span>
+        <span><b>Book an ITP Training Session</b><br><small>After Training</small></span>
       </div>
       <div class="finance-badge top-left">
         <img src="{{ asset('images/corporate/tl1.svg') }}" alt="Icon">
@@ -76,7 +76,7 @@
       <img src="{{ asset('images/corporate/image3.png') }}" alt="AP Management">
       <div class="finance-badge">
         <img src="{{ asset('images/corporate/increase.svg') }}" alt="Icon">
-        <span><b>Increase in Employee Retention</b><br><small><b>with Strong Leadership Training</b></small></span>
+        <span><b>Increase in Employee Retention</b><br><small>with Strong Leadership Training</small></span>
       </div>
       <div class="finance-badge top-right">
         <img src="{{ asset('images/corporate/tr2.svg') }}" alt="Icon">
@@ -95,7 +95,7 @@
       <img src="{{ asset('images/corporate/image4.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">
         <img src="{{ asset('images/corporate/workspace.svg') }}" alt="Icon">
-        <span><b>Improvement in Workplace Collaboration</b><br><small><b>After Training</b></small></span>
+        <span><b>Improvement in Workplace Collaboration</b><br><small>After Training</small></span>
       </div>
       <div class="finance-badge top-left">
         <img src="{{ asset('images/corporate/tl2.svg') }}" alt="Icon">
@@ -113,7 +113,7 @@
       <img src="{{ asset('images/corporate/image5.png') }}" alt="AP Management">
       <div class="finance-badge">
         <img src="{{ asset('images/corporate/reduct2.svg') }}" alt="Icon">
-        <span><b>Reduction in Cybersecurity Breaches</b><br><small><b>After Training</b></small></span>
+        <span><b>Reduction in Cybersecurity Breaches</b><br><small>After Training</small></span>
       </div>
       <div class="finance-badge top-right">
         <img src="{{ asset('images/corporate/tr3.svg') }}" alt="Icon">
@@ -132,7 +132,7 @@
       <img src="{{ asset('images/corporate/image4.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">
         <img src="{{ asset('images/corporate/growth.svg') }}" alt="Icon">
-        <span><b>Business Profitability Growth</b><br><small><b>After Financial Training</b></small></span>
+        <span><b>Business Profitability Growth</b><br><small>After Financial Training</small></span>
       </div>
       <div class="finance-badge top-left">
         <img src="{{ asset('images/corporate/tl3.svg') }}" alt="Icon">
@@ -151,7 +151,7 @@
       <img src="{{ asset('images/corporate/image5.png') }}" alt="AP Management">
       <div class="finance-badge">
         <img src="{{ asset('images/corporate/rates.svg') }}" alt="Icon">
-        <span><b>Increase in Conversion Rates</b><br><small><b>After Sales Training</b></small></span>
+        <span><b>Increase in Conversion Rates</b><br><small>After Sales Training</small></span>
       </div>
       <div class="finance-badge top-right">
         <img src="{{ asset('images/corporate/tr4.svg') }}" alt="Icon">
