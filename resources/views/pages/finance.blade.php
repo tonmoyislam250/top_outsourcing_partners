@@ -19,6 +19,8 @@
             <img src="{{ asset('images/finance/frame3.svg') }}" alt="AP Management">
             <p><strong>Accounts Payable (AP) Management</strong></p>
         </div>
+    </div>
+    <div class="grid">
         <div class="card animate__animated animate__flipInY animate__delay-2s" onclick="document.getElementById('ar-billing').scrollIntoView({ behavior: 'smooth' })">
             <img src="{{ asset('images/finance/frame4.svg') }}" alt="AR Billing">
             <p><strong>Accounts Receivable (AR) & Billing Services</strong></p>
