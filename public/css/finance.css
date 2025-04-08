@@ -196,8 +196,12 @@ body {
 
   .finance-badge.top-right img,
   .finance-badge.top-left img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
+  }
+  .finance-image-wrapper {
+    height: auto; /* Adjust height to be less */
+    max-height: 310px; /* Set a maximum height */
   }
 }
 
