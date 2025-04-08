@@ -17,21 +17,141 @@
 </section>
 
 <style>
-    .hero-flex {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+  .hero-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .hero-managerial-img {
+    max-width: 100%;
+    text-align: center;
+  }
+  .hero-img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (min-width: 768px) {
     .hero-text {
-        max-width: 50%;
+      max-width: 50%;
+      text-align: left;
     }
     .hero-managerial-img {
-        max-width: 45%;
+      max-width: 45%;
     }
-    .hero-img {
-        width: 100%;
-        height: auto;
+  }
+
+  .features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .feature-item {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .feature-item img {
+    width: 100%;
+    height: auto;
+  }
+
+
+  @media (min-width: 768px) {
+    .feature-item {
+      flex: 0 0 calc(50% - 10px);
+      text-align: left;
     }
+  }
+
+  @media (min-width: 768px) {
+    .enhancement-grid {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .enhancement-card {
+      flex: 0 0 calc(50% - 10px);
+      text-align: left;
+    }
+  }
+  .steps-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .step-box {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .step-box {
+      flex: 0 0 calc(25% - 10px);
+      text-align: left;
+    }
+  }
+
+  .benefit-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .benefit-card {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .benefit-grid {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .benefit-card {
+      flex: 0 0 calc(50% - 10px);
+    }
+  }
+
+  .bangladesh-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .map-img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (min-width: 768px) {
+    .map-img {
+      width: 30%;
+    }
+  }
+
+  .cta {
+    padding: 20px;
+    text-align: center;
+  }
+  .cta button {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .cta button {
+      width: auto;
+    }
+  }
 </style>
 
 <!-- Why Choose Us Section -->
