@@ -245,9 +245,10 @@
     padding: 20px;
     display: flex;
     align-items: flex-start;
-    gap: 15px;
+    gap: 10px; /* Reduced gap for less horizontal space */
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width: 500px; /* Reduced width */
   }
   
   .benefit-card img {

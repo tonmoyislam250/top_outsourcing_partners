@@ -12,24 +12,14 @@
     background-color: #fff9db; /* Light yellow background */
     position: relative;
     padding-top: 50px;
+    border-top-left-radius: 145px;
+    border-top-right-radius: 145px
   }
 
-  .success-stories-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: #fff9db;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    z-index: -1;
-  }
 </style>
 
 <section class="success-stories-section">
-  <div class="success-stories-heading animate__animated animate__fadeIn animate__delay-1s">
+  <div class="success-stories-heading" style="border-top-left-radius: 50px; border-top-right-radius: 50px;" animate__animated animate__fadeIn animate__delay-1s">
     <h2 class="animate__animated animate__slideInDown">Success Stories</h2>
     <p class="animate__animated animate__fadeIn animate__delay-2s">Meet our graduates working at top companies. Get inspired by the journeys of our students who have successfully transitioned into high-paying careers with the help of our courses and mentorship.</p>
   </div>

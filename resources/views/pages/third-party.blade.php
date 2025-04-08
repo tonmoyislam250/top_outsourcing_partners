@@ -46,10 +46,10 @@
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Human Resource Outsourcing (HRO)</b></h2>
-      <p>Simplify workforce management with end-to-end recruitment, payroll processing,
+      <h2 style="text-align: left;"><b>Human Resource Outsourcing (HRO)</b></h2>
+      <p style="text-align: left;">Simplify workforce management with end-to-end recruitment, payroll processing,
       employee benefits administration, and compliance handling for your business.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'"> Talk to an HR Outsourcing Expert</button>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'"> Talk to an HR Outsourcing Expert</button>
     </div>
   </div>
 
@@ -65,9 +65,9 @@
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Legal Process Outsourcing (LPO)</b></h2>
-      <p>Access expert contract drafting, compliance management, legal documentation, and risk assessment services without hiring an in-house legal team.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Book a Legal Outsourcing Consultation</button>
+      <h2 style="text-align: left;"><b>Legal Process Outsourcing (LPO)</b></h2>
+      <p style="text-align: left;">Access expert contract drafting, compliance management, legal documentation, and risk assessment services without hiring an in-house legal team.</p>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Book a Legal Outsourcing Consultation</button>
     </div>
   </div>
 
@@ -83,9 +83,9 @@
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Marketing & Brand Management</b></h2>
-      <p>Enhance your brand visibility with SEO, digital marketing, social media management, and content strategy to attract more customers.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Schedule a Marketing Consultation</button>
+      <h2 style="text-align: left;"><b>Marketing & Brand Management</b></h2>
+      <p style="text-align: left;">Enhance your brand visibility with SEO, digital marketing, social media management, and content strategy to attract more customers.</p>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Schedule a Marketing Consultation</button>
     </div>
   </div>
 
@@ -101,10 +101,10 @@
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Accounting & Financial Process Outsourcing</b></h2>
-      <p>Ensure accurate bookkeeping, tax filing, financial reporting, and cash flow
+      <h2 style="text-align: left;"><b>Accounting & Financial Process Outsourcing</b></h2>
+      <p style="text-align: left;">Ensure accurate bookkeeping, tax filing, financial reporting, and cash flow
       management with expert financial outsourcing services.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Schedule a Finance Outsourcing Call</button>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Schedule a Finance Outsourcing Call</button>
     </div>
   </div>
 
@@ -120,10 +120,10 @@
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Customer Support & Call Center Services</b></h2>
-      <p>Provide 24/7 multilingual customer support, live chat services, and technical
+      <h2 style="text-align: left;"><b>Customer Support & Call Center Services</b></h2>
+      <p style="text-align: left;">Provide 24/7 multilingual customer support, live chat services, and technical
       assistance to improve customer satisfaction and retention.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Book a Customer Support Strategy Call</button>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Book a Customer Support Strategy Call</button>
     </div>
   </div>
 
@@ -139,10 +139,10 @@
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>E-commerce & Marketplace Support</b></h2>
-      <p>Manage your order processing, inventory control, product listings, and customer
+      <h2 style="text-align: left;"><b>E-commerce & Marketplace Support</b></h2>
+      <p style="text-align: left;">Manage your order processing, inventory control, product listings, and customer
       interactions efficiently with expert outsourcing solutions.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Schedule an E-commerce Support Consultation</button>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Schedule an E-commerce Support Consultation</button>
     </div>
   </div>
 </section>

@@ -106,7 +106,7 @@ body {
   }
   .finance-badge img {
     width: 50px;
-    height: 60.finance-badge.top-rightpx;
+    height: 60px;
   }
   .finance-badge span {
     font-size: 14px;
@@ -212,7 +212,7 @@ body {
 .section-header .section-icon {
     width: 50px;
     height: auto;
-    vertical-align: middle;finance-badge top-righ /* Ensure proper alignment */
+    vertical-align: middle; /* Ensure proper alignment */
 }
 
 .section-header .section-title {

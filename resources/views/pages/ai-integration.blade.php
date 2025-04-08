@@ -39,16 +39,16 @@
       <img src="{{ asset('images/ai/image1.png') }}" alt="Bookkeeping">
       <div class="finance-badge">
         <img src="{{ asset('images/ai/business.svg') }}" alt="Icon">
-        <span><b>Business Performance</b><br><small><b>Before & After AI Analytics</b></small></span>
+        <span><b>Business Performance</b><br><small>Before & After AI Analytics</small></span>
       </div>
       <div class="finance-badge top-right">
         <img src="{{ asset('images/ai/tr1.svg') }}" alt="Icon">
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>AI Powered Data Analytics</b></h2>
-      <p>Transform raw data into actionable insights with AI-driven analytics and machine learning models. Make smarter decisions with real-time reporting and trend predictions.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Schedule a Data Analytics Consultation</button>
+      <h2 style="text-align: left;"><b>AI Powered Data Analytics</b></h2>
+      <p style="text-align: left;">Transform raw data into actionable insights with AI-driven analytics and machine learning models. Make smarter decisions with real-time reporting and trend predictions.</p>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Schedule a Data Analytics Consultation</button>
     </div>
   </div>
 
@@ -57,16 +57,16 @@
       <img src="{{ asset('images/ai/image2.png') }}" alt="CFO Services">
       <div class="finance-badge">
         <img src="{{ asset('images/ai/reduction.svg') }}" alt="Icon">
-        <span><b>Reduction in Customer Support</b><br><small><b>Response time with AI</b></small></span>
+        <span><b>Reduction in Customer Support</b><br><small>Response time with AI</small></span>
       </div>
       <div class="finance-badge top-left">
         <img src="{{ asset('images/ai/tl1.svg') }}" alt="Icon">
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>AI-Powered Chatbots & Customer Support</b></h2>
-      <p>Enhance customer experience with AI-driven chatbots and virtual assistants that provide 24/7 support, instant responses, and multilingual interactions.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Book an AI Chatbot Consultation</button>
+      <h2 style="text-align: left;"><b>AI-Powered Chatbots & Customer Support</b></h2>
+      <p style="text-align: left;">Enhance customer experience with AI-driven chatbots and virtual assistants that provide 24/7 support, instant responses, and multilingual interactions.</p>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Book an AI Chatbot Consultation</button>
     </div>
   </div>
 
@@ -75,16 +75,16 @@
       <img src="{{ asset('images/ai/image3.png') }}" alt="AP Management">
       <div class="finance-badge">
         <img src="{{ asset('images/ai/sales.svg') }}" alt="Icon">
-        <span><b>Sales Growth Forecast</b><br><small><b>with AI vs. Without AI</b></small></span>
+        <span><b>Sales Growth Forecast</b><br><small>with AI vs. Without AI</small></span>
       </div>
       <div class="finance-badge top-right">
         <img src="{{ asset('images/ai/tr2.svg') }}" alt="Icon">
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Predictive Business Intelligence</b></h2>
-      <p>Use AI to forecast market trends, customer behavior, and financial performance, helping businesses make proactive, data-driven decisions.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Schedule a Predictive Analytics Session</button>
+      <h2 style="text-align: left;"><b>Predictive Business Intelligence</b></h2>
+      <p style="text-align: left;">Use AI to forecast market trends, customer behavior, and financial performance, helping businesses make proactive, data-driven decisions.</p>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Schedule a Predictive Analytics Session</button>
     </div>
   </div>
 
@@ -93,16 +93,16 @@
       <img src="{{ asset('images/ai/image4.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">
         <img src="{{ asset('images/ai/reduction2.svg') }}" alt="Icon">
-        <span><b>Reduction in Accounting Errors</b><br><small><b>with AI Automation</b></small></span>
+        <span><b>Reduction in Accounting Errors</b><br><small>with AI Automation</small></span>
       </div>
       <div class="finance-badge top-left">
         <img src="{{ asset('images/ai/tl2.svg') }}" alt="Icon">
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>AI in Finance & Accounting Automation</b></h2>
-      <p>Increase efficiency in invoicing, expense tracking, payroll, and reconciliation with AI-powered automation, reducing errors and manual effort.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Book an AI Finance Strategy Call</button>
+      <h2 style="text-align: left;"><b>AI in Finance & Accounting Automation</b></h2>
+      <p style="text-align: left;">Increase efficiency in invoicing, expense tracking, payroll, and reconciliation with AI-powered automation, reducing errors and manual effort.</p>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Book an AI Finance Strategy Call</button>
     </div>
   </div>
 
@@ -111,16 +111,16 @@
       <img src="{{ asset('images/ai/image5.png') }}" alt="AP Management">
       <div class="finance-badge">
         <img src="{{ asset('images/ai/prod.svg') }}" alt="Icon">
-        <span><b>Productivity Increase</b><br><small><b>with AI-Driven Workflow Automation</b></small></span>
+        <span><b>Productivity Increase</b><br><small>with AI-Driven Workflow Automation</small></span>
       </div>
       <div class="finance-badge top-right">
         <img src="{{ asset('images/ai/tr2.svg') }}" alt="Icon">
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>AI-Driven Process Automation & Workflow Optimization</b></h2>
-      <p>AI automates repetitive business tasks, workflows, and approvals, streamlining operations and boosting productivity by up to 40%.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Talk to an AI Automation Specialist</button>
+      <h2 style="text-align: left;"><b>AI-Driven Process Automation & Workflow Optimization</b></h2>
+      <p style="text-align: left;">AI automates repetitive business tasks, workflows, and approvals, streamlining operations and boosting productivity by up to 40%.</p>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Talk to an AI Automation Specialist</button>
     </div>
   </div>
 
@@ -129,16 +129,16 @@
       <img src="{{ asset('images/ai/image6.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">
         <img src="{{ asset('images/ai/fraud.svg') }}" alt="Icon">
-        <span><b>Fraud Detection Effectiveness</b><br><small><b>with AI Automation</b></small></span>
+        <span><b>Fraud Detection Effectiveness</b><br><small>with AI Automation</small></span>
       </div>
       <div class="finance-badge top-left">
         <img src="{{ asset('images/ai/tl3.svg') }}" alt="Icon">
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Cybersecurity & AI Risk Management</b></h2>
-      <p>Protect your business with AI-powered fraud detection, automated security monitoring, and real-time threat prevention against cyber risks.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Schedule a Cybersecurity Consultation</button>
+      <h2 style="text-align: left;"><b>Cybersecurity & AI Risk Management</b></h2>
+      <p style="text-align: left;">Protect your business with AI-powered fraud detection, automated security monitoring, and real-time threat prevention against cyber risks.</p>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Schedule a Cybersecurity Consultation</button>
     </div>
   </div>
 </section>

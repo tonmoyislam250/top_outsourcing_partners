@@ -46,10 +46,10 @@
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Legal & Compliance Training</b></h2>
-      <p><b>Stay compliant with industry regulations, corporate governance policies, and labor
-      laws through expert-led training programs</b></p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Schedule a Compliance Training Consultation</button>
+      <h2 style="text-align: left;"><b>Legal & Compliance Training</b></h2>
+      <p style="text-align: left;">Stay compliant with industry regulations, corporate governance policies, and labor
+      laws through expert-led training programs</p>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Schedule a Compliance Training Consultation</button>
     </div>
   </div>
 
@@ -65,9 +65,9 @@
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Income Tax Practitioner (ITP) Training</b></h2>
-      <p><b>Equip finance professionals with taxation expertise, corporate tax filing strategies, and compliance best practices to improve accuracy.</b></p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Book an ITP Training Session</button>
+      <h2 style="text-align: left;"><b>Income Tax Practitioner (ITP) Training</b></h2>
+      <p style="text-align: left;">Equip finance professionals with taxation expertise, corporate tax filing strategies, and compliance best practices to improve accuracy.</p>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Book an ITP Training Session</button>
     </div>
   </div>
 
@@ -83,10 +83,10 @@
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Leadership & Management Development</b></h2>
-      <p><b>Enhance leadership capabilities with decision-making, strategic thinking, and conflict
-      resolution training for executives and managers.</b></p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Book a Leadership Training Consultation</button>
+      <h2 style="text-align: left;"><b>Leadership & Management Development</b></h2>
+      <p style="text-align: left;">Enhance leadership capabilities with decision-making, strategic thinking, and conflict
+      resolution training for executives and managers.</p>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Book a Leadership Training Consultation</button>
     </div>
   </div>
 
@@ -102,9 +102,9 @@
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Cross-Cultural & Communication Training</b></h2>
-      <p><b>Improve team collaboration, business negotiations, and customer interactions with tailored communication training for global business environments.</b></p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Schedule a Cross-Cultural Training Call</button>
+      <h2 style="text-align: left;"><b>Cross-Cultural & Communication Training</b></h2>
+      <p style="text-align: left;">Improve team collaboration, business negotiations, and customer interactions with tailored communication training for global business environments.</p>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Schedule a Cross-Cultural Training Call</button>
     </div>
   </div>
 
@@ -120,10 +120,10 @@
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Cybersecurity Awareness & Data Protection</b></h2>
-      <p><b>Protect your business from cyber threats with training on data security, phishing
-      prevention, and risk management strategies.</b></p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Book a Cybersecurity Awareness Session</button>
+      <h2 style="text-align: left;"><b>Cybersecurity Awareness & Data Protection</b></h2>
+      <p style="text-align: left;">Protect your business from cyber threats with training on data security, phishing
+      prevention, and risk management strategies.</p>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Book a Cybersecurity Awareness Session</button>
     </div>
   </div>
 
@@ -139,10 +139,10 @@
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Financial Management & Budgeting Training</b></h2>
-      <p><b>Train your employees in budget planning, financial forecasting, and cash flow
-      optimization to ensure financial stability.</b></p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Schedule a Financial Training Session</button>
+      <h2 style="text-align: left;"><b>Financial Management & Budgeting Training</b></h2>
+      <p style="text-align: left;">Train your employees in budget planning, financial forecasting, and cash flow
+      optimization to ensure financial stability.</p>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Schedule a Financial Training Session</button>
     </div>
   </div>
 
@@ -158,10 +158,10 @@
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Sales & Negotiation Mastery</b></h2>
-      <p><b>Boost sales performance with strategic negotiation techniques, client relationship
-      management, and persuasion training to close more deals.</b></p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Book a Sales & Negotiation Training Call</button>
+      <h2 style="text-align: left;"><b>Sales & Negotiation Mastery</b></h2>
+      <p style="text-align: left;">Boost sales performance with strategic negotiation techniques, client relationship
+      management, and persuasion training to close more deals.</p>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Book a Sales & Negotiation Training Call</button>
     </div>
   </div>
 </section>

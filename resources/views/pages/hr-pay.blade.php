@@ -42,11 +42,11 @@
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Payroll Management Services</b></h2>
-      <p>Ensure accurate, on-time payroll processing, tax calculations, and compliance with
+      <h2 style="text-align: left;"><b>Payroll Management Services</b></h2>
+      <p style="text-align: left;">Ensure accurate, on-time payroll processing, tax calculations, and compliance with
 local and international labor laws. We handle salary disbursement, deductions, and
 reporting seamlessly.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Talk to a Payroll Specialist</button>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Talk to a Payroll Specialist</button>
     </div>
   </div>
 
@@ -62,10 +62,10 @@ reporting seamlessly.</p>
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Employee Benefits Administration</b></h2>
-      <p>Manage employee benefits, health insurance, leave policies, and retirement plans
+      <h2 style="text-align: left;"><b>Employee Benefits Administration</b></h2>
+      <p style="text-align: left;">Manage employee benefits, health insurance, leave policies, and retirement plans
       effortlessly, ensuring compliance with global labor laws and company policies.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Book a Benefits Strategy Call</button>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Book a Benefits Strategy Call</button>
     </div>
   </div>
 
@@ -81,11 +81,11 @@ reporting seamlessly.</p>
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Recruitment & Talent Acquisition</b></h2>
-      <p>Find and hire the best talent globally with data-driven recruitment strategies, candidate
+      <h2 style="text-align: left;"><b>Recruitment & Talent Acquisition</b></h2>
+      <p style="text-align: left;">Find and hire the best talent globally with data-driven recruitment strategies, candidate
 screening, and interview management to ensure the perfect fit for your business
 needs.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Schedule a Hiring Consultation</button>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Schedule a Hiring Consultation</button>
     </div>
   </div>
 
@@ -101,10 +101,10 @@ needs.</p>
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>HR Outsourcing & Compliance Management</b></h2>
-      <p>Ensure HR operations align with legal standards by outsourcing policy creation, labor
+      <h2 style="text-align: left;"><b>HR Outsourcing & Compliance Management</b></h2>
+      <p style="text-align: left;">Ensure HR operations align with legal standards by outsourcing policy creation, labor
       law compliance, contract management, and workplace issue resolution to experts.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Schedule an HR Consultation</button>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Schedule an HR Consultation</button>
     </div>
   </div>
 
@@ -120,10 +120,10 @@ needs.</p>
       </div>
     </div>
     <div class="finance-content">
-      <h2><b>Workforce Management & HR Automation</b></h2>
-      <p>Boost productivity with AI-driven HR solutions for employee scheduling, attendance
+      <h2 style="text-align: left;"><b>Workforce Management & HR Automation</b></h2>
+      <p style="text-align: left;">Boost productivity with AI-driven HR solutions for employee scheduling, attendance
       tracking, and performance management, ensuring efficiency and transparency.</p>
-      <button onclick="window.location.href='{{ url('/consult') }}'">Schedule an HR Automation Consultation</button>
+      <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Schedule an HR Automation Consultation</button>
     </div>
   </div>
 </section>
