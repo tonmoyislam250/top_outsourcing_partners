@@ -12,6 +12,10 @@ Route::get('/contact', function () {
     return view('pages/contact');
 })->name('contact');
 
+Route::get('/about', function () {
+    return view('pages/about-us');
+})->name('about');
+
 Route::get('industries', function () {
     return view('pages/industries');
 })->name('industries');

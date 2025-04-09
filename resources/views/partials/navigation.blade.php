@@ -24,7 +24,7 @@
     </a>
     <div class="nav-links">
         <a href="{{ url('/') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Home</a>
-        <a style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">About us</a>
+        <a href="{{ url('/about') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">About us</a>
         <div class="services-dropdown">
             <a class="services-link" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Services</a>
             <div class="dropdown-menu" style="width: 600px;">
@@ -69,7 +69,7 @@
     <span class="close-btn" onclick="toggleMenu()">&times;</span>
     <div class="nav-links">
         <a href="{{ url('/') }}" style="font-size: 1.2rem; font-weight: bold;">Home</a>
-        <a style="font-size: 1.2rem; font-weight: bold;">About us</a>
+        <a href="{{ url('/about') }}" style="font-size: 1.2rem; font-weight: bold;">About us</a>
         <div class="services-mobile-dropdown">
             <a class="services-link" onclick="toggleServicesMenu()" style="font-size: 1.2rem; font-weight: bold; color: #007bff; cursor: pointer;">Services</a>
             <div class="mobile-dropdown-menu" id="mobile-services-menu" style="display: none; background-color: #f8f9fa; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
