@@ -74,11 +74,11 @@
         </div>
 
         <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" style="filter: invert(1); opacity: 0.8;">
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" style="filter: invert(1); opacity: 0.8; left: -5%;">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" style="filter: invert(1); opacity: 0.8;">
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" style="filter: invert(1); opacity: 0.8; right: -5%;">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
