@@ -146,6 +146,7 @@ p {
     border-radius: 20px;
     display: inline-block;
     margin-top: 10px;
+    margin-bottom: 5px;
     text-decoration: none;
     font-weight: bold;
 }

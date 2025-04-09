@@ -31,12 +31,12 @@
             <p>Address: 123 Top Solutions Drive, Innovation City, USA</p>
             <p>Phone: +1-800-123-4567</p>
             <p>Email: <a href="mailto:info@Topoutsourcingpartners.com">info@Topoutsourcingpartners.com</a></p>
-            <a href="{{ url('/contact') }}" class="footer-button">Get in touch</a>
+            <a href="{{ url('/contact') }}" class="footer-button" style="font-size: smaller;">Get in touch</a>
         </div>
     </div>
     <div class="footer-bottom">
         <div class="footer-bottom-content">
-            <p>&copy; 2025 Support, a registered trademark of Top OutSourcing Partners, LLC</p>
+            <p style="font-size: small;">Copyright © 2025 Top Outsourcing Partners, All Rights Reserved</p>
             <ul class="footer-links">
                 <li><a href="{{ url('/privacy-policy') }}">Privacy Policy</a></li>
                 <li><a href="{{ url('/security-policy') }}">Security Policy</a></li>

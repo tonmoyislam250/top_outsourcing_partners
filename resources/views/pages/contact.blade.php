@@ -3,7 +3,7 @@
 @section('title', 'Contact Us')
 
 @section('content')
-<div class="contact-container" style="max-width: 1100px; margin: 0 auto; padding: 0 15px; box-sizing: border-box;">
+<div class="contact-container" style="max-width: 1100px; margin: 20px auto; padding: 0 15px; box-sizing: border-box; border: 2px solid blue;">
     <div class="form-section animate__animated animate__fadeInLeft">
         <h2 class="animate__animated animate__fadeInDown" style="text-align: left;"><strong>Contact us</strong></h2>
         <form id="contactForm" action="{{ route('contact.send') }}" method="POST">
