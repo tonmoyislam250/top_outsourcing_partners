@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ asset('css/review.css') }}">
 <link rel="stylesheet" href="{{ asset('css/default/swiper-bundle.min.css') }}"> <!-- Swiper styles -->
-<link rel="stylesheet" href="{{ asset('css/animate.min.css') }}"> <!-- Animation library -->
+<link rel="stylesheet" href="{{ asset('css/default/animate.min.css') }}"> <!-- Animation library -->
 
 <style>
   .swiper-container {

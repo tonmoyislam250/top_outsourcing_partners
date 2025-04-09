@@ -1,6 +1,7 @@
 <div class="container">
     <h1 class="animate__animated animate__fadeInDown">Why Choose Top Outsourcing Partners?</h1>
     <p class="animate__animated animate__fadeIn animate__delay-1s">A structured approach designed to help your business scale efficiently, streamline operations, and deliver exceptional results with expert-led solutions.</p>
+
     <div class="features">
         <!-- First 3 features -->
         <div class="feature-box animate__animated animate__fadeInUp animate__delay-1s">
