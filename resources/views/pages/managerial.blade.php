@@ -158,7 +158,7 @@
 <section class="why-choose">
   <div class="container">
     <h2 style="font-weight: bold; font-size: 30px;" class="animate__animated animate__fadeInDown animate__delay-1s">Why Choose Our Employee Managerial Service?</h2>
-    <div class="features-grid" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+    <div class="features-grid" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0px;">
       <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box;">
         <img src="{{ asset('images/manager/image1.png') }}" alt="Dedicated Team" style="width: 100%; height: auto;">
         <h3 style="font-weight: bold; text-align: left;">A Dedicated Team That Works Only for You</h3>
@@ -176,7 +176,7 @@
         </ul>
       </div>
     </div>
-    <div class="features-grid" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; margin-top: 20px;">
+    <div class="features-grid" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0px; margin-top: 20px;">
       <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box;">
         <img src="{{ asset('images/manager/image3.png') }}" alt="No Obligation" style="width: 100%; height: auto;">
         <h3 style="font-weight: bold; text-align: left;">No Obligation, No Problem!</h3>
