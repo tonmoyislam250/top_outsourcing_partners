@@ -54,20 +54,25 @@
     gap: 20px;
   }
   .feature-item {
-    flex: 0 0 100%;
     box-sizing: border-box;
     text-align: center;
+    flex: 0 0 calc(50% - 10px);
   }
-  .feature-item img {
-    width: 100%;
-    height: auto;
+  .feature-item2 {
+    flex: 0 0 50%; 
+    box-sizing: border-box;
   }
 
-
-  @media (min-width: 768px) {
+  @media (max-width: 767px) {
     .feature-item {
-      flex: 0 0 calc(50% - 10px);
       text-align: left;
+      box-sizing: border-box;
+      flex: 0 0 100%; /* Make feature items stack vertically */
+    }
+    .feature-item2{
+      flex: 0 0 100%;
+      text-align: left;
+      box-sizing: border-box;
     }
   }
 
@@ -159,16 +164,16 @@
   <div class="container">
     <h2 style="font-weight: bold; font-size: 30px;" class="animate__animated animate__fadeInDown animate__delay-1s">Why Choose Our Employee Managerial Service?</h2>
     <div class="features-grid" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0px;">
-      <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box;">
-        <img src="{{ asset('images/manager/image1.png') }}" alt="Dedicated Team" style="width: 100%; height: auto;">
+      <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s">
+        <img src="{{ asset('images/manager/image1.png') }}" alt="Dedicated Team" style="width: 80%; height: auto;">
         <h3 style="font-weight: bold; text-align: left;">A Dedicated Team That Works Only for You</h3>
         <ul style="text-align: left;">
           <li>No shared resources—your team is 100% dedicated to your company.</li>
           <li>Seamless integration with your operations, culture, and work processes.</li>
         </ul>
       </div>
-      <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box;">
-        <img src="{{ asset('images/manager/image2.png') }}" alt="Cost Saving" style="width: 95%; height: auto;">
+      <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s">
+        <img src="{{ asset('images/manager/image2.png') }}" alt="Cost Saving" style="width: 75%; height: auto;">
         <h3 style="font-weight: bold; text-align: left;">Massive Cost Saving Without Compromising Quality</h3>
         <ul style="text-align: left;">
           <li>Lower hiring costs compared to the USA, UK, Canada, and other high-wage countries.</li>
@@ -177,16 +182,16 @@
       </div>
     </div>
     <div class="features-grid" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0px; margin-top: 20px;">
-      <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box;">
-        <img src="{{ asset('images/manager/image3.png') }}" alt="No Obligation" style="width: 100%; height: auto;">
+      <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s">
+        <img src="{{ asset('images/manager/image3.png') }}" alt="No Obligation" style="width: 80%; height: auto;">
         <h3 style="font-weight: bold; text-align: left;">No Obligation, No Problem!</h3>
         <ul style="text-align: left;">
           <li>You don't need to set up a physical office in Bangladesh.</li>
           <li>We take care of all employment logistics, so you stay focused on your business.</li>
         </ul>
       </div>
-      <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box;">
-        <img src="{{ asset('images/manager/image4.png') }}" alt="Guaranteed Productivity" style="width: 93%; height: auto;">
+      <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s">
+        <img src="{{ asset('images/manager/image4.png') }}" alt="Guaranteed Productivity" style="width: 73%; height: auto;">
         <h3 style="font-weight: bold; text-align: left;">Guaranteed Workforce Continuity - No Disruption</h3>
         <ul style="text-align: left;">
           <li>If an employee resigns, we immediately replace them with a top-tier professional.</li>
@@ -195,8 +200,8 @@
       </div>
     </div>
     <div class="features-grid" style="display: flex; justify-content: center; margin-top: 20px;">
-      <div class="feature-item animate__animated animate__fadeInLeft animate__delay-1s" style="flex: 0 0 50%; box-sizing: border-box;">
-        <img src="{{ asset('images/manager/image5.png') }}" alt="Flexible Hiring Options" style="width: 100%; height: auto;">
+      <div class="feature-item2 animate__animated animate__fadeInLeft animate__delay-1s">
+        <img src="{{ asset('images/manager/image5.png') }}" alt="Flexible Hiring Options" style="width: 80%; height: auto;">
         <h3 style="font-weight: bold; text-align: left;">Flexible Hiring Options</h3>
         <ul style="text-align: left;">
           <li>Hire full-time, part-time, or project-based employees based on your needs.</li>
