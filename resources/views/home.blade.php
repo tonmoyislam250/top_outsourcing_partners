@@ -21,7 +21,7 @@
                     </div>
                 @endforeach
                 </div>
-                <h1 class="animate__animated animate__fadeInDown">Empowering Businesses with Smart Outsourcing Solutions</h1>
+                <h1 class="animate__animated animate__fadeInDown" style="font-size: calc(2rem + 1vw);">Empowering Businesses with Smart Outsourcing Solutions</h1>
                 <p class="animate__animated animate__fadeInUp animate__delay-1s">Customized accounting, finance, AI integration, ledger management, insurance, and third-party services to help your business grow.</p>
                 <a href="{{ url('/consult') }}" class="cta-button animate__animated animate__pulse animate__infinite animate__slow">Schedule for a Consultation</a>
             </div>

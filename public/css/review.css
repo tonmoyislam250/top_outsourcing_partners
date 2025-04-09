@@ -19,15 +19,15 @@ body {
     font-size: 14px;
     line-height: 1.6;
     position: relative;
-    max-width: 300px; /* Limit the width of review cards */
-    margin: 0 auto; /* Center the cards */
+    max-width: 380px; /* Limit the width of review cards */
+    margin: 15px auto; /* Center the cards */
   }
   .review-card__avatar {
     width: 32px; /* Increased size for better visibility */
     height: 32px; /* Increased size for better visibility */
     position: absolute;
     top: -16px; /* Adjusted to center the avatar */
-    left: 10px;
+    left: -27px;
     border-radius: 50%;
     /* Removed overflow: hidden to ensure SVG is fully visible */
   }
@@ -39,17 +39,6 @@ body {
     background-color: #d7f0ff;
     border: 2px solid #00aaff;
     position: relative;
-  }
-  .review-card--highlighted::before {
-    content: "T Your coaches are experienced p...";
-    position: absolute;
-    top: -30px;
-    left: 10px;
-    background-color: #007bff;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
   }
   .review-action {
     text-align: center;

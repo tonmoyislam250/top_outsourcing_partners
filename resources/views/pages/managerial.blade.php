@@ -424,7 +424,7 @@
 <!-- Call to Action -->
 <section class="cta" style="background-color: #007b8f; padding: 20px 40px; text-align: center; color: white; margin: 0; ">
   <h2 style="font-size: 2rem; margin-bottom: 15px; font-weight: bold;">Let’s Work Together!</h2>
-  <p style="font-size: 1.2rem; margin-bottom: 20px; color: white">Top Outsourcing Partners is no longer just an option—it's a growth strategy for modern firms. Let Global Outsourcing Partners handle your accounting workload so you can focus on client success and firm growth.</p>
+  <p style="margin-bottom: 20px; color: white;">Outsourcing is no longer just an option—it's a growth strategy for modern firms. Let Top Outsourcing Partners handle your accounting workload so you can focus on client success and firm growth.</p>
   <button onclick="window.location.href='/consult'" style="background-color: black; color: white; padding: 10px 20px; border: none; border-radius: 20px; font-size: 1rem; cursor: pointer;">Book a Free Financial Consultation</button>
 </section>
 
