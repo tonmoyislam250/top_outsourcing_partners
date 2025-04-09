@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ asset('css/review.css') }}">
 <link rel="stylesheet" href="{{ asset('css/default/swiper-bundle.min.css') }}"> <!-- Swiper styles -->
-<link rel="stylesheet" href="{{ asset('css/default/animate.min.css') }}"> <!-- Animation library -->
+<link rel="stylesheet" href="{{ asset('css/animate.min.css') }}"> <!-- Animation library -->
 
 <style>
   .swiper-container {
@@ -26,7 +26,7 @@
 
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
+    <div class="swiper-slide">
         <div class="review-card review-card--highlighted animate__animated animate__fadeInUp">
           <div class="review-card__avatar">
             <img src="{{ asset('images/avatars/avatar1.svg') }}" alt="Avatar">
@@ -79,26 +79,6 @@
             <p class="review-card__text" style="font-size: 15px; font-style: italic; font-family: 'Georgia', serif;">"Switching to QuickBooks with the help of Top Outsourcing Partners was seamless. They ensured that all our data was accurately transferred, and the transition was completed with minimal downtime. Their support has improved our operational efficiency, and we now have more control over our financial processes."</p>
           <p class="review-card__author" style="font-size: 15px;">— Emily Martinez, CFO at Greenfield Enterprises</p>
         </div>
-      </div>
-    </div>
-  </div>
-      </div>
-      <!-- <div class="swiper-slide">
-        <div class="review-card animate__animated animate__fadeInUp animate__delay-6s">
-          <div class="review-card__avatar">
-            <img src="{{ asset('images/avatars/avatar7.svg') }}" alt="Avatar">
-          </div>
-          Another inspiring story of success from our graduates.
-        </div>
-      </div> -->
-      <!-- <div class="swiper-slide">
-        <div class="review-card animate__animated animate__fadeInUp animate__delay-7s">
-          <div class="review-card__avatar">
-            <img src="{{ asset('images/avatars/avatar8.svg') }}" alt="Avatar">
-          </div>
-          Discover how our students achieved their dreams.
-        </div>
-      </div> -->
     </div>
   </div>
 </section>

@@ -84,6 +84,3 @@
 }
 </style>
 
-<script>
-    // Removed dropdown menu toggle script
-</script>
