@@ -34,6 +34,16 @@
             <a href="{{ url('/contact') }}" class="footer-button">Get in touch</a>
         </div>
     </div>
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <p>&copy; 2025 Support, a registered trademark of Top OutSourcing Partners, LLC</p>
+            <ul class="footer-links">
+                <li><a href="{{ url('/privacy-policy') }}">Privacy Policy</a></li>
+                <li><a href="{{ url('/security-policy') }}">Security Policy</a></li>
+                <li><a href="{{ url('/terms-of-use') }}">Terms of Use</a></li>
+            </ul>
+        </div>
+    </div>
 </footer>
 
 <style>
@@ -67,6 +77,50 @@
 .footer-section ul .dropdown-menu li a:hover {
     background-color: #f0f0f0;
     color: #000;
+}
+
+/* Style for the footer bottom section */
+.footer-bottom {
+    background-color: #ffe4e1; /* white pinkish */
+    padding: 10px 20px;
+    font-size: 14px;
+    color: black;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-bottom-content p {
+    margin: 0;
+    flex: 1;
+    text-align: left;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links li a {
+    color: #666;
+    text-decoration: none;
+}
+
+.footer-links li a:hover {
+    text-decoration: underline;
 }
 </style>
 
