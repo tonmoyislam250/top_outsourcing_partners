@@ -24,7 +24,7 @@ class ContactController extends Controller
                     ->subject('Top Outsourcing Partners Contact Form Submission');
             });
 
-            return back()->with('success', 'Your message has been sent successfully!');
+            return response()->json(['success' => true, 'message' => 'Your message has been sent successfully!']);
         } catch (\Exception $e) {
             Log::error('Email sending failed: ' . $e->getMessage());
             return back()->with('error', 'Failed to send your message. Please try again later.');

@@ -88,19 +88,19 @@
     }
 </style>
 
-<div class="slider-menu" id="slider-menu">
-    <span class="close-btn" onclick="toggleMenu()">&times;</span>
+<div class="slider-menu animate__animated animate__slideInRight animate__faster" id="slider-menu">
+    <span class="close-btn animate__animated animate__fadeIn" onclick="toggleMenu()">&times;</span>
     <div class="nav-links">
-        <a href="{{ url('/') }}" style="font-size: 1.2rem; font-weight: bold;">Home</a>
-        <a href="{{ url('/about') }}" style="font-size: 1.2rem; font-weight: bold;">About us</a>
-        <div class="services-mobile-dropdown">
+        <a href="{{ url('/') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Home</a>
+        <a href="{{ url('/about') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">About us</a>
+        <div class="services-mobile-dropdown animate__animated animate__fadeInRight animate__faster animate__delay-1s">
             <a class="services-link" onclick="toggleServicesMenu()" style="font-size: 1.2rem; font-weight: bold; color: #007bff; cursor: pointer;">Services</a>
-            <div class="mobile-dropdown-menu" id="mobile-services-menu" style="display: none; background-color: #f8f9fa; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                <a href="{{ url('/services/finance') }}" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">Accounting & Finance Outsourcing</a>
-                <a href="{{ url('/services/ai-integration') }}" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">AI Integration for Businesses</a>
-                <a href="{{ url('/services/corporate-training') }}" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">Corporate Training & Development</a>
-                <a href="{{ url('/services/third-party') }}" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">Third-Party Business Support</a>
-                <a href="{{ url('/services/hr-pay') }}" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">HR & Payroll Services</a>
+            <div class="mobile-dropdown-menu animate__animated animate__fadeIn animate__faster" id="mobile-services-menu" style="display: none; background-color: #f8f9fa; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <a href="{{ url('/services/finance') }}" class="animate__animated animate__fadeIn animate__faster" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">Accounting & Finance Outsourcing</a>
+                <a href="{{ url('/services/ai-integration') }}" class="animate__animated animate__fadeIn animate__faster" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">AI Integration for Businesses</a>
+                <a href="{{ url('/services/corporate-training') }}" class="animate__animated animate__fadeIn animate__faster" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">Corporate Training & Development</a>
+                <a href="{{ url('/services/third-party') }}" class="animate__animated animate__fadeIn animate__faster" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">Third-Party Business Support</a>
+                <a href="{{ url('/services/hr-pay') }}" class="animate__animated animate__fadeIn animate__faster" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">HR & Payroll Services</a>
             </div>
         </div>
 
@@ -109,16 +109,22 @@
                 var menu = document.getElementById('mobile-services-menu');
                 if (menu.style.display === 'none' || menu.style.display === '') {
                     menu.style.display = 'block';
+                    menu.classList.add('animate__fadeIn');
+                    menu.classList.remove('animate__fadeOut');
                 } else {
-                    menu.style.display = 'none';
+                    menu.classList.remove('animate__fadeIn');
+                    menu.classList.add('animate__fadeOut');
+                    setTimeout(function() {
+                        menu.style.display = 'none';
+                    }, 300); // Reduced timeout for faster transition
                 }
             }
         </script>
-        <a href="{{ url('/industries') }}" style="font-size: 1.2rem; font-weight: bold;">Industries</a>
-        <a href="{{ url('/solutions') }}" style="font-size: 1.2rem; font-weight: bold;">Solutions</a>
-        <a href="{{ url('/contact') }}" style="font-size: 1.2rem; font-weight: bold;">Contact Us</a>
+        <a href="{{ url('/industries') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Industries</a>
+        <a href="{{ url('/solutions') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Solutions</a>
+        <a href="{{ url('/contact') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Contact Us</a>
     </div>
-    <div class="social-links" style="font-size: 2rem; margin-top: 1rem;">
+    <div class="social-links animate__animated animate__fadeInUp animate__faster animate__delay-2s" style="font-size: 2rem; margin-top: 1rem;">
         <a href="https://www.facebook.com/RickAstley/" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
         <a href="https://x.com/elonmusk" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-twitter"></i></a>
         <a href="https://www.instagram.com/officialrickastley/" target="_blank" style="color: #007bff;"><i class="fa-brands fa-instagram"></i></a>

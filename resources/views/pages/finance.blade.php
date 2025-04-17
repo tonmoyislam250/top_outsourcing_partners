@@ -33,14 +33,14 @@
     
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 50px auto; max-width: 1000px;">
         <div style="flex: 1 1 300px; background: #E8F8E8; padding: 20px; border-radius: 10px; display: flex; align-items: center;">
-            <img src="{{ asset('images/finance/stat1.svg') }}" alt="Stat Icon" style="width: 300px;">
+            <img src="{{ asset('images/finance/stat1.svg') }}" alt="Stat Icon" style="width: 100%; max-width: 300px;">
             <div>
                 <div style="font-size: 2rem; font-weight: bold;">56%</div>
                 <p style="margin: 10px 0; font-size: 1rem;">of CFOs say that finance outsourcing improves strategic decision-making</p>
             </div>
         </div>
         <div style="flex: 1 1 300px; background: #E8F8E8; padding: 20px; border-radius: 10px; display: flex; align-items: center;">
-            <img src="{{ asset('images/finance/stat2.svg') }}" alt="Stat Icon" style="width: 300px;">
+            <img src="{{ asset('images/finance/stat2.svg') }}" alt="Stat Icon" style="width: 100%; max-width: 300px;">
             <div>
                 <div style="font-size: 2rem; font-weight: bold;">44%</div>
                 <p style="margin: 10px 0; font-size: 1rem;">reduction in operational costs is achieved through finance outsourcing</p>

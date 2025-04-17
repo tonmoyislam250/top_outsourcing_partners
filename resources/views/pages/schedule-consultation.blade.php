@@ -80,10 +80,67 @@
             @enderror
         </div>
         <div class="submit-btn full text-center">
-            <button type="submit" class="btn btn-primary animate__animated animate__pulse animate__infinite animate__slower">Submit</button>
+            <button type="submit" class="btn btn-primary animate__animated animate__pulse animate__infinite animate__slower" id="submitButton">
+                Submit
+            </button>
+            <div id="loadingSpinner" class="netflix-spinner" style="display: none;">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
         </div>
     </form>
 </div>
+
+<style>
+.netflix-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.netflix-spinner .circle {
+    width: 10px;
+    height: 10px;
+    background-color: #e50914;
+    border-radius: 50%;
+    animation: netflix-bounce 1.2s infinite ease-in-out;
+}
+
+.netflix-spinner .circle:nth-child(2) {
+    animation-delay: -1.1s;
+}
+
+.netflix-spinner .circle:nth-child(3) {
+    animation-delay: -1.0s;
+}
+
+.netflix-spinner .circle:nth-child(4) {
+    animation-delay: -0.9s;
+}
+
+.netflix-spinner .circle:nth-child(5) {
+    animation-delay: -0.8s;
+}
+
+.netflix-spinner .circle:nth-child(6) {
+    animation-delay: -0.7s;
+}
+
+@keyframes netflix-bounce {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+</style>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
@@ -91,6 +148,13 @@
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
+        const submitButton = document.getElementById('submitButton');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+
+        // Show Netflix-style loading animation
+        submitButton.disabled = true;
+        submitButton.style.display = 'none';
+        loadingSpinner.style.display = 'flex';
 
         fetch(form.action, {
             method: 'POST',
@@ -124,6 +188,12 @@
                 title: 'Error',
                 text: 'An error occurred while sending your consultation request.',
             });
+        })
+        .finally(() => {
+            // Hide Netflix-style loading animation
+            submitButton.disabled = false;
+            submitButton.style.display = 'inline-block';
+            loadingSpinner.style.display = 'none';
         });
     });
 </script>
