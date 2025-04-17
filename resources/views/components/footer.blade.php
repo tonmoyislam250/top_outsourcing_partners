@@ -11,7 +11,7 @@
         <div class="footer-section">
             <ul>
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="{{ url('/about-us') }}">About us</a></li>
+                <li><a href="{{ url('/about') }}">About us</a></li>
                 <li><a href="{{ url('/services') }}" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });">Services</a></li>
                 <li><a href="{{ url('/solutions') }}">Solutions</a></li>
                 <li><a href="{{ url('/industries') }}">Industries</a></li>
@@ -23,7 +23,7 @@
             <p style="color: white;">Address: 123 Top Solutions Drive, Innovation City, USA</p>
             <p style="color: white;">Phone: +1-800-123-4567</p>
             <p style="color: white;">Email: <a href="mailto:info@Topoutsourcingpartners.com" style="color: white;">info@Topoutsourcingpartners.com</a></p>
-            <a href="{{ url('/contact') }}" class="footer-button" style="font-size: smaller;">Get in touch</a>
+            <a href="{{ url('/consult') }}" class="footer-button" style="font-size: smaller;">Get in touch</a>
         </div>
     </div>
     <div class="footer-bottom">

@@ -49,7 +49,7 @@
         <div class="info-block animate__animated animate__fadeIn animate__delay-2s" style="text-align: left;">
             <strong>EMAIL</strong>
             <p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16" style="vertical-align: middle;">
                     <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.708 2.825L15 11.383V5.383zM1 5.383v6l4.708-2.825L1 5.383zm5.354 3.354L1 12.617V13a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.383l-5.354-3.88L8 9.383l-1.646-1.646z"/>
                 </svg>
                 info@Topoutsourcingpartners.com

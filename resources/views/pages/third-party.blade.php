@@ -39,7 +39,7 @@
       <img src="{{ asset('images/third-party/image1.png') }}" alt="Bookkeeping">
       <div class="finance-badge">
         <img src="{{ asset('images/third-party/cost.svg') }}" alt="Icon">
-        <span><b>Cost Savings</b><br><small><b>from HR Outsourcing</b></small></span>
+        <span><b>Cost Savings</b><br><small>from HR Outsourcing</small></span>
       </div>
       <div class="finance-badge top-right">
         <img src="{{ asset('images/third-party/tr1.svg') }}" alt="Icon">
@@ -58,7 +58,7 @@
       <img src="{{ asset('images/third-party/image2.png') }}" alt="CFO Services">
       <div class="finance-badge">
         <img src="{{ asset('images/third-party/reduction.svg') }}" alt="Icon">
-        <span><b>Increase in Customer Engagement</b><br><small><b>with Outsourced Marketing</b></small></span>
+        <span><b>Increase in Customer Engagement</b><br><small>with Outsourced Marketing</small></span>
       </div>
       <div class="finance-badge top-left">
         <img src="{{ asset('images/third-party/tl1.svg') }}" alt="Icon">
@@ -75,8 +75,8 @@
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/third-party/image3.png') }}" alt="AP Management">
       <div class="finance-badge">
-        <img src="{{ asset('images/third-party/sales.svg') }}" alt="Icon">
-        <span><b>Sales Growth Forecast</b><br><small><b>with AI vs. Without AI</b></small></span>
+        <img src="{{ asset('images/third-party/increase.svg') }}" alt="Icon">
+        <span><b>Increase in Customer Engagement</b><br><small>with Outsourced Marketing</small></span>
       </div>
       <div class="finance-badge top-right">
         <img src="{{ asset('images/third-party/tr2.svg') }}" alt="Icon">
@@ -94,7 +94,7 @@
       <img src="{{ asset('images/third-party/image4.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">
         <img src="{{ asset('images/third-party/efficiency.svg') }}" alt="Icon">
-        <span><b>Efficiency Gains</b><br><small><b>with Outsourced Financial Services</b></small></span>
+        <span><b>Efficiency Gains</b><br><small>with Outsourced Financial Services</small></span>
       </div>
       <div class="finance-badge top-left">
         <img src="{{ asset('images/third-party/tl2.svg') }}" alt="Icon">
@@ -113,7 +113,7 @@
       <img src="{{ asset('images/third-party/image5.png') }}" alt="AP Management">
       <div class="finance-badge">
         <img src="{{ asset('images/third-party/customer.svg') }}" alt="Icon">
-        <span><b>Customer Satisfaction Improvement</b><br><small><b>After Call Center Outsourcing</b></small></span>
+        <span><b>Customer Satisfaction Improvement</b><br><small>After Call Center Outsourcing</small></span>
       </div>
       <div class="finance-badge top-right">
         <img src="{{ asset('images/third-party/tr2.svg') }}" alt="Icon">
@@ -132,7 +132,7 @@
       <img src="{{ asset('images/third-party/image4.png') }}" alt="AR & Billing Services">
       <div class="finance-badge">
         <img src="{{ asset('images/third-party/faster.svg') }}" alt="Icon">
-        <span><b>Faster Order Fulfillment</b><br><small><b>with E-commerce Outsourcing</b></small></span>
+        <span><b>Faster Order Fulfillment</b><br><small>with E-commerce Outsourcing</small></span>
       </div>
       <div class="finance-badge top-left">
         <img src="{{ asset('images/third-party/tl3.svg') }}" alt="Icon">
