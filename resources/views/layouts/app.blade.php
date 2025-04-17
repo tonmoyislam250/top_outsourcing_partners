@@ -18,14 +18,26 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 1s ease-out;
+            transition: all 0.8s ease-out;
         }
         #splash-screen img {
-            width: 100px; /* Adjust the size as needed */
-            height: 100px; /* Adjust the size as needed */
+            width: 100px;
+            height: 100px;
+            animation: pulse 1.5s infinite alternate;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
         }
         .fade-out {
             opacity: 0;
+            transform: scale(1.5);
         }
     </style>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">

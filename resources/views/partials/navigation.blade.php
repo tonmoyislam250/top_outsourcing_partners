@@ -42,12 +42,12 @@
                         Corporate Training & Development
                     </a>
                 </div>
-                <div class="dropdown-row">
-                    <a href="{{ url('/services/third-party') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
+                <div class="dropdown-row" style="justify-content: center; gap: 2rem;">
+                    <a href="{{ url('/services/third-party') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px; flex: 0 1 auto;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
                         <img src="{{ asset('images/third-party/third-party.svg') }}" alt="Support Icon" class="dropdown-icon">
                         Third-Party Business Support
                     </a>
-                    <a href="{{ url('/services/hr-pay') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
+                    <a href="{{ url('/services/hr-pay') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px; flex: 0 1 auto;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
                         <img src="{{ asset('images/hr/hr.svg') }}" alt="Data Icon" class="dropdown-icon">
                         HR & Payroll Services
                     </a>

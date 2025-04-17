@@ -20,11 +20,11 @@
       <img src="{{ asset('images/hr/frame3.svg') }}" alt="predictive">
       <p><b>Recruitment & Talent Acquisition</b></p>
     </div>
-    <div class="card animate__animated animate__fadeInUp animate__delay-2s" data-target="#compliance">
+    <div class="card animate__animated animate__fadeInUp animate__delay-2s" data-target="#compliance" style="left: 182px;">
       <img src="{{ asset('images/hr/frame4.svg') }}" alt="automation">
       <p><b>HR Outsourcing & Compliance Management</b></p>
     </div>
-    <div class="card animate__animated animate__fadeInUp animate__delay-2s" data-target="#automation">
+    <div class="card animate__animated animate__fadeInUp animate__delay-2s" data-target="#automation" style="left: 182px;">
       <img src="{{ asset('images/hr/frame5.svg') }}" alt="workflow">
       <p><b>Workforce Management & HR Automation</b></p>
     </div>
@@ -82,9 +82,7 @@ reporting seamlessly.</p>
     </div>
     <div class="finance-content">
       <h2 style="text-align: left;"><b>Recruitment & Talent Acquisition</b></h2>
-      <p style="text-align: left;">Find and hire the best talent globally with data-driven recruitment strategies, candidate
-screening, and interview management to ensure the perfect fit for your business
-needs.</p>
+      <p style="text-align: left;">Find and hire the best talent globally with data-driven recruitment strategies, candidate screening, and interview management to ensure the perfect fit for your business needs.</p>
       <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Schedule a Hiring Consultation</button>
     </div>
   </div>

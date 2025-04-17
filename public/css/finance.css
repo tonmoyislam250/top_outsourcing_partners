@@ -98,6 +98,7 @@ body {
     background: white;
     padding: 15px 20px;
     border-radius: 12px;
+    border-top: 3px solid #2e7d32; /* Added green border top color to match theme */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     display: flex;
     align-items: center;
@@ -153,6 +154,7 @@ body {
   top: 2px;
   right: -2px;
   left: unset;
+  border-top: none;
   bottom: unset;
   padding: 10px;
   background: none; /* Remove background */
@@ -168,6 +170,7 @@ body {
   top: -20px;
   left: -20px;
   right: unset;
+  border-top: none;
   bottom: unset;
   padding: 10px;
   border-radius: 50%;
