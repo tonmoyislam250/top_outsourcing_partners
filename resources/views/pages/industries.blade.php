@@ -12,39 +12,39 @@
   <div class="grid">
     <div class="card-container">
       <div class="card animate__animated animate__zoomIn animate__delay-1s">
-        <img src="{{ asset('images/industries/frame1.svg') }}" alt="analytics">
-        <b>Healthcare</b>
-        <p>Claims management, pharmacy benefits, and revenue cycle optimization.</p>
+      <img src="{{ asset('images/industries/frame1.svg') }}" alt="analytics">
+      <b>Healthcare</b>
+      <p style="font-weight: normal;">Claims management, pharmacy benefits, and revenue cycle optimization.</p>
       </div>
       <div class="card animate__animated animate__zoomIn animate__delay-1s">
-        <img src="{{ asset('images/industries/frame2.svg') }}" alt="chatbot">
-        <b>Insurance</b>
-        <p>Solutions for general, life, and commercial insurance providers.</p>
+      <img src="{{ asset('images/industries/frame2.svg') }}" alt="chatbot">
+      <b>Insurance</b>
+      <p style="font-weight: normal;">Solutions for general, life, and commercial insurance providers.</p>
       </div>
       <div class="card animate__animated animate__zoomIn animate__delay-1s">
-        <img src="{{ asset('images/industries/frame3.svg') }}" alt="predictive">
-        <b>Retail & E-Commerce </b>
-        <p>Enhance customer engagement and streamline supply chains.</p>
+      <img src="{{ asset('images/industries/frame3.svg') }}" alt="predictive">
+      <b>Retail & E-Commerce </b>
+      <p style="font-weight: normal;">Enhance customer engagement and streamline supply chains.</p>
       </div>
       <div class="card animate__animated animate__zoomIn animate__delay-2s">
-        <img src="{{ asset('images/industries/frame4.svg') }}" alt="automation">
-        <b>Real Estate</b>
-        <p>Property management, sales, and back-office support.</p>
+      <img src="{{ asset('images/industries/frame4.svg') }}" alt="automation">
+      <b>Real Estate</b>
+      <p style="font-weight: normal;">Property management, sales, and back-office support.</p>
       </div>
       <div class="card animate__animated animate__zoomIn animate__delay-2s">
-        <img src="{{ asset('images/industries/frame5.svg') }}" alt="workflow">
-        <b>Banking & Fintech</b>
-        <p>Secure, scalable solutions for retail banking, credit cards, and financial services.</p>
+      <img src="{{ asset('images/industries/frame5.svg') }}" alt="workflow">
+      <b>Banking & Fintech</b>
+      <p style="font-weight: normal;">Secure, scalable solutions for retail banking, credit cards, and financial services.</p>
       </div>
       <div class="card animate__animated animate__zoomIn animate__delay-2s">
-        <img src="{{ asset('images/industries/frame6.svg') }}" alt="cyber">
-        <b>Logistics & Manufacturing</b>
-        <p>Process automation and supply chain management.</p>
+      <img src="{{ asset('images/industries/frame6.svg') }}" alt="cyber">
+      <b>Logistics & Manufacturing</b>
+      <p style="font-weight: normal;">Process automation and supply chain management.</p>
       </div>
       <div class="card animate__animated animate__zoomIn animate__delay-2s">
-        <img src="{{ asset('images/industries/frame7.svg') }}" alt="cyber">
-        <b>Technology & Media</b>
-        <p>Digital content management and IT support. </p>
+      <img src="{{ asset('images/industries/frame7.svg') }}" alt="cyber">
+      <b>Technology & Media</b>
+      <p style="font-weight: normal;">Digital content management and IT support. </p>
       </div>
     </div>
     <style>

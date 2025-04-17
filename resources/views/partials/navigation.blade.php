@@ -27,7 +27,7 @@
         <a href="{{ url('/about') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">About us</a>
         <div class="services-dropdown">
             <a class="services-link" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Services</a>
-            <div class="dropdown-menu" style="width: 600px;">
+            <div class="dropdown-menu" style="width: 900px;">
                 <div class="dropdown-row">
                     <a href="{{ url('/services/finance') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
                         <img src="{{ asset('images/finance/finance.svg') }}" alt="Finance Icon" class="dropdown-icon">
@@ -128,17 +128,33 @@
         gap: 1rem;
         position: absolute;
         top: 100%;
-        left: 0;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        left: -350px;
+        background-color: #fff; /* Keep white background */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Stronger shadow for thicker appearance */
         border-radius: 0.5rem;
-        padding: 0.5rem 1rem;
+        padding: 1rem 1.5rem; /* Increased padding for thicker appearance */
         z-index: 1000;
+        border: 2px solid #f0f0f0; /* Adding border for thicker appearance */
+        width: 920px; /* Slightly wider to accommodate thicker styling */
+        margin-top: 10px; /* Add some space between menu and link */
+    }
+
+    /* Add a pseudo-element to bridge the gap between menu item and dropdown */
+    .services-dropdown::after {
+        content: '';
+        display: block;
+        height: 15px;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
     }
 
     .services-dropdown:hover .dropdown-menu {
         display: flex; /* Show menu on hover */
-        animation: fadeInDown 0.5s; /* Use Animate.css animation */
+        animation: fadeIn 0.5s; /* Changed to a popup animation */
+        transform-origin: top center; /* Sets the origin point for the transform */
+        animation: zoomIn 0.3s;
     }
 
     .dropdown-row {

@@ -19,7 +19,7 @@ body {
   font-size: 14px;
   line-height: 1.6;
   position: relative;
-  max-width: 380px; /* Limit the width of review cards */
+  max-width: 348px; /* Limit the width of review cards */
   margin: 15px auto; /* Center the cards */
 }
 .review-card__avatar {
@@ -27,7 +27,7 @@ body {
   height: 32px; /* Increased size for better visibility */
   position: absolute;
   top: -16px; /* Adjusted to center the avatar */
-  left: -27px;
+  left: -16px;
   border-radius: 50%;
   /* Removed overflow: hidden to ensure SVG is fully visible */
 }

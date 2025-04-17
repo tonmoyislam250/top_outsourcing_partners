@@ -357,7 +357,7 @@
     <div class="benefit-grid" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
       <div class="benefit-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; text-align: center;">
         <img src="{{ asset('images/manager/ben1.svg') }}" alt="Tech & IT" style="width: 80px; height: 80px; margin-bottom: 10px;">
-        <div>
+        <div style="text-align: left;">
           <h3 style="font-weight: bold;">Tech & IT Companies</h3>
           <p>Hire dedicated software engineers, developers, and support staff.</p>
         </div>
@@ -365,7 +365,7 @@
 
       <div class="benefit-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; text-align: center;">
         <img src="{{ asset('images/manager/ben2.svg') }}" alt="Accounting" style="width: 80px; height: 80px; margin-bottom: 10px;">
-        <div>
+        <div style="text-align: left;">
           <h3 style="font-weight: bold;">Accounting & Finance Firms</h3>
           <p>Hire dedicated software engineers, developers, and support staff.</p>
         </div>
@@ -373,7 +373,7 @@
 
       <div class="benefit-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; text-align: center;">
         <img src="{{ asset('images/manager/ben3.svg') }}" alt="Call Centers" style="width: 80px; height: 80px; margin-bottom: 10px;">
-        <div>
+        <div style="text-align: left;">
           <h3 style="font-weight: bold;">Call Centers & Customer Support</h3>
           <p>Get cost-effective, multilingual 24/7 support.</p>
         </div>
@@ -381,7 +381,7 @@
 
       <div class="benefit-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; text-align: center;">
         <img src="{{ asset('images/manager/ben4.svg') }}" alt="E-commerce" style="width: 80px; height: 80px; margin-bottom: 10px;">
-        <div>
+        <div style="text-align: left;">
           <h3 style="font-weight: bold;">E-commerce & Retail</h3>
           <p>Manage order processing, customer service, and inventory remotely.</p>
         </div>
@@ -389,7 +389,7 @@
 
       <div class="benefit-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; text-align: center;">
         <img src="{{ asset('images/manager/ben5.svg') }}" alt="Engineering" style="width: 80px; height: 80px; margin-bottom: 10px;">
-        <div>
+        <div style="text-align: left;">
           <h3 style="font-weight: bold;">Engineering & Design Firms</h3>
           <p>Expand your workforce with CAD designers and architects.</p>
         </div>
@@ -397,7 +397,7 @@
 
       <div class="benefit-card" style="flex: 0 0 calc(50% - 10px); box-sizing: border-box; text-align: center;">
         <img src="{{ asset('images/manager/ben6.svg') }}" alt="Healthcare" style="width: 80px; height: 80px; margin-bottom: 10px;">
-        <div>
+        <div style="text-align: left;">
           <h3 style="font-weight: bold;">Healthcare & Medical Support</h3>
           <p>Administrative, billing, and remote support teams.</p>
         </div>

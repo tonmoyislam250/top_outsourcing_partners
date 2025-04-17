@@ -55,19 +55,20 @@
             <div class="carousel-item">
             <div class="hero-outsourcing">
                 <div class="container hero-flex">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                    <div class="hero-outsourcing-text">
-                        <h2 class="animate__animated animate__fadeInLeft"><strong>Outsourcing Solutions for Accounting Firms - Scale Your Operations with Confidence</strong></h2>
-                        <p class="animate__animated animate__fadeInLeft animate__delay-1s">We act as an extension of your firm, handling bookkeeping, accounting, and financial operations so you can focus on client advisory and revenue-generating activities.</p>
-                        <a href="{{ url('/out') }}" class="cta-button animate__animated animate__pulse animate__infinite animate__slow">Learn How We Can Support Your Firm</a>
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="hero-outsourcing-text">
+                                <h2 class="animate__animated animate__fadeInLeft"><strong>Outsourcing Solutions for Accounting Firms - Scale Your Operations with Confidence</strong></h2>
+                                <p class="animate__animated animate__fadeInLeft animate__delay-1s">We act as an extension of your firm, handling bookkeeping, accounting, and financial operations so you can focus on client advisory and revenue-generating activities.</p>
+                                <a href="{{ url('/out') }}" class="cta-button animate__animated animate__pulse animate__infinite animate__slow">Learn How We Can Support Your Firm</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="hero-outsourcing-image animate__animated animate__fadeInRight">
+                                <img src="{{ asset('images/out/hero.png') }}" alt="Accounting Illustration" class="img-fluid" style="width: 80%; height: auto;">
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                    <div class="col-md-6">
-                    <div class="hero-outsourcing-image animate__animated animate__fadeInRight">
-                        <img src="{{ asset('images/out/hero.png') }}" alt="Accounting Illustration" class="img-fluid" style="width: 80%; height: auto;">
-                    </div>
-                </div>
                 </div>
             </div>
             </div>
