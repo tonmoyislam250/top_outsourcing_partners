@@ -1,4 +1,4 @@
-<nav>
+<nav class="sticky-nav">
     <head>
         <!-- Add Animate.css -->
         <link rel="stylesheet" href="{{ asset('css/default/animate.min.css') }}" />
@@ -64,6 +64,29 @@
         <a href="https://www.instagram.com/officialrickastley/" target="_blank" style="color: #007bff;"><i class="fa-brands fa-instagram"></i></a>
     </div>
 </nav>
+
+<style>
+    /* Sticky navigation styles */
+    .sticky-nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    /* Add a little padding to prevent content from jumping when nav becomes sticky */
+    body {
+        padding-top: 0;
+    }
+    
+    @media (max-width: 768px) {
+        .sticky-nav {
+            position: relative;
+        }
+    }
+</style>
 
 <div class="slider-menu" id="slider-menu">
     <span class="close-btn" onclick="toggleMenu()">&times;</span>
