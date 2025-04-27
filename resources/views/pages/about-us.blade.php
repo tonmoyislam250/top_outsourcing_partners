@@ -1,175 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- Add this CSS to your main stylesheet or in a <style> tag --}}
-<style>
-    .team-card {
-        border: 2px solid #a0d2eb; /* Light blue border */
-        border-radius: 15px; /* Rounded corners */
-        background-color: #f8f9fa; /* Light background */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        margin-bottom: 30px;
-        overflow: hidden; /* Ensures content respects border-radius */
-        height: 100%; /* For equal height columns */
-        display: flex;
-        flex-direction: column;
-        cursor: pointer; /* Indicate cards are clickable */
-        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    }
-    .team-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-    }
-    .team-card-principal {
-        background-color: #fff; /* White background for principal */
-        padding: 25px; /* Padding inside the principal card */
-        cursor: default; /* Principal card might not need modal */
-    }
-    .team-card-principal:hover {
-        transform: none; /* Disable hover effect for principal */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    .team-card-principal .principal-img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px; /* Rounded corners for image */
-        object-fit: cover;
-        display: block;
-        margin: 0;
-    }
-    .team-card-member .member-img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1 / 1; /* Make images square */
-        object-fit: cover;
-        display: block;
-    }
-    .team-card-member .card-content {
-        padding: 15px;
-        text-align: center;
-        background-color: #fff; /* White background for text area */
-        flex-grow: 1; /* Allow content area to fill remaining space */
-        border-top: 2px solid #a0d2eb; /* Separator line like in image */
-    }
-    .team-title {
-        font-weight: bold;
-        color: #333;
-    }
-    .principal-details {
-        text-align: left;
-    }
-    .principal-details h3 {
-        font-weight: bold;
-        margin-bottom: 0.25rem;
-    }
-    .principal-details .text-muted {
-        margin-bottom: 1rem;
-        font-size: 0.9rem;
-    }
-     .principal-details p:last-of-type {
-        font-size: 0.9rem;
-        color: #555;
-        line-height: 1.6;
-     }
-    .member-details h5 {
-        font-weight: bold;
-        margin-bottom: 0.1rem;
-        font-size: 1.1rem;
-    }
-    .member-details .text-muted {
-        font-size: 0.85rem;
-    }
-
-    /* Helper for equal height columns */
-    .row.equal-height {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .row.equal-height > [class*='col-'] {
-        display: flex;
-        flex-direction: column;
-    }
-     .row.equal-height > [class*='col-'] > .team-card {
-        flex-grow: 1;
-    }
-
-    /* Modal Styles */
-    .modal-content {
-        border-radius: 15px;
-        border: none;
-    }
-    .modal-header {
-        border-bottom: none;
-        padding: 1rem 1.5rem 0.5rem; /* Adjust padding */
-    }
-    .modal-body {
-        padding: 0.5rem 1.5rem 1.5rem; /* Adjust padding */
-    }
-    .modal-profile-img {
-        width: 100%;
-        max-width: 250px; /* Adjust as needed */
-        height: auto;
-        border-radius: 10px;
-        object-fit: cover;
-        margin-bottom: 1rem; /* Space below image */
-    }
-    .modal-section-title {
-        font-weight: bold;
-        margin-top: 1.5rem;
-        margin-bottom: 0.75rem;
-        color: #333;
-        display: flex;
-        align-items: center;
-        font-size: 1.1rem;
-    }
-    .modal-section-title i {
-        margin-right: 8px;
-        color: #6c757d; /* Icon color */
-        font-size: 1.3rem; /* Icon size */
-    }
-    .modal-details ul {
-        list-style: none;
-        padding-left: 0;
-        font-size: 0.9rem;
-        color: #555;
-    }
-    .modal-details ul li {
-        margin-bottom: 0.5rem;
-        position: relative;
-        padding-left: 1.2em; /* Space for bullet */
-    }
-    .modal-details ul li::before {
-        content: '•'; /* Bullet point */
-        position: absolute;
-        left: 0;
-        color: #a0d2eb; /* Bullet color */
-        font-weight: bold;
-        display: inline-block;
-        width: 1em;
-    }
-    .modal-description {
-        font-size: 0.95rem;
-        color: #555;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-    }
-    .modal-title-name {
-        font-weight: bold;
-        font-size: 1.5rem;
-        margin-bottom: 0.1rem;
-    }
-    .modal-title-role {
-        font-size: 0.95rem;
-        color: #6c757d;
-        margin-bottom: 1rem;
-    }
-    /* Ensure modal content is scrollable if it exceeds viewport height */
-    .modal-dialog-scrollable .modal-body {
-        overflow-y: auto;
-    }
-
-</style>
-{{-- Add Font Awesome for icons --}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <div class="container my-5 py-4">
@@ -182,9 +13,9 @@
             'id' => 1, // Unique ID
             'image' => 'images/about/user1.png',
             'modal_image' => 'images/about/user1_large.png', // Optional larger image
-            'name' => 'Shubhankar Shil',
-            'title' => 'Principal',
-            'description' => 'Shubhankar Shil, the Managing Partner at GlobalOutsourcingPartners, brings a wealth of experience in strategic leadership, operational efficiency, and client-centric solutions. With a proven track record of driving growth and delivering customized outsourcing strategies, he leads the organization with a commitment to innovation and excellence. His expertise spans diverse industries, ensuring tailored solutions that empower clients to achieve their goals. As a visionary leader, he is dedicated to fostering long-term partnerships, optimizing processes, and creating scalable opportunities for businesses worldwide.',
+            'name' => 'Dr. Rajib Hasan',
+            'title' => 'Advisor | Top Outsourcing Partners',
+            'description' => 'As an advisor, he leverages his extensive experience in financial analysis and corporate compliance to guide Top Outsourcing Partners in delivering efficient outsourcing solutions. His insights help organizations streamline their financial operations, ensuring cost-effective compliance and transparency in outsourced services.',
             'education' => [ // Example data - replace with actual
                 'Degree in Business Administration',
                 'Executive Leadership Program'
@@ -226,7 +57,7 @@
                         <h3>{{ $principal['name'] }}</h3>
                         <p class="text-muted">{{ $principal['title'] }}</p>
                         {{-- Keep short description or excerpt here if desired --}}
-                        <p>{{ Str::limit($principal['description'], 200) }}</p> {{-- Example: Show limited text --}}
+                        <p>{{ Str::limit($principal['description'], 1000) }}</p> {{-- Example: Show limited text --}}
                     </div>
                 </div>
             </div>
@@ -238,7 +69,7 @@
         @php
             // Example detailed member data - replace with your actual data source (e.g., database query)
             $members = [];
-            for ($i = 2; $i <= 8; $i++) {
+            for ($i = 2; $i <= 17; $i++) {
                 // Placeholder data - replace with actual team data
                 $members[] = [
                     'id' => $i, // Unique ID for each member
@@ -328,7 +159,7 @@
 
                  <div class="modal-details">
                     <h5 class="modal-section-title"><i class="fas fa-bullseye"></i> Approach & Vision</h5>
-                    <p id="modalVision" style="font-size: 0.9rem; color: #555;"></p>
+                    <p id="modalVision" style="font-size: 0.9rem; color: #555;text-align: left;"></p>
                  </div>
 
                  {{-- Show Education section here for smaller screens --}}

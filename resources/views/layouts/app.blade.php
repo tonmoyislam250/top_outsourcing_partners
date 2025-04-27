@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
     <link rel="stylesheet" href="{{ asset('css/manager.css') }}">
     <link rel="stylesheet" href="{{ asset('css/out.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/about.css') }}">
     <!-- Animate.css Library -->
     <link rel="stylesheet" href="{{asset('css/default/animate.min.css')}}" />
 
