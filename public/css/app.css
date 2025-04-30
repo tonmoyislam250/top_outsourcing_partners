@@ -93,6 +93,8 @@ nav {
 }
 
 .floating-image {
+    width: 155px;
+    height: 155px;
     border-radius: 50%;
     border: 4px solid #FFD700;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
