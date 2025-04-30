@@ -8,14 +8,14 @@
                 <a href="https://www.instagram.com/officialrickastley/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-        <div class="footer-section">
-            <ul>
-                <li><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="{{ url('/about') }}">About us</a></li>
-                <li><a href="{{ url('/services') }}" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });">Services</a></li>
-                <li><a href="{{ url('/solutions') }}">Solutions</a></li>
-                <li><a href="{{ url('/industries') }}">Industries</a></li>
-                <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+        <div class="footer-section" style="text-align: left; margin-left: 186px;">
+            <ul style="text-align: left;">
+            <li><a href="{{ url('/') }}">Home</a></li>
+            <li><a href="{{ url('/about') }}">About us</a></li>
+            <li><a href="{{ url('/services') }}" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });">Services</a></li>
+            <li><a href="{{ url('/solutions') }}">Solutions</a></li>
+            <li><a href="{{ url('/industries') }}">Industries</a></li>
+            <li><a href="{{ url('/contact') }}">Contact Us</a></li>
             </ul>
         </div>
         <div class="footer-section">
@@ -30,7 +30,7 @@
     </div>
     <div class="footer-bottom">
         <div class="footer-bottom-content">
-            <p style="font-size: small; color: #ccc; text-align: left;">Copyright © 2025 Top Outsourcing Partners, All Rights Reserved</p>
+            <p style="font-size: small; color: #ccc;">Copyright © 2025 Top Outsourcing Partners, All Rights Reserved</p>
             <ul class="footer-links">
             <li><a href="{{ url('/privacy-policy') }}" style="color: #ccc;">Privacy Policy</a></li>
             <li><a href="{{ url('/security-policy') }}" style="color: #ccc;">Security Policy</a></li>
@@ -69,7 +69,7 @@
     display: flex;
     gap: 15px;
     flex: 1;
-    justify-content: flex-start;
+    justify-content: flex-end;
 }
 
 .footer-links li {
