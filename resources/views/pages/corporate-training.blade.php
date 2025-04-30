@@ -32,6 +32,7 @@
       <img src="{{ asset('images/corporate/frame5.svg') }}" alt="cyber">
       <p><b>Financial Management & Budgeting Training</b></p>
     </div>
+    <div></div> {{-- Placeholder to push the next card to the middle --}}
     <div class="card animate__animated animate__bounceIn animate__delay-2s" onclick="document.getElementById('sales-negotiation').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/corporate/frame5.svg') }}" alt="cyber">
       <p><b>Sales & Negotiation Mastery</b></p>
