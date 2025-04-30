@@ -31,7 +31,7 @@
     <div class="footer-bottom">
         <div class="footer-bottom-content">
             <p style="font-size: small; color: #ccc; text-align: left;">Copyright © 2025 Top Outsourcing Partners, All Rights Reserved</p>
-            <ul class="footer-links" style="text-align: left;">
+            <ul class="footer-links">
             <li><a href="{{ url('/privacy-policy') }}" style="color: #ccc;">Privacy Policy</a></li>
             <li><a href="{{ url('/security-policy') }}" style="color: #ccc;">Security Policy</a></li>
             <li><a href="{{ url('/terms-of-use') }}" style="color: #ccc;">Terms of Use</a></li>
