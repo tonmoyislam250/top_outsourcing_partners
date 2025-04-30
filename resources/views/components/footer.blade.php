@@ -20,11 +20,11 @@
         </div>
         <div class="footer-section">
             <h3 style="text-align: left;"><strong>Contact</strong></h3>
-            <p style="color: white; text-align: left;">Address: 123 Top Solutions Drive, Innovation City, USA</p>
-            <p style="color: white; text-align: left;">Phone: +1-800-123-4567</p>
+            <p style="color: white; text-align: left;">Address: 801 Travis Street, Suite # 2101, Houston, Texas, 77002</p>
+            <p style="color: white; text-align: left;">Phone: +1 346 777 4586</p>
             <p style="color: white; text-align: left;">Email: <a href="mailto:info@Topoutsourcingpartners.com" style="color: white;">info@Topoutsourcingpartners.com</a></p>
             <div style="text-align: left;">
-                <a href="{{ url('/consult') }}" class="footer-button" style="font-size: smaller;">Get in touch</a>
+            <a href="{{ url('/consult') }}" class="footer-button" style="font-size: smaller;">Get in touch</a>
             </div>
         </div>
     </div>

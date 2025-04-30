@@ -230,155 +230,175 @@ class TeamMemberSeeder extends Seeder
         //     'is_principal' => 0,
         // ]);
 
-        TeamMember::create([
-            'id' => 11,
-            'image' => 'images/about/user11.png',
-            'modal_image' => 'images/about/user11.png',
-            'name' => 'Anisuzzaman',
-            'title' => 'Chief Business Development Officer | Top Outsourcing Partners',
-            'description' => 'Anisuzzaman is the Chief Business Development Officer at Top Outsourcing Partners (TOP). In this role, he is responsible for driving new business, partnerships, and developing long-term strategies to ensure sustained business growth.',
-            'education' => [
-                'MBA in Management Information Systems from University of Dhaka',
-                'BBA from Khulna University'
-            ],
-            'expertise' => [
-                'B2B business development',
-                'Sales strategy',
-                'Client relationship management',
-                'Digital transformation',
-                'Process optimization'
-            ],
-            'vision' => 'To drive sustained business growth through strategic partnerships and innovative solutions.',
-            'is_principal' => 0,
-        ]);
+        // TeamMember::create([
+        //     'id' => 11,
+        //     'image' => 'images/about/user11.png',
+        //     'modal_image' => 'images/about/user11.png',
+        //     'name' => 'Anisuzzaman',
+        //     'title' => 'Chief Business Development Officer | Top Outsourcing Partners',
+        //     'description' => 'Anisuzzaman is the Chief Business Development Officer at Top Outsourcing Partners (TOP). In this role, he is responsible for driving new business, partnerships, and developing long-term strategies to ensure sustained business growth.',
+        //     'education' => [
+        //         'MBA in Management Information Systems from University of Dhaka',
+        //         'BBA from Khulna University'
+        //     ],
+        //     'expertise' => [
+        //         'B2B business development',
+        //         'Sales strategy',
+        //         'Client relationship management',
+        //         'Digital transformation',
+        //         'Process optimization'
+        //     ],
+        //     'vision' => 'To drive sustained business growth through strategic partnerships and innovative solutions.',
+        //     'is_principal' => 0,
+        // ]);
 
-        TeamMember::create([
-            'id' => 12,
-            'image' => 'images/about/user12.png',
-            'modal_image' => 'images/about/user12.png',
-            'name' => 'S M Rayhan',
-            'title' => 'Chief Strategy and Business Operations Officer | Top Outsourcing Partners',
-            'description' => 'S M Rayhan is the Chief Strategy and Business Operations Officer at Top Outsourcing Partners (TOP), where he leads strategic planning, business operations, and organizational development to drive the company’s continued growth and success.',
-            'education' => [
-                'MBA from Khulna University',
-                'Pursuing Chartered Secretarial Course'
-            ],
-            'expertise' => [
-                'Strategic planning',
-                'Business operations',
-                'Telecommunications',
-                'Mobile financial services',
-                'Startups'
-            ],
-            'vision' => 'To optimize operations and foster innovation for sustainable growth.',
-            'is_principal' => 0,
-        ]);
+        // TeamMember::create([
+        //     'id' => 12,
+        //     'image' => 'images/about/user12.png',
+        //     'modal_image' => 'images/about/user12.png',
+        //     'name' => 'S M Rayhan',
+        //     'title' => 'Chief Strategy and Business Operations Officer | Top Outsourcing Partners',
+        //     'description' => 'S M Rayhan is the Chief Strategy and Business Operations Officer at Top Outsourcing Partners (TOP), where he leads strategic planning, business operations, and organizational development to drive the company’s continued growth and success.',
+        //     'education' => [
+        //         'MBA from Khulna University',
+        //         'Pursuing Chartered Secretarial Course'
+        //     ],
+        //     'expertise' => [
+        //         'Strategic planning',
+        //         'Business operations',
+        //         'Telecommunications',
+        //         'Mobile financial services',
+        //         'Startups'
+        //     ],
+        //     'vision' => 'To optimize operations and foster innovation for sustainable growth.',
+        //     'is_principal' => 0,
+        // ]);
 
-        TeamMember::create([
-            'id' => 13,
-            'image' => 'images/about/user13.png',
-            'modal_image' => 'images/about/user13.png',
-            'name' => 'Sazal Sarkar',
-            'title' => 'Chief Legal Officer and Head of Corporate Affairs | Top Outsourcing Partners',
-            'description' => 'Sazal Sarkar serves as the Chief Legal Officer and Head of Corporate Affairs at TOP Outsourcing Partners (TOP). In this role, Sazal leads the corporate legal team, ensuring compliance with various laws and regulations.',
-            'education' => [
-                'LLB and BBA in Management from Jagannath University',
-                'Professional training in Chartered Accountancy from ICAB'
-            ],
-            'expertise' => [
-                'Business law',
-                'Taxation law',
-                'Compliance management',
-                'Corporate governance',
-                'Mergers and acquisitions'
-            ],
-            'vision' => 'To guide companies through legal challenges and foster sustainable business practices.',
-            'is_principal' => 0,
-        ]);
+        // TeamMember::create([
+        //     'id' => 13,
+        //     'image' => 'images/about/user13.png',
+        //     'modal_image' => 'images/about/user13.png',
+        //     'name' => 'Sazal Sarkar',
+        //     'title' => 'Chief Legal Officer and Head of Corporate Affairs | Top Outsourcing Partners',
+        //     'description' => 'Sazal Sarkar serves as the Chief Legal Officer and Head of Corporate Affairs at TOP Outsourcing Partners (TOP). In this role, Sazal leads the corporate legal team, ensuring compliance with various laws and regulations.',
+        //     'education' => [
+        //         'LLB and BBA in Management from Jagannath University',
+        //         'Professional training in Chartered Accountancy from ICAB'
+        //     ],
+        //     'expertise' => [
+        //         'Business law',
+        //         'Taxation law',
+        //         'Compliance management',
+        //         'Corporate governance',
+        //         'Mergers and acquisitions'
+        //     ],
+        //     'vision' => 'To guide companies through legal challenges and foster sustainable business practices.',
+        //     'is_principal' => 0,
+        // ]);
 
-        TeamMember::create([
-            'id' => 14,
-            'image' => 'images/about/user14.png',
-            'modal_image' => 'images/about/user14.png',
-            'name' => 'Zahirul Quayum',
-            'title' => 'Chief Product Officer | Top Outsourcing Partners',
-            'description' => 'Zahirul Quayum is the Chief Product Officer at Top Outsourcing Partners (TOP), responsible for leading product development and shaping the product strategy across the company\'s service portfolio.',
-            'education' => [
-                'MBA in Management Information Systems (MIS) from Dhaka University',
-                'BBA from Khulna University'
-            ],
-            'expertise' => [
-                'Product development',
-                'Digital transformation',
-                'Product management',
-                'IT and outsourcing industries',
-                'Market alignment'
-            ],
-            'vision' => 'To innovate and align product strategies with client needs and market demands.',
-            'is_principal' => 0,
-        ]);
+        // TeamMember::create([
+        //     'id' => 14,
+        //     'image' => 'images/about/user14.png',
+        //     'modal_image' => 'images/about/user14.png',
+        //     'name' => 'Zahirul Quayum',
+        //     'title' => 'Chief Product Officer | Top Outsourcing Partners',
+        //     'description' => 'Zahirul Quayum is the Chief Product Officer at Top Outsourcing Partners (TOP), responsible for leading product development and shaping the product strategy across the company\'s service portfolio.',
+        //     'education' => [
+        //         'MBA in Management Information Systems (MIS) from Dhaka University',
+        //         'BBA from Khulna University'
+        //     ],
+        //     'expertise' => [
+        //         'Product development',
+        //         'Digital transformation',
+        //         'Product management',
+        //         'IT and outsourcing industries',
+        //         'Market alignment'
+        //     ],
+        //     'vision' => 'To innovate and align product strategies with client needs and market demands.',
+        //     'is_principal' => 0,
+        // ]);
 
-        TeamMember::create([
-            'id' => 15,
-            'image' => 'images/about/user15.png',
-            'modal_image' => 'images/about/user15.png',
-            'name' => 'Abdulla Romman',
-            'title' => 'Senior Manager – Financial Reporting & Business Compliance | Top Outsourcing Partners',
-            'description' => 'Abdulla Romman is the Senior Manager – Financial Reporting & Business Compliance at Top Outsourcing Partners (TOP). In this role, he oversees financial reporting, ensuring compliance with industry regulations.',
-            'education' => [
-                'Bachelor’s degree in Accounting',
-                'Pursuing advanced certifications in International Financial Reporting Standards (IFRS)'
-            ],
-            'expertise' => [
-                'Financial reporting',
-                'Auditing',
-                'Compliance',
-                'Internal controls',
-                'Business process optimization'
-            ],
-            'vision' => 'To enhance operational efficiencies and ensure adherence to financial regulations.',
-            'is_principal' => 0,
-        ]);
+        // TeamMember::create([
+        //     'id' => 15,
+        //     'image' => 'images/about/user15.png',
+        //     'modal_image' => 'images/about/user15.png',
+        //     'name' => 'Abdulla Romman',
+        //     'title' => 'Senior Manager – Financial Reporting & Business Compliance | Top Outsourcing Partners',
+        //     'description' => 'Abdulla Romman is the Senior Manager – Financial Reporting & Business Compliance at Top Outsourcing Partners (TOP). In this role, he oversees financial reporting, ensuring compliance with industry regulations.',
+        //     'education' => [
+        //         'Bachelor’s degree in Accounting',
+        //         'Pursuing advanced certifications in International Financial Reporting Standards (IFRS)'
+        //     ],
+        //     'expertise' => [
+        //         'Financial reporting',
+        //         'Auditing',
+        //         'Compliance',
+        //         'Internal controls',
+        //         'Business process optimization'
+        //     ],
+        //     'vision' => 'To enhance operational efficiencies and ensure adherence to financial regulations.',
+        //     'is_principal' => 0,
+        // ]);
 
-        TeamMember::create([
-            'id' => 16,
-            'image' => 'images/about/user16.png',
-            'modal_image' => 'images/about/user16.png',
-            'name' => 'Abu Saleh MD Moin',
-            'title' => 'Manager – Client Management | Top Outsourcing Partners',
-            'description' => 'Abu Saleh MD Moin is the Manager – Client Management at TOP Outsourcing Partners (TOP). In this role, he is responsible for overseeing client relationships and ensuring seamless communication.',
-            'education' => [
-                'Bachelor’s degree in Business Administration'
-            ],
-            'expertise' => [
-                'Client management',
-                'Account management',
-                'Client retention',
-                'Service delivery',
-                'Operational excellence'
-            ],
-            'vision' => 'To foster long-term partnerships through client-centric strategies.',
-            'is_principal' => 0,
-        ]);
+        // TeamMember::create([
+        //     'id' => 16,
+        //     'image' => 'images/about/user16.png',
+        //     'modal_image' => 'images/about/user16.png',
+        //     'name' => 'Abu Saleh MD Moin',
+        //     'title' => 'Manager – Client Management | Top Outsourcing Partners',
+        //     'description' => 'Abu Saleh MD Moin is the Manager – Client Management at TOP Outsourcing Partners (TOP). In this role, he is responsible for overseeing client relationships and ensuring seamless communication.',
+        //     'education' => [
+        //         'Bachelor’s degree in Business Administration'
+        //     ],
+        //     'expertise' => [
+        //         'Client management',
+        //         'Account management',
+        //         'Client retention',
+        //         'Service delivery',
+        //         'Operational excellence'
+        //     ],
+        //     'vision' => 'To foster long-term partnerships through client-centric strategies.',
+        //     'is_principal' => 0,
+        // ]);
 
+        // TeamMember::create([
+        //     'id' => 17,
+        //     'image' => 'images/about/user17.png',
+        //     'modal_image' => 'images/about/user17.png',
+        //     'name' => 'Md. Sojib Hossain',
+        //     'title' => 'Manager – Accounting & Assurance | Top Outsourcing Partners',
+        //     'description' => 'Md. Sojib Hossain is the Manager of Accounting & Assurance at Top Outsourcing Partners (TOP). In this role, he leads tax compliance, financial reporting, and business advisory services.',
+        //     'education' => [
+        //         'Bachelor’s degree in Business Administration (BBA) from the National University'
+        //     ],
+        //     'expertise' => [
+        //         'Accounting',
+        //         'Tax compliance',
+        //         'Financial reporting',
+        //         'Business advisory',
+        //         'Process optimization'
+        //     ],
+        //     'vision' => 'To streamline financial operations and ensure regulatory adherence for business growth.',
+        //     'is_principal' => 0,
+        // ]);
         TeamMember::create([
-            'id' => 17,
-            'image' => 'images/about/user17.png',
-            'modal_image' => 'images/about/user17.png',
-            'name' => 'Md. Sojib Hossain',
-            'title' => 'Manager – Accounting & Assurance | Top Outsourcing Partners',
-            'description' => 'Md. Sojib Hossain is the Manager of Accounting & Assurance at Top Outsourcing Partners (TOP). In this role, he leads tax compliance, financial reporting, and business advisory services.',
+            'id' => 18,
+            'image' => 'images/about/user18.png',
+            'modal_image' => 'images/about/user18.png',
+            'name' => 'Md. Imdadul Islam',
+            'title' => 'Director, Lead – Partnership & Engagement Advisory | Top Outsourcing Partners',
+            'description' => 'Md. Imdadul Islam is the Director, Lead – Partnership & Engagement Advisory at Top Outsourcing Partners (TOP). In this role, Imdadul spearheads the development of strategic alliances, drives client engagement initiatives, and fosters business relationships that enable sustainable growth and innovation for clients across industries.',
             'education' => [
-                'Bachelor’s degree in Business Administration (BBA) from the National University'
+                'Bachelor’s in Finance & Banking (Jahangirnagar University)'
             ],
             'expertise' => [
-                'Accounting',
-                'Tax compliance',
-                'Financial reporting',
-                'Business advisory',
-                'Process optimization'
+                'Partnership Development',
+                'Client Relationship Management',
+                'Strategic Engagement Advisory',
+                'Business Growth Strategy',
+                'Cross-Functional Collaboration'
             ],
-            'vision' => 'To streamline financial operations and ensure regulatory adherence for business growth.',
+            'vision' => 'To build impactful partnerships through trust, transparency, and tailored engagement strategies that empower organizations to scale efficiently and achieve long-term success.',
             'is_principal' => 0,
         ]);
     }

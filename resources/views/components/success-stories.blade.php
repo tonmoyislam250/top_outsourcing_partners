@@ -31,8 +31,8 @@
           <div class="review-card__avatar">
             <img src="{{ asset('images/avatars/avatar1.svg') }}" alt="Avatar">
           </div>
-          <p class="review-card__text" style="font-size: 15px; font-style: italic; font-family: 'Georgia', serif;">"Working with Top Outsourcing Partners was a game-changer for our company. Their expertise in financial process automation and bookkeeping helped us cut down on errors and saved us valuable time, allowing us to focus on growing our business. Their team is highly professional and committed to our success."</p>
-          <p class="review-card__author" style="font-size: 15px;">— Amit Rahman, CFO at Tech Innovations Ltd.</p>
+          <p class="review-card__text" style="font-size: 15px; font-style: italic; font-family: 'Georgia', serif;">"We have been working with Top Outsourcing Partners for the past four years and couldn't be happier with their services. Their team has consistently delivered outstanding solutions across bookkeeping, accounting, payroll, and Employer of Record (EOR) services. Highly reliable, responsive, flexible, and professional — TOP has proven to be a trusted partner. Plus, their services were provided at only 30% of the cost compared to our previous outsourcing firms in London and Dallas."</p>
+          <p class="review-card__author" style="font-size: 15px;">— Faz Karim, Director - Marketing & Stakeholder Engagement, Pink Squid.</p>
         </div>
       </div>
       <div class="swiper-slide">
@@ -40,8 +40,8 @@
           <div class="review-card__avatar">
             <img src="{{ asset('images/avatars/avatar2.svg') }}" alt="Avatar">
           </div>
-          <p class="review-card__text" style="font-size: 15px; font-style: italic; font-family: 'Georgia', serif;">"We were struggling with resource constraints until we partnered with Top Outsourcing Partners. They offered scalable outsourcing solutions that allowed us to expand without the cost of additional in-house staff. Thanks to their support, we’ve been able to increase our client base and streamline operations."</p>
-          <p class="review-card__author" style="font-size: 15px;">— Sarah Patel, Senior Partner</p>
+          <p class="review-card__text" style="font-size: 15px; font-style: italic; font-family: 'Georgia', serif;">"It is a pleasure to acknowledge the outstanding contributions of Top Outsourcing Partners over the past seven years. Their energetic team has been instrumental in managing our bookkeeping, accounting, and financial reporting, allowing us to focus on our core business activities like merchandising, marketing, and sales. With service costs at just 40% of the industry average, TOP has helped us achieve significant savings, enhancing our competitiveness in a highly challenging market."</p>
+          <p class="review-card__author" style="font-size: 15px;">— Avijit Samanta, Head of Finance, VIP Bags</p>
         </div>
       </div>
       <div class="swiper-slide">
@@ -49,8 +49,8 @@
           <div class="review-card__avatar">
             <img src="{{ asset('images/avatars/avatar3.svg') }}" alt="Avatar">
           </div>
-          <p class="review-card__text" style="font-size: 15px; font-style: italic; font-family: 'Georgia', serif;">"The team at Top Outsourcing Partners introduced us to AI-powered financial tools that drastically improved our efficiency. Automating our reporting processes has not only saved us time but has also improved accuracy and compliance with regulatory standards. We’re seeing better financial insights, and our decision-making process has improved."</p>
-          <p class="review-card__author" style="font-size: 15px;">— Emily Carter, Founder & CEO</p>
+          <p class="review-card__text" style="font-size: 15px; font-style: italic; font-family: 'Georgia', serif;">"Since 2011, Top Outsourcing Partners has consistently delivered a positive and proactive experience, supporting us in bookkeeping, accounting, internal audits, investigation, and compliance services. Their commitment to maintaining financial transparency, cost-effectiveness, and healthy records has strengthened our company’s operational foundation. Their team's proactive approach has been a key factor in keeping our financial affairs compliant and risk-free."</p>
+          <p class="review-card__author" style="font-size: 15px;">— Ashok Yadav, Head of Finance, PDS Group</p>
         </div>
       </div>
       <div class="swiper-slide">
@@ -59,10 +59,10 @@
             <img src="{{ asset('images/avatars/avatar4.svg') }}" alt="Avatar">
           </div>
           <p class="review-card__text" style="font-size: 15px; font-style: italic; font-family: 'Georgia', serif;">"As a small business, managing our financials was a challenge. After partnering with Top Outsourcing Partners for bookkeeping services, we no longer have to worry about financial mismanagement. Their team handled our day-to-day finances, which allowed us to concentrate on what we do best."</p>
-          <p class="review-card__author" style="font-size: 15px;">— Sarah Sultana, Founder of Sultana Design Studios</p>
+          <p class="review-card__author" style="font-size: 15px;">— Arvind Kumar, Team Lead - Finance, Netcom Learning</p>
         </div>
       </div>
-      <div class="swiper-slide">
+      <!-- <div class="swiper-slide">
         <div class="review-card animate__animated animate__fadeInUp animate__delay-4s">
           <div class="review-card__avatar">
             <img src="{{ asset('images/avatars/avatar5.svg') }}" alt="Avatar">
@@ -78,7 +78,7 @@
           </div>
             <p class="review-card__text" style="font-size: 15px; font-style: italic; font-family: 'Georgia', serif;">"Switching to QuickBooks with the help of Top Outsourcing Partners was seamless. They ensured that all our data was accurately transferred, and the transition was completed with minimal downtime. Their support has improved our operational efficiency, and we now have more control over our financial processes."</p>
           <p class="review-card__author" style="font-size: 15px;">— Emily Martinez, CFO at Greenfield Enterprises</p>
-        </div>
+        </div> -->
     </div>
   </div>
 </section>

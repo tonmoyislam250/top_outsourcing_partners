@@ -26,7 +26,7 @@
     <!-- Separate section for 2 additional features -->
     <div class="features" style="margin-top: 30px;">
         <div class="feature-box animate__animated animate__fadeInUp animate__delay-1s">
-            <div class="feature-icon green">
+            <div class="feature-icon" style="background-color: #FF6F61;">
                 <img src="{{ asset('images/home4.svg') }}" alt="24/7 Support Icon">
             </div>
             <p>24/7 Support & Dedicated Assistance</p>

@@ -29,7 +29,7 @@
             @endforeach
         </div>
         <div class="text-center mt-5">
-            <a href="{{ url('/consult') }}" class="btn-primary" style="padding: 10px 20px; background-color: black; color: #fff; text-decoration: none; border-radius: 5px;">Optimize Your Business Today!</a>
+            <a href="{{ url('/consult') }}" class="btn-primary" style="padding: 10px 20px; background-color: black; color: #fff; text-decoration: none; border-radius: 25px;">Optimize Your Business Today!</a>
         </div>
     </div>
 </section>

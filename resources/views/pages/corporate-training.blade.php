@@ -30,6 +30,10 @@
     </div>
     <div class="card animate__animated animate__bounceIn animate__delay-2s" onclick="document.getElementById('sales-mastery').scrollIntoView({ behavior: 'smooth' })">
       <img src="{{ asset('images/corporate/frame5.svg') }}" alt="cyber">
+      <p><b>Financial Management & Budgeting Training</b></p>
+    </div>
+    <div class="card animate__animated animate__bounceIn animate__delay-2s" onclick="document.getElementById('sales-negotiation').scrollIntoView({ behavior: 'smooth' })">
+      <img src="{{ asset('images/corporate/frame5.svg') }}" alt="cyber">
       <p><b>Sales & Negotiation Mastery</b></p>
     </div>
   </div>
@@ -146,7 +150,7 @@
     </div>
   </div>
 
-  <div class="finance-service animate__animated animate__fadeIn animate__delay-3s">
+  <div id="sales-negotiation" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
     <div class="finance-image-wrapper">
       <img src="{{ asset('images/corporate/image5.png') }}" alt="AP Management">
       <div class="finance-badge">
