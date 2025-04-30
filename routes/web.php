@@ -16,6 +16,10 @@ Route::get('/about', function () {
     return view('pages/about');
 })->name('about');
 
+Route::get('/about-us', function () {
+    return view('pages/about-us');
+})->name('about');
+
 Route::get('/services', function () {
     return view('pages/services');
 })->name('services');
