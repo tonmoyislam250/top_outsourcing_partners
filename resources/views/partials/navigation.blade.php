@@ -25,35 +25,7 @@
     <div class="nav-links">
         <a href="{{ url('/') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Home</a>
         <a href="{{ url('/about') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">About us</a>
-        <div class="services-dropdown">
-            <a class="services-link" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Services</a>
-            <div class="dropdown-menu" style="width: 900px;">
-                <div class="dropdown-row">
-                    <a href="{{ url('/services/finance') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
-                        <img src="{{ asset('images/finance/finance.svg') }}" alt="Finance Icon" class="dropdown-icon">
-                        Accounting & Finance Outsourcing
-                    </a>
-                    <a href="{{ url('/services/ai-integration') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
-                        <img src="{{ asset('images/ai/ai-icon.svg') }}" alt="AI Icon" class="dropdown-icon">
-                        AI Integration for Businesses
-                    </a>
-                    <a href="{{ url('/services/corporate-training') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
-                        <img src="{{ asset('images/corporate/corporate.svg') }}" alt="Training Icon" class="dropdown-icon">
-                        Corporate Training & Development
-                    </a>
-                </div>
-                <div class="dropdown-row" style="justify-content: center; gap: 2rem;">
-                    <a href="{{ url('/services/third-party') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px; flex: 0 1 auto;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
-                        <img src="{{ asset('images/third-party/third-party.svg') }}" alt="Support Icon" class="dropdown-icon">
-                        Third-Party Business Support
-                    </a>
-                    <a href="{{ url('/services/hr-pay') }}" style="font-size: 1rem; font-weight: bold; color: #000; transition: box-shadow 0.3s ease; border-radius: 8px; flex: 0 1 auto;" onmouseover="this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.boxShadow='none'">
-                        <img src="{{ asset('images/hr/hr.svg') }}" alt="Data Icon" class="dropdown-icon">
-                        HR & Payroll Services
-                    </a>
-                </div>
-            </div>
-        </div>
+        <a href="{{ url('/services') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Services</a>
         <a href="{{ url('/solutions') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 10px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Solutions</a>
         <a href="{{ url('/industries') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 10px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Industries</a>
         <a href="{{ url('/contact') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 10px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Contact Us</a>
@@ -93,33 +65,7 @@
     <div class="nav-links">
         <a href="{{ url('/') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Home</a>
         <a href="{{ url('/about') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">About us</a>
-        <div class="services-mobile-dropdown animate__animated animate__fadeInRight animate__faster animate__delay-1s">
-            <a class="services-link" onclick="toggleServicesMenu()" style="font-size: 1.2rem; font-weight: bold; color: #007bff; cursor: pointer;">Services</a>
-            <div class="mobile-dropdown-menu animate__animated animate__fadeIn animate__faster" id="mobile-services-menu" style="display: none; background-color: #f8f9fa; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                <a href="{{ url('/services/finance') }}" class="animate__animated animate__fadeIn animate__faster" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">Accounting & Finance Outsourcing</a>
-                <a href="{{ url('/services/ai-integration') }}" class="animate__animated animate__fadeIn animate__faster" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">AI Integration for Businesses</a>
-                <a href="{{ url('/services/corporate-training') }}" class="animate__animated animate__fadeIn animate__faster" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">Corporate Training & Development</a>
-                <a href="{{ url('/services/third-party') }}" class="animate__animated animate__fadeIn animate__faster" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">Third-Party Business Support</a>
-                <a href="{{ url('/services/hr-pay') }}" class="animate__animated animate__fadeIn animate__faster" style="display: block; margin-bottom: 0.5rem; font-size: 1rem; color: #000; font-weight: bold;">HR & Payroll Services</a>
-            </div>
-        </div>
-
-        <script>
-            function toggleServicesMenu() {
-                var menu = document.getElementById('mobile-services-menu');
-                if (menu.style.display === 'none' || menu.style.display === '') {
-                    menu.style.display = 'block';
-                    menu.classList.add('animate__fadeIn');
-                    menu.classList.remove('animate__fadeOut');
-                } else {
-                    menu.classList.remove('animate__fadeIn');
-                    menu.classList.add('animate__fadeOut');
-                    setTimeout(function() {
-                        menu.style.display = 'none';
-                    }, 300); // Reduced timeout for faster transition
-                }
-            }
-        </script>
+        <a href="{{ url('/about') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Services</a>
         <a href="{{ url('/industries') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Industries</a>
         <a href="{{ url('/solutions') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Solutions</a>
         <a href="{{ url('/contact') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Contact Us</a>
