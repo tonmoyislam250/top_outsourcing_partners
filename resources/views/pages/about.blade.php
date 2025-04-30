@@ -96,9 +96,6 @@
     </div>
 </section>
 
-<!-- Meet Our Dynamic Team Section -->
-
-
 <!-- Why Choose Us Section (Alternative Layout) -->
 <section class="why-choose-us-alt animate__animated animate__fadeInLeft" style="padding: 60px 0; background-color: #eaf2f8;">
     <div class="container" style="max-width: 1140px; margin: 0 auto; padding: 0 15px;">

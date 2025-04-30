@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <div class="container my-5 py-4">
-    <h1 class="text-center mb-5 team-title animate__animated animate__fadeInDown">Meet Our Wonderful Team</h1>
+    <h1 class="text-center mb-5 team-title">Meet Our Wonderful Team</h1>
 
     <!-- Principal Section -->
     @php
@@ -14,7 +16,7 @@
 
     <div class="row justify-content-center mb-5">
         <div class="col-lg-10 col-md-12">
-            <div class="team-card team-card-principal animate__animated animate__zoomIn"
+            <div class="team-card team-card-principal"
                  data-bs-toggle="modal"
                  data-bs-target="#teamMemberModal"
                  data-member-id="{{ $principal->id }}"
@@ -52,7 +54,7 @@
 
         @foreach($members as $member)
         <div class="col-lg-4 col-md-6 mb-4">
-            <div class="team-card team-card-member p-0 animate__animated animate__fadeInUp"
+            <div class="team-card team-card-member p-0"
                  data-bs-toggle="modal"
                  data-bs-target="#teamMemberModal"
                  data-member-id="{{ $member->id }}"
@@ -75,7 +77,7 @@
 </div>
 
 <!-- Team Member Modal -->
-<div class="modal fade animate__animated animate__fadeIn" id="teamMemberModal" tabindex="-1" aria-labelledby="teamMemberModalLabel" aria-hidden="true">
+<div class="modal fade" id="teamMemberModal" tabindex="-1" aria-labelledby="teamMemberModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
