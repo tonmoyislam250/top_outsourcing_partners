@@ -69,14 +69,15 @@
             <strong>PHONE</strong>
             <p>
                 <i class="fas fa-phone"></i>
-                +1-800-123-4567
+                +1 346 777 4586
             </p>
         </div>
         <div class="info-block animate__animated animate__fadeIn animate__delay-3s" style="text-align: left;">
             <strong>ADDRESS</strong>
             <p>
                 <i class="fas fa-map-marker-alt"></i>
-                123 Top Solutions Drive, Innovation City, USA
+                801 Travis Street, Suite # 2101<br>
+                Houston, Texas, 77002
             </p>
         </div>
     </div>
