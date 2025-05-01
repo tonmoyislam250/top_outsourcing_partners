@@ -380,7 +380,7 @@
     <div class="rectangle-92" style="background: #ffffff; border-radius: 24px; width: 1200px; height: 528px; position: absolute; left: 50%; transform: translateX(-50%); top: 0;"></div>
     <div class="rectangle-93" style="background: linear-gradient(90deg, rgba(0, 229, 149, 1) 0%, rgba(0, 118, 229, 1) 16.77%, rgba(172, 0, 229, 1) 41.48%, rgba(229, 202, 0, 1) 67.39%, rgba(229, 0, 118, 1) 88.97%, rgba(202, 229, 0, 1) 100%); opacity: 0.4; width: 1201px; height: 140px; position: absolute; left: 50%; transform: translateX(-50%); top: 387px; filter: blur(50px);"></div>
     <img class="vector-18" src="{{ asset('images/about2/vector18.svg') }}" style="width: 1200px; height: 528px; position: absolute; left: 50%; transform: translateX(-50%); top: 131px; overflow: visible;" />
-    <div class="Meet" style="color: #111111; text-align: center; font-family: 'PlusJakartaSans-Bold', sans-serif; font-size: 48px; line-height: 130%; font-weight: 700; position: absolute; left: 50%; transform: translateX(-50%); top: 42px; width: 90%; max-width: 1160px;">
+    <div class="Meet" style="color: #111111; text-align: center; font-family: 'PlusJakartaSans-Bold', sans-serif; font-size: 40px; line-height: 130%; font-weight: 700; position: absolute; left: 50%; transform: translateX(-50%); top: 54px; width: 90%; max-width: 1160px;">
         Meet Our Dynamic Team
     </div>
     <img class="ellipse-34" src="{{ asset('images/user1.jpg') }}" style="border-radius: 50%; border: 2px solid #ffffff; width: 70px; height: 70px; position: absolute; left: 15%; transform: translateX(-50%); top: 315px; object-fit: cover;" />
