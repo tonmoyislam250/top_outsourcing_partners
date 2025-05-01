@@ -20,11 +20,11 @@
       <img src="{{ asset('images/hr/frame3.svg') }}" alt="predictive">
       <p><b>Recruitment & Talent Acquisition</b></p>
     </div>
-    <div class="card animate__animated animate__fadeInUp animate__delay-2s" data-target="#compliance" style="left: 182px;">
+    <div class="card custom-left animate__animated animate__fadeInUp animate__delay-2s" data-target="#compliance">
       <img src="{{ asset('images/hr/frame4.svg') }}" alt="automation">
       <p><b>HR Outsourcing & Compliance Management</b></p>
     </div>
-    <div class="card animate__animated animate__fadeInUp animate__delay-2s" data-target="#automation" style="left: 182px;">
+    <div class="card custom-left animate__animated animate__fadeInUp animate__delay-2s" data-target="#automation">
       <img src="{{ asset('images/hr/frame5.svg') }}" alt="workflow">
       <p><b>Workforce Management & HR Automation</b></p>
     </div>

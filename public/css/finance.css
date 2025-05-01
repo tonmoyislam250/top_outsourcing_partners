@@ -24,6 +24,20 @@ body {
     max-width: 1000px;
     margin: 0 auto 50px;
   }
+
+  .custom-left {
+    position: relative;
+    left: 182px;
+  }
+  
+  @media (max-width: 768px) {
+    .custom-left {
+      left: 0; /* Reset on mobile */
+    }
+  }
+  
+  
+
   .card {
     background: #f9f9f9;
     border-radius: 12px;
