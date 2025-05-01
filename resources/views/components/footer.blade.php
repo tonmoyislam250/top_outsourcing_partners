@@ -8,7 +8,7 @@
                 <a href="https://www.instagram.com/officialrickastley/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-        <div class="footer-section" style="text-align: left; margin-left: 186px;">
+        <div class="footer-section" style="text-align: left; margin-left: 186px; @media (max-width: 768px) { margin-left: 20px; }">
             <ul style="text-align: left;">
             <li><a href="{{ url('/') }}">Home</a></li>
             <li><a href="{{ url('/about') }}">About us</a></li>
@@ -20,7 +20,7 @@
         </div>
         <div class="footer-section">
             <h3 style="text-align: left;"><strong>Contact</strong></h3>
-            <p style="color: white; text-align: left;">Address: 801 Travis Street, Suite # 2101, Houston, Texas, 77002</p>
+            <p style="color: white; text-align: left;">Address: 801 Travis Street, Suite # 2101<br> Houston, Texas, 77002</p>
             <p style="color: white; text-align: left;">Phone: +1 346 777 4586</p>
             <p style="color: white; text-align: left;">Email: <a href="mailto:info@Topoutsourcingpartners.com" style="color: white;">info@Topoutsourcingpartners.com</a></p>
             <div style="text-align: left;">

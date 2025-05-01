@@ -116,14 +116,12 @@ p {
 }
 .footer-section {
     flex: 1;
-    min-width: 150px; /* Reduce min-width for better fit on smaller screens */
     margin-bottom: 20px; /* Add spacing between sections on mobile */
 }
 
 @media (max-width: 768px) {
     .footer-section {
-        min-width: 100%; /* Allow sections to take full width */
-        margin-left: 20px;
+        margin-left: 20px !important;
     }
 }
 .footer-section h2 {
