@@ -16,7 +16,7 @@ A web-based project designed to demonstrate key concepts and features.
    ```
 2. Navigate to the project directory:
    ```bash
-   cd springboard_sarthak
+   cd top_outsourcing_partners
    ```
 3. Install dependencies:
    ```bash
