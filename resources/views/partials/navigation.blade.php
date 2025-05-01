@@ -64,7 +64,7 @@
     <span class="close-btn animate__animated animate__fadeIn" onclick="toggleMenu()">&times;</span>
     <div class="nav-links">
         <a href="{{ url('/') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Home</a>
-        <a href="{{ url('/about') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">About us</a>
+        <a href="{{ url('/about') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">About Us</a>
         <a href="{{ url('/about') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Services</a>
         <a href="{{ url('/industries') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Industries</a>
         <a href="{{ url('/solutions') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Solutions</a>

@@ -142,27 +142,27 @@ class TeamMemberSeeder extends Seeder
         //     'is_principal' => 0,
         // ]);
 
-        // TeamMember::create([
-        //     'id' => 7,
-        //     'image' => 'images/about/user7.png',
-        //     'modal_image' => 'images/about/user7.png',
-        //     'name' => 'Barna Paul',
-        //     'title' => 'Chief Finance Officer | Top Outsourcing Partners',
-        //     'description' => 'Barna Paul is the Chief Finance Officer at Top Outsourcing Partners (TOP), overseeing all financial operations and ensuring the company\'s financial health and sustainability.',
-        //     'education' => [
-        //         'MBA in Finance',
-        //         'BBA in Accounting'
-        //     ],
-        //     'expertise' => [
-        //         'Financial reporting',
-        //         'Taxation',
-        //         'Corporate governance',
-        //         'Strategic planning',
-        //         'Cost optimization'
-        //     ],
-        //     'vision' => 'To drive financial stability and growth while ensuring compliance with global financial standards.',
-        //     'is_principal' => 0,
-        // ]);
+        TeamMember::create([
+            'id' => 7,
+            'image' => 'images/about/user7.png',
+            'modal_image' => 'images/about/user7.png',
+            'name' => 'Barna Paul',
+            'title' => 'Chief Finance Officer | Top Outsourcing Partners',
+            'description' => 'Barna Paul is the Chief Finance Officer at Top Outsourcing Partners (TOP), overseeing all financial operations and ensuring the company\'s financial health and sustainability.',
+            'education' => [
+                'MBA in Finance',
+                'BBA in Accounting'
+            ],
+            'expertise' => [
+                'Financial reporting',
+                'Taxation',
+                'Corporate governance',
+                'Strategic planning',
+                'Cost optimization'
+            ],
+            'vision' => 'To drive financial stability and growth while ensuring compliance with global financial standards.',
+            'is_principal' => 0,
+        ]);
 
         // TeamMember::create([
         //     'id' => 8,
@@ -381,25 +381,25 @@ class TeamMemberSeeder extends Seeder
         //     'vision' => 'To streamline financial operations and ensure regulatory adherence for business growth.',
         //     'is_principal' => 0,
         // ]);
-        TeamMember::create([
-            'id' => 18,
-            'image' => 'images/about/user18.png',
-            'modal_image' => 'images/about/user18.png',
-            'name' => 'Md. Imdadul Islam',
-            'title' => 'Director, Lead – Partnership & Engagement Advisory | Top Outsourcing Partners',
-            'description' => 'Md. Imdadul Islam is the Director, Lead – Partnership & Engagement Advisory at Top Outsourcing Partners (TOP). In this role, Imdadul spearheads the development of strategic alliances, drives client engagement initiatives, and fosters business relationships that enable sustainable growth and innovation for clients across industries.',
-            'education' => [
-                'Bachelor’s in Finance & Banking (Jahangirnagar University)'
-            ],
-            'expertise' => [
-                'Partnership Development',
-                'Client Relationship Management',
-                'Strategic Engagement Advisory',
-                'Business Growth Strategy',
-                'Cross-Functional Collaboration'
-            ],
-            'vision' => 'To build impactful partnerships through trust, transparency, and tailored engagement strategies that empower organizations to scale efficiently and achieve long-term success.',
-            'is_principal' => 0,
-        ]);
+        // TeamMember::create([
+        //     'id' => 18,
+        //     'image' => 'images/about/user18.png',
+        //     'modal_image' => 'images/about/user18.png',
+        //     'name' => 'Md. Imdadul Islam',
+        //     'title' => 'Director, Lead – Partnership & Engagement Advisory | Top Outsourcing Partners',
+        //     'description' => 'Md. Imdadul Islam is the Director, Lead – Partnership & Engagement Advisory at Top Outsourcing Partners (TOP). In this role, Imdadul spearheads the development of strategic alliances, drives client engagement initiatives, and fosters business relationships that enable sustainable growth and innovation for clients across industries.',
+        //     'education' => [
+        //         'Bachelor’s in Finance & Banking (Jahangirnagar University)'
+        //     ],
+        //     'expertise' => [
+        //         'Partnership Development',
+        //         'Client Relationship Management',
+        //         'Strategic Engagement Advisory',
+        //         'Business Growth Strategy',
+        //         'Cross-Functional Collaboration'
+        //     ],
+        //     'vision' => 'To build impactful partnerships through trust, transparency, and tailored engagement strategies that empower organizations to scale efficiently and achieve long-term success.',
+        //     'is_principal' => 0,
+        // ]);
     }
 }
