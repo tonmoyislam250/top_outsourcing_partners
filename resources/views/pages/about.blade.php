@@ -97,41 +97,40 @@
 </section>
 
 <!-- Why Choose Us Section (Alternative Layout) -->
-<section class="why-choose-us-alt animate__animated animate__fadeInLeft" style="padding: 60px 0; background-color: #eaf2f8;">
+<section class="why-choose-us-alt animate__animated animate__fadeInUp" style="padding: 60px 0; background-color: #eaf2f8;">
     <div class="container" style="max-width: 1140px; margin: 0 auto; padding: 0 15px;">
         <h2 style="text-align: center; font-size: 2.5rem; font-weight: bold; margin-bottom: 50px;">Why Choose Us?</h2>
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-            <!-- Image Column -->
-            <div class="why-choose-image animate__animated animate__fadeInLeft" style="flex: 1; max-width: 40%; text-align: left; padding-right: 30px; margin-bottom: 30px;">
+        <div style="display: flex; flex-direction: column-reverse; align-items: center; justify-content: space-between;">
+            <!-- Image Column (will appear at top on mobile) -->
+            <div class="why-choose-image animate__animated animate__fadeInLeft" style="width: 100%; text-align: center; margin-bottom: 30px;">
                 {{-- Make sure this image path is correct --}}
                 <img src="{{ asset('images/services/why-choose-us-illustration.png') }}" alt="Why Choose Us Illustration" style="max-width: 100%; height: auto; max-height: 350px;">
             </div>
 
-            <!-- Text Points Column -->
-            <div class="why-choose-points animate__animated animate__fadeInRight" style="flex: 1; max-width: 55%;">
+            <!-- Text Points Column (will appear below image on mobile) -->
+            <div class="why-choose-points animate__animated animate__fadeInRight" style="width: 100%;">
                 <!-- Row 1 -->
                 <div class="points-row" style="display: flex; justify-content: space-between; margin-bottom: 30px; flex-wrap: wrap; gap: 20px;">
-                    <div class="point-item" style="flex: 1; min-width: calc(33% - 20px); text-align: left;">
+                    <div class="point-item" style="flex: 1 1 100%; min-width: 100%; text-align: left; margin-bottom: 20px;">
                         <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 10px;">Tailored Outsourcing Solutions</h3>
                         <p style="font-size: 1rem; line-height: 1.6; color: #555;">We understand that every business is unique, and we provide customized outsourcing solutions that meet your specific needs.</p>
                     </div>
-                    <div class="point-item" style="flex: 1; min-width: calc(33% - 20px); text-align: left;">
+                    <div class="point-item" style="flex: 1 1 100%; min-width: 100%; text-align: left; margin-bottom: 20px;">
                         <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 10px;">Cost Efficiency</h3>
                         <p style="font-size: 1rem; line-height: 1.6; color: #555;">By outsourcing non-core activities to us, you can achieve significant cost savings while maintaining high-quality service.</p>
                     </div>
-                    <div class="point-item" style="flex: 1; min-width: calc(33% - 20px); text-align: left;">
+                    <div class="point-item" style="flex: 1 1 100%; min-width: 100%; text-align: left; margin-bottom: 20px;">
                         <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 10px;">Expertise</h3>
                         <p style="font-size: 1rem; line-height: 1.6; color: #555;">Our team consists of highly skilled professionals with deep expertise in finance, HR, and other critical business functions.</p>
                     </div>
                 </div>
                 <!-- Row 2 -->
                 <div class="points-row" style="display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 20px;">
-                     {{-- Using flex-start and gap for the second row with 2 items --}}
-                    <div class="point-item" style="flex: 1; min-width: calc(50% - 20px); max-width: calc(50% - 10px); text-align: left;">
+                    <div class="point-item" style="flex: 1 1 100%; min-width: 100%; text-align: left; margin-bottom: 20px;">
                         <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 10px;">Global Presence</h3>
                         <p style="font-size: 1rem; line-height: 1.6; color: #555;">With experience serving clients in North America, Europe, Asia, and Africa, we understand the intricacies of global markets and offer region-specific solutions.</p>
                     </div>
-                    <div class="point-item" style="flex: 1; min-width: calc(50% - 20px); max-width: calc(50% - 10px); text-align: left;">
+                    <div class="point-item" style="flex: 1 1 100%; min-width: 100%; text-align: left; margin-bottom: 20px;">
                         <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 10px;">Proven Track Record</h3>
                         <p style="font-size: 1rem; line-height: 1.6; color: #555;">We have successfully worked with leading organizations across diverse industries, helping them improve efficiency and grow sustainably.</p>
                     </div>
@@ -139,7 +138,33 @@
             </div>
         </div>
     </div>
+
+    <style>
+        @media (min-width: 768px) {
+            .why-choose-us-alt .container > div {
+                flex-direction: row !important;
+            }
+            .why-choose-image {
+                width: 40% !important;
+                text-align: left !important;
+                padding-right: 30px !important;
+            }
+            .why-choose-points {
+                width: 55% !important;
+            }
+            .point-item {
+                flex: 1 1 calc(33% - 20px) !important;
+                min-width: calc(33% - 20px) !important;
+            }
+            .points-row:last-child .point-item {
+                flex: 1 1 calc(50% - 20px) !important;
+                min-width: calc(50% - 20px) !important;
+                max-width: calc(50% - 10px) !important;
+            }
+        }
+    </style>
 </section>
+
 
 <!-- Our Process Section -->
 <section class="our-process-section animate__animated animate__fadeInUp" style="padding: 60px 0; background-color: #ffffff; text-align: center;">
@@ -158,7 +183,7 @@
                     [
                         'title' => 'Consultation',
                         'description' => 'Understanding your business needs and identifying key outsourcing areas.',
-                        'icon' => asset('images/about2/pro1.svg'), // Replace with actual path if different
+                        'icon' => asset('images/about2/pro1.svg'),
                         'icon_bg' => '#f3e8ff',
                         'icon_border' => '#6f42c1',
                         'align' => 'right'
@@ -166,7 +191,7 @@
                     [
                         'title' => 'Solution Design',
                         'description' => 'Tailored outsourcing strategies created to match your goals.',
-                        'icon' => asset('images/about2/pro2.svg'), // Replace with actual path if different
+                        'icon' => asset('images/about2/pro2.svg'),
                         'icon_bg' => '#e8f5e9',
                         'icon_border' => '#4caf50',
                         'align' => 'left'
@@ -174,7 +199,7 @@
                     [
                         'title' => 'Implementation',
                         'description' => 'Seamless integration of outsourcing solutions into your existing processes.',
-                        'icon' => asset('images/about2/pro3.svg'), // Replace with actual path if different
+                        'icon' => asset('images/about2/pro3.svg'),
                         'icon_bg' => '#e0f7fa',
                         'icon_border' => '#00bcd4',
                         'align' => 'right'
@@ -182,7 +207,7 @@
                     [
                         'title' => 'Monitoring & Optimization',
                         'description' => 'Continuous monitoring and adjustments to ensure efficiency and cost savings.',
-                        'icon' => asset('images/about2/pro4.svg'), // Replace with actual path if different
+                        'icon' => asset('images/about2/pro4.svg'),
                         'icon_bg' => '#fff8e1',
                         'icon_border' => '#ffc107',
                         'align' => 'left'
@@ -190,7 +215,7 @@
                     [
                         'title' => 'Ongoing Support',
                         'description' => 'Dedicated support team ensuring smooth operations and ongoing improvements.',
-                        'icon' => asset('images/about2/pro5.svg'), // Replace with actual path if different
+                        'icon' => asset('images/about2/pro5.svg'),
                         'icon_bg' => '#ffebee',
                         'icon_border' => '#f44336',
                         'align' => 'right'
@@ -199,11 +224,11 @@
             @endphp
 
             @foreach ($processSteps as $index => $step)
-                <div class="process-step animate__animated animate__fadeInUp" style="display: flex; justify-content: {{ $step['align'] === 'right' ? 'flex-start' : 'flex-end' }}; align-items: center; margin-bottom: 60px; position: relative; z-index: 2;">
+                <div class="process-step animate__animated animate__fadeInUp" style="display: flex; justify-content: {{ $step['align'] === 'right' ? 'flex-start' : 'flex-end' }}; align-items: center; margin-bottom: 60px; position: relative; z-index: 2; flex-wrap: wrap;">
 
                     <!-- Content (Order depends on alignment) -->
                     @if ($step['align'] === 'right')
-                        <div class="step-content" style="text-align: left; padding-right: 90px; width: 50%;">
+                        <div class="step-content" style="text-align: left; padding-right: 90px; width: 100%; order: 2;">
                             <h4 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; color: #333;">{{ $step['title'] }}</h4>
                             <p style="font-size: 0.95rem; line-height: 1.6; color: #555;">
                                 {{ $step['description'] }}
@@ -212,21 +237,15 @@
                     @endif
 
                     <!-- Icon Wrapper (Always in the middle) -->
-                    <div class="step-icon-wrapper" style="position: absolute; left: 50%; transform: translateX(-50%); background-color: #fff; padding: 5px 0;"> {{-- White background to cover the line --}}
+                    <div class="step-icon-wrapper" style="position: relative; margin: 20px auto; order: 1;">
                         <div class="step-icon" style="width: 70px; height: 70px; border-radius: 50%; background-color: {{ $step['icon_bg'] }}; border: 3px solid {{ $step['icon_border'] }}; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-                            {{-- Use img tag if you have SVG files, or inline SVG --}}
                             <img src="{{ $step['icon'] }}" alt="{{ $step['title'] }} Icon" style="width: 35px; height: 35px;">
-                            {{-- Example inline SVG (replace with actual SVG content or img tag)
-                            <svg width="35" height="35" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                            </svg>
-                            --}}
                         </div>
                     </div>
 
-                     <!-- Content (Order depends on alignment) -->
+                    <!-- Content (Order depends on alignment) -->
                     @if ($step['align'] === 'left')
-                        <div class="step-content" style="text-align: left; padding-left: 90px; width: 50%;">
+                        <div class="step-content" style="text-align: left; padding-left: 90px; width: 100%; order: 2;">
                             <h4 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; color: #333;">{{ $step['title'] }}</h4>
                             <p style="font-size: 0.95rem; line-height: 1.6; color: #555;">
                                 {{ $step['description'] }}
@@ -239,6 +258,22 @@
 
         </div>
     </div>
+
+    <style>
+        @media (max-width: 768px) {
+            .process-step {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            .step-content {
+                padding: 0 !important;
+                width: 100% !important;
+            }
+            .step-icon-wrapper {
+                margin: 0 auto 20px auto !important;
+            }
+        }
+    </style>
 </section>
 
 <!-- Our Impact Section -->
@@ -345,7 +380,7 @@
     <div class="rectangle-92" style="background: #ffffff; border-radius: 24px; width: 1200px; height: 528px; position: absolute; left: 50%; transform: translateX(-50%); top: 0;"></div>
     <div class="rectangle-93" style="background: linear-gradient(90deg, rgba(0, 229, 149, 1) 0%, rgba(0, 118, 229, 1) 16.77%, rgba(172, 0, 229, 1) 41.48%, rgba(229, 202, 0, 1) 67.39%, rgba(229, 0, 118, 1) 88.97%, rgba(202, 229, 0, 1) 100%); opacity: 0.4; width: 1201px; height: 140px; position: absolute; left: 50%; transform: translateX(-50%); top: 387px; filter: blur(50px);"></div>
     <img class="vector-18" src="{{ asset('images/about2/vector18.svg') }}" style="width: 1200px; height: 528px; position: absolute; left: 50%; transform: translateX(-50%); top: 131px; overflow: visible;" />
-    <div class="your-coaches-are-experienced-professionals-who-earn-at-least-10-000-per-month-in-recruitment-and-have-been-working-successfully-in-this-sector-for-years" style="color: #111111; text-align: center; font-family: 'PlusJakartaSans-Bold', sans-serif; font-size: 48px; line-height: 130%; font-weight: 700; position: absolute; left: 50%; transform: translateX(-50%); top: 42px; width: 1160px;">
+    <div class="Meet" style="color: #111111; text-align: center; font-family: 'PlusJakartaSans-Bold', sans-serif; font-size: 48px; line-height: 130%; font-weight: 700; position: absolute; left: 50%; transform: translateX(-50%); top: 42px; width: 90%; max-width: 1160px;">
         Meet Our Dynamic Team
     </div>
     <img class="ellipse-34" src="{{ asset('images/user1.jpg') }}" style="border-radius: 50%; border: 2px solid #ffffff; width: 70px; height: 70px; position: absolute; left: 15%; transform: translateX(-50%); top: 315px; object-fit: cover;" />
@@ -356,7 +391,7 @@
     <img class="ellipse-42" src="{{ asset('images/user6.jpg') }}" style="border-radius: 50%; border: 2px solid #ffffff; width: 70px; height: 70px; position: absolute; left: 65%; transform: translateX(-50%); top: 392px; object-fit: cover;" />
     <img class="ellipse-37" src="{{ asset('images/user7.jpg') }}" style="border-radius: 50%; border: 2px solid #ffffff; width: 70px; height: 70px; position: absolute; left: 65%; transform: translateX(-50%); top: 291px; object-fit: cover;" />
     <img class="ellipse-39" src="{{ asset('images/user8.jpg') }}" style="border-radius: 50%; border: 2px solid #ffffff; width: 70px; height: 70px; position: absolute; left: 85%; transform: translateX(-50%); top: 272px; object-fit: cover;" />
-    <div class="frame-50" style="background: #111111; border-radius: 70px; border: 1px solid #111111; padding: 10px 36px; display: flex; flex-direction: row; gap: 10px; align-items: center; justify-content: center; height: 60px; position: absolute; left: 50%; transform: translateX(-50%); top: 129px;">
+    <div class="frame-50" style="background: #111111; border-radius: 70px; border: 1px solid #111111; padding: 10px 36px; display: flex; flex-direction: row; gap: 10px; align-items: center; justify-content: center; height: 60px; position: absolute; left: 50%; transform: translateX(-50%); top: 162px;">
         <a href="{{ url('/about-us') }}" class="sign-up" style="color: #ffffff; text-align: center; font-family: 'PlusJakartaSans-Bold', sans-serif; font-size: 20px; font-weight: 700; text-decoration: none; display: block; position: relative;">
             View Team
         </a>
