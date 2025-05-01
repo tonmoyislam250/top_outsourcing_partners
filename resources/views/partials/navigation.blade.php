@@ -23,17 +23,17 @@
         <img src="{{ asset('images/logo.svg') }}" alt="Logo">
     </a>
     <div class="nav-links">
-        <a href="{{ url('/') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Home</a>
-        <a href="{{ url('/about') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">About us</a>
-        <a href="{{ url('/services') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Services</a>
-        <a href="{{ url('/solutions') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 10px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Solutions</a>
-        <a href="{{ url('/industries') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 10px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Industries</a>
-        <a href="{{ url('/contact') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 10px;" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Contact Us</a>
+        <a href="{{ url('/') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px; {{ request()->is('/') ? 'box-shadow: 0 0 15px rgba(51, 51, 51, 0.5);' : '' }}" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Home</a>
+        <a href="{{ url('/about') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px; {{ request()->is('about') ? 'box-shadow: 0 0 15px rgba(51, 51, 51, 0.5);' : '' }}" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">About us</a>
+        <a href="{{ url('/services') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 8px; {{ request()->is('services') ? 'box-shadow: 0 0 15px rgba(51, 51, 51, 0.5);' : '' }}" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Services</a>
+        <a href="{{ url('/solutions') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 10px; {{ request()->is('solutions') ? 'box-shadow: 0 0 15px rgba(51, 51, 51, 0.5);' : '' }}" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Solutions</a>
+        <a href="{{ url('/industries') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 10px; {{ request()->is('industries') ? 'box-shadow: 0 0 15px rgba(51, 51, 51, 0.5);' : '' }}" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Industries</a>
+        <a href="{{ url('/contact') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 10px; {{ request()->is('contact') ? 'box-shadow: 0 0 15px rgba(51, 51, 51, 0.5);' : '' }}" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Contact Us</a>
     </div>
     <div class="social-links" style="font-size: 2rem; margin-top: 1rem;">
-        <a href="https://www.facebook.com/RickAstley/" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://x.com/elonmusk" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-twitter"></i></a>
-        <a href="https://www.instagram.com/officialrickastley/" target="_blank" style="color: #007bff;"><i class="fa-brands fa-instagram"></i></a>
+        <a href="" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
+        <a href="" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-twitter"></i></a>
+        <a href="" target="_blank" style="color: #007bff;"><i class="fa-brands fa-instagram"></i></a>
     </div>
 </nav>
 
@@ -63,17 +63,17 @@
 <div class="slider-menu animate__animated animate__slideInRight animate__faster" id="slider-menu">
     <span class="close-btn animate__animated animate__fadeIn" onclick="toggleMenu()">&times;</span>
     <div class="nav-links">
-        <a href="{{ url('/') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Home</a>
-        <a href="{{ url('/about') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">About Us</a>
-        <a href="{{ url('/about') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Services</a>
-        <a href="{{ url('/industries') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Industries</a>
-        <a href="{{ url('/solutions') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Solutions</a>
-        <a href="{{ url('/contact') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold;">Contact Us</a>
+        <a href="{{ url('/') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold; {{ request()->is('/') ? 'color: #007bff;' : '' }}">Home</a>
+        <a href="{{ url('/about') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold; {{ request()->is('about') ? 'color: #007bff;' : '' }}">About Us</a>
+        <a href="{{ url('/services') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold; {{ request()->is('services') ? 'color: #007bff;' : '' }}">Services</a>
+        <a href="{{ url('/industries') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold; {{ request()->is('industries') ? 'color: #007bff;' : '' }}">Industries</a>
+        <a href="{{ url('/solutions') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold; {{ request()->is('solutions') ? 'color: #007bff;' : '' }}">Solutions</a>
+        <a href="{{ url('/contact') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold; {{ request()->is('contact') ? 'color: #007bff;' : '' }}">Contact Us</a>
     </div>
     <div class="social-links animate__animated animate__fadeInUp animate__faster animate__delay-2s" style="font-size: 2rem; margin-top: 1rem;">
-        <a href="https://www.facebook.com/RickAstley/" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://x.com/elonmusk" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-twitter"></i></a>
-        <a href="https://www.instagram.com/officialrickastley/" target="_blank" style="color: #007bff;"><i class="fa-brands fa-instagram"></i></a>
+        <a href="" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
+        <a href="" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-twitter"></i></a>
+        <a href="" target="_blank" style="color: #007bff;"><i class="fa-brands fa-instagram"></i></a>
     </div>
 </div>
 

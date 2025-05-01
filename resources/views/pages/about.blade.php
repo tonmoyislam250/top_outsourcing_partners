@@ -246,35 +246,8 @@
     <div class="container" style="max-width: 1140px; margin: 0 auto; padding: 0 15px;">
         <h2 style="font-size: 2.8rem; font-weight: bold; margin-bottom: 20px; color: #333;">Our Impact</h2>
         <p style="font-size: 1.1rem; line-height: 1.7; color: #555; max-width: 800px; margin: 0 auto 50px auto;">
-            Through our outsourcing solutions, we have helped businesses reduce operational costs by up to 40%, improve efficiency by 30%, and scale operations to meet growing market demands. Our approach has consistently delivered measurable results, driving sustained growth for our clients.
+            Through our Top outsourcing solutions, we have helped businesses reduce operational costs by up to 40%, improve efficiency by 30%, and scale operations to meet growing market demands. Our approach has consistently delivered measurable results, driving sustained growth for our clients.
         </p>
-        <div class="impact-charts-grid" style="display: flex; flex-direction: column; gap: 40px; align-items: center;">
-            <!-- Cost Savings Chart -->
-            <div class="chart-card animate__animated animate__fadeInUp" style="position: relative; background-color: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); width: 100%; max-width: 900px; text-align: left;">
-                <h3 style="font-size: 1.8rem; font-weight: bold; margin-bottom: 20px; color: #333; text-align: center;">Cost Savings</h3>
-                <div style="position: relative; height: 300px;"> <!-- Chart area -->
-                    <canvas id="costSavingsChart"></canvas>
-                    <!-- Annotation -->
-                    <div class="chart-annotation" style="position: absolute; top: 45%; right: 10%; transform: translateY(-50%); background-color: #fff; border-radius: 8px; padding: 15px 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; border: 1px solid #eee; border-top: 3px solid rgba(0, 200, 83, 1); width: 180px;">
-                        <p style="font-weight: bold; margin: 0 0 5px 0; font-size: 1rem; color: #333;">$34 million saved</p>
-                        <p style="margin: 0; font-size: 0.9rem; color: #555;">40% cost reduced</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Efficiency Chart -->
-            <div class="chart-card animate__animated animate__fadeInUp" style="position: relative; background-color: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); width: 100%; max-width: 900px; text-align: left;">
-                <h3 style="font-size: 1.8rem; font-weight: bold; margin-bottom: 20px; color: #333; text-align: center;">Efficiency</h3>
-                 <div style="position: relative; height: 300px;"> <!-- Chart area -->
-                    <canvas id="efficiencyChart"></canvas>
-                     <!-- Annotation -->
-                    <div class="chart-annotation" style="position: absolute; top: 40%; right: 10%; transform: translateY(-50%); background-color: #fff; border-radius: 8px; padding: 15px 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; border: 1px solid #eee; border-top: 3px solid rgba(0, 200, 83, 1); width: 180px;">
-                        <p style="font-weight: bold; margin: 0 0 5px 0; font-size: 1rem; color: #333;">$34 million saved</p> {{-- Note: Text from image, adjust if needed --}}
-                        <p style="margin: 0; font-size: 0.9rem; color: #555;">40% cost reduced</p> {{-- Note: Text from image, adjust if needed --}}
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
@@ -385,7 +358,7 @@
     <img class="ellipse-39" src="{{ asset('images/user8.jpg') }}" style="border-radius: 50%; border: 2px solid #ffffff; width: 70px; height: 70px; position: absolute; left: 85%; transform: translateX(-50%); top: 272px; object-fit: cover;" />
     <div class="frame-50" style="background: #111111; border-radius: 70px; border: 1px solid #111111; padding: 10px 36px; display: flex; flex-direction: row; gap: 10px; align-items: center; justify-content: center; height: 60px; position: absolute; left: 50%; transform: translateX(-50%); top: 129px;">
         <a href="{{ url('/about-us') }}" class="sign-up" style="color: #ffffff; text-align: center; font-family: 'PlusJakartaSans-Bold', sans-serif; font-size: 20px; font-weight: 700; text-decoration: none; display: block; position: relative;">
-            See Team
+            View Team
         </a>
     </div>
 </section>
