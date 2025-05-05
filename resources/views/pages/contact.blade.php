@@ -74,11 +74,26 @@
         </div>
         <div class="info-block animate__animated animate__fadeIn animate__delay-3s" style="text-align: left;">
             <strong>ADDRESS</strong>
-            <p>
-                <i class="fas fa-map-marker-alt"></i>
-                801 Travis Street, Suite # 2101<br>
-                Houston, Texas, 77002
-            </p>
+            <div class="additional-addresses" style="max-height: 275px; overflow-y: auto; margin-top: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;">
+                <p><strong>Bangladesh Offices</strong></p>
+                <p><strong>Dhaka (Head Office)</strong>
+                Office Suites 906 & 1005, 9th & 10th Floor
+                SEL Trident Tower, 57 Purana Paltan Line, VIP Road
+                Dhaka 1000, Bangladesh</p>
+                <p><strong>Dhaka (Green Road Office)</strong>
+                Suite 326, RH Home Center, 74/B/1 Green Road
+                Dhaka 1215, Bangladesh</p>
+                <p><strong>Chittagong Office</strong>
+                Suite C-4, 7th Floor, 13 SS Khaled Road, Kajer Dewri<br>
+                Chittagong 4000, Bangladesh</p>
+                <p><strong>Khulna Office</strong>
+                Suite 2B, Plot 399, Road 4, Sonadanga 2nd Phase<br>
+                Khulna 9100, Bangladesh</p>
+                <p><strong>North America Office</strong></p>
+                <p><strong>Houston Office</strong>
+                801 Travis Street, Suite 2101<br>
+                Houston, Texas 77002, USA</p>
+            </div>
         </div>
     </div>
 </div>
