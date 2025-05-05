@@ -74,7 +74,7 @@
         </div>
         <div class="info-block animate__animated animate__fadeIn animate__delay-3s" style="text-align: left;">
             <strong>ADDRESS</strong>
-            <div class="additional-addresses" style="max-height: 275px; overflow-y: auto; margin-top: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;">
+            <div class="additional-addresses" style="max-height: 275px; overflow-y: auto; margin-top: 10px; padding: 10px; border: 0px solid #ccc; border-radius: 5px; background-color: #f9f9f9;">
                 <p><strong>Bangladesh Offices</strong></p>
                 <p><strong>Dhaka (Head Office)</strong>
                 Office Suites 906 & 1005, 9th & 10th Floor
