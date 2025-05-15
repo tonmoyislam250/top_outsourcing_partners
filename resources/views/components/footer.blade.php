@@ -22,7 +22,7 @@
             <h3 style="text-align: left;"><strong>Contact</strong></h3>
             <!-- <p style="color: white; text-align: left;">Head Office: SEL Trident Tower, Dhaka 1000<br> Other Offices: Green Road (Dhaka)|Chittagong|Khulna<br>USA Office: 801 Travis Street, Suite 2101, Houston, TX 77002</p> -->
             <p style="color: white; text-align: left; margin-bottom: 0px;">Phone: +1 346 777 4586</p>
-            <p style="color: white; text-align: left;">Email: <a href="mailto:info@topoutsourcingpartners.com" style="color: white;">info@Topoutsourcingpartners.com</a></p>
+            <p style="color: white; text-align: left;">Email: <a href="mailto:info@topoutsourcingpartners.com" style="color: white;">contact@topoutsourcingpartners.com</a></p>
             <div style="text-align: left;">
                 <a href="{{ url('/consult') }}" class="footer-button" style="font-size: smaller;">Get in touch</a>
             </div>

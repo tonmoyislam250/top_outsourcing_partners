@@ -62,7 +62,7 @@
             <strong>EMAIL</strong>
             <p>
                 <i class="fas fa-envelope"></i>
-                info@Topoutsourcingpartners.com
+                contact@topoutsourcingpartners.com
             </p>
         </div>
         <div class="info-block animate__animated animate__fadeIn animate__delay-2s" style="text-align: left;">
