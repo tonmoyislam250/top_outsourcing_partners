@@ -45,4 +45,8 @@ Route::get('/out', function () {
     return view('pages/outsourcing');
 })->name('outsourcing');
 
+Route::get('/privacy-policy', function () {
+    return view('pages/privacy');
+})->name('outsourcing');
+
 Route::post('/consultation/send', [ConsultationController::class, 'send'])->name('consultation.send');
