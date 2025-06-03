@@ -47,6 +47,14 @@ Route::get('/out', function () {
 
 Route::get('/privacy-policy', function () {
     return view('pages/privacy');
-})->name('outsourcing');
+})->name('privacy-policy');
+
+Route::get('/breach', function () {
+    return view('pages/breach');
+})->name('Data Breach Policy & Procedures');
+
+Route::get('/retention', function () {
+    return view('pages/retention');
+})->name('Data Retention & Deletion Policy');
 
 Route::post('/consultation/send', [ConsultationController::class, 'send'])->name('consultation.send');

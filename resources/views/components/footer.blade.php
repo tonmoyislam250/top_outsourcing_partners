@@ -33,8 +33,8 @@
             <p style="font-size: small; color: #ccc;">Copyright © 2025 Top Outsourcing Partners, All Rights Reserved</p>
             <ul class="footer-links">
             <li><a href="{{ url('/privacy-policy') }}" style="color: #ccc;">Privacy Policy</a></li>
-            <li><a href="{{ url('/security-policy') }}" style="color: #ccc;">Security Policy</a></li>
-            <li><a href="{{ url('/terms-of-use') }}" style="color: #ccc;">Terms of Use</a></li>
+            <li><a href="{{ url('/breach') }}" style="color: #ccc;">Breach Policy</a></li>
+            <li><a href="{{ url('/retention') }}" style="color: #ccc;">Retention & Deletion</a></li>
             </ul>
         </div>
     </div>
