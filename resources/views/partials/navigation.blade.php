@@ -33,7 +33,7 @@
     <div class="social-links" style="font-size: 2rem; margin-top: 1rem;">
         <a href="https://www.facebook.com/profile.php?id=61576043437938" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
         <a href="https://x.com/topoutsourcingp" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-twitter"></i></a>
-        <a href="https://www.linkedin.com/company/topoutsourcingpartners" target="_blank" style="color: #007bff;"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/topoutsourcingpartners" target="_blank" style="color: #007bff;"><i class="fa-brands fa-linkedin"></i></a>
     </div>
 </nav>
 
