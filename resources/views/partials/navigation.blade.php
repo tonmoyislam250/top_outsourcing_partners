@@ -31,9 +31,9 @@
         <a href="{{ url('/contact') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 10px; {{ request()->is('contact') ? 'box-shadow: 0 0 15px rgba(51, 51, 51, 0.5);' : '' }}" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Contact Us</a>
     </div>
     <div class="social-links" style="font-size: 2rem; margin-top: 1rem;">
-        <a href="" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
-        <a href="" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-twitter"></i></a>
-        <a href="" target="_blank" style="color: #007bff;"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61576043437938" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://x.com/topoutsourcingp" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/topoutsourcingpartners" target="_blank" style="color: #007bff;"><i class="fa-brands fa-instagram"></i></a>
     </div>
 </nav>
 
