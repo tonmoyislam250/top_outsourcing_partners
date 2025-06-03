@@ -3,9 +3,9 @@
         <div class="footer-section">
             <h2><a href="{{ url('/') }}" style="text-decoration: none; color: inherit; text-align:left;">Top <br>OutSourcing <br>Partners</a></h2>
             <div class="social-icons">
-                <a href="https://www.facebook.com/RickAstley/" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://x.com/elonmusk" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/officialrickastley/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61576043437938" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://x.com/topoutsourcingp" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/topoutsourcingpartners/" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
         <div class="footer-section" style="text-align: left; margin-left: 186px; @media (max-width: 768px) { margin-left: 20px; }">
