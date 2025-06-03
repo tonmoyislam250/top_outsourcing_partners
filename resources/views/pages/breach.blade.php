@@ -62,7 +62,7 @@
                 </ul>
             </ul>
             <h4 class="mt-3 mb-2 text-start">5.3.3 Risk Investigation & Documentation</h4>
-            <p class="lead text-start">The lead investigator documents:</p>
+            <p class="lead text-start ps-0 ms-0">The lead investigator documents:</p>
             <ul class="text-start">
                 <li>Type and sensitivity of data</li>
                 <li>What protections existed (e.g., encryption)</li>
