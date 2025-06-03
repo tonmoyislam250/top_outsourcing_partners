@@ -145,8 +145,8 @@
 
             <h2 class="mt-5 mb-3 text-start">4.2 How can you contact us?</h2>
             <ul class="text-start">
-                <li>Email: <a href="mailto:privacy@top-outsourcing.com">privacy@top-outsourcing.com</a></li>
-                <li>Phone: +1-800-555-8899</li>
+                <li>Email: <a href="mailto:info@topoutsourcingpartners.com">info@topoutsourcingpartners.com</a></li>
+                <li>Phone: +1 346-777-4586</li>
             </ul>
 
             <h2 class="mt-5 mb-3 text-start">5. SMS Data Policy</h2>
