@@ -22,4 +22,8 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+    #Start of Google Analytics verification for Laravel
+    RewriteCond $1 !^(index\.php|public|robots|google8bea0745aec8d2cf\.html)
+
+    RewriteRule ^([0-9A-Za-z-:._/\x7f-\xff]*)$ /public/index.php/$1 [L]
 </IfModule>
