@@ -27,7 +27,7 @@ class ConsultationController extends Controller
             Mail::send('emails.consultation', ['data' => $data], function ($message) use ($data) {
                 $message->to(env('CONSULTATION_FORM_RECIPIENT'))
                     ->subject('New Consultation Request')
-                    ->from($data['business_email'], $data['first_name'] . ' ' . $data['last_name']);
+                    ->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
             });
 
             return response()->json(['success' => true, 'message' => 'Your consultation request has been sent successfully!']);
