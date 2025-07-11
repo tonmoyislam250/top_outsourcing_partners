@@ -31,6 +31,7 @@
         <a href="{{ url('/contact') }}" style="font-size: 1.2rem; font-weight: bold; color: #333; transition: box-shadow 0.3s ease; border-radius: 10px; {{ request()->is('contact') ? 'box-shadow: 0 0 15px rgba(51, 51, 51, 0.5);' : '' }}" onmouseover="this.style.boxShadow='0 0 15px rgba(51, 51, 51, 0.5)'" onmouseout="this.style.boxShadow='none'">Contact Us</a>
     </div>
     <div class="social-links" style="font-size: 2rem; margin-top: 1rem;">
+        <a href="{{ url('/blogs') }}" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-solid fa-blog"></i></a>
         <a href="https://www.facebook.com/profile.php?id=61576043437938" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
         <a href="https://x.com/topoutsourcingp" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-twitter"></i></a>
         <a href="https://www.linkedin.com/company/topoutsourcingpartners" target="_blank" style="color: #007bff;"><i class="fa-brands fa-linkedin"></i></a>
@@ -62,6 +63,9 @@
 
 <div class="slider-menu animate__animated animate__slideInRight animate__faster" id="slider-menu">
     <span class="close-btn animate__animated animate__fadeIn" onclick="toggleMenu()">&times;</span>
+    <div class="company-name animate__animated animate__fadeIn animate__delay-1s">
+        <i>Top Outsourcing Partners</i>
+    </div>
     <div class="nav-links">
         <a href="{{ url('/') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold; {{ request()->is('/') ? 'color: #007bff;' : '' }}">Home</a>
         <a href="{{ url('/about') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold; {{ request()->is('about') ? 'color: #007bff;' : '' }}">About Us</a>
@@ -71,11 +75,22 @@
         <a href="{{ url('/contact') }}" class="animate__animated animate__fadeInRight animate__faster animate__delay-1s" style="font-size: 1.2rem; font-weight: bold; {{ request()->is('contact') ? 'color: #007bff;' : '' }}">Contact Us</a>
     </div>
     <div class="social-links animate__animated animate__fadeInUp animate__faster animate__delay-2s" style="font-size: 2rem; margin-top: 1rem;">
+        <a href="{{ url('/blogs') }}" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-solid fa-blog"></i></a>
         <a href="https://www.facebook.com/profile.php?id=61576043437938" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-facebook"></i></a>
         <a href="https://x.com/topoutsourcingp" target="_blank" style="margin-right: 1rem; color: #007bff;"><i class="fa-brands fa-twitter"></i></a>
         <a href="https://www.linkedin.com/company/topoutsourcingpartners" target="_blank" style="color: #007bff;"><i class="fa-brands fa-linkedin"></i></a>
     </div>
 </div>
+
+<style>
+    .company-name {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        color: #007bff;
+        font-weight: bold;
+    }
+</style>
 
 <script>
     function toggleMenu() {
