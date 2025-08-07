@@ -219,18 +219,6 @@
         </div>
     </div>
     @else
-    <!-- Guest User Authentication -->
-    <div class="blog-nexus-auth-section">
-        <div class="blog-nexus-auth-card">
-            <h3 class="blog-nexus-auth-title">Join Our Community</h3>
-            <p class="blog-nexus-auth-subtitle">Login to manage blogs or sign up to get started</p>
-            <div class="blog-nexus-auth-buttons">
-                <a href="{{ route('login') }}" class="blog-nexus-login-btn">Login</a>
-                <a href="{{ route('signup') }}" class="blog-nexus-signup-btn">Sign Up</a>
-            </div>
-        </div>
-    </div>
-
     <!-- Guest Blog Gallery -->
     <div class="blog-nexus-gallery">
         @foreach($blogs as $blog)
