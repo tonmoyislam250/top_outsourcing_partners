@@ -34,7 +34,6 @@
         <!-- Logout button moved to hero section -->
     </div>
 
-    <!-- Blog Management Form -->
     <div class="blog-nexus-form-container">
         <div class="blog-nexus-form-header">
             <h3 class="blog-nexus-form-title">{{ isset($blog) ? 'Edit Blog Post' : 'Create New Blog' }}</h3>
