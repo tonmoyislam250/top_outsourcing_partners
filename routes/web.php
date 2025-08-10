@@ -8,6 +8,7 @@ use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\Auth\SignupController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\NewsletterController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/services/{slug}', [HomeController::class, 'show'])->name('services.show');
@@ -60,30 +61,40 @@ Route::get('/retention', function () {
     return view('pages/retention');
 })->name('Data Retention & Deletion Policy');
 
-Route::get('/login', function () {
-    return view('auth/login');
-})->name('login');
+// Authentication routes
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/signup', [SignupController::class, 'showSignupForm'])->name('signup')->middleware('guest');
+Route::post('/signup/store',[SignupController::class, 'store'])->name('signup.store')->middleware('guest');
 
-Route::get('/signup', function () {
-    return view('auth/signup');
-})->name('signup');
-
-Route::post('/signup/store',[SignupController::class, 'store'])->name('signup.store');
+// Dashboard route for authenticated users
+Route::get('/dashboard', function () {
+    return redirect()->route('blogs.index');
+})->middleware('auth')->name('dashboard');
 Route::post('/consultation/send', [ConsultationController::class, 'send'])->name('consultation.send');
 
 // Blog routes
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
 
-// Admin blog routes - these should ideally be protected by auth middleware
-Route::get('/admin/blogs', [BlogController::class, 'index'])->name('admin.blogs.index');
-Route::get('/admin/blogs/create', [BlogController::class, 'create'])->name('admin.blogs.create');
-Route::post('/admin/blogs', [BlogController::class, 'store'])->name('admin.blogs.store');
-Route::get('/admin/blogs/{blog}/edit', [BlogController::class, 'edit'])->name('admin.blogs.edit');
-Route::put('/admin/blogs/{blog}', [BlogController::class, 'update'])->name('admin.blogs.update');
-Route::delete('/admin/blogs/{blog}', [BlogController::class, 'destroy'])->name('admin.blogs.destroy');
+// Newsletter subscription
+Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+
+// Admin blog routes - protected by auth middleware
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/blogs', [BlogController::class, 'index'])->name('admin.blogs.index');
+    Route::get('/admin/blogs/create', [BlogController::class, 'create'])->name('admin.blogs.create');
+    Route::post('/admin/blogs', [BlogController::class, 'store'])->name('admin.blogs.store');
+    Route::get('/admin/blogs/{blog}/edit', [BlogController::class, 'edit'])->name('admin.blogs.edit');
+    Route::put('/admin/blogs/{blog}', [BlogController::class, 'update'])->name('admin.blogs.update');
+    Route::delete('/admin/blogs/{blog}', [BlogController::class, 'destroy'])->name('admin.blogs.destroy');
+    
+    // AJAX routes for blog management
+    Route::get('/admin/blogs/{blog}/', [BlogController::class, 'getForEdit'])->name('admin.blogs.get-for-edit');
+    Route::delete('/blogs/{blog}/ajax-delete', [BlogController::class, 'ajaxDestroy'])->name('blogs.ajax-destroy');
+    Route::post('/admin/blogs/upload-image', [BlogController::class, 'uploadImage'])->name('admin.blogs.upload-image');
+});
 
 

@@ -66,6 +66,9 @@
     <link rel="stylesheet" href="{{ asset('css/blogs.css') }}">
     <!-- Animate.css Library -->
     <link rel="stylesheet" href="{{asset('css/default/animate.min.css')}}" />
+    <!-- TinyMCE Rich Text Editor -->
+    <script src="https://cdn.tiny.cloud/1/si1oqrkmp8u8g75rhq9vf6hz3vdegcww6rkzb9iakkz3t5ss/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
 <body>

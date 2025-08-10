@@ -17,6 +17,21 @@
             <p class="cosmic-subtitle">Continue your journey</p>
         </div>
         
+        <!-- Session Messages -->
+        @if(session('success'))
+            <div class="success-constellation">
+                <i class="fas fa-check-circle"></i>
+                {{ session('success') }}
+            </div>
+        @endif
+        
+        @if(session('info'))
+            <div class="info-constellation">
+                <i class="fas fa-info-circle"></i>
+                {{ session('info') }}
+            </div>
+        @endif
+        
         <div class="quantum-form-container">
             <form method="POST" action="{{ route('login') }}" class="stellar-form">
                 @csrf
@@ -271,6 +286,34 @@
         padding: 0.5rem;
         border-radius: 8px;
         border-left: 3px solid #ef4444;
+    }
+
+    .success-constellation {
+        color: #10b981;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(16, 185, 129, 0.1);
+        padding: 0.75rem;
+        border-radius: 8px;
+        border-left: 3px solid #10b981;
+        backdrop-filter: blur(10px);
+    }
+
+    .info-constellation {
+        color: #3b82f6;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(59, 130, 246, 0.1);
+        padding: 0.75rem;
+        border-radius: 8px;
+        border-left: 3px solid #3b82f6;
+        backdrop-filter: blur(10px);
     }
 
     .floating-label {

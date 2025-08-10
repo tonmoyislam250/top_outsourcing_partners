@@ -9,7 +9,35 @@ class Blog extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'content', 'user_id'];
+    protected $fillable = ['title', 'content', 'image', 'user_id', 'type'];
+
+    protected $casts = [
+        'type' => 'string',
+    ];
+
+    /**
+     * Scope for blog posts only
+     */
+    public function scopeBlogs($query)
+    {
+        return $query->where('type', 'blog');
+    }
+
+    /**
+     * Scope for case studies only
+     */
+    public function scopeCaseStudies($query)
+    {
+        return $query->where('type', 'case_study');
+    }
+
+    /**
+     * Get formatted type name
+     */
+    public function getFormattedTypeAttribute()
+    {
+        return $this->type === 'case_study' ? 'Case Study' : 'Blog Post';
+    }
 
     public function user()
     {

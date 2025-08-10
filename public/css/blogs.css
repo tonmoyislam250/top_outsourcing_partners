@@ -618,7 +618,93 @@
 .blog-nexus-modal-text {
     color: #2d3748;
     line-height: 1.8;
-    white-space: pre-line;
+    white-space: normal;
+}
+
+/* Rich content styling for modal */
+.blog-nexus-modal-text h1,
+.blog-nexus-modal-text h2,
+.blog-nexus-modal-text h3,
+.blog-nexus-modal-text h4,
+.blog-nexus-modal-text h5,
+.blog-nexus-modal-text h6 {
+    color: #2d3748;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.blog-nexus-modal-text p {
+    margin-bottom: 1em;
+}
+
+.blog-nexus-modal-text img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.blog-nexus-modal-text blockquote {
+    border-left: 4px solid #e2e8f0;
+    margin: 1.5em 0;
+    padding: 0.5em 0 0.5em 1em;
+    background-color: #f7fafc;
+    border-radius: 4px;
+}
+
+.blog-nexus-modal-text code {
+    background-color: #f1f5f9;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.blog-nexus-modal-text pre {
+    background-color: #1a202c;
+    color: #e2e8f0;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.blog-nexus-modal-text ul,
+.blog-nexus-modal-text ol {
+    margin: 1em 0;
+    padding-left: 2em;
+}
+
+.blog-nexus-modal-text li {
+    margin-bottom: 0.5em;
+}
+
+.blog-nexus-modal-text table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.blog-nexus-modal-text table td,
+.blog-nexus-modal-text table th {
+    border: 1px solid #e2e8f0;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.blog-nexus-modal-text table th {
+    background-color: #f7fafc;
+    font-weight: bold;
+}
+
+.blog-nexus-modal-text a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.blog-nexus-modal-text a:hover {
+    text-decoration: underline;
 }
 
 .blog-nexus-modal-message {
@@ -665,5 +751,82 @@
     
     .blog-nexus-action-buttons {
         flex-direction: column;
+    }
+}
+
+/* TinyMCE Editor Customization */
+.tox-tinymce {
+    border-radius: 12px !important;
+    border: 2px solid #e2e8f0 !important;
+    box-shadow: none !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.tox-tinymce:focus-within {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+
+.tox .tox-menubar {
+    background: #f8fafc !important;
+    border: none !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.tox .tox-toolbar {
+    background: #f8fafc !important;
+    border: none !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.tox .tox-statusbar {
+    background: #f8fafc !important;
+    border: none !important;
+    border-top: 1px solid #e2e8f0 !important;
+}
+
+.tox .tox-edit-area {
+    border: none !important;
+}
+
+.tox .tox-edit-area iframe {
+    background: white !important;
+}
+
+/* TinyMCE Button Styling */
+.tox .tox-tbtn {
+    border-radius: 6px !important;
+    margin: 2px !important;
+}
+
+.tox .tox-tbtn--enabled {
+    background: #667eea !important;
+    color: white !important;
+}
+
+.tox .tox-tbtn:hover {
+    background: #5a67d8 !important;
+    color: white !important;
+}
+
+/* TinyMCE Modal Styling */
+.tox .tox-dialog {
+    border-radius: 12px !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}
+
+.tox .tox-dialog-header {
+    background: #f8fafc !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+/* Make TinyMCE responsive */
+@media (max-width: 768px) {
+    .tox .tox-toolbar {
+        flex-wrap: wrap !important;
+    }
+    
+    .tox .tox-toolbar__group {
+        flex-wrap: wrap !important;
     }
 }

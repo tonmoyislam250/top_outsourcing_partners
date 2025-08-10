@@ -15,7 +15,14 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::latest()->get();
-        return view('blogs.blogs', compact('blogs'));
+        
+        // Check if user is authenticated for admin view
+        if (Auth::check()) {
+            return view('blogs.blogs-professional', compact('blogs'));
+        }
+        
+        // Guest view with modern design
+        return view('blogs.guest-blogs', compact('blogs'));
     }
 
     /**
@@ -34,6 +41,7 @@ class BlogController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
+            'type' => 'required|in:blog,case_study',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -42,15 +50,22 @@ class BlogController extends Controller
             $imagePath = $request->file('image')->store('blog-images', 'public');
         }
 
-        Blog::create([
-            'title' => $request->title,
-            'content' => $request->content,
-            'image' => $imagePath,
-            'user_id' => Auth::id()
-        ]);
+        try {
+            $blog = Blog::create([
+                'title' => $request->title,
+                'content' => $request->content,
+                'type' => $request->type,
+                'image' => $imagePath,
+                'user_id' => Auth::id()
+            ]);
 
-        return redirect()->route('blogs.index')
-            ->with('success', 'Blog created successfully');
+            return redirect()->route('blogs.index')
+                ->with('success', 'Content created successfully');
+        } catch (\Exception $e) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'Failed to create content: ' . $e->getMessage());
+        }
     }
 
     /**
@@ -155,6 +170,36 @@ class BlogController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Failed to delete blog: ' . $e->getMessage()
+            ], 500);
+        }
+    }
+
+    /**
+     * Handle image uploads for TinyMCE editor
+     */
+    public function uploadImage(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+        ]);
+
+        try {
+            if ($request->hasFile('file')) {
+                $imagePath = $request->file('file')->store('tinymce-images', 'public');
+                $url = asset('storage/' . $imagePath);
+                
+                return response()->json([
+                    'location' => $url
+                ]);
+            }
+            
+            return response()->json([
+                'error' => 'No file uploaded'
+            ], 400);
+            
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Failed to upload image: ' . $e->getMessage()
             ], 500);
         }
     }

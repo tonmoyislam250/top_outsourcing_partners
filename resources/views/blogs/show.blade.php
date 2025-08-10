@@ -35,49 +35,9 @@
     <div class="blog-universe-content-wrapper">
         <article class="blog-universe-article">
             <div class="blog-universe-content-body">
-                {!! nl2br(e($blog->content)) !!}
+                {!! $blog->content !!}
             </div>
         </article>
-
-        <!-- Blog Sidebar -->
-        <aside class="blog-universe-sidebar">
-            <div class="blog-universe-sidebar-card">
-                <h3 class="blog-universe-sidebar-title">Share This Article</h3>
-                <div class="blog-universe-share-buttons">
-                    <a href="https://twitter.com/intent/tweet?text={{ urlencode($blog->title) }}&url={{ urlencode(request()->fullUrl()) }}" 
-                       target="_blank" class="blog-universe-share-btn blog-universe-twitter">
-                        <span class="blog-universe-share-icon">🐦</span>
-                        Twitter
-                    </a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}" 
-                       target="_blank" class="blog-universe-share-btn blog-universe-facebook">
-                        <span class="blog-universe-share-icon">📘</span>
-                        Facebook
-                    </a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode(request()->fullUrl()) }}" 
-                       target="_blank" class="blog-universe-share-btn blog-universe-linkedin">
-                        <span class="blog-universe-share-icon">💼</span>
-                        LinkedIn
-                    </a>
-                </div>
-            </div>
-
-            <div class="blog-universe-sidebar-card">
-                <h3 class="blog-universe-sidebar-title">Quick Navigation</h3>
-                <div class="blog-universe-nav-buttons">
-                    <a href="{{ route('blogs.index') }}" class="blog-universe-nav-btn">
-                        <span class="blog-universe-nav-icon">📚</span>
-                        All Blogs
-                    </a>
-                    @auth
-                        <a href="{{ route('admin.blogs.edit', $blog->id) }}" class="blog-universe-nav-btn blog-universe-edit">
-                            <span class="blog-universe-nav-icon">✏️</span>
-                            Edit Blog
-                        </a>
-                    @endauth
-                </div>
-            </div>
-        </aside>
     </div>
 </div>
 
@@ -212,10 +172,144 @@
     font-size: 1.1rem;
     line-height: 1.8;
     color: #2d3748;
+    text-align: justify;
 }
 
 .blog-universe-content-body p {
     margin-bottom: 1.5rem;
+}
+
+/* Rich content styling */
+.blog-universe-content-body h1,
+.blog-universe-content-body h2,
+.blog-universe-content-body h3,
+.blog-universe-content-body h4,
+.blog-universe-content-body h5,
+.blog-universe-content-body h6 {
+    color: #2d3748;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.blog-universe-content-body h1 {
+    font-size: 2.2em;
+}
+
+.blog-universe-content-body h2 {
+    font-size: 1.9em;
+}
+
+.blog-universe-content-body h3 {
+    font-size: 1.6em;
+}
+
+.blog-universe-content-body h4 {
+    font-size: 1.3em;
+}
+
+.blog-universe-content-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.blog-universe-content-body blockquote {
+    border-left: 4px solid #667eea;
+    margin: 2rem 0;
+    padding: 1rem 0 1rem 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+    color: #4a5568;
+}
+
+.blog-universe-content-body code {
+    background-color: #f1f5f9;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', Monaco, monospace;
+    font-size: 0.9em;
+    color: #e53e3e;
+}
+
+.blog-universe-content-body pre {
+    background-color: #1a202c;
+    color: #e2e8f0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 2rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.blog-universe-content-body pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+}
+
+.blog-universe-content-body ul,
+.blog-universe-content-body ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.blog-universe-content-body li {
+    margin-bottom: 0.8rem;
+}
+
+.blog-universe-content-body table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2rem 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.blog-universe-content-body table td,
+.blog-universe-content-body table th {
+    border: 1px solid #e2e8f0;
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.blog-universe-content-body table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: bold;
+}
+
+.blog-universe-content-body table tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.blog-universe-content-body a {
+    color: #667eea;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.blog-universe-content-body a:hover {
+    border-bottom-color: #667eea;
+    color: #5a67d8;
+}
+
+.blog-universe-content-body strong {
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.blog-universe-content-body em {
+    font-style: italic;
+    color: #4a5568;
 }
 
 .blog-universe-sidebar {
