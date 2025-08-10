@@ -20,6 +20,10 @@
                         <i class="fas fa-user"></i>
                     </div>
                 </div>
+                <a href="{{ route('admin.newsletter.index') }}" class="newsletter-btn" title="Manage Newsletter">
+                    <i class="fas fa-envelope"></i>
+                    <span>Newsletter</span>
+                </a>
                 <form method="POST" action="{{ route('logout') }}" class="logout-form">
                     @csrf
                     <button type="submit" class="logout-btn">
@@ -226,6 +230,27 @@
 
                         <div class="form-row">
                             <div class="form-group">
+                                <label for="keywords" class="form-label">
+                                    <i class="fas fa-tags"></i>
+                                    Keywords/Tags
+                                </label>
+                                <input 
+                                    type="text" 
+                                    class="form-input @error('keywords') error @enderror" 
+                                    id="keywords" 
+                                    name="keywords" 
+                                    value="{{ old('keywords') }}" 
+                                    placeholder="Enter keywords separated by commas (e.g., outsourcing, business, technology)"
+                                >
+                                <small class="form-help">Separate multiple keywords with commas</small>
+                                @error('keywords')
+                                    <span class="error-message">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
                                 <label for="content" class="form-label">
                                     <i class="fas fa-edit"></i>
                                     <span id="content-label">Content</span>
@@ -249,7 +274,7 @@
                                 <i class="fas fa-save"></i>
                                 <span id="submit-button-text">Publish Content</span>
                             </button>
-                            <button type="reset" class="btn btn-secondary">
+                            <button type="reset" class="btn btn-secondary" onclick="clearCreateForm()">
                                 <i class="fas fa-undo"></i>
                                 Reset Form
                             </button>
@@ -273,7 +298,7 @@
             <div class="modal-body">
                 <div id="viewBlogImage" class="modal-image"></div>
                 <div id="viewBlogDate" class="modal-date"></div>
-                <div id="viewBlogContent" class="modal-text"></div>
+                <div id="viewBlogContent" class="modal-text" style="text-align: justify;"></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" onclick="closeModal('viewBlogModal')">Close</button>
@@ -302,15 +327,34 @@
                     </div>
                     
                     <div class="form-group">
+                        <label for="editType" class="form-label">Content Type</label>
+                        <select class="form-input" id="editType" name="type" required>
+                            <option value="">Select content type...</option>
+                            <option value="blog">📝 Blog Post</option>
+                            <option value="case_study">📊 Case Study</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="editKeywords" class="form-label">Keywords/Tags</label>
+                        <input type="text" class="form-input" id="editKeywords" name="keywords" placeholder="Enter keywords separated by commas (e.g., outsourcing, business, technology)">
+                        <small class="form-help">Separate multiple keywords with commas</small>
+                    </div>
+                    
+                    <div class="form-group">
                         <label for="editImage" class="form-label">Featured Image</label>
                         <div class="file-upload-area">
-                            <input type="file" class="file-input" id="editImage" name="image" accept="image/*">
+                            <input type="file" class="file-input" id="editImage" name="image" accept="image/*" onchange="previewEditImage(this)">
                             <label for="editImage" class="file-upload-label">
                                 <i class="fas fa-cloud-upload-alt"></i>
                                 Choose New Image
                             </label>
                         </div>
                         <div id="editCurrentImage" class="current-image"></div>
+                        <div id="editImagePreview" class="image-preview" style="display:none">
+                            <img id="editPreviewImg" src="" alt="New Image Preview" class="preview-image">
+                            <p class="preview-caption">New Image Preview</p>
+                        </div>
                     </div>
                     
                     <div class="form-group">
@@ -487,7 +531,11 @@ function openViewModal(blogId) {
 function openEditModal(blogId) {
     // Show loading state
     document.getElementById('editTitle').value = '';
+    document.getElementById('editType').value = '';
+    document.getElementById('editKeywords').value = '';
     document.getElementById('editCurrentImage').innerHTML = '';
+    document.getElementById('editImage').value = ''; // Clear file input
+    document.getElementById('editImagePreview').style.display = 'none'; // Hide new image preview
     document.getElementById('editBlogId').value = blogId;
     
     // Remove existing TinyMCE instance if it exists
@@ -605,6 +653,8 @@ function fetchBlogDataForEdit(blogId) {
     .then(response => response.json())
     .then(data => {
         document.getElementById('editTitle').value = data.blog.title;
+        document.getElementById('editType').value = data.blog.type;
+        document.getElementById('editKeywords').value = data.blog.keywords ? data.blog.keywords.join(', ') : '';
         document.getElementById('editBlogForm').action = `/admin/blogs/${blogId}`;
         
         // Set content in TinyMCE editor
@@ -616,8 +666,19 @@ function fetchBlogDataForEdit(blogId) {
         
         if (data.imageUrl) {
             document.getElementById('editCurrentImage').innerHTML = 
-                `<img src="${data.imageUrl}" alt="Current image" class="preview-image">
-                 <p class="preview-caption">Current featured image</p>`;
+                `<div class="current-image-container">
+                    <img src="${data.imageUrl}" alt="Current image" class="preview-image">
+                    <div class="current-image-info">
+                        <p class="preview-caption">Current featured image</p>
+                        <small class="image-note">Choose a new image above to replace this one</small>
+                    </div>
+                 </div>`;
+        } else {
+            document.getElementById('editCurrentImage').innerHTML = 
+                `<div class="no-current-image">
+                    <i class="fas fa-image"></i>
+                    <p>No featured image currently set</p>
+                 </div>`;
         }
     })
     .catch(error => {
@@ -632,7 +693,51 @@ function submitEditForm() {
     if (tinymce.get('editContent')) {
         tinymce.get('editContent').save();
     }
-    document.getElementById('editBlogForm').submit();
+    
+    const form = document.getElementById('editBlogForm');
+    const formData = new FormData(form);
+    const submitBtn = document.querySelector('#editBlogModal .btn-primary');
+    const originalBtnText = submitBtn.innerHTML;
+    
+    // Show loading state
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Updating...';
+    submitBtn.disabled = true;
+    
+    // Submit form via AJAX
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Close modal
+            closeModal('editBlogModal');
+            
+            // Show success notification
+            showNotification(data.message, 'success');
+            
+            // Reload page to show updated data
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+        } else {
+            showNotification(data.message || 'Failed to update blog', 'error');
+        }
+    })
+    .catch(error => {
+        console.error('Error updating blog:', error);
+        showNotification('Failed to update blog. Please try again.', 'error');
+    })
+    .finally(() => {
+        // Restore button state
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+    });
 }
 
 // Delete blog modal
@@ -678,6 +783,25 @@ function previewImage(input) {
     const file = input.files[0];
     const preview = document.getElementById('imagePreview');
     const previewImg = document.getElementById('previewImg');
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            previewImg.src = e.target.result;
+            preview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    } else {
+        preview.style.display = 'none';
+        previewImg.src = '';
+    }
+}
+
+// Image preview function for edit modal
+function previewEditImage(input) {
+    const file = input.files[0];
+    const preview = document.getElementById('editImagePreview');
+    const previewImg = document.getElementById('editPreviewImg');
 
     if (file) {
         const reader = new FileReader();
@@ -811,6 +935,15 @@ function initializeTinyMCE() {
 
 // Initialize page state
 document.addEventListener('DOMContentLoaded', function() {
+    // Clear create form if there's a success message about blog updates
+    const successAlert = document.querySelector('.alert-success');
+    if (successAlert) {
+        const alertText = successAlert.textContent || '';
+        if (alertText.includes('updated') || alertText.includes('Blog updated')) {
+            clearCreateForm();
+        }
+    }
+    
     // Ensure form title is correct
     const formTitle = document.querySelector('.form-section .card-title');
     if (formTitle) {
@@ -823,6 +956,32 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize TinyMCE
     initializeTinyMCE();
 });
+
+// Function to clear create form
+function clearCreateForm() {
+    // Clear regular form fields
+    document.getElementById('title').value = '';
+    document.getElementById('type').value = '';
+    document.getElementById('keywords').value = '';
+    document.getElementById('image').value = '';
+    
+    // Hide image preview
+    const imagePreview = document.getElementById('imagePreview');
+    if (imagePreview) {
+        imagePreview.style.display = 'none';
+        document.getElementById('previewImg').src = '';
+    }
+    
+    // Clear TinyMCE content
+    setTimeout(() => {
+        if (tinymce.get('content')) {
+            tinymce.get('content').setContent('');
+        }
+    }, 500);
+    
+    // Reset form labels
+    updateFormLabels('');
+}
 
 // Form validation function
 function validateForm() {
@@ -956,6 +1115,33 @@ function validateForm() {
 .logout-btn:hover {
     background: rgba(255, 255, 255, 0.25);
     transform: translateY(-2px);
+}
+
+.newsletter-btn {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.newsletter-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: white;
+}
+
+.newsletter-btn span {
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 /* Alert Styles */
@@ -1198,10 +1384,49 @@ function validateForm() {
     text-align: center;
 }
 
-.preview-image {
-    max-width: 200px;
+.current-image-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8fafc;
     border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+.current-image-info {
+    text-align: left;
+    flex: 1;
+}
+
+.image-note {
+    color: #6b7280;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.no-current-image {
+    padding: 2rem;
+    background: #f9fafb;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+    color: #6b7280;
+}
+
+.no-current-image i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.preview-image {
+    max-width: 120px;
+    max-height: 120px;
+    border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
 }
 
 .preview-caption {

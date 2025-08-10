@@ -81,6 +81,7 @@ Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show')
 
 // Newsletter subscription
 Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+Route::get('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
 
 // Admin blog routes - protected by auth middleware
 Route::middleware(['auth'])->group(function () {
@@ -95,6 +96,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/blogs/{blog}/', [BlogController::class, 'getForEdit'])->name('admin.blogs.get-for-edit');
     Route::delete('/blogs/{blog}/ajax-delete', [BlogController::class, 'ajaxDestroy'])->name('blogs.ajax-destroy');
     Route::post('/admin/blogs/upload-image', [BlogController::class, 'uploadImage'])->name('admin.blogs.upload-image');
+    
+    // Newsletter admin routes
+    Route::get('/admin/newsletter', [NewsletterController::class, 'adminIndex'])->name('admin.newsletter.index');
+    Route::post('/admin/newsletter/test', [NewsletterController::class, 'sendTestNewsletter'])->name('admin.newsletter.test');
 });
 
 

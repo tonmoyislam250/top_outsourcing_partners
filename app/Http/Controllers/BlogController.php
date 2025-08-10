@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Jobs\SendNewsletterNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -12,17 +13,43 @@ class BlogController extends Controller
     /**
      * Display a listing of blogs.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $blogs = Blog::latest()->get();
+        $query = Blog::latest();
+        
+        // Handle keyword search
+        if ($request->has('keyword') && $request->keyword) {
+            $keyword = $request->keyword;
+            $query->where(function($q) use ($keyword) {
+                $q->where('title', 'like', '%' . $keyword . '%')
+                  ->orWhere('content', 'like', '%' . $keyword . '%')
+                  ->orWhereJsonContains('keywords', $keyword);
+            });
+        }
+        
+        // Handle type filter
+        if ($request->has('type') && in_array($request->type, ['blog', 'case_study'])) {
+            $query->where('type', $request->type);
+        }
+        
+        $blogs = $query->get();
+        
+        // Get all unique keywords for the filter
+        $allKeywords = Blog::whereNotNull('keywords')
+            ->pluck('keywords')
+            ->flatten()
+            ->unique()
+            ->filter()
+            ->sort()
+            ->values();
         
         // Check if user is authenticated for admin view
         if (Auth::check()) {
-            return view('blogs.blogs-professional', compact('blogs'));
+            return view('blogs.blogs-professional', compact('blogs', 'allKeywords'));
         }
         
         // Guest view with modern design
-        return view('blogs.guest-blogs', compact('blogs'));
+        return view('blogs.guest-blogs', compact('blogs', 'allKeywords'));
     }
 
     /**
@@ -56,11 +83,15 @@ class BlogController extends Controller
                 'content' => $request->content,
                 'type' => $request->type,
                 'image' => $imagePath,
-                'user_id' => Auth::id()
+                'user_id' => Auth::id(),
+                'keywords' => $request->keywords ? explode(',', $request->keywords) : null
             ]);
 
-            return redirect()->route('blogs.index')
-                ->with('success', 'Content created successfully');
+            // Dispatch newsletter notification job
+            SendNewsletterNotification::dispatch($blog);
+
+            return redirect()->route('admin.blogs.index')
+                ->with('success', 'Content created successfully and newsletter notifications are being sent!');
         } catch (\Exception $e) {
             return redirect()->back()
                 ->withInput()
@@ -85,6 +116,8 @@ class BlogController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
+            'type' => 'required|in:blog,case_study',
+            'keywords' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -100,10 +133,23 @@ class BlogController extends Controller
         $blog->update([
             'title' => $request->title,
             'content' => $request->content,
-            'image' => $imagePath
+            'type' => $request->type,
+            'image' => $imagePath,
+            'keywords' => $request->keywords ? array_map('trim', explode(',', $request->keywords)) : null
         ]);
 
-        return redirect()->route('blogs.index')
+        // Check if it's an AJAX request
+        if ($request->ajax()) {
+            $freshBlog = $blog->fresh();
+            return response()->json([
+                'success' => true,
+                'message' => 'Blog updated successfully',
+                'blog' => $freshBlog,
+                'imageUrl' => $freshBlog->image ? asset('storage/' . $freshBlog->image) : null
+            ]);
+        }
+
+        return redirect()->route('admin.blogs.index')
             ->with('success', 'Blog updated successfully');
     }
 

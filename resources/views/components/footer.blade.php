@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-section">
-            <h2><a href="{{ url('/') }}" style="text-decoration: none; color: inherit; text-align:left;">Top <br>OutSourcing <br>Partners</a></h2>
+            <h2><a href="{{ url('/login') }}" style="text-decoration: none; color: inherit; text-align:left;">Top <br>OutSourcing <br>Partners</a></h2>
             <div class="social-icons">
                 <a href="https://www.facebook.com/profile.php?id=61576043437938" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="https://x.com/topoutsourcingp" target="_blank"><i class="fab fa-twitter"></i></a>

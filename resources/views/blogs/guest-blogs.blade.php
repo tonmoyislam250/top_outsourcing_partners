@@ -25,215 +25,328 @@
     <!-- Content Categories -->
     <section class="content-categories">
         <div class="container">
-            <!-- Blog Posts Section -->
-            <div class="category-section">
-                <div class="section-header">
-                    <h2 class="section-title">
-                        <i class="fas fa-blog"></i>
-                        Latest Blog Posts
-                    </h2>
-                    <p class="section-subtitle">
-                        Explore our latest thoughts on technology, business, and innovation
-                    </p>
-                </div>
-                
-                <div class="horizontal-scroll-container">
-                    <div class="scroll-content">
-                        @php $blogPosts = $blogs->where('type', 'blog'); @endphp
-                        @if($blogPosts->count() > 0)
-                            @foreach($blogPosts as $blog)
-                                <article class="content-card blog-card">
-                                    <div class="card-image">
-                                        @if($blog->image)
-                                            <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}" loading="lazy">
-                                        @else
-                                            <div class="placeholder-image">
-                                                <i class="fas fa-newspaper"></i>
-                                            </div>
-                                        @endif
-                                        <div class="card-overlay">
-                                            <span class="content-type">Blog Post</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="card-meta">
-                                            <span class="date">
-                                                <i class="fas fa-calendar-alt"></i>
-                                                {{ $blog->created_at->format('M d, Y') }}
-                                            </span>
-                                            <span class="read-time">
-                                                <i class="fas fa-clock"></i>
-                                                {{ ceil(str_word_count(strip_tags($blog->content)) / 200) }} min read
-                                            </span>
-                                        </div>
-                                        <h3 class="card-title">{{ $blog->title }}</h3>
-                                        <p class="card-excerpt">
-                                            {{ \Illuminate\Support\Str::limit(strip_tags($blog->content), 120) }}
-                                        </p>
-                                        <a href="{{ route('blogs.show', $blog->id) }}" class="read-more-btn">
-                                            Read Article
-                                            <i class="fas fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </article>
-                            @endforeach
-                        @else
-                            <div class="empty-state">
-                                <i class="fas fa-blog"></i>
-                                <h3>No Blog Posts Yet</h3>
-                                <p>Check back soon for our latest insights and articles.</p>
+            <div class="content-layout">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">
+                            <i class="fas fa-search"></i>
+                            Search & Filter
+                        </h3>
+                        
+                        <!-- Search Form -->
+                        <form id="searchForm" class="search-form" method="GET">
+                            <div class="search-input-group">
+                                <input 
+                                    type="text" 
+                                    name="keyword" 
+                                    id="keywordSearch"
+                                    placeholder="Search posts..." 
+                                    value="{{ request('keyword') }}"
+                                    class="search-input"
+                                >
+                                <button type="submit" class="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                            
+                            <!-- Type Filter -->
+                            <div class="filter-group">
+                                <label class="filter-label">Content Type</label>
+                                <div class="filter-buttons">
+                                    <button type="button" class="filter-btn {{ !request('type') ? 'active' : '' }}" data-type="">
+                                        All
+                                    </button>
+                                    <button type="button" class="filter-btn {{ request('type') == 'blog' ? 'active' : '' }}" data-type="blog">
+                                        Blogs
+                                    </button>
+                                    <button type="button" class="filter-btn {{ request('type') == 'case_study' ? 'active' : '' }}" data-type="case_study">
+                                        Case Studies
+                                    </button>
+                                </div>
+                                <input type="hidden" name="type" id="typeFilter" value="{{ request('type') }}">
+                            </div>
+                        </form>
+                        
+                        <!-- Keywords List -->
+                        @if($allKeywords->count() > 0)
+                            <div class="keywords-section">
+                                <h4 class="keywords-title">
+                                    <i class="fas fa-tags"></i>
+                                    Popular Keywords
+                                </h4>
+                                <div class="keywords-list">
+                                    @foreach($allKeywords->take(15) as $keyword)
+                                        <button class="keyword-tag {{ request('keyword') == $keyword ? 'active' : '' }}" 
+                                                data-keyword="{{ $keyword }}">
+                                            {{ $keyword }}
+                                        </button>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endif
+                        
+                        <!-- Clear Filters -->
+                        @if(request('keyword') || request('type'))
+                            <div class="clear-filters">
+                                <a href="{{ route('blogs.index') }}" class="clear-btn">
+                                    <i class="fas fa-times"></i>
+                                    Clear All Filters
+                                </a>
                             </div>
                         @endif
                     </div>
-                    
-                    <!-- Scroll Controls -->
-                    <div class="scroll-controls">
-                        <button class="scroll-btn scroll-left" data-target="blog-posts">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="scroll-btn scroll-right" data-target="blog-posts">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Case Studies Section -->
-            <div class="category-section">
-                <div class="section-header">
-                    <h2 class="section-title">
-                        <i class="fas fa-chart-line"></i>
-                        Case Studies
-                    </h2>
-                    <p class="section-subtitle">
-                        Real-world success stories and transformative partnerships
-                    </p>
                 </div>
                 
-                <div class="horizontal-scroll-container">
-                    <div class="scroll-content" id="case-studies">
-                        @php $caseStudies = $blogs->where('type', 'case_study'); @endphp
-                        @if($caseStudies->count() > 0)
-                            @foreach($caseStudies as $caseStudy)
-                                <article class="content-card case-study-card">
-                                    <div class="card-image">
-                                        @if($caseStudy->image)
-                                            <img src="{{ asset('storage/' . $caseStudy->image) }}" alt="{{ $caseStudy->title }}" loading="lazy">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Blog Posts Section -->
+                    <div class="category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <i class="fas fa-blog"></i>
+                                Latest Blog Posts
+                                @if(request('keyword') || request('type'))
+                                    <span class="filter-indicator">
+                                        @if(request('keyword'))
+                                            - "{{ request('keyword') }}"
+                                        @endif
+                                        @if(request('type'))
+                                            - {{ request('type') == 'case_study' ? 'Case Studies' : 'Blog Posts' }} only
+                                        @endif
+                                    </span>
+                                @endif
+                            </h2>
+                            <p class="section-subtitle">
+                                Explore our latest thoughts on technology, business, and innovation
+                            </p>
+                        </div>
+                        
+                        <div class="posts-grid">
+                            @php 
+                                $blogPosts = $blogs->where('type', 'blog');
+                                if (request('type') && request('type') !== 'blog') {
+                                    $blogPosts = collect();
+                                }
+                            @endphp
+                            @if($blogPosts->count() > 0)
+                                @foreach($blogPosts as $blog)
+                                    <article class="content-card blog-card">
+                                        <div class="card-image">
+                                            @if($blog->image)
+                                                <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}" loading="lazy">
+                                            @else
+                                                <div class="placeholder-image">
+                                                    <i class="fas fa-newspaper"></i>
+                                                </div>
+                                            @endif
+                                            <div class="card-overlay">
+                                                <span class="content-type">Blog Post</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="card-meta">
+                                                <span class="date">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                    {{ $blog->created_at->format('M d, Y') }}
+                                                </span>
+                                                <span class="read-time">
+                                                    <i class="fas fa-clock"></i>
+                                                    {{ ceil(str_word_count(strip_tags($blog->content)) / 200) }} min read
+                                                </span>
+                                            </div>
+                                            <h3 class="card-title">{{ $blog->title }}</h3>
+                                            <p class="card-excerpt">
+                                                {{ \Illuminate\Support\Str::limit(strip_tags($blog->content), 120) }}
+                                            </p>
+                                            @if($blog->keywords && count($blog->keywords) > 0)
+                                                <div class="card-keywords">
+                                                    @foreach(array_slice($blog->keywords, 0, 3) as $keyword)
+                                                        <span class="keyword-badge">{{ $keyword }}</span>
+                                                    @endforeach
+                                                </div>
+                                            @endif
+                                            <a href="{{ route('blogs.show', $blog->id) }}" class="read-more-btn">
+                                                Read Article
+                                                <i class="fas fa-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </article>
+                                @endforeach
+                            @else
+                                <div class="empty-state">
+                                    <i class="fas fa-blog"></i>
+                                    <h3>No Blog Posts Found</h3>
+                                    <p>
+                                        @if(request('keyword') || request('type'))
+                                            Try adjusting your search criteria or clear filters to see all posts.
                                         @else
+                                            Check back soon for our latest insights and articles.
+                                        @endif
+                                    </p>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <!-- Case Studies Section -->
+                    <div class="category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <i class="fas fa-chart-line"></i>
+                                Case Studies
+                                @if(request('keyword') || request('type'))
+                                    <span class="filter-indicator">
+                                        @if(request('keyword'))
+                                            - "{{ request('keyword') }}"
+                                        @endif
+                                        @if(request('type'))
+                                            - {{ request('type') == 'case_study' ? 'Case Studies' : 'Blog Posts' }} only
+                                        @endif
+                                    </span>
+                                @endif
+                            </h2>
+                            <p class="section-subtitle">
+                                Real-world success stories and transformative partnerships
+                            </p>
+                        </div>
+                        
+                        <div class="posts-grid">
+                            @php 
+                                $caseStudies = $blogs->where('type', 'case_study');
+                                if (request('type') && request('type') !== 'case_study') {
+                                    $caseStudies = collect();
+                                }
+                            @endphp
+                            @if($caseStudies->count() > 0)
+                                @foreach($caseStudies as $caseStudy)
+                                    <article class="content-card case-study-card">
+                                        <div class="card-image">
+                                            @if($caseStudy->image)
+                                                <img src="{{ asset('storage/' . $caseStudy->image) }}" alt="{{ $caseStudy->title }}" loading="lazy">
+                                            @else
+                                                <div class="placeholder-image">
+                                                    <i class="fas fa-chart-line"></i>
+                                                </div>
+                                            @endif
+                                            <div class="card-overlay">
+                                                <span class="content-type">Case Study</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="card-meta">
+                                                <span class="date">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                    {{ $caseStudy->created_at->format('M d, Y') }}
+                                                </span>
+                                                <span class="read-time">
+                                                    <i class="fas fa-clock"></i>
+                                                    {{ ceil(str_word_count(strip_tags($caseStudy->content)) / 200) }} min read
+                                                </span>
+                                            </div>
+                                            <h3 class="card-title">{{ $caseStudy->title }}</h3>
+                                            <p class="card-excerpt">
+                                                {{ \Illuminate\Support\Str::limit(strip_tags($caseStudy->content), 120) }}
+                                            </p>
+                                            @if($caseStudy->keywords && count($caseStudy->keywords) > 0)
+                                                <div class="card-keywords">
+                                                    @foreach(array_slice($caseStudy->keywords, 0, 3) as $keyword)
+                                                        <span class="keyword-badge">{{ $keyword }}</span>
+                                                    @endforeach
+                                                </div>
+                                            @endif
+                                            <a href="{{ route('blogs.show', $caseStudy->id) }}" class="read-more-btn">
+                                                Read Case Study
+                                                <i class="fas fa-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </article>
+                                @endforeach
+                            @else
+                                @if(!request('keyword') && !request('type'))
+                                    <!-- Placeholder for Case Studies (to be implemented) -->
+                                    <article class="content-card case-study-card coming-soon">
+                                        <div class="card-image">
                                             <div class="placeholder-image">
                                                 <i class="fas fa-chart-line"></i>
                                             </div>
-                                        @endif
-                                        <div class="card-overlay">
-                                            <span class="content-type">Case Study</span>
+                                            <div class="card-overlay">
+                                                <span class="content-type">Case Study</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="card-meta">
-                                            <span class="date">
-                                                <i class="fas fa-calendar-alt"></i>
-                                                {{ $caseStudy->created_at->format('M d, Y') }}
-                                            </span>
-                                            <span class="read-time">
+                                        <div class="card-content">
+                                            <div class="card-meta">
+                                                <span class="status">Coming Soon</span>
+                                            </div>
+                                            <h3 class="card-title">Digital Transformation Success</h3>
+                                            <p class="card-excerpt">
+                                                Discover how we helped a Fortune 500 company streamline their operations and achieve 40% cost savings.
+                                            </p>
+                                            <button class="read-more-btn disabled">
+                                                Coming Soon
                                                 <i class="fas fa-clock"></i>
-                                                {{ ceil(str_word_count(strip_tags($caseStudy->content)) / 200) }} min read
-                                            </span>
+                                            </button>
                                         </div>
-                                        <h3 class="card-title">{{ $caseStudy->title }}</h3>
-                                        <p class="card-excerpt">
-                                            {{ \Illuminate\Support\Str::limit(strip_tags($caseStudy->content), 120) }}
-                                        </p>
-                                        <a href="{{ route('blogs.show', $caseStudy->id) }}" class="read-more-btn">
-                                            Read Case Study
-                                            <i class="fas fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </article>
-                            @endforeach
-                        @else
-                            <!-- Placeholder for Case Studies (to be implemented) -->
-                            <article class="content-card case-study-card coming-soon">
-                                <div class="card-image">
-                                    <div class="placeholder-image">
+                                    </article>
+
+                                    <article class="content-card case-study-card coming-soon">
+                                        <div class="card-image">
+                                            <div class="placeholder-image">
+                                                <i class="fas fa-cogs"></i>
+                                            </div>
+                                            <div class="card-overlay">
+                                                <span class="content-type">Case Study</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="card-meta">
+                                                <span class="status">Coming Soon</span>
+                                            </div>
+                                            <h3 class="card-title">AI Implementation Journey</h3>
+                                            <p class="card-excerpt">
+                                                Learn about our comprehensive AI integration process that boosted productivity by 60%.
+                                            </p>
+                                            <button class="read-more-btn disabled">
+                                                Coming Soon
+                                                <i class="fas fa-clock"></i>
+                                            </button>
+                                        </div>
+                                    </article>
+
+                                    <article class="content-card case-study-card coming-soon">
+                                        <div class="card-image">
+                                            <div class="placeholder-image">
+                                                <i class="fas fa-rocket"></i>
+                                            </div>
+                                            <div class="card-overlay">
+                                                <span class="content-type">Case Study</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="card-meta">
+                                                <span class="status">Coming Soon</span>
+                                            </div>
+                                            <h3 class="card-title">Startup Scale-Up Strategy</h3>
+                                            <p class="card-excerpt">
+                                                How we helped a tech startup scale from 10 to 200+ employees in 18 months.
+                                            </p>
+                                            <button class="read-more-btn disabled">
+                                                Coming Soon
+                                                <i class="fas fa-clock"></i>
+                                            </button>
+                                        </div>
+                                    </article>
+                                @else
+                                    <div class="empty-state">
                                         <i class="fas fa-chart-line"></i>
+                                        <h3>No Case Studies Found</h3>
+                                        <p>
+                                            Try adjusting your search criteria or clear filters to see all case studies.
+                                        </p>
                                     </div>
-                                    <div class="card-overlay">
-                                        <span class="content-type">Case Study</span>
-                                    </div>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-meta">
-                                        <span class="status">Coming Soon</span>
-                                    </div>
-                                    <h3 class="card-title">Digital Transformation Success</h3>
-                                    <p class="card-excerpt">
-                                        Discover how we helped a Fortune 500 company streamline their operations and achieve 40% cost savings.
-                                    </p>
-                                    <button class="read-more-btn disabled">
-                                        Coming Soon
-                                        <i class="fas fa-clock"></i>
-                                    </button>
-                                </div>
-                            </article>
-
-                            <article class="content-card case-study-card coming-soon">
-                                <div class="card-image">
-                                    <div class="placeholder-image">
-                                        <i class="fas fa-cogs"></i>
-                                    </div>
-                                    <div class="card-overlay">
-                                        <span class="content-type">Case Study</span>
-                                    </div>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-meta">
-                                        <span class="status">Coming Soon</span>
-                                    </div>
-                                    <h3 class="card-title">AI Implementation Journey</h3>
-                                    <p class="card-excerpt">
-                                        Learn about our comprehensive AI integration process that boosted productivity by 60%.
-                                    </p>
-                                    <button class="read-more-btn disabled">
-                                        Coming Soon
-                                        <i class="fas fa-clock"></i>
-                                    </button>
-                                </div>
-                            </article>
-
-                            <article class="content-card case-study-card coming-soon">
-                                <div class="card-image">
-                                    <div class="placeholder-image">
-                                        <i class="fas fa-rocket"></i>
-                                    </div>
-                                    <div class="card-overlay">
-                                        <span class="content-type">Case Study</span>
-                                    </div>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-meta">
-                                        <span class="status">Coming Soon</span>
-                                    </div>
-                                    <h3 class="card-title">Startup Scale-Up Strategy</h3>
-                                    <p class="card-excerpt">
-                                        How we helped a tech startup scale from 10 to 200+ employees in 18 months.
-                                    </p>
-                                    <button class="read-more-btn disabled">
-                                        Coming Soon
-                                        <i class="fas fa-clock"></i>
-                                    </button>
-                                </div>
-                            </article>
-                        @endif
-                    </div>
-                    
-                    <!-- Scroll Controls -->
-                    <div class="scroll-controls">
-                        <button class="scroll-btn scroll-left" data-target="case-studies">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="scroll-btn scroll-right" data-target="case-studies">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
+                                @endif
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
@@ -272,7 +385,6 @@
                         @csrf
                         <div class="form-group">
                             <div class="input-wrapper">
-                                <i class="fas fa-envelope input-icon"></i>
                                 <input 
                                     type="email" 
                                     name="email" 
@@ -413,8 +525,208 @@
     padding: 0 2rem;
 }
 
+.content-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: sticky;
+    top: 20px;
+}
+
+.sidebar-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.sidebar-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sidebar-title i {
+    color: #667eea;
+}
+
+/* Search Form */
+.search-form {
+    margin-bottom: 2rem;
+}
+
+.search-input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 3rem 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    background: #5a67d8;
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* Filter Group */
+.filter-group {
+    margin-bottom: 1.5rem;
+}
+
+.filter-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-btn {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.filter-btn:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.filter-btn.active {
+    background: #667eea;
+    border-color: #667eea;
+    color: white;
+}
+
+/* Keywords Section */
+.keywords-section {
+    margin-bottom: 1.5rem;
+}
+
+.keywords-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.keywords-title i {
+    color: #667eea;
+    font-size: 0.875rem;
+}
+
+.keywords-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.keyword-tag {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.keyword-tag:hover {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.keyword-tag.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+/* Clear Filters */
+.clear-filters {
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.clear-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ef4444;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.clear-btn:hover {
+    color: #dc2626;
+}
+
+/* Main Content */
+.main-content {
+    min-width: 0;
+}
+
 .category-section {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .category-section:last-child {
@@ -427,7 +739,7 @@
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 700;
     color: #1a202c;
     margin-bottom: 1rem;
@@ -435,11 +747,18 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .section-title i {
     color: #667eea;
-    font-size: 2rem;
+    font-size: 1.75rem;
+}
+
+.filter-indicator {
+    font-size: 1rem;
+    color: #667eea;
+    font-weight: 500;
 }
 
 .section-subtitle {
@@ -450,46 +769,32 @@
     line-height: 1.6;
 }
 
-/* Horizontal Scroll Container */
-.horizontal-scroll-container {
-    position: relative;
-    overflow: hidden;
-    padding: 2rem 0;
-}
-
-.scroll-content {
-    display: flex;
+/* Posts Grid */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 0 2rem;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    padding: 0;
 }
 
-.scroll-content::-webkit-scrollbar {
-    display: none;
-}
-
-/* Content Cards */
+/* Content Cards - Smaller */
 .content-card {
-    flex: 0 0 400px;
     background: white;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     position: relative;
 }
 
 .content-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .card-image {
     position: relative;
-    height: 250px;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -512,7 +817,7 @@
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .card-overlay {
@@ -524,28 +829,28 @@
 .content-type {
     background: rgba(255, 255, 255, 0.9);
     color: #667eea;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.875rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 16px;
+    font-size: 0.75rem;
     font-weight: 600;
 }
 
 .card-content {
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .card-meta {
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     color: #64748b;
 }
 
 .card-meta span {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
 }
 
 .card-meta i {
@@ -553,17 +858,35 @@
 }
 
 .card-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: #1a202c;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     line-height: 1.3;
 }
 
 .card-excerpt {
     color: #64748b;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+/* Card Keywords */
+.card-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.keyword-badge {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
 }
 
 .read-more-btn {
@@ -572,18 +895,19 @@
     gap: 0.5rem;
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.875rem;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
 }
 
 .read-more-btn:hover {
-    transform: translateX(5px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    transform: translateX(3px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
 }
 
 .read-more-btn.disabled {
@@ -618,49 +942,6 @@
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 600;
-}
-
-/* Scroll Controls */
-.scroll-controls {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.scroll-btn {
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #667eea;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    pointer-events: all;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.scroll-btn:hover {
-    background: #667eea;
-    color: white;
-    transform: scale(1.1);
-}
-
-.scroll-left {
-    margin-left: -25px;
-}
-
-.scroll-right {
-    margin-right: -25px;
 }
 
 /* Newsletter Section */
@@ -858,7 +1139,7 @@
     text-align: center;
     padding: 4rem 2rem;
     color: #64748b;
-    min-width: 400px;
+    grid-column: 1 / -1;
 }
 
 .empty-state i {
@@ -876,6 +1157,19 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+    .content-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .sidebar {
+        position: static;
+    }
+    
+    .sidebar-card {
+        padding: 1.5rem;
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -888,8 +1182,9 @@
         text-align: center;
     }
     
-    .content-card {
-        flex: 0 0 350px;
+    .posts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
     }
 }
 
@@ -908,12 +1203,8 @@
         gap: 0.5rem;
     }
     
-    .content-card {
-        flex: 0 0 300px;
-    }
-    
-    .scroll-content {
-        padding: 0 1rem;
+    .posts-grid {
+        grid-template-columns: 1fr;
     }
     
     .container {
@@ -922,6 +1213,19 @@
     
     .newsletter-form {
         padding: 1.5rem;
+    }
+    
+    .filter-buttons {
+        flex-direction: row;
+    }
+    
+    .keywords-list {
+        gap: 0.3rem;
+    }
+    
+    .keyword-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
     }
 }
 
@@ -934,40 +1238,78 @@
         font-size: 2rem;
     }
     
-    .content-card {
-        flex: 0 0 280px;
+    .content-layout {
+        gap: 1.5rem;
+    }
+    
+    .sidebar-card {
+        padding: 1rem;
     }
     
     .card-content {
-        padding: 1.5rem;
+        padding: 1.25rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
     }
 }
 </style>
 
 <script>
-// Horizontal scroll functionality
+// Search and filter functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize scroll controls
-    const scrollBtns = document.querySelectorAll('.scroll-btn');
+    const searchForm = document.getElementById('searchForm');
+    const keywordSearch = document.getElementById('keywordSearch');
+    const typeFilter = document.getElementById('typeFilter');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const keywordTags = document.querySelectorAll('.keyword-tag');
     
-    scrollBtns.forEach(btn => {
+    // Handle type filter buttons
+    filterButtons.forEach(btn => {
         btn.addEventListener('click', function() {
-            const target = this.dataset.target;
-            const container = document.getElementById(target) || document.querySelector('.scroll-content');
-            const scrollAmount = 420; // Card width + gap
+            const type = this.dataset.type;
             
-            if (this.classList.contains('scroll-left')) {
-                container.scrollBy({
-                    left: -scrollAmount,
-                    behavior: 'smooth'
-                });
-            } else {
-                container.scrollBy({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
-            }
+            // Update active state
+            filterButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Update hidden input and submit form
+            typeFilter.value = type;
+            searchForm.submit();
         });
+    });
+    
+    // Handle keyword tags
+    keywordTags.forEach(tag => {
+        tag.addEventListener('click', function() {
+            const keyword = this.dataset.keyword;
+            
+            // Set the search input value and submit form
+            keywordSearch.value = keyword;
+            searchForm.submit();
+        });
+    });
+    
+    // Handle search form submission
+    searchForm.addEventListener('submit', function(e) {
+        // Remove empty values before submission
+        const formData = new FormData(this);
+        const url = new URL(this.action || window.location.href);
+        
+        // Clear existing params
+        url.search = '';
+        
+        // Add non-empty values
+        for (let [key, value] of formData.entries()) {
+            if (value.trim() !== '') {
+                url.searchParams.set(key, value);
+            }
+        }
+        
+        // Navigate to new URL
+        window.location.href = url.toString();
+        e.preventDefault();
     });
     
     // Newsletter form handling
@@ -975,102 +1317,70 @@ document.addEventListener('DOMContentLoaded', function() {
     const successMessage = document.getElementById('subscriptionSuccess');
     const errorMessage = document.getElementById('subscriptionError');
     
-    newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(this);
-        const subscribeBtn = document.querySelector('.subscribe-btn');
-        const originalBtnText = subscribeBtn.innerHTML;
-        
-        // Show loading state
-        subscribeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
-        subscribeBtn.disabled = true;
-        
-        // Hide any previous messages
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none';
-        
-        // Make API call
-        fetch(this.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                this.style.display = 'none';
-                successMessage.style.display = 'flex';
-                
-                // Reset form after 5 seconds
-                setTimeout(() => {
-                    this.style.display = 'block';
-                    successMessage.style.display = 'none';
-                    this.reset();
-                }, 5000);
-            } else {
-                errorMessage.querySelector('span').textContent = data.message || 'Something went wrong. Please try again.';
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const subscribeBtn = document.querySelector('.subscribe-btn');
+            const originalBtnText = subscribeBtn.innerHTML;
+            
+            // Show loading state
+            subscribeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+            subscribeBtn.disabled = true;
+            
+            // Hide any previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Make API call
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    this.style.display = 'none';
+                    successMessage.style.display = 'flex';
+                    
+                    // Reset form after 5 seconds
+                    setTimeout(() => {
+                        this.style.display = 'block';
+                        successMessage.style.display = 'none';
+                        this.reset();
+                    }, 5000);
+                } else {
+                    errorMessage.querySelector('span').textContent = data.message || 'Something went wrong. Please try again.';
+                    errorMessage.style.display = 'flex';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                errorMessage.querySelector('span').textContent = 'Network error. Please check your connection and try again.';
                 errorMessage.style.display = 'flex';
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            errorMessage.querySelector('span').textContent = 'Network error. Please check your connection and try again.';
-            errorMessage.style.display = 'flex';
-        })
-        .finally(() => {
-            // Restore button state
-            subscribeBtn.innerHTML = originalBtnText;
-            subscribeBtn.disabled = false;
+            })
+            .finally(() => {
+                // Restore button state
+                subscribeBtn.innerHTML = originalBtnText;
+                subscribeBtn.disabled = false;
+            });
         });
-    });
-});
-
-// Touch/swipe support for mobile
-let isDown = false;
-let startX;
-let scrollLeftPos;
-
-document.querySelectorAll('.scroll-content').forEach(container => {
-    container.addEventListener('mousedown', (e) => {
-        isDown = true;
-        startX = e.pageX - container.offsetLeft;
-        scrollLeftPos = container.scrollLeft;
-        container.style.cursor = 'grabbing';
-    });
-
-    container.addEventListener('mouseleave', () => {
-        isDown = false;
-        container.style.cursor = 'grab';
-    });
-
-    container.addEventListener('mouseup', () => {
-        isDown = false;
-        container.style.cursor = 'grab';
-    });
-
-    container.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - container.offsetLeft;
-        const walk = (x - startX) * 2;
-        container.scrollLeft = scrollLeftPos - walk;
-    });
+    }
     
-    // Touch events for mobile
-    container.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].pageX - container.offsetLeft;
-        scrollLeftPos = container.scrollLeft;
-    });
-    
-    container.addEventListener('touchmove', (e) => {
-        if (!startX) return;
-        const x = e.touches[0].pageX - container.offsetLeft;
-        const walk = (x - startX) * 2;
-        container.scrollLeft = scrollLeftPos - walk;
+    // Real-time search (optional - debounced)
+    let searchTimeout;
+    keywordSearch.addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            if (this.value.length >= 3 || this.value.length === 0) {
+                searchForm.submit();
+            }
+        }, 500);
     });
 });
 </script>
