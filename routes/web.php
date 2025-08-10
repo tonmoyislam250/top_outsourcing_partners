@@ -8,6 +8,7 @@ use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\Auth\SignupController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\StorageController;
 use App\Http\Controllers\NewsletterController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -84,19 +85,23 @@ Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])
 Route::get('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
 
 // Storage files route (fallback for when symlink doesn't work)
-Route::get('/storage/{path}', function ($path) {
-    $filePath = storage_path('app/public/' . $path);
-    
-    if (file_exists($filePath)) {
-        $mimeType = mime_content_type($filePath);
-        return response()->file($filePath, [
-            'Content-Type' => $mimeType,
-            'Cache-Control' => 'public, max-age=31536000',
-        ]);
-    }
-    
-    abort(404);
-})->where('path', '.*')->name('storage.serve');
+Route::get('/storage/{path}', [StorageController::class, 'serve'])
+    ->where('path', '.*')
+    ->name('storage.serve');
+
+// Test route for storage functionality
+Route::get('/test-storage', function () {
+    $files = \Storage::disk('public')->allFiles('blog-images');
+    return response()->json([
+        'storage_path' => storage_path('app/public'),
+        'public_storage_exists' => file_exists(public_path('storage')),
+        'public_storage_is_link' => is_link(public_path('storage')),
+        'blog_images_count' => count($files),
+        'sample_files' => array_slice($files, 0, 5),
+        'app_env' => app()->environment(),
+        'app_url' => config('app.url'),
+    ]);
+})->name('test.storage');
 
 // Admin blog routes - protected by auth middleware
 Route::middleware(['auth'])->group(function () {
