@@ -11,7 +11,7 @@ cmds = [
 [phases.build]
 cmds = [
     # Storage link (try multiple methods)
-    'ls -la storage/app/public/*'
+    'ls -la storage/app/public/*',
     'cp -rf storage/app/public/* public/storage/',
     
     # Verify storage directory exists
