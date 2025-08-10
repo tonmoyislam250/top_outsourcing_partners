@@ -83,6 +83,21 @@ Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show')
 Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 Route::get('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
 
+// Storage files route (fallback for when symlink doesn't work)
+Route::get('/storage/{path}', function ($path) {
+    $filePath = storage_path('app/public/' . $path);
+    
+    if (file_exists($filePath)) {
+        $mimeType = mime_content_type($filePath);
+        return response()->file($filePath, [
+            'Content-Type' => $mimeType,
+            'Cache-Control' => 'public, max-age=31536000',
+        ]);
+    }
+    
+    abort(404);
+})->where('path', '.*')->name('storage.serve');
+
 // Admin blog routes - protected by auth middleware
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/blogs', [BlogController::class, 'index'])->name('admin.blogs.index');

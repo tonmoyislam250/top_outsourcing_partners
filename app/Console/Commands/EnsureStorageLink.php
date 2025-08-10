@@ -29,6 +29,12 @@ class EnsureStorageLink extends Command
         $target = storage_path('app/public');
         $link = public_path('storage');
 
+        // Ensure target directory exists
+        if (!File::exists($target)) {
+            File::makeDirectory($target, 0755, true);
+            $this->info('Created target directory: ' . $target);
+        }
+
         // Remove existing link/directory if it exists
         if (File::exists($link)) {
             if (is_link($link)) {
@@ -40,32 +46,40 @@ class EnsureStorageLink extends Command
             }
         }
 
-        // Ensure target directory exists
-        if (!File::exists($target)) {
-            File::makeDirectory($target, 0755, true);
-            $this->info('Created target directory.');
-        }
-
-        // Create the symbolic link
+        // Try different methods to create the symbolic link
         try {
-            if (windows_os()) {
-                // Use symlink function for Windows
-                $result = symlink($target, $link);
-            } else {
-                // Use Laravel's File facade for Unix-like systems
-                $result = File::link($target, $link);
-            }
-
-            if ($result) {
-                $this->info('Storage link created successfully.');
+            // Method 1: Try using Laravel's File facade
+            if (File::link($target, $link)) {
+                $this->info('Storage link created successfully using Laravel File facade.');
                 return 0;
-            } else {
-                $this->error('Failed to create storage link.');
-                return 1;
             }
         } catch (\Exception $e) {
-            $this->error('Exception: ' . $e->getMessage());
-            return 1;
+            $this->warn('Laravel File facade failed: ' . $e->getMessage());
         }
+
+        try {
+            // Method 2: Try using PHP's symlink function
+            if (symlink($target, $link)) {
+                $this->info('Storage link created successfully using PHP symlink.');
+                return 0;
+            }
+        } catch (\Exception $e) {
+            $this->warn('PHP symlink failed: ' . $e->getMessage());
+        }
+
+        try {
+            // Method 3: For Railway/production environments, copy files instead of symlink
+            if (app()->environment('production')) {
+                $this->info('Creating storage directory copy for production environment...');
+                File::copyDirectory($target, $link);
+                $this->info('Storage directory copied successfully.');
+                return 0;
+            }
+        } catch (\Exception $e) {
+            $this->warn('Directory copy failed: ' . $e->getMessage());
+        }
+
+        $this->error('All methods failed to create storage link.');
+        return 1;
     }
 }
