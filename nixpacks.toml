@@ -28,7 +28,7 @@ cmds = [
     'cp -rf storage/app/public/* public/storage/',
     
     # Verify storage directory exists
-    'ls -la public/storage/ || true',
+    'ls -la public/storage/blog-images || true',
 ]
 
 [start]
