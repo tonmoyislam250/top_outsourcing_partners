@@ -3,7 +3,7 @@
 @section('content')
 <div class="modern-blog-container">
     <!-- Header Section -->
-    <div class="blog-header" @if($blog->image) style="background-image: url('{{ storage_asset($blog->image) }}');" @endif>
+    <div class="blog-header" @if($blog->image) style="background-image: url('{{ asset('storage/' . $blog->image) }}');" @endif>
         <div class="header-overlay"></div>
         <div class="container-fluid">
             <div class="row">

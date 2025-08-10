@@ -11,8 +11,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        // Add storage file serving middleware for production
-        $middleware->web(\App\Http\Middleware\ServeStorageFiles::class);
+        //
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

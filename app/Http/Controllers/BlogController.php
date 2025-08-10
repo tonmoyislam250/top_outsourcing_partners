@@ -145,7 +145,7 @@ class BlogController extends Controller
                 'success' => true,
                 'message' => 'Blog updated successfully',
                 'blog' => $freshBlog,
-                'imageUrl' => $freshBlog->image ? storage_asset($freshBlog->image) : null
+                'imageUrl' => $freshBlog->image ? asset('storage/' . $freshBlog->image) : null
             ]);
         }
 
@@ -177,7 +177,7 @@ class BlogController extends Controller
         if ($request->ajax()) {
             return response()->json([
                 'blog' => $blog,
-                'imageUrl' => $blog->image ? storage_asset($blog->image) : null,
+                'imageUrl' => $blog->image ? asset('storage/' . $blog->image) : null,
                 'createdAt' => $blog->created_at->format('M d, Y')
             ]);
         }
@@ -191,7 +191,7 @@ class BlogController extends Controller
     {
         return response()->json([
             'blog' => $blog,
-            'imageUrl' => $blog->image ? storage_asset($blog->image) : null,
+            'imageUrl' => $blog->image ? asset('storage/' . $blog->image) : null,
         ]);
     }
 
@@ -232,7 +232,7 @@ class BlogController extends Controller
         try {
             if ($request->hasFile('file')) {
                 $imagePath = $request->file('file')->store('tinymce-images', 'public');
-                $url = storage_asset($imagePath);
+                $url = asset('storage/' . $imagePath);
                 
                 return response()->json([
                     'location' => $url
