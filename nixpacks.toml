@@ -25,11 +25,10 @@ cmds = [
     'php artisan view:cache',
     
     # Storage link (try multiple methods)
-    'php artisan storage:link || cp -rf storage/app/public/* public/storage/ || true',
+    'cp -rf storage/app/public/* public/storage/',
     
     # Verify storage directory exists
     'ls -la public/storage/ || true',
-    'ls -la storage/app/public/ || true'
 ]
 
 [start]
