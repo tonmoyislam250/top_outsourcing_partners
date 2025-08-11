@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="google-site-verification" content="Obtv3mmaGnLncwwV1CCtglU1C2NN61qR3Hl6cN2jL7A" />
     <!-- Google Tag Manager -->
     <script>
         (function(w, d, s, l, i) {
