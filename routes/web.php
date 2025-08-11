@@ -22,7 +22,8 @@ Route::get('/about-us', function () {
 })->name('about');
 
 Route::get('/team-members', function () {
-    return view('pages/team-members');
+    $teamMembers = \App\Models\TeamMember::all();
+    return view('pages/team-members', compact('teamMembers'));
 })->name('team-members.show');
 
 Route::get('/services', function () {
