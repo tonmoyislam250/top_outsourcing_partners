@@ -1,9 +1,6 @@
-@extends('layouts.a    @php
-        $principal = $teamMembers->where('is_principal', true)->first();
-        if ($principal && !$principal->modal_image) {
-            $principal->modal_image = $principal->image;
-        }
-    @endphp@section('content')
+@extends('layouts.app')
+
+@section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link rel="stylesheet" href="{{ asset('css/about.css') }}">
 
@@ -21,8 +18,8 @@
 
     <!-- Principal Section -->
     @php
-        $principal = App\Models\TeamMember::where('is_principal', true)->first();
-        if ($principal && !file_exists(public_path($principal->modal_image))) {
+        $principal = $teamMembers->where('is_principal', true)->first();
+        if ($principal && !$principal->modal_image) {
             $principal->modal_image = $principal->image;
         }
     @endphp
@@ -99,7 +96,7 @@
     <!-- Team Members Section -->
     <div class="row justify-content-center equal-height">
         @php
-            $members = App\Models\TeamMember::where('is_principal', false)->get();
+            $members = $teamMembers->where('is_principal', false);
             foreach ($members as $member) {
                 if (!$member->modal_image) {
                     $member->modal_image = $member->image;
@@ -540,7 +537,7 @@ function editTeamMemberInline(id) {
             // Show current images
             if (data.image) {
                 document.getElementById('current_image_preview').innerHTML = 
-                    `<small class="text-muted">Current: </small><img src="/${data.image}" style="max-width: 100px; max-height: 100px;" class="img-thumbnail">`;
+                    `<small class="text-muted">Current: </small><img src="${data.image}" style="max-width: 100px; max-height: 100px;" class="img-thumbnail">`;
             }
             if (data.modal_image) {
                 document.getElementById('current_modal_image_preview').innerHTML = 
