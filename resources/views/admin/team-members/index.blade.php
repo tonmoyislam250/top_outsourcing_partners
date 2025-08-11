@@ -6,19 +6,27 @@
 
 <div class="container my-5 py-4">
     <div class="d-flex justify-content-between align-items-center mb-5">
-        <h1 class="team-title">Meet Our Wonderful Team</h1>
-        @auth
-            <div>
-                <a href="{{ route('admin.team-members.index') }}" class="btn btn-outline-primary btn-sm">
-                    <i class="fas fa-cog"></i> Manage Team
-                </a>
-            </div>
-        @endauth
+        <h1 class="team-title">Team Members Management</h1>
+        <div>
+            <a href="{{ route('team-members.show') }}" class="btn btn-outline-secondary btn-sm me-2">
+                <i class="fas fa-eye"></i> View Public Page
+            </a>
+            <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#createTeamMemberModal">
+                <i class="fas fa-plus"></i> Add New Team Member
+            </button>
+        </div>
     </div>
+
+    @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    @endif
 
     <!-- Principal Section -->
     @php
-        $principal = App\Models\TeamMember::where('is_principal', true)->first();
+        $principal = $teamMembers->where('is_principal', true)->first();
         if ($principal && !file_exists(public_path($principal->modal_image))) {
             $principal->modal_image = $principal->image;
         }
@@ -39,20 +47,18 @@
                  data-member-expertise="{{ json_encode($principal->expertise) }}"
                  data-member-vision="{{ $principal->vision }}">
                 
-                @auth
                 <div class="admin-actions position-absolute top-0 end-0 m-2" style="z-index: 10;">
                     <button type="button" class="btn btn-sm btn-warning me-1" 
-                            onclick="event.stopPropagation(); editTeamMemberInline({{ $principal->id }})"
+                            onclick="event.stopPropagation(); editTeamMember({{ $principal->id }})"
                             data-bs-toggle="modal" 
                             data-bs-target="#editTeamMemberModal">
                         <i class="fas fa-edit"></i>
                     </button>
                     <button type="button" class="btn btn-sm btn-danger" 
-                            onclick="event.stopPropagation(); deleteTeamMemberInline({{ $principal->id }}, '{{ $principal->name }}')">
+                            onclick="event.stopPropagation(); deleteTeamMember({{ $principal->id }}, '{{ $principal->name }}')">
                         <i class="fas fa-trash"></i>
                     </button>
                 </div>
-                @endauth
                 
                 <div class="row align-items-center">
                     <div class="col-md-4 mb-3 mb-md-0">
@@ -68,35 +74,24 @@
         </div>
     </div>
     @else
-        @auth
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-10 col-md-12">
-                <div class="team-card team-card-principal d-flex flex-column justify-content-center align-items-center border-2 border-dashed text-center" 
-                     style="min-height: 200px; cursor: pointer; border-color: #007bff !important;"
-                     data-bs-toggle="modal" 
-                     data-bs-target="#createTeamMemberModal">
-                    <i class="fas fa-user-plus fa-3x text-primary mb-3"></i>
-                    <h5 class="text-primary">Add Principal Team Member</h5>
-                    <p class="text-muted">No principal found. Click to add one.</p>
-                </div>
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-10 col-md-12">
+            <div class="team-card team-card-principal d-flex flex-column justify-content-center align-items-center border-2 border-dashed text-center" 
+                 style="min-height: 200px; cursor: pointer; border-color: #007bff !important;"
+                 data-bs-toggle="modal" 
+                 data-bs-target="#createTeamMemberModal">
+                <i class="fas fa-user-plus fa-3x text-primary mb-3"></i>
+                <h5 class="text-primary">Add Principal Team Member</h5>
+                <p class="text-muted">No principal found. Click to add one.</p>
             </div>
         </div>
-        @else
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-10 col-md-12">
-                <div class="alert alert-info text-center">
-                    <h4>No Principal Team Member</h4>
-                    <p>Please contact the administrator to add team members.</p>
-                </div>
-            </div>
-        </div>
-        @endauth
+    </div>
     @endif
 
     <!-- Team Members Section -->
     <div class="row justify-content-center equal-height">
         @php
-            $members = App\Models\TeamMember::where('is_principal', false)->get();
+            $members = $teamMembers->where('is_principal', false);
             foreach ($members as $member) {
                 if ($member->modal_image && !file_exists(public_path($member->modal_image))) {
                     $member->modal_image = $member->image;
@@ -104,7 +99,6 @@
             }
         @endphp
 
-        @auth
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="team-card team-card-member p-0 d-flex flex-column justify-content-center align-items-center border-2 border-dashed text-center" 
                  style="min-height: 350px; cursor: pointer; border-color: #007bff !important;"
@@ -114,7 +108,6 @@
                 <h5 class="text-primary">Add New Team Member</h5>
             </div>
         </div>
-        @endauth
 
         @forelse($members as $member)
         <div class="col-lg-4 col-md-6 mb-4">
@@ -130,20 +123,18 @@
                  data-member-expertise="{{ json_encode($member->expertise) }}"
                  data-member-vision="{{ $member->vision }}">
                  
-                 @auth
                  <div class="admin-actions position-absolute top-0 end-0 m-2" style="z-index: 10;">
                      <button type="button" class="btn btn-sm btn-warning me-1" 
-                             onclick="event.stopPropagation(); editTeamMemberInline({{ $member->id }})"
+                             onclick="event.stopPropagation(); editTeamMember({{ $member->id }})"
                              data-bs-toggle="modal" 
                              data-bs-target="#editTeamMemberModal">
                          <i class="fas fa-edit"></i>
                      </button>
                      <button type="button" class="btn btn-sm btn-danger" 
-                             onclick="event.stopPropagation(); deleteTeamMemberInline({{ $member->id }}, '{{ $member->name }}')">
+                             onclick="event.stopPropagation(); deleteTeamMember({{ $member->id }}, '{{ $member->name }}')">
                          <i class="fas fa-trash"></i>
                      </button>
                  </div>
-                 @endauth
                  
                  <img src="{{ asset($member->image) }}" alt="{{ $member->name }}" class="member-img img-fluid">
                  <div class="card-content member-details">
@@ -153,14 +144,12 @@
             </div>
         </div>
         @empty
-            @guest
-            <div class="col-12">
-                <div class="alert alert-info text-center">
-                    <h4>No Team Members Available</h4>
-                    <p>Team members will be displayed here once they are added.</p>
-                </div>
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+                <h4>No Team Members Available</h4>
+                <p>Team members will be displayed here once they are added.</p>
             </div>
-            @endguest
+        </div>
         @endforelse
     </div>
 </div>
@@ -175,33 +164,23 @@
       <div class="modal-body">
         <div class="row">
             <div class="col-md-4 text-center text-md-start">
-                <img src="" alt="Team Member" id="modalProfileImage" class="modal-profile-img img-fluid mb-3 mb-md-0">
-                <div class="modal-details d-none d-md-block">
-                    <h5 class="modal-section-title"><i class="fas fa-graduation-cap"></i> Education & Certifications</h5>
-                    <ul id="modalEducationList">
-                    </ul>
-                </div>
+                <img id="modalProfileImage" src="" alt="" class="modal-profile-img">
             </div>
             <div class="col-md-8">
-                <h4 id="modalName" class="modal-title-name"></h4>
+                <h3 id="modalName" class="modal-title-name"></h3>
                 <p id="modalTitle" class="modal-title-role"></p>
                 <p id="modalDescription" class="modal-description"></p>
-
+                
                 <div class="modal-details">
-                    <h5 class="modal-section-title"><i class="fas fa-cogs"></i> Area of expertise</h5>
-                    <ul id="modalExpertiseList">
-                    </ul>
-                </div>
-
-                 <div class="modal-details">
-                    <h5 class="modal-section-title"><i class="fas fa-bullseye"></i> Approach & Vision</h5>
-                    <p id="modalVision" style="font-size: 0.9rem; color: #555;text-align: left;"></p>
-                 </div>
-
-                 <div class="modal-details d-block d-md-none mt-3">
-                    <h5 class="modal-section-title"><i class="fas fa-graduation-cap"></i> Education & Certifications</h5>
-                    <ul id="modalEducationListSmall">
-                    </ul>
+                    <h6 class="modal-section-title"><i class="fas fa-graduation-cap"></i>Education & Certifications</h6>
+                    <ul id="modalEducationList" class="d-none d-md-block"></ul>
+                    <ul id="modalEducationListSmall" class="d-md-none"></ul>
+                    
+                    <h6 class="modal-section-title"><i class="fas fa-star"></i>Areas of Expertise</h6>
+                    <ul id="modalExpertiseList"></ul>
+                    
+                    <h6 class="modal-section-title"><i class="fas fa-lightbulb"></i>Vision & Approach</h6>
+                    <p id="modalVision" class="modal-description"></p>
                 </div>
             </div>
         </div>
@@ -210,7 +189,6 @@
   </div>
 </div>
 
-@auth
 <!-- Create Team Member Modal -->
 <div class="modal fade" id="createTeamMemberModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -396,7 +374,6 @@
         </div>
     </div>
 </div>
-@endauth
 
 @endsection
 
@@ -521,7 +498,7 @@ function removeField(button) {
     button.parentElement.remove();
 }
 
-function editTeamMemberInline(id) {
+function editTeamMember(id) {
     fetch(`/admin/team-members/${id}/edit-data`)
         .then(response => response.json())
         .then(data => {
@@ -588,7 +565,7 @@ function editTeamMemberInline(id) {
         });
 }
 
-function deleteTeamMemberInline(id, name) {
+function deleteTeamMember(id, name) {
     if (confirm(`Are you sure you want to delete ${name}? This action cannot be undone.`)) {
         fetch(`/admin/team-members/${id}/ajax-delete`, {
             method: 'DELETE',

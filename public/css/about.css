@@ -18,7 +18,7 @@
 .team-card-principal {
     background-color: #fff; /* White background for principal */
     padding: 25px; /* Padding inside the principal card */
-    cursor: default; /* Principal card might not need modal */
+    cursor: pointer; /* Principal card is clickable for modal */
 }
 .team-card-principal:hover {
     transform: none; /* Disable hover effect for principal */
@@ -165,4 +165,48 @@
 /* Ensure modal content is scrollable if it exceeds viewport height */
 .modal-dialog-scrollable .modal-body {
     overflow-y: auto;
+}
+
+/* Admin Button Styles */
+.admin-actions {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.team-card:hover .admin-actions {
+    opacity: 1;
+}
+
+.admin-actions .btn {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.admin-actions .btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Add New Team Member Card Styles */
+.team-card.border-dashed {
+    border-style: dashed !important;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease-in-out;
+}
+
+.team-card.border-dashed:hover {
+    background-color: #e9ecef;
+    border-color: #0056b3 !important;
+}
+
+.team-card.border-dashed:hover i,
+.team-card.border-dashed:hover h5 {
+    color: #0056b3 !important;
 }

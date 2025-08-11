@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\SignupController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\TeamMemberController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/services/{slug}', [HomeController::class, 'show'])->name('services.show');
@@ -22,7 +23,7 @@ Route::get('/about-us', function () {
 
 Route::get('/team-members', function () {
     return view('pages/team-members');
-})->name('about-us');
+})->name('team-members.show');
 
 Route::get('/services', function () {
     return view('pages/services');
@@ -100,6 +101,18 @@ Route::middleware(['auth'])->group(function () {
     // Newsletter admin routes
     Route::get('/admin/newsletter', [NewsletterController::class, 'adminIndex'])->name('admin.newsletter.index');
     Route::post('/admin/newsletter/test', [NewsletterController::class, 'sendTestNewsletter'])->name('admin.newsletter.test');
+    
+    // Team Members admin routes
+    Route::get('/admin/team-members', [TeamMemberController::class, 'index'])->name('admin.team-members.index');
+    Route::get('/admin/team-members/create', [TeamMemberController::class, 'create'])->name('admin.team-members.create');
+    Route::post('/admin/team-members', [TeamMemberController::class, 'store'])->name('admin.team-members.store');
+    Route::get('/admin/team-members/{teamMember}/edit', [TeamMemberController::class, 'edit'])->name('admin.team-members.edit');
+    Route::put('/admin/team-members/{teamMember}', [TeamMemberController::class, 'update'])->name('admin.team-members.update');
+    Route::delete('/admin/team-members/{teamMember}', [TeamMemberController::class, 'destroy'])->name('admin.team-members.destroy');
+    
+    // AJAX routes for team member management
+    Route::get('/admin/team-members/{teamMember}/edit-data', [TeamMemberController::class, 'getForEdit'])->name('admin.team-members.get-for-edit');
+    Route::delete('/admin/team-members/{teamMember}/ajax-delete', [TeamMemberController::class, 'ajaxDestroy'])->name('admin.team-members.ajax-destroy');
 });
 
 
