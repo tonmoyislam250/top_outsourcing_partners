@@ -1,6 +1,9 @@
-@extends('layouts.app')
-
-@section('content')
+@extends('layouts.a    @php
+        $principal = $teamMembers->where('is_principal', true)->first();
+        if ($principal && !$principal->modal_image) {
+            $principal->modal_image = $principal->image;
+        }
+    @endphp@section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link rel="stylesheet" href="{{ asset('css/about.css') }}">
 
@@ -33,7 +36,7 @@
                  data-member-id="{{ $principal->id }}"
                  data-member-name="{{ $principal->name }}"
                  data-member-title="{{ $principal->title }}"
-                 data-member-image="{{ asset($principal->modal_image) }}"
+                 data-member-image="{{ $principal->modal_image }}"
                  data-member-description="{{ $principal->description }}"
                  data-member-education="{{ json_encode($principal->education) }}"
                  data-member-expertise="{{ json_encode($principal->expertise) }}"
@@ -98,7 +101,7 @@
         @php
             $members = App\Models\TeamMember::where('is_principal', false)->get();
             foreach ($members as $member) {
-                if ($member->modal_image && !file_exists(public_path($member->modal_image))) {
+                if (!$member->modal_image) {
                     $member->modal_image = $member->image;
                 }
             }
@@ -124,7 +127,7 @@
                  data-member-id="{{ $member->id }}"
                  data-member-name="{{ $member->name }}"
                  data-member-title="{{ $member->title }}"
-                 data-member-image="{{ asset($member->modal_image) }}"
+                 data-member-image="{{ $member->modal_image }}"
                  data-member-description="{{ $member->description }}"
                  data-member-education="{{ json_encode($member->education) }}"
                  data-member-expertise="{{ json_encode($member->expertise) }}"
@@ -145,7 +148,7 @@
                  </div>
                  @endauth
                  
-                 <img src="{{ asset($member->image) }}" alt="{{ $member->name }}" class="member-img img-fluid">
+                 <img src="{{ $member->image }}" alt="{{ $member->name }}" class="member-img img-fluid">
                  <div class="card-content member-details">
                     <h5>{{ $member->name }}</h5>
                     <p class="text-muted mb-0">{{ $member->title }}</p>
@@ -541,7 +544,7 @@ function editTeamMemberInline(id) {
             }
             if (data.modal_image) {
                 document.getElementById('current_modal_image_preview').innerHTML = 
-                    `<small class="text-muted">Current: </small><img src="/${data.modal_image}" style="max-width: 100px; max-height: 100px;" class="img-thumbnail">`;
+                    `<small class="text-muted">Current: </small><img src="${data.modal_image}" style="max-width: 100px; max-height: 100px;" class="img-thumbnail">`;
             }
             
             // Populate education fields

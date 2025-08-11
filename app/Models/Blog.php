@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
+use App\Traits\HasCloudinaryImages;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
-    use HasFactory;
+    use HasFactory, HasCloudinaryImages;
 
-    protected $fillable = ['title', 'content', 'image', 'user_id', 'type', 'keywords'];
+    protected $fillable = ['title', 'content', 'image', 'image_public_id', 'user_id', 'type', 'keywords'];
 
     protected $casts = [
         'type' => 'string',
@@ -43,5 +44,29 @@ class Blog extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Get the blog's thumbnail image URL
+     */
+    public function getThumbnailImageAttribute()
+    {
+        return $this->getThumbnailUrl($this->image_public_id) ?: $this->image;
+    }
+
+    /**
+     * Get the blog's medium image URL
+     */
+    public function getMediumImageAttribute()
+    {
+        return $this->getMediumUrl($this->image_public_id) ?: $this->image;
+    }
+
+    /**
+     * Get the blog's large image URL
+     */
+    public function getLargeImageAttribute()
+    {
+        return $this->getLargeUrl($this->image_public_id) ?: $this->image;
     }
 }

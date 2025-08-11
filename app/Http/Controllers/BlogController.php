@@ -4,12 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Jobs\SendNewsletterNotification;
+use App\Services\CloudinaryService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class BlogController extends Controller
 {
+    protected $cloudinaryService;
+
+    public function __construct(CloudinaryService $cloudinaryService)
+    {
+        $this->cloudinaryService = $cloudinaryService;
+    }
     /**
      * Display a listing of blogs.
      */
@@ -73,8 +80,23 @@ class BlogController extends Controller
         ]);
 
         $imagePath = null;
+        $imagePublicId = null;
+        
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('blog-images', 'public');
+            $uploadResult = $this->cloudinaryService->uploadBlogImage(
+                $request->file('image'),
+                $request->title,
+                $request->type
+            );
+            
+            if ($uploadResult['success']) {
+                $imagePath = $uploadResult['url'];
+                $imagePublicId = $uploadResult['public_id'];
+            } else {
+                return redirect()->back()
+                    ->withInput()
+                    ->with('error', 'Failed to upload image: ' . $uploadResult['error']);
+            }
         }
 
         try {
@@ -83,6 +105,7 @@ class BlogController extends Controller
                 'content' => $request->content,
                 'type' => $request->type,
                 'image' => $imagePath,
+                'image_public_id' => $imagePublicId,
                 'user_id' => Auth::id(),
                 'keywords' => $request->keywords ? explode(',', $request->keywords) : null
             ]);
@@ -93,6 +116,11 @@ class BlogController extends Controller
             return redirect()->route('admin.blogs.index')
                 ->with('success', 'Content created successfully and newsletter notifications are being sent!');
         } catch (\Exception $e) {
+            // If blog creation fails but image was uploaded, delete the image from Cloudinary
+            if ($imagePublicId) {
+                $this->cloudinaryService->deleteImage($imagePublicId);
+            }
+            
             return redirect()->back()
                 ->withInput()
                 ->with('error', 'Failed to create content: ' . $e->getMessage());
@@ -122,12 +150,28 @@ class BlogController extends Controller
         ]);
 
         $imagePath = $blog->image;
+        $imagePublicId = $blog->image_public_id;
+        
         if ($request->hasFile('image')) {
-            // Delete old image if exists
-            if ($blog->image) {
-                Storage::disk('public')->delete($blog->image);
+            // Delete old image from Cloudinary if exists
+            if ($blog->image_public_id) {
+                $this->cloudinaryService->deleteImage($blog->image_public_id);
             }
-            $imagePath = $request->file('image')->store('blog-images', 'public');
+            
+            $uploadResult = $this->cloudinaryService->uploadBlogImage(
+                $request->file('image'),
+                $request->title,
+                $request->type
+            );
+            
+            if ($uploadResult['success']) {
+                $imagePath = $uploadResult['url'];
+                $imagePublicId = $uploadResult['public_id'];
+            } else {
+                return redirect()->back()
+                    ->withInput()
+                    ->with('error', 'Failed to upload image: ' . $uploadResult['error']);
+            }
         }
 
         $blog->update([
@@ -135,6 +179,7 @@ class BlogController extends Controller
             'content' => $request->content,
             'type' => $request->type,
             'image' => $imagePath,
+            'image_public_id' => $imagePublicId,
             'keywords' => $request->keywords ? array_map('trim', explode(',', $request->keywords)) : null
         ]);
 
@@ -145,7 +190,7 @@ class BlogController extends Controller
                 'success' => true,
                 'message' => 'Blog updated successfully',
                 'blog' => $freshBlog,
-                'imageUrl' => $freshBlog->image ? asset('storage/' . $freshBlog->image) : null
+                'imageUrl' => $freshBlog->image
             ]);
         }
 
@@ -158,9 +203,9 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        // Delete associated image if exists
-        if ($blog->image) {
-            Storage::disk('public')->delete($blog->image);
+        // Delete associated image from Cloudinary if exists
+        if ($blog->image_public_id) {
+            $this->cloudinaryService->deleteImage($blog->image_public_id);
         }
         
         $blog->delete();
@@ -177,7 +222,7 @@ class BlogController extends Controller
         if ($request->ajax()) {
             return response()->json([
                 'blog' => $blog,
-                'imageUrl' => $blog->image ? asset('storage/' . $blog->image) : null,
+                'imageUrl' => $blog->image,
                 'createdAt' => $blog->created_at->format('M d, Y')
             ]);
         }
@@ -191,7 +236,7 @@ class BlogController extends Controller
     {
         return response()->json([
             'blog' => $blog,
-            'imageUrl' => $blog->image ? asset('storage/' . $blog->image) : null,
+            'imageUrl' => $blog->image,
         ]);
     }
 
@@ -201,9 +246,9 @@ class BlogController extends Controller
     public function ajaxDestroy(Blog $blog)
     {
         try {
-            // Delete associated image if exists
-            if ($blog->image) {
-                Storage::disk('public')->delete($blog->image);
+            // Delete associated image from Cloudinary if exists
+            if ($blog->image_public_id) {
+                $this->cloudinaryService->deleteImage($blog->image_public_id);
             }
             
             $blog->delete();
@@ -231,12 +276,20 @@ class BlogController extends Controller
 
         try {
             if ($request->hasFile('file')) {
-                $imagePath = $request->file('file')->store('tinymce-images', 'public');
-                $url = asset('storage/' . $imagePath);
+                $uploadResult = $this->cloudinaryService->uploadImage(
+                    $request->file('file'),
+                    'tinymce-images'
+                );
                 
-                return response()->json([
-                    'location' => $url
-                ]);
+                if ($uploadResult['success']) {
+                    return response()->json([
+                        'location' => $uploadResult['url']
+                    ]);
+                } else {
+                    return response()->json([
+                        'error' => 'Failed to upload image: ' . $uploadResult['error']
+                    ], 500);
+                }
             }
             
             return response()->json([

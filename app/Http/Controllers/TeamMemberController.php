@@ -3,12 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\TeamMember;
+use App\Services\CloudinaryService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
 class TeamMemberController extends Controller
 {
+    protected $cloudinaryService;
+
+    public function __construct(CloudinaryService $cloudinaryService)
+    {
+        $this->cloudinaryService = $cloudinaryService;
+    }
     /**
      * Display a listing of the resource.
      */
@@ -47,24 +54,49 @@ class TeamMemberController extends Controller
 
         $data = $request->all();
         
-        // Handle image upload
+        // Handle main image upload
         if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '_' . $image->getClientOriginalName();
-            $imagePath = 'images/team/' . $imageName;
-            $image->move(public_path('images/team'), $imageName);
-            $data['image'] = $imagePath;
+            $uploadResult = $this->cloudinaryService->uploadTeamMemberImage(
+                $request->file('image'),
+                $request->name,
+                'main'
+            );
+            
+            if ($uploadResult['success']) {
+                $data['image'] = $uploadResult['url'];
+                $data['image_public_id'] = $uploadResult['public_id'];
+            } else {
+                return redirect()->back()
+                    ->withInput()
+                    ->with('error', 'Failed to upload main image: ' . $uploadResult['error']);
+            }
         }
 
         // Handle modal image upload
         if ($request->hasFile('modal_image')) {
-            $modalImage = $request->file('modal_image');
-            $modalImageName = time() . '_modal_' . $modalImage->getClientOriginalName();
-            $modalImagePath = 'images/team/' . $modalImageName;
-            $modalImage->move(public_path('images/team'), $modalImageName);
-            $data['modal_image'] = $modalImagePath;
+            $uploadResult = $this->cloudinaryService->uploadTeamMemberImage(
+                $request->file('modal_image'),
+                $request->name,
+                'modal'
+            );
+            
+            if ($uploadResult['success']) {
+                $data['modal_image'] = $uploadResult['url'];
+                $data['modal_image_public_id'] = $uploadResult['public_id'];
+            } else {
+                // If modal image upload fails but main image succeeded, delete the main image
+                if (isset($data['image_public_id'])) {
+                    $this->cloudinaryService->deleteImage($data['image_public_id']);
+                }
+                
+                return redirect()->back()
+                    ->withInput()
+                    ->with('error', 'Failed to upload modal image: ' . $uploadResult['error']);
+            }
         } else {
+            // Use main image as modal image if no separate modal image provided
             $data['modal_image'] = $data['image'];
+            $data['modal_image_public_id'] = $data['image_public_id'];
         }
 
         // Filter out empty education and expertise entries
@@ -80,9 +112,22 @@ class TeamMemberController extends Controller
             });
         }
 
-        TeamMember::create($data);
-
-        return redirect()->route('admin.team-members.index')->with('success', 'Team member created successfully!');
+        try {
+            TeamMember::create($data);
+            return redirect()->route('admin.team-members.index')->with('success', 'Team member created successfully!');
+        } catch (\Exception $e) {
+            // If team member creation fails, delete uploaded images from Cloudinary
+            if (isset($data['image_public_id'])) {
+                $this->cloudinaryService->deleteImage($data['image_public_id']);
+            }
+            if (isset($data['modal_image_public_id']) && $data['modal_image_public_id'] !== $data['image_public_id']) {
+                $this->cloudinaryService->deleteImage($data['modal_image_public_id']);
+            }
+            
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'Failed to create team member: ' . $e->getMessage());
+        }
     }
 
     /**
@@ -122,32 +167,50 @@ class TeamMemberController extends Controller
 
         $data = $request->all();
         
-        // Handle image upload
+        // Handle main image upload
         if ($request->hasFile('image')) {
-            // Delete old image if it exists
-            if ($teamMember->image && File::exists(public_path($teamMember->image))) {
-                File::delete(public_path($teamMember->image));
+            // Delete old main image from Cloudinary if exists
+            if ($teamMember->image_public_id) {
+                $this->cloudinaryService->deleteImage($teamMember->image_public_id);
             }
             
-            $image = $request->file('image');
-            $imageName = time() . '_' . $image->getClientOriginalName();
-            $imagePath = 'images/team/' . $imageName;
-            $image->move(public_path('images/team'), $imageName);
-            $data['image'] = $imagePath;
+            $uploadResult = $this->cloudinaryService->uploadTeamMemberImage(
+                $request->file('image'),
+                $request->name,
+                'main'
+            );
+            
+            if ($uploadResult['success']) {
+                $data['image'] = $uploadResult['url'];
+                $data['image_public_id'] = $uploadResult['public_id'];
+            } else {
+                return redirect()->back()
+                    ->withInput()
+                    ->with('error', 'Failed to upload main image: ' . $uploadResult['error']);
+            }
         }
 
         // Handle modal image upload
         if ($request->hasFile('modal_image')) {
-            // Delete old modal image if it exists and is different from main image
-            if ($teamMember->modal_image && $teamMember->modal_image !== $teamMember->image && File::exists(public_path($teamMember->modal_image))) {
-                File::delete(public_path($teamMember->modal_image));
+            // Delete old modal image from Cloudinary if exists and different from main image
+            if ($teamMember->modal_image_public_id && $teamMember->modal_image_public_id !== $teamMember->image_public_id) {
+                $this->cloudinaryService->deleteImage($teamMember->modal_image_public_id);
             }
             
-            $modalImage = $request->file('modal_image');
-            $modalImageName = time() . '_modal_' . $modalImage->getClientOriginalName();
-            $modalImagePath = 'images/team/' . $modalImageName;
-            $modalImage->move(public_path('images/team'), $modalImageName);
-            $data['modal_image'] = $modalImagePath;
+            $uploadResult = $this->cloudinaryService->uploadTeamMemberImage(
+                $request->file('modal_image'),
+                $request->name,
+                'modal'
+            );
+            
+            if ($uploadResult['success']) {
+                $data['modal_image'] = $uploadResult['url'];
+                $data['modal_image_public_id'] = $uploadResult['public_id'];
+            } else {
+                return redirect()->back()
+                    ->withInput()
+                    ->with('error', 'Failed to upload modal image: ' . $uploadResult['error']);
+            }
         }
 
         // Filter out empty education and expertise entries
@@ -173,13 +236,13 @@ class TeamMemberController extends Controller
      */
     public function destroy(TeamMember $teamMember)
     {
-        // Delete associated images
-        if ($teamMember->image && File::exists(public_path($teamMember->image))) {
-            File::delete(public_path($teamMember->image));
+        // Delete associated images from Cloudinary
+        if ($teamMember->image_public_id) {
+            $this->cloudinaryService->deleteImage($teamMember->image_public_id);
         }
         
-        if ($teamMember->modal_image && $teamMember->modal_image !== $teamMember->image && File::exists(public_path($teamMember->modal_image))) {
-            File::delete(public_path($teamMember->modal_image));
+        if ($teamMember->modal_image_public_id && $teamMember->modal_image_public_id !== $teamMember->image_public_id) {
+            $this->cloudinaryService->deleteImage($teamMember->modal_image_public_id);
         }
 
         $teamMember->delete();
@@ -193,13 +256,13 @@ class TeamMemberController extends Controller
     public function ajaxDestroy(TeamMember $teamMember)
     {
         try {
-            // Delete associated images
-            if ($teamMember->image && File::exists(public_path($teamMember->image))) {
-                File::delete(public_path($teamMember->image));
+            // Delete associated images from Cloudinary
+            if ($teamMember->image_public_id) {
+                $this->cloudinaryService->deleteImage($teamMember->image_public_id);
             }
             
-            if ($teamMember->modal_image && $teamMember->modal_image !== $teamMember->image && File::exists(public_path($teamMember->modal_image))) {
-                File::delete(public_path($teamMember->modal_image));
+            if ($teamMember->modal_image_public_id && $teamMember->modal_image_public_id !== $teamMember->image_public_id) {
+                $this->cloudinaryService->deleteImage($teamMember->modal_image_public_id);
             }
 
             $teamMember->delete();

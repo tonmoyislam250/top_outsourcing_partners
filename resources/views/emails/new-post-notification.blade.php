@@ -216,7 +216,7 @@
         <div class="content">
             <div class="post-preview">
                 @if($blog->image)
-                    <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}" class="post-image">
+                    <img src="{{ $blog->image }}" alt="{{ $blog->title }}" class="post-image">
                 @else
                     <div class="post-image" style="display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-size: 48px;">
                         📝

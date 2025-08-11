@@ -32,7 +32,7 @@ if (!function_exists('storage_asset')) {
 
 if (!function_exists('blog_image_url')) {
     /**
-     * Generate a blog image URL
+     * Generate a blog image URL (works with both Cloudinary and local storage)
      *
      * @param string|null $imagePath
      * @return string|null
@@ -43,6 +43,40 @@ if (!function_exists('blog_image_url')) {
             return null;
         }
         
+        // If it's already a full URL (Cloudinary), return as is
+        if (str_starts_with($imagePath, 'http://') || str_starts_with($imagePath, 'https://')) {
+            return $imagePath;
+        }
+        
+        // Otherwise, treat as local storage path
+        return storage_asset($imagePath);
+    }
+}
+
+if (!function_exists('image_url')) {
+    /**
+     * Generate an image URL (works with both Cloudinary and local storage)
+     *
+     * @param string|null $imagePath
+     * @return string|null
+     */
+    function image_url($imagePath)
+    {
+        if (!$imagePath) {
+            return null;
+        }
+        
+        // If it's already a full URL (Cloudinary), return as is
+        if (str_starts_with($imagePath, 'http://') || str_starts_with($imagePath, 'https://')) {
+            return $imagePath;
+        }
+        
+        // If it starts with 'images/' it's a local path that should be treated as asset
+        if (str_starts_with($imagePath, 'images/')) {
+            return asset($imagePath);
+        }
+        
+        // Otherwise, treat as storage path
         return storage_asset($imagePath);
     }
 }
