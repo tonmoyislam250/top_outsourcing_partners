@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
     <meta name="google-site-verification" content="Obtv3mmaGnLncwwV1CCtglU1C2NN61qR3Hl6cN2jL7A" />
-    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0X7BVWG21V"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0X7BVWG21V');
+    </script>
     <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -15,7 +21,6 @@
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MNHR9CMF');
     </script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
