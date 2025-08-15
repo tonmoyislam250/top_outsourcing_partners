@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
     <link rel="stylesheet" href="{{ asset('css/schedule-consultation.css') }}">
     <link rel="stylesheet" href="{{ asset('css/manager.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/out.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/out.css') }}"> -->
     <link rel="stylesheet" href="{{ asset('css/team.css') }}">
     <link rel="stylesheet" href="{{ asset('css/blogs.css') }}">
     <!-- Animate.css Library -->
