@@ -113,7 +113,7 @@
                             <td class="blog-nexus-td">{{ $loop->iteration }}</td>
                             <td class="blog-nexus-td">
                                 @if($blog->image)
-                                    <img src="{{ asset('storage/' . $blog->image) }}" alt="Blog image" class="blog-nexus-table-img">
+                                    <img src="{{ $blog->image }}" alt="Blog image" class="blog-nexus-table-img">
                                 @else
                                     <div class="blog-nexus-no-image">📷</div>
                                 @endif
