@@ -1,0 +1,318 @@
+/* Page background */
+body {
+  background-color: #F7FBFC;
+}
+
+section.meet-team {
+  padding: 50px 0;
+}
+
+/* Page title */
+.team-title{
+  text-align: center;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 1.1rem + 2vw, 2.6rem);
+  margin-bottom: 2.25rem;
+}
+
+/* Card base */
+
+.team-card{
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e6eaef;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(17,24,39,0.08);
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease;
+  cursor: pointer;
+}
+.team-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(17,24,39,0.14);
+}
+
+/* Principal card */
+.principle-member {
+  padding: 20px 0 50px;
+}
+.team-card-principal{
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+}
+.team-card-principal {
+    display: flex;
+    gap: 40px;
+    border: 5px solid #17c5f3;
+    border-top: 0;
+    border-left: 0;
+}
+
+.team-card-principal .col {
+    flex: 0 0 auto; /* shrink to fit content, no grow */
+}
+
+.team-card-principal .col.principal-details {
+    flex: 1 1 auto; /* grow to fill remaining space */
+}
+
+.principal-img{
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  background: #f1f5f9;
+  object-fit: cover;
+  object-position: top; /* crop from top */
+  aspect-ratio: 1;
+  width: 340px;
+  height: 340px;
+}
+@media (min-width: 768px){
+  .principal-img{min-height: 260px;}
+}
+.principal-details{
+  padding: .5rem 0 .25rem 0;
+  flex-grow: 1;
+}
+.principal-details h3{
+  margin: 0 0 .25rem 0;
+  font-weight: 700;
+  color: #0f172a;
+}
+.principal-details .text-muted{
+  color: #6b7280 !important;
+  margin-bottom: .75rem;
+  font-size: .95rem;
+}
+.principal-details p{
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* Member cards */
+.team-members .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem; /* space between items */
+}
+.team-members {
+  padding: 50px 0 100px;
+}
+.team-members .container .col {
+    flex: 1 1 calc(33.333% - 2rem); /* 3 per row */
+    max-width: calc(33.333% - 2rem);
+}
+
+@media (max-width: 768px) {
+    .team-members .container .col {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+.team-card-member{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 5px solid #17c5f3;
+  border-left: 0;
+  border-top: 0;
+}
+.member-img{
+  width: 100%;
+  display: block;
+  background: #f1f5f9;
+  object-fit: cover;
+  object-position: top; /* crop from top */
+  aspect-ratio: 1 / 1;
+}
+.card-content.member-details{
+  padding: .95rem 1rem 1.15rem;
+  border-radius: 0 0 16px 16px;
+}
+.member-details h5{
+  margin: 0 0 .25rem 0;
+  font-weight: 600;
+  color: #0f172a;
+}
+.member-details .text-muted{
+  margin: 0;
+  color: #6b7280 !important;
+  font-size: .95rem;
+}
+
+/* Equal-height cards in grid */
+.equal-height > [class^="col"],
+.equal-height > [class*=" col"]{
+  display: flex;
+  /* flex: 1 1 33.3333%; */
+}
+.equal-height > [class^="col"] > .team-card,
+.equal-height > [class*=" col"] > .team-card{
+  width: 100%;
+}
+
+
+
+
+
+/* ===== Team Member Modal – hardcoded styles to match the mockup ===== */
+
+/* Backdrop a bit darker so the card pops */
+.modal-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+/* Dialog size similar to the mockup */
+#teamMemberModal .modal-dialog {
+  max-width: 1100px;           /* large, wide layout */
+  margin: 1.75rem auto;
+}
+
+/* Card container: soft white, big radius, deep layered shadow */
+#teamMemberModal .modal-content {
+  border: 0;
+  background: #ffffff;
+  border-radius: 24px;
+  /* layered shadows to mimic the heavy glow in the screenshot */
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.08),
+    0 30px 60px rgba(0, 0, 0, 0.12),
+    0 60px 120px rgba(0, 0, 0, 0.18);
+}
+
+/* Header: just the close button floating top-right */
+#teamMemberModal .modal-header {
+  border-bottom: none;
+  padding: 16px 16px 0 16px;
+}
+
+/* Close button as a subtle gray circular chip */
+#teamMemberModal .btn-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #f2f4f7;
+  opacity: 1;
+  box-shadow: inset 0 0 0 1px rgba(17,24,39,0.06);
+}
+#teamMemberModal .btn-close:hover {
+  background-color: #e6eaf0;
+}
+
+/* Body spacing similar to mockup */
+#teamMemberModal .modal-body {
+  padding: 28px 36px 36px 36px;
+}
+
+/* Left column image: rounded, soft gray bg, portrait aspect */
+#teamMemberModal .modal-profile-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  background: #eef2f6;
+  object-fit: cover;
+  aspect-ratio: 4 / 5;              /* consistent crop */
+}
+
+/* Top-right: name, role, summary */
+#teamMemberModal .modal-title-name {
+  margin: 6px 0 4px;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.25;
+  color: #111827;                    /* near-black */
+}
+#teamMemberModal .modal-title-role {
+  margin: 0 0 14px;
+  color: #4b5563;                    /* slate/gray */
+  font-weight: 600;
+}
+#teamMemberModal .modal-description {
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-size: 18px;
+}
+
+/* Section blocks */
+#teamMemberModal .modal-details {
+  margin-top: 20px;
+}
+
+/* Section headings with icon at left and bold text */
+#teamMemberModal .modal-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  color: #111827;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+/* Icon tint per section (Font Awesome used in markup) */
+#teamMemberModal .modal-section-title .fa-graduation-cap { color: #7c3aed; } /* purple */
+#teamMemberModal .modal-section-title .fa-cogs           { color: #2563eb; } /* blue */
+#teamMemberModal .modal-section-title .fa-bullseye       { color: #6366f1; } /* indigo */
+
+/* Lists (education + expertise) */
+#teamMemberModal #modalEducationList,
+#teamMemberModal #modalEducationListSmall,
+#teamMemberModal #modalExpertiseList {
+  margin: 0;
+  padding-left: 1.25rem;             /* bullets aligned like mock */
+  list-style: disc;
+}
+#teamMemberModal #modalEducationList li,
+#teamMemberModal #modalEducationListSmall li,
+#teamMemberModal #modalExpertiseList li {
+  color: #111827;
+  line-height: 1.65;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+/* Vision paragraph */
+#teamMemberModal .modal-vision {
+  color: #374151;
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 2px 0 0;
+  text-align: left;
+}
+
+/* Muted "no data" list item (if JS inserts .muted-empty) */
+#teamMemberModal .muted-empty {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* Responsive tweaks */
+@media (max-width: 991.98px) {
+  #teamMemberModal .modal-body {
+    padding: 24px;
+  }
+  #teamMemberModal .modal-title-name {
+    font-size: 24px;
+  }
+}
+@media (max-width: 575.98px) {
+  #teamMemberModal .modal-dialog {
+    margin: 0.75rem;
+  }
+  #teamMemberModal .modal-body {
+    padding: 20px;
+  }
+  #teamMemberModal .modal-profile-img {
+    border-radius: 14px;
+  }
+}

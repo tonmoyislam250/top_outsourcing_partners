@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    background-color: #ffffff; /* White for navigation */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    margin-left: 5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-right: 5rem;
+}
+
+.social-links a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f9f9f9; /* White for hero section */
+}
+
+.floating-container {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.floating-group {
+    position: absolute;
+}
+
+.floating-image {
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    border: 4px solid #FFD700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    animation: popOut 0.8s ease-out;
+}
+
+.floating-icon {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: float 3s infinite ease-in-out;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    margin-top: 8rem;
+    background-color: #fffde7; /* Light yellow for content section */
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content p {
+    margin-top: 1rem;
+    color: #666;
+    max-width: 500px;
+    margin: 1rem auto;
+}
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 9999px;
+    font-weight: 500;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slow-float {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(5px, 5px);
+    }
+    50% {
+        transform: translate(0, 10px);
+    }
+    75% {
+        transform: translate(-5px, 5px);
+    }
+}
+
+@keyframes popOut {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.floating-group:nth-child(1) {
+    top: 15%;
+    left: 30%;
+    animation: slow-float 8s infinite ease-in-out;
+}
+
+.floating-group:nth-child(2) {
+    top: 25%;
+    left: 55%;
+    animation: slow-float 12s infinite ease-in-out;
+}
+
+.floating-group:nth-child(3) {
+    top: 10%;
+    left: 45%;
+    animation: slow-float 10s infinite ease-in-out;
+}
+
+.floating-group:nth-child(4) {
+    top: 30%;
+    left: 25%;
+    animation: slow-float 9s infinite ease-in-out; 
+}
+
+.floating-group:nth-child(5) {
+    top: 20%;
+    left: 65%;
+    animation: slow-float 11s infinite ease-in-out;
+}
+
+.floating-group:nth-child(6) {
+    top: 35%;
+    left: 40%;
+    animation: slow-float 13s infinite ease-in-out;
+}
+
+.floating-group:nth-child(7) {
+    top: 15%;
+    left: 75%;
+    animation: slow-float 8.5s infinite ease-in-out;
+}
+
+.floating-group:nth-child(8) {
+    top: 25%;
+    left: 20%;
+    animation: slow-float 12.5s infinite ease-in-out;
+}
+
+.floating-icon {
+    opacity: 0.7;
+}
+
+/* Slider Menu */
+.slider-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100%;
+    background-color: #ede7f6; /* Light purple for slider menu */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.slider-menu.open {
+    left: 0;
+}
+
+.slider-menu .close-btn {
+    display: block;
+    text-align: right;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.slider-menu .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.slider-menu .social-links {
+    margin-top: 2rem;
+    margin-left: 5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+    }
+    .menu-icon {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    .logo {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+    .nav-links {
+        display: none; /* Hide nav-links in mobile layout */
+    }
+    .social-links {
+        display: none;
+    }
+    .hero {
+        height: auto;
+        padding: 2rem 0;
+    }
+    .floating-group {
+        width: 50px; /* Adjust size for mobile */
+        height: 50px; /* Adjust size for mobile */
+    }
+    .floating-group:nth-child(1) {
+        top: 10%;
+        left: 20%;
+    }
+    .floating-group:nth-child(2) {
+        top: 15%;
+        left: 60%;
+    }
+    .floating-group:nth-child(3) {
+        top: 5%;
+        left: 50%;
+    }
+    .floating-group:nth-child(4) {
+        top: 20%;
+        left: 15%;
+    }
+    .floating-group:nth-child(5) {
+        top: 10%;
+        left: 70%;
+    }
+    .floating-group:nth-child(6) {
+        top: 25%;
+        left: 35%;
+    }
+    .floating-group:nth-child(7) {
+        top: 10%;
+        left: 80%;
+    }
+    .floating-group:nth-child(8) {
+        top: 15%;
+        left: 10%;
+    }
+    .content h1 {
+        font-size: 2rem;
+    }
+    .content p {
+        font-size: 14px;
+    }
+}
+
+

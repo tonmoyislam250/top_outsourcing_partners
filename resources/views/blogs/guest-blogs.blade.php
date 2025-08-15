@@ -6,7 +6,7 @@
     <section class="blogs-hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">
+                <h1 class="hero-title" style="text-align: left;">
                     Insights & <span class="highlight">Innovation</span>
                 </h1>
                 <p class="hero-subtitle">
@@ -134,7 +134,7 @@
                                     <article class="content-card blog-card">
                                         <div class="card-image">
                                             @if($blog->image)
-                                                <img src="{{ $blog->image }}" alt="{{ $blog->title }}" loading="lazy">
+                                                <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}" loading="lazy">
                                             @else
                                                 <div class="placeholder-image">
                                                     <i class="fas fa-newspaper"></i>
@@ -223,7 +223,7 @@
                                     <article class="content-card case-study-card">
                                         <div class="card-image">
                                             @if($caseStudy->image)
-                                                <img src="{{ $caseStudy->image }}" alt="{{ $caseStudy->title }}" loading="lazy">
+                                                <img src="{{ asset('storage/' . $caseStudy->image) }}" alt="{{ $caseStudy->title }}" loading="lazy">
                                             @else
                                                 <div class="placeholder-image">
                                                     <i class="fas fa-chart-line"></i>
@@ -984,6 +984,7 @@
     color: white;
     margin-bottom: 1.5rem;
     line-height: 1.1;
+    text-align: left;
 }
 
 .newsletter-title .highlight {

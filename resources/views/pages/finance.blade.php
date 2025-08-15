@@ -1,37 +1,50 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="section">
-    <div class="section-header animate__animated animate__fadeInDown">
-        <img src="{{ asset('images/finance/finance.svg') }}" alt="fin Icon" class="section-icon">
-        <h1 class="section-title">Finance & Accounting</h1>
+
+<section class="section finance-section">
+    <div class="container">
+        <div class="finance-header animate__animated animate__fadeInDown">
+            <img src="{{ asset('images/finance/finance.svg') }}" alt="Finance Icon" class="section-icon">
+            <h1>Finance & Accounting</h1>
+        </div>
+        <div class="finance-description animate__animated animate__fadeIn animate__delay-1s">
+            <p>
+                At TopOutsourcingPartners, we specialize in providing customized solutions to meet the unique requirements of each client. Our flexible approach ensures that businesses receive the exact support they need, whether it’s hiring our in-house team or having us manage a dedicated team tailored to their needs.
+            </p>
+        </div>
     </div>
-    <div class="grid">
-        <div class="card animate__animated animate__flipInY animate__delay-1s" onclick="document.getElementById('bookkeeping').scrollIntoView({ behavior: 'smooth' })">
+</section>
+
+<section class="services-cards">
+    <!-- Service Cards Grid -->
+    <div class="container services-grid">
+        <div class="feature-box animate__animated animate__flipInY animate__delay-1s" data-target="#bookkeeping">
             <img src="{{ asset('images/finance/frame1.svg') }}" alt="Bookkeeping">
-            <p><strong>Bookkeeping & Payroll Management</strong></p>
+            <h4>Bookkeeping & Payroll Management</h5>
         </div>
-        <div class="card animate__animated animate__flipInY animate__delay-1s" onclick="document.getElementById('cfo-services').scrollIntoView({ behavior: 'smooth' })">
+        <div class="feature-box animate__animated animate__flipInY animate__delay-1s" data-target="#cfo-services">
             <img src="{{ asset('images/finance/frame2.svg') }}" alt="CFO Services">
-            <p><strong>CFO Services (Virtual & On-Demand)</strong></p>
+            <h4>CFO Services (Virtual & On-Demand)</h5>
         </div>
-        <div class="card animate__animated animate__flipInY animate__delay-1s" onclick="document.getElementById('ap-management').scrollIntoView({ behavior: 'smooth' })">
+        <div class="feature-box animate__animated animate__flipInY animate__delay-1s" data-target="#ap-management">
             <img src="{{ asset('images/finance/frame3.svg') }}" alt="AP Management">
-            <p><strong>Accounts Payable (AP) Management</strong></p>
+            <h4>Accounts Payable (AP) Management</h5>
         </div>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto 50px;">
-        <div class="card animate__animated animate__flipInY animate__delay-2s" onclick="document.getElementById('ar-billing').scrollIntoView({ behavior: 'smooth' })">
+        <div class="feature-box animate__animated animate__flipInY animate__delay-2s" data-target="#ar-billing">
             <img src="{{ asset('images/finance/frame4.svg') }}" alt="AR Billing">
-            <p><strong>Accounts Receivable (AR) & Billing Services</strong></p>
+            <h4>Accounts Receivable (AR) & Billing Services</h5>
         </div>
-        <div class="card animate__animated animate__flipInY animate__delay-2s" onclick="document.getElementById('tax-compliance').scrollIntoView({ behavior: 'smooth' })">
+        <div class="feature-box animate__animated animate__flipInY animate__delay-2s" data-target="#tax-compliance">
             <img src="{{ asset('images/finance/frame5.svg') }}" alt="Tax Compliance">
-            <p><strong>Tax Preparation & Compliance</strong></p>
+            <h4>Tax Preparation & Compliance</h5>
         </div>
     </div>
-    
-    <div class="stats-container">
+</section>
+
+<!-- Stats Section -->
+<section class="stats">
+    <div class="container">
         <div class="stat-card">
             <img src="{{ asset('images/finance/stat1.svg') }}" alt="Stat Icon" class="stat-icon">
             <div class="stat-content">
@@ -47,8 +60,11 @@
             </div>
         </div>
     </div>
+</section>
 
-    <div id="bookkeeping" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
+<!-- Bookkeeping -->
+<section class="service-details">
+    <div id="bookkeeping" class="container finance-service animate__animated animate__fadeIn animate__delay-3s">
         <div class="finance-image-wrapper">
             <img src="{{ asset('images/finance/image1.png') }}" alt="Bookkeeping">
             <div class="finance-badge">
@@ -60,14 +76,16 @@
             </div>
         </div>
         <div class="finance-content">
-            <h2 style="text-align: left;"><strong>Bookkeeping & Payroll Management</strong></h2>
-            <p style="text-align: left;">Stay ahead of your finances with accurate, real-time bookkeeping. Our experts handle ledger maintenance, bank reconciliations, and financial reporting so you can focus on growing your business.</p>
-            <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Schedule a Bookkeeping Consultation</button>
+            <h2><strong>Bookkeeping & Payroll Management</strong></h2>
+            <p>Stay ahead of your finances with accurate, real-time bookkeeping. Our experts handle ledger maintenance, bank reconciliations, and financial reporting so you can focus on growing your business.</p>
+            <a href="{{ url('/consult') }}" class="btn-primary">Schedule a Bookkeeping Consultation</a>
         </div>
     </div>
+</section>
 
-    <!-- CFO Services -->
-    <div id="cfo-services" class="finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
+<!-- CFO Services -->
+<section class="service-details alt">
+    <div id="cfo-services" class="container finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
         <div class="finance-image-wrapper">
             <img src="{{ asset('images/finance/image2.png') }}" alt="CFO Services">
             <div class="finance-badge">
@@ -79,14 +97,16 @@
             </div>
         </div>
         <div class="finance-content">
-            <h2 style="text-align: left;"><strong>CFO Services (Virtual & On-Demand)</strong></h2>
-            <p style="text-align: left;">Access high-level financial strategy without the cost of a full-time CFO. We provide cash flow forecasting, profitability analysis, and financial planning tailored to your business goals.</p>
-            <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Book a CFO Advisory Session</button>
+            <h2><strong>CFO Services (Virtual & On-Demand)</strong></h2>
+            <p>Access high-level financial strategy without the cost of a full-time CFO. We provide cash flow forecasting, profitability analysis, and financial planning tailored to your business goals.</p>
+            <a href="{{ url('/consult') }}" class="btn-primary">Book a CFO Advisory Session</a>
         </div>
     </div>
+</section>
 
-    <!-- Accounts Payable (AP) Management -->
-    <div id="ap-management" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
+<!-- AP Management -->
+<section class="service-details">
+    <div id="ap-management" class="container finance-service animate__animated animate__fadeIn animate__delay-3s">
         <div class="finance-image-wrapper">
             <img src="{{ asset('images/finance/image3.png') }}" alt="AP Management">
             <div class="finance-badge">
@@ -98,14 +118,16 @@
             </div>
         </div>
         <div class="finance-content">
-            <h2 style="text-align: left;"><strong>Accounts Payable (AP) Management</strong></h2>
-            <p style="text-align: left;">Stay ahead of your finances with accurate, real-time bookkeeping. Our experts handle ledger maintenance, bank reconciliations, and financial reporting so you can focus on growing your business.</p>
-            <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Speak with an AP Specialist</button>
+            <h2><strong>Accounts Payable (AP) Management</strong></h2>
+            <p>Ensure bills are paid on time with efficient AP processing. Our automation reduces late payment risks and streamlines your vendor relationships.</p>
+            <a href="{{ url('/consult') }}" class="btn-primary">Speak with an AP Specialist</a>
         </div>
     </div>
+</section>
 
-    <!-- Accounts Receivable (AR) & Billing Services -->
-    <div id="ar-billing" class="finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
+<!-- AR & Billing -->
+<section class="service-details alt">
+    <div id="ar-billing" class="container finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
         <div class="finance-image-wrapper">
             <img src="{{ asset('images/finance/image4.png') }}" alt="AR & Billing Services">
             <div class="finance-badge">
@@ -117,15 +139,18 @@
             </div>
         </div>
         <div class="finance-content">
-            <h2 style="text-align: left;"><strong>Accounts Receivable (AR) & Billing Services</strong></h2>
-            <p style="text-align: left;">Speed up payments and enhance cash flow with automated invoicing, payment tracking, and collections management. Get paid faster with reduced outstanding balances.</p>
-            <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Book an AR Strategy Call</button>
+            <h2><strong>Accounts Receivable (AR) & Billing Services</strong></h2>
+            <p>Speed up payments and improve cash flow through automated invoicing, payment tracking, and collections.</p>
+            <a href="{{ url('/consult') }}" class="btn-primary">Book an AR Strategy Call</a>
         </div>
     </div>
+</section>
 
-    <div id="tax-compliance" class="finance-service animate__animated animate__fadeIn animate__delay-3s">
+<!-- Tax Compliance -->
+<section class="service-details">
+    <div id="tax-compliance" class="container finance-service animate__animated animate__fadeIn animate__delay-3s">
         <div class="finance-image-wrapper">
-            <img src="{{ asset('images/finance/image5.png') }}" alt="AP Management">
+            <img src="{{ asset('images/finance/image5.png') }}" alt="Tax Compliance">
             <div class="finance-badge">
                 <img src="{{ asset('images/finance/tax.svg') }}" alt="Icon">
                 <span><strong>Tax Error Reduction</strong><br><small>with Professional Outsourcing</small></span>
@@ -135,16 +160,31 @@
             </div>
         </div>
         <div class="finance-content">
-            <h2 style="text-align: left;"><strong>Tax Preparation & Compliance</strong></h2>
-            <p style="text-align: left;">Ensure hassle-free tax compliance with corporate tax filing, VAT/GST reporting, and
-            regulatory adherence. Stay tax-ready while we handle the complexities for you.</p>
-            <button style="text-align: left; display: block; margin-left: 0;" onclick="window.location.href='{{ url('/consult') }}'">Speak with an AP Specialist</button>
+            <h2><strong>Tax Preparation & Compliance</strong></h2>
+            <p>Ensure hassle-free compliance with corporate tax filing, VAT/GST reporting, and adherence to regulations.</p>
+            <a href="{{ url('/consult') }}" class="btn-primary">Schedule a Tax Consultation</a>
         </div>
     </div>
 </section>
+
 @include('components.why-choose-us')
 @endsection
 
 @section('footer')
-    @include('components.footer') 
+@include('components.footer')
+<script>
+    document.querySelectorAll('.feature-box').forEach(featureBox => {
+        featureBox.addEventListener('click', () => {
+            const target = document.querySelector(featureBox.getAttribute('data-target'));
+            if (target) {
+                const y = target.getBoundingClientRect().top + window.scrollY - 180; // 180px earlier
+                window.scrollTo({
+                    top: y,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+
 @endsection

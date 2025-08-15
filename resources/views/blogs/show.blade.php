@@ -3,7 +3,7 @@
 @section('content')
 <div class="modern-blog-container">
     <!-- Header Section -->
-    <div class="blog-header" @if($blog->image) style="background-image: url('{{ $blog->image }}');" @endif>
+    <div class="blog-header" @if($blog->image) style="background-image: url('{{ asset('storage/' . $blog->image) }}');" @endif>
         <div class="header-overlay"></div>
         <div class="container-fluid">
             <div class="row">
@@ -215,7 +215,7 @@
                                 <a href="{{ route('blogs.show', $related) }}" class="related-item">
                                     @if($related->image)
                                     <div class="related-image">
-                                        <img src="{{ $related->image }}" alt="{{ $related->title }}">
+                                        <img src="{{ asset('storage/' . $related->image) }}" alt="{{ $related->title }}">
                                     </div>
                                     @endif
                                     <div class="related-content">
