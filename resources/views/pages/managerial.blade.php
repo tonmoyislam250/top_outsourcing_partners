@@ -156,10 +156,7 @@
 	<div class="container">
 		<h2 class="section__title">How It Works — Simple, Fast, & Hassle-Free!</h2>
 
-
-
 		<div class="timeline-items">
-
 			<!-- 1 -->
 			<div class="item left purple">
 				<div class="item-header">
