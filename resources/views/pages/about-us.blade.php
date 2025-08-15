@@ -223,7 +223,7 @@
 <section class="meet-team-section">
     <div class="container">
         <h2 class="meet-team-title">Meet Our Dynamic Team</h2>
-        <a href="{{ url('/about-us') }}" class="btn-primary meet-team-btn">See Team</a>
+        <a href="{{ url('/team-members') }}" class="btn-primary meet-team-btn">See Team</a>
                 <div class="floating-container">
                     <div class="floating-box">
                         @foreach(range(1, 8) as $i)

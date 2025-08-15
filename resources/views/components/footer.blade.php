@@ -15,7 +15,7 @@
             <h4>Quick Links</h4>
             <ul>
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="{{ url('/about') }}">About us</a></li>
+                <li><a href="{{ url('/about-us') }}">About us</a></li>
                 <li><a href="{{ url('/services') }}" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });">Services</a></li>
                 <li><a href="{{ url('/solutions') }}">Solutions</a></li>
                 <li><a href="{{ url('/industries') }}">Industries</a></li>

@@ -11,7 +11,7 @@
         {{-- Desktop Navigation Links --}}
         <div class="nav-links">
             <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">Home</a>
-            <a href="{{ url('/about') }}" class="{{ request()->is('about') ? 'active' : '' }}">About Us</a>
+            <a href="{{ url('/about-us') }}" class="{{ request()->is('about') ? 'active' : '' }}">About Us</a>
             <a href="{{ url('/services') }}" class="{{ request()->is('services') ? 'active' : '' }}">Services</a>
             <a href="{{ url('/solutions') }}" class="{{ request()->is('solutions') ? 'active' : '' }}">Solutions</a>
             <a href="{{ url('/industries') }}" class="{{ request()->is('industries') ? 'active' : '' }}">Industries</a>
@@ -40,7 +40,7 @@
 
     <div class="nav-links">
         <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}" onclick="toggleMenu()">Home</a>
-        <a href="{{ url('/about') }}" class="{{ request()->is('about') ? 'active' : '' }}" onclick="toggleMenu()">About Us</a>
+        <a href="{{ url('/about-us') }}" class="{{ request()->is('about') ? 'active' : '' }}" onclick="toggleMenu()">About Us</a>
         <a href="{{ url('/services') }}" class="{{ request()->is('services') ? 'active' : '' }}" onclick="toggleMenu()">Services</a>
         <a href="{{ url('/solutions') }}" class="{{ request()->is('solutions') ? 'active' : '' }}" onclick="toggleMenu()">Solutions</a>
         <a href="{{ url('/industries') }}" class="{{ request()->is('industries') ? 'active' : '' }}" onclick="toggleMenu()">Industries</a>

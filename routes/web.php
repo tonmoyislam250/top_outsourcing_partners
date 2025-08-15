@@ -16,12 +16,12 @@ Route::get('/contact', function () {
     return view('pages/contact');
 })->name('contact');
 
-Route::get('/about', function () {
-    return view('pages/about');
-})->name('about');
-
 Route::get('/about-us', function () {
     return view('pages/about-us');
+})->name('about');
+
+Route::get('/team-members', function () {
+    return view('pages/team-members');
 })->name('about-us');
 
 Route::get('/services', function () {
