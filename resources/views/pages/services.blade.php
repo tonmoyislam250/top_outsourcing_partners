@@ -250,7 +250,7 @@
 </section>
 
 <section class="cta-2 animate__animated animate__fadeInUp">
-    <h2>Let’s Work Together!</h2>
+    <h2>Let's Work Together!</h2>
     <p>Outsourcing is no longer just an option—it's a growth strategy for modern firms. Let Top Outsourcing Partners handle your accounting workload so you can focus on client success and firm growth.</p>
     <a class="btn-primary" href="{{ url('/consult') }}">Book a Free Financial Consultation</a>
 </section>

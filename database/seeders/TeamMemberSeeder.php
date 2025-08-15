@@ -62,9 +62,9 @@ class TeamMemberSeeder extends Seeder
         //     'modal_image' => 'images/about/user3.png',
         //     'name' => 'Khokan Chandra Das',
         //     'title' => 'Executive Director | Revenue & Product | Top Outsourcing Partners',
-        //     'description' => 'Khokan Chandra Das is the Executive Director of Revenue & Product at Top Outsourcing Partners (TOP), where he has played a key role in driving business growth and product innovation. With over 20 years of experience in financial management, business development, and strategic leadership, Khokan has been instrumental in shaping TOP’s product offerings and expanding its global footprint.',
+        //     'description' => 'Khokan Chandra Das is the Executive Director of Revenue & Product at Top Outsourcing Partners (TOP), where he has played a key role in driving business growth and product innovation. With over 20 years of experience in financial management, business development, and strategic leadership, Khokan has been instrumental in shaping TOP's product offerings and expanding its global footprint.',
         //     'education' => [
-        //         'Bachelor’s Degree in Commerce from Dhaka University'
+        //         'Bachelor's Degree in Commerce from Dhaka University'
         //     ],
         //     'expertise' => [
         //         'Financial management',
@@ -85,7 +85,7 @@ class TeamMemberSeeder extends Seeder
         //     'title' => 'Executive Director, Capacity Building & Organization Development | Top Outsourcing Partners',
         //     'description' => 'Ashutosh Dey is the Executive Director, Capacity Building & Organization Development at Top Outsourcing Partners (TOP). In this role, Ashutosh leads the company\'s efforts in building organizational capacity and developing programs that enhance employee performance and leadership.',
         //     'education' => [
-        //         'Master’s in Business Administration (MBA)',
+        //         'Master's in Business Administration (MBA)',
         //         'Certifications in Organizational Development and Change Management'
         //     ],
         //     'expertise' => [
@@ -107,7 +107,7 @@ class TeamMemberSeeder extends Seeder
         //     'title' => 'Executive Director, Project Management & Enterprise Transformation | Top Outsourcing Partners',
         //     'description' => 'Khurshid Almeher is the Executive Director, Project Management & Enterprise Transformation at Top Outsourcing Partners (TOP). In this role, Khurshid leads the company\'s project management initiatives and oversees the implementation of enterprise transformation strategies to help clients achieve operational excellence and sustainable growth.',
         //     'education' => [
-        //         'Master’s in Business Administration (MBA)',
+        //         'Master's in Business Administration (MBA)',
         //         'Certifications in Project Management Professional (PMP) and Lean Six Sigma'
         //     ],
         //     'expertise' => [
@@ -129,7 +129,7 @@ class TeamMemberSeeder extends Seeder
         //     'title' => 'Executive Director, Partnership & Engagement | Top Outsourcing Partners',
         //     'description' => 'Nirmal Roy serves as the Executive Director, Partnership & Engagement at Top Outsourcing Partners. Nirmal has over 15 years of experience in corporate finance, strategic consulting, and supply chain management.',
         //     'education' => [
-        //         'Bachelor’s Degree in Commerce'
+        //         'Bachelor's Degree in Commerce'
         //     ],
         //     'expertise' => [
         //         'Corporate finance',
@@ -192,10 +192,10 @@ class TeamMemberSeeder extends Seeder
         //     'modal_image' => 'images/about/user9.png',
         //     'name' => 'Tapan Fouzder',
         //     'title' => 'President, Information & Technology | Top Outsourcing Partners',
-        //     'description' => 'Tapan Fouzder is the President of Information & Technology at Top Outsourcing Partners (TOP), where he is responsible for leading the company’s technology strategy, delivery, infrastructure, and innovation.',
+        //     'description' => 'Tapan Fouzder is the President of Information & Technology at Top Outsourcing Partners (TOP), where he is responsible for leading the company's technology strategy, delivery, infrastructure, and innovation.',
         //     'education' => [
-        //         'Master’s in Public Health from State University Bangladesh',
-        //         'Bachelor’s in Civil Engineering from RUET'
+        //         'Master's in Public Health from State University Bangladesh',
+        //         'Bachelor's in Civil Engineering from RUET'
         //     ],
         //     'expertise' => [
         //         'System development',
@@ -258,7 +258,7 @@ class TeamMemberSeeder extends Seeder
         //     'modal_image' => 'images/about/user12.png',
         //     'name' => 'S M Rayhan',
         //     'title' => 'Chief Strategy and Business Operations Officer | Top Outsourcing Partners',
-        //     'description' => 'S M Rayhan is the Chief Strategy and Business Operations Officer at Top Outsourcing Partners (TOP), where he leads strategic planning, business operations, and organizational development to drive the company’s continued growth and success.',
+        //     'description' => 'S M Rayhan is the Chief Strategy and Business Operations Officer at Top Outsourcing Partners (TOP), where he leads strategic planning, business operations, and organizational development to drive the company's continued growth and success.',
         //     'education' => [
         //         'MBA from Khulna University',
         //         'Pursuing Chartered Secretarial Course'
@@ -323,10 +323,10 @@ class TeamMemberSeeder extends Seeder
         //     'image' => 'images/about/user15.png',
         //     'modal_image' => 'images/about/user15.png',
         //     'name' => 'Abdulla Romman',
-        //     'title' => 'Senior Manager – Financial Reporting & Business Compliance | Top Outsourcing Partners',
-        //     'description' => 'Abdulla Romman is the Senior Manager – Financial Reporting & Business Compliance at Top Outsourcing Partners (TOP). In this role, he oversees financial reporting, ensuring compliance with industry regulations.',
+        //     'title' => 'Senior Manager - Financial Reporting & Business Compliance | Top Outsourcing Partners',
+        //     'description' => 'Abdulla Romman is the Senior Manager - Financial Reporting & Business Compliance at Top Outsourcing Partners (TOP). In this role, he oversees financial reporting, ensuring compliance with industry regulations.',
         //     'education' => [
-        //         'Bachelor’s degree in Accounting',
+        //         'Bachelor's degree in Accounting',
         //         'Pursuing advanced certifications in International Financial Reporting Standards (IFRS)'
         //     ],
         //     'expertise' => [
@@ -345,10 +345,10 @@ class TeamMemberSeeder extends Seeder
         //     'image' => 'images/about/user16.png',
         //     'modal_image' => 'images/about/user16.png',
         //     'name' => 'Abu Saleh MD Moin',
-        //     'title' => 'Manager – Client Management | Top Outsourcing Partners',
-        //     'description' => 'Abu Saleh MD Moin is the Manager – Client Management at TOP Outsourcing Partners (TOP). In this role, he is responsible for overseeing client relationships and ensuring seamless communication.',
+        //     'title' => 'Manager - Client Management | Top Outsourcing Partners',
+        //     'description' => 'Abu Saleh MD Moin is the Manager - Client Management at TOP Outsourcing Partners (TOP). In this role, he is responsible for overseeing client relationships and ensuring seamless communication.',
         //     'education' => [
-        //         'Bachelor’s degree in Business Administration'
+        //         'Bachelor's degree in Business Administration'
         //     ],
         //     'expertise' => [
         //         'Client management',
@@ -366,10 +366,10 @@ class TeamMemberSeeder extends Seeder
         //     'image' => 'images/about/user17.png',
         //     'modal_image' => 'images/about/user17.png',
         //     'name' => 'Md. Sojib Hossain',
-        //     'title' => 'Manager – Accounting & Assurance | Top Outsourcing Partners',
+        //     'title' => 'Manager - Accounting & Assurance | Top Outsourcing Partners',
         //     'description' => 'Md. Sojib Hossain is the Manager of Accounting & Assurance at Top Outsourcing Partners (TOP). In this role, he leads tax compliance, financial reporting, and business advisory services.',
         //     'education' => [
-        //         'Bachelor’s degree in Business Administration (BBA) from the National University'
+        //         'Bachelor's degree in Business Administration (BBA) from the National University'
         //     ],
         //     'expertise' => [
         //         'Accounting',
@@ -386,10 +386,10 @@ class TeamMemberSeeder extends Seeder
         //     'image' => 'images/about/user18.png',
         //     'modal_image' => 'images/about/user18.png',
         //     'name' => 'Md. Imdadul Islam',
-        //     'title' => 'Director, Lead – Partnership & Engagement Advisory | Top Outsourcing Partners',
-        //     'description' => 'Md. Imdadul Islam is the Director, Lead – Partnership & Engagement Advisory at Top Outsourcing Partners (TOP). In this role, Imdadul spearheads the development of strategic alliances, drives client engagement initiatives, and fosters business relationships that enable sustainable growth and innovation for clients across industries.',
+        //     'title' => 'Director, Lead - Partnership & Engagement Advisory | Top Outsourcing Partners',
+        //     'description' => 'Md. Imdadul Islam is the Director, Lead - Partnership & Engagement Advisory at Top Outsourcing Partners (TOP). In this role, Imdadul spearheads the development of strategic alliances, drives client engagement initiatives, and fosters business relationships that enable sustainable growth and innovation for clients across industries.',
         //     'education' => [
-        //         'Bachelor’s in Finance & Banking (Jahangirnagar University)'
+        //         'Bachelor's in Finance & Banking (Jahangirnagar University)'
         //     ],
         //     'expertise' => [
         //         'Partnership Development',

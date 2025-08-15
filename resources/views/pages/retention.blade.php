@@ -22,7 +22,7 @@
 
         <h2>2. Purpose</h2>
         <p class="lead-text">
-            This policy outlines TOP’s intent to implement structured, secure, and compliant management of data and records, 
+            This policy outlines TOP's intent to implement structured, secure, and compliant management of data and records, 
             both physical and digital. It governs how data is created, received, maintained, stored, and destroyed, ensuring 
             its integrity and regulatory conformity.
         </p>

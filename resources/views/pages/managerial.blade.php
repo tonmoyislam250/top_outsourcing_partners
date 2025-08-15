@@ -138,7 +138,7 @@
 			<article class="card enhancement">
 				<div class="card__body">
 					<img src="{{ asset('images/manager/en4.svg') }}" alt="Client branding icon" class="card__icon">
-					<h3 class="card__title">Client–Branded Workspaces & Team Integration</h3>
+					<h3 class="card__title">Client-Branded Workspaces & Team Integration</h3>
 				</div>
 				<div class="enhancements__list">
 					<ul class="list">
@@ -208,7 +208,7 @@
 					<h3>Continuous Management &amp; Support</h3>
 					<ul>
 						<li>Need to scale up or replace a team member? We handle it instantly!</li>
-						<li>We manage performance, training, and issue resolution, so you don’t have to.</li>
+						<li>We manage performance, training, and issue resolution, so you don't have to.</li>
 					</ul>
 				</div>
 			</div>
@@ -312,7 +312,7 @@
 
 <!-- Call to Action -->
 <section class="cta-2 animate__animated animate__fadeInUp">
-	<h2>Let’s Work Together!</h2>
+	<h2>Let's Work Together!</h2>
 	<p>Outsourcing is no longer just an option—it's a growth strategy for modern firms. Let Top Outsourcing Partners handle your accounting workload so you can focus on client success and firm growth.</p>
 	<a class="btn-primary" href="{{ url('/consult') }}">Book a Free Financial Consultation</a>
 </section>

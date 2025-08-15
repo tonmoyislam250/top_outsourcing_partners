@@ -48,7 +48,7 @@
 
                         <div class="col-md-6">
                             <div class="hero-text">
-                                <h2>Global Workforce, Hassle-Free – Build Your Dedicated Team Today!</h2>
+                                <h2>Global Workforce, Hassle-Free - Build Your Dedicated Team Today!</h2>
                                 <p>Focus on your business while we manage your dedicated offshore team.</p>
                                 <a href="{{ url('/manager') }}" class="btn-primary">
                                     Discover How We Can Optimize Your Operations
@@ -67,7 +67,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-6 order-2 order-md-1">
                             <div class="hero-text">
-                                <h2>Outsourcing Solutions for Accounting Firms – Scale Your Operations with Confidence</h2>
+                                <h2>Outsourcing Solutions for Accounting Firms - Scale Your Operations with Confidence</h2>
                                 <p>We act as an extension of your firm, handling bookkeeping,
                                    accounting, and financial operations so you can focus on client
                                    advisory and revenue-generating activities.</p>

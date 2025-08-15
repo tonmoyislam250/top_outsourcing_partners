@@ -9,7 +9,7 @@
         </div>
         <div class="solutions-description animate__animated animate__fadeIn animate__delay-1s">
             <p>
-                At TopOutsourcingPartners, we specialize in providing customized solutions to meet the unique requirements of each client. Our flexible approach ensures that businesses receive the exact support they need, whether it’s hiring our in-house team or having us manage a dedicated team tailored to their needs.
+                At TopOutsourcingPartners, we specialize in providing customized solutions to meet the unique requirements of each client. Our flexible approach ensures that businesses receive the exact support they need, whether it's hiring our in-house team or having us manage a dedicated team tailored to their needs.
             </p>
         </div>
     </div>

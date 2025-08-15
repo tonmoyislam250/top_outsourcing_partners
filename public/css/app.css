@@ -63,6 +63,9 @@ a {
     user-select: none;
     cursor: pointer;
 }
+.container {
+    padding: 0;
+}
 
 /* Default Button Style */
 a.btn-primary {
