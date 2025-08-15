@@ -134,7 +134,7 @@
                                     <article class="content-card blog-card">
                                         <div class="card-image">
                                             @if($blog->image)
-                                                <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}" loading="lazy">
+                                                <img src="{{ $blog->image }}" alt="{{ $blog->title }}" loading="lazy">
                                             @else
                                                 <div class="placeholder-image">
                                                     <i class="fas fa-newspaper"></i>

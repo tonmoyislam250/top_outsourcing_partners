@@ -69,7 +69,7 @@
                     </div>
                     @if(isset($blog) && $blog->image)
                         <div class="blog-nexus-current-image">
-                            <img src="{{ asset('storage/' . $blog->image) }}" alt="Current image" class="blog-nexus-preview-img">
+                            <img src="{{ $blog->image }}" alt="Current image" class="blog-nexus-preview-img">
                             <p class="blog-nexus-image-caption">Current featured image</p>
                         </div>
                     @endif
@@ -225,7 +225,7 @@
             <div class="blog-nexus-card">
                 @if($blog->image)
                     <div class="blog-nexus-card-image">
-                        <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}" class="blog-nexus-img">
+                        <img src="{{ $blog->image }}" alt="{{ $blog->title }}" class="blog-nexus-img">
                         <div class="blog-nexus-image-overlay"></div>
                     </div>
                 @endif

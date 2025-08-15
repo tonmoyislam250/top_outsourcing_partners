@@ -90,7 +90,7 @@
                                             <td class="td-number">{{ $loop->iteration }}</td>
                                             <td class="td-image">
                                                 @if($blog->image)
-                                                    <img src="{{ asset('storage/' . $blog->image) }}" alt="Blog image" class="table-image">
+                                                    <img src="{{ $blog->image }}" alt="Blog image" class="table-image">
                                                 @else
                                                     <div class="no-image">
                                                         <i class="fas fa-image"></i>
@@ -400,7 +400,7 @@
             <div class="blog-nexus-card">
                 @if($blog->image)
                     <div class="blog-nexus-card-image">
-                        <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}" class="blog-nexus-img">
+                        <img src="{{ $blog->image }}" alt="{{ $blog->title }}" class="blog-nexus-img">
                         <div class="blog-nexus-image-overlay"></div>
                     </div>
                 @endif
