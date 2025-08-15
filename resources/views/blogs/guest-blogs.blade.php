@@ -878,6 +878,7 @@
     flex-wrap: wrap;
     gap: 0.4rem;
     margin-bottom: 1rem;
+    justify-content: center;
 }
 
 .keyword-badge {
