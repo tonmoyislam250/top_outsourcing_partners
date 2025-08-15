@@ -1,5 +1,5 @@
 .section--why {
-    background: #F7FBFC;
+    background: #f7fbfc;
     padding: 100px 0;
     margin-top: 100px;
 }
@@ -18,19 +18,11 @@
 .grid--3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(20px, 3vw, 30px);
+}
 
-    
-    
-    
-    
-    
-    
-    
-    
 .grid {
     display: grid;
     gap: clamp(20px, 3vw, 60px);
-};
 }
 
 .card {
@@ -40,7 +32,7 @@
     box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
 }
 .card.enhancement {
-    text-align: left
+    text-align: left;
 }
 .card__icon {
     width: 64px;
@@ -125,161 +117,158 @@
     margin-bottom: 30px;
 }
 
-
-	/* ----------  Timeline items  ---------- */
-	.timeline-items {
-		display: flex;
-		flex-direction: column;
-		gap: 4.5rem;
-	}
-
-	.timeline-items .item {
-		position: relative;
-		width: 100%;
-		max-width: 650px;
-		padding: 1.75rem 2.5rem;
-		background: #ffffff;
-		border-radius: .5rem;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, .07);
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-start;
-		gap: 2rem;
-		align-items: flex-start;
-		/* min-height: 230px; */
-		align-content: flex-start;
-	}
-
-	.timeline-items .item::before {
-		content: "";
-		width: 10px;
-		height: 10px;
-		top: auto;
-		left: calc(50% + 5px);
-		position: absolute;
-		bottom: calc(0% - 5px);
-		border-radius: 50%;
-	}
-
-	.timeline-items .item.left::before {
-		background: #7350BA;
-	}
-
-	.timeline-items .item.right::before {
-		background: #74B329;
-	}
-
-	.timeline-items .item:last-child::before {
-		display: none;
-	}
-
-	.timeline-items .item-header {
-		/* display: flex; */
-		/* align-items: flex-start; */
-		/* gap: .85rem; */
-		/* flex-direction: row; */
-		/* justify-content: flex-start; */
-	}
-
-	.timeline-items .item-content h3 {
-		font-size: 24px;
-	}
-
-	.timeline-items .item-header i {
-		font-size: 1.65rem;
-		margin-top: .15rem;
-	}
-
-	.timeline-items .item::after {
-		content: "";
-		position: absolute;
-		top: 100%;
-		width: calc(50% - 12px);
-		height: calc(50% + 4.5rem);		
-		bottom: 0;
-		background-repeat: no-repeat;
-		background-size: contain;
-	}
-
-	.timeline-items .left {
-		margin-left: 0;
-		
-	}
-
-	.timeline-items .right {
-		margin-left: auto;
-		padding-right: 4rem;
-	}
-
-	.timeline-items .left::after {
-		left: calc(50% + 8px);
-		background-image: url("../images/manager/l_arrow.svg");
-	}
-
-	.timeline-items .right::after {
-		right: calc(50% - 12px);
-		background-image: url("../images/manager/r_arrow.svg");
-	}
-.timeline-items .item:last-child::after {
-	display: none;
+/* ----------  Timeline items  ---------- */
+.timeline-items {
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
 }
 
-	.timeline-items .item ul {
-		margin-top: .5rem;
-		padding-left: 1.25rem;
-	}
+.timeline-items .item {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    padding: 1.75rem 2.5rem;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2rem;
+    align-items: flex-start;
+    /* min-height: 230px; */
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    text-align: left;
+}
 
-	.timeline-items .item ul li {
-		margin-bottom: .35rem;
-	}
+.timeline-items .item::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    top: auto;
+    left: calc(50% + 5px);
+    position: absolute;
+    bottom: calc(0% - 5px);
+    border-radius: 50%;
+}
 
-	.timeline-items .purple i,
-	.timeline-items .purple::marker {
-		color: #7d0080;
-	}
+.timeline-items .item.left::before {
+    background: #7350ba;
+}
 
-	.timeline-items .green i,
-	.timeline-items .green ::marker {
-		color: #01ae4b;
-	}
+.timeline-items .item.right::before {
+    background: #74b329;
+}
 
-	.timeline-items .purple {
-		border: 1px dashed #7d008040;
-		border-radius: 10px;
-	}
+.timeline-items .item:last-child::before {
+    display: none;
+}
 
-	.timeline-items .green {
-		border: 1px dashed #01ae4b40;
-		border-radius: 10px;
+.timeline-items .item-header {
+    /* display: flex; */
+    /* align-items: flex-start; */
+    /* gap: .85rem; */
+    /* flex-direction: row; */
+    /* justify-content: flex-start; */
+}
 
-	}
+.timeline-items .item-content h3 {
+    font-size: 24px;
+}
 
-	@media(max-width:760px) {
-		.timeline::before {
-			left: 24px;
-		}
+.timeline-items .item-header i {
+    font-size: 1.65rem;
+    margin-top: 0.15rem;
+}
 
-		.timeline-items .item,
-		.timeline-items .left,
-		.timeline-items .right {
-			max-width: 100%;
-			margin-left: 0 !important;
-			padding: 1.25rem 1.25rem 1.5rem 3.5rem;
-		}
+.timeline-items .item::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: calc(50% - 12px);
+    height: calc(50% + 4.5rem);
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
-		.timeline-items .item::after {
-			display: none;
-		}
-	}
+.timeline-items .left {
+    margin-left: 0;
+}
 
+.timeline-items .right {
+    margin-left: auto;
+    padding-right: 4rem;
+}
 
+.timeline-items .left::after {
+    left: calc(50% + 8px);
+    background-image: url("../images/manager/l_arrow.svg");
+}
+
+.timeline-items .right::after {
+    right: calc(50% - 12px);
+    background-image: url("../images/manager/r_arrow.svg");
+}
+.timeline-items .item:last-child::after {
+    display: none;
+}
+
+.timeline-items .item ul {
+    margin-top: 0.5rem;
+    padding-left: 1.25rem;
+}
+
+.timeline-items .item ul li {
+    margin-bottom: 0.35rem;
+}
+
+.timeline-items .purple i,
+.timeline-items .purple::marker {
+    color: #7d0080;
+}
+
+.timeline-items .green i,
+.timeline-items .green ::marker {
+    color: #01ae4b;
+}
+
+.timeline-items .purple {
+    border: 1px dashed #7d008040;
+    border-radius: 10px;
+}
+
+.timeline-items .green {
+    border: 1px dashed #01ae4b40;
+    border-radius: 10px;
+}
+
+@media (max-width: 760px) {
+    .timeline::before {
+        left: 24px;
+    }
+
+    .timeline-items .item,
+    .timeline-items .left,
+    .timeline-items .right {
+        max-width: 100%;
+        margin-left: 0 !important;
+        padding: 1.25rem 1.25rem 1.5rem 3.5rem;
+    }
+
+    .timeline-items .item::after {
+        display: none;
+    }
+}
 
 /* ========== Benefits ========== */
 .section--benefits {
-    background: #F7FBFC;
+    background: #f7fbfc;
     padding: 100px 0;
 }
-.section--benefits h2{
+.section--benefits h2 {
     margin-bottom: 30px;
 }
 .cards {
