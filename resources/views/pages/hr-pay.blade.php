@@ -57,7 +57,7 @@
 		</div>
 	</div>
 </section>
-<section class="service-details">
+<section class="service-details alt">
 	<div id="benefits" class="container finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
 		<div class="finance-image-wrapper">
 			<img src="{{ asset('images/hr/image2.png') }}" alt="CFO Services">
@@ -96,7 +96,7 @@
 		</div>
 	</div>
 </section>
-<section class="service-details">
+<section class="service-details alt">
 	<div id="compliance" class="container finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
 		<div class="finance-image-wrapper">
 			<img src="{{ asset('images/hr/image4.png') }}" alt="AR & Billing Services">

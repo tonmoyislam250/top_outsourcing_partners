@@ -63,7 +63,7 @@
 	</div>
 
 </section>
-<section class="service-details">
+<section class="service-details alt">
 	<div id="lpo" class="container finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
 		<div class="finance-image-wrapper">
 			<img src="{{ asset('images/third-party/image2.png') }}" alt="CFO Services">
@@ -103,7 +103,7 @@
 	</div>
 
 </section>
-<section class="service-details">
+<section class="service-details alt">
 	<div id="finance" class="container finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
 		<div class="finance-image-wrapper">
 			<img src="{{ asset('images/third-party/image4.png') }}" alt="AR & Billing Services">
@@ -145,7 +145,7 @@
 	</div>
 
 </section>
-<section class="service-details">
+<section class="service-details alt">
 	<div id="ecommerce" class="container finance-service reverse animate__animated animate__fadeIn animate__delay-3s">
 		<div class="finance-image-wrapper">
 			<img src="{{ asset('images/third-party/image4.png') }}" alt="AR & Billing Services">

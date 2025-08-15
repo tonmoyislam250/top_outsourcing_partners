@@ -92,7 +92,7 @@
 	</div>
 </section>
 
-<section class="service-details">
+<section class="service-details alt">
 	<div id="leadership-development" class="container finance-service animate__animated animate__fadeIn animate__delay-3s">
 		<div class="finance-image-wrapper">
 			<img src="{{ asset('images/corporate/image3.png') }}" alt="AP Management">
@@ -133,7 +133,7 @@
 	</div>
 </section>
 
-<section class="service-details">
+<section class="service-details alt">
 	<div id="cybersecurity" class="container finance-service animate__animated animate__fadeIn animate__delay-3s">
 		<div class="finance-image-wrapper">
 			<img src="{{ asset('images/corporate/image5.png') }}" alt="AP Management">
@@ -175,7 +175,7 @@
 	</div>
 </section>
 
-<section class="service-details">
+<section class="service-details alt">
 	<div id="sales-negotiation" class="container finance-service animate__animated animate__fadeIn animate__delay-3s">
 		<div class="finance-image-wrapper">
 			<img src="{{ asset('images/corporate/image5.png') }}" alt="AP Management">
