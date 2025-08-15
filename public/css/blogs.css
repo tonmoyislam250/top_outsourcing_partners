@@ -1,8 +1,17 @@
+.modern-blogs-container .section-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.modern-blogs-container .section-header h2 {
+    padding-bottom: 0;
+}
+
 .blog-nexus-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .blog-nexus-hero-section {
@@ -17,7 +26,7 @@
 }
 
 .blog-nexus-hero-section::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -35,7 +44,7 @@
 }
 
 .blog-nexus-admin-badge {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     padding: 0.5rem 1rem;
     border-radius: 50px;
     font-size: 0.9rem;
@@ -93,7 +102,7 @@
 .blog-nexus-form-container {
     background: white;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     margin-bottom: 3rem;
     overflow: hidden;
 }
@@ -180,7 +189,7 @@
 .blog-nexus-preview-img {
     max-width: 200px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .blog-nexus-image-caption {
@@ -229,7 +238,7 @@
 .blog-nexus-management-panel {
     background: white;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
@@ -362,7 +371,7 @@
     background: white;
     padding: 2rem;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 400px;
 }
@@ -426,14 +435,14 @@
     background: white;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     transition: all 0.4s ease;
     position: relative;
 }
 
 .blog-nexus-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
 .blog-nexus-card-image {
@@ -459,7 +468,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    background: linear-gradient(
+        135deg,
+        rgba(102, 126, 234, 0.1),
+        rgba(118, 75, 162, 0.1)
+    );
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -539,7 +552,7 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     animation: fadeIn 0.3s ease;
 }
 
@@ -549,7 +562,7 @@
     width: 80%;
     max-width: 800px;
     border-radius: 20px;
-    box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
     animation: slideIn 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -657,7 +670,7 @@
     background-color: #f1f5f9;
     padding: 2px 4px;
     border-radius: 3px;
-    font-family: 'Courier New', monospace;
+    font-family: "Courier New", monospace;
     font-size: 0.9em;
 }
 
@@ -723,32 +736,42 @@
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideIn {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @media (max-width: 768px) {
     .blog-nexus-container {
         padding: 1rem;
     }
-    
+
     .blog-nexus-main-title {
         font-size: 2rem;
     }
-    
+
     .blog-nexus-gallery {
         grid-template-columns: 1fr;
     }
-    
+
     .blog-nexus-auth-buttons {
         flex-direction: column;
     }
-    
+
     .blog-nexus-action-buttons {
         flex-direction: column;
     }
@@ -759,7 +782,7 @@
     border-radius: 12px !important;
     border: 2px solid #e2e8f0 !important;
     box-shadow: none !important;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
 .tox-tinymce:focus-within {
@@ -825,7 +848,7 @@
     .tox .tox-toolbar {
         flex-wrap: wrap !important;
     }
-    
+
     .tox .tox-toolbar__group {
         flex-wrap: wrap !important;
     }
