@@ -1,13 +1,17 @@
+.services-page-section.outsourcing {
+    padding: 100px 0;
+}
+
 /* Partner Section */
-  .partner-section {
+.partner-section {
     background: #fff;
     padding: 100px 0;
-  }
-.container {
-  padding: 0;
 }
-  
-  .partner-wrapper {
+.container {
+    padding: 0;
+}
+
+.partner-wrapper {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -15,8 +19,8 @@
     flex-wrap: wrap;
     flex-direction: row;
     align-content: center;
-  }
-  
+}
+
 .partner-text {
     flex: 1;
     text-align: left;
@@ -26,28 +30,27 @@
     flex: 1;
     text-align: left;
 }
-  
-  .partner-wrapper img {
+
+.partner-wrapper img {
     max-width: 100%;
-  }
-  
-  .partner-wrapper h2 {
+}
+
+.partner-wrapper h2 {
     margin-bottom: 24px;
     text-align: left;
-  }
-  
-  .partner-wrapper ul {
+}
+
+.partner-wrapper ul {
     list-style: none;
     padding: 0;
     margin-bottom: 24px;
-  }
-  
-  .partner-wrapper ul li {
+}
+
+.partner-wrapper ul li {
     margin-bottom: 10px;
-  }
-  
- 
-  /* ROI Section */
+}
+
+/* ROI Section */
 .roi-section {
     background: #f8fcff;
     padding: 100px 0;

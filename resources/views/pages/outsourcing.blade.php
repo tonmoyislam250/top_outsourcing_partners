@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="services-page-section animate__animated animate__fadeIn">
+<section class="services-page-section animate__animated animate__fadeIn outsourcing">
 	<div class="container services-page-container">
 		<div class="hero hero-outsourcing">
 			<div class="container hero-flex">
