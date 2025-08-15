@@ -1,7 +1,9 @@
 .services-page-section.outsourcing {
     padding: 100px 0;
 }
-
+.services-section.outsourcing {
+    margin: 0;
+}
 /* Partner Section */
 .partner-section {
     background: #fff;

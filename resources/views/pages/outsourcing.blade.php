@@ -49,7 +49,7 @@
 </section>
 
 <!-- Service Offerings -->
-<section class="services-section">
+<section class="services-section outsourcing">
 	<div class="container">
 		<h2 class="section-title text-center mb-5 animate__animated animate__fadeIn">Our Service Offerings</h2>
 		<div class="row justify-content-center">
