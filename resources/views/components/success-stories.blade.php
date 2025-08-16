@@ -28,7 +28,7 @@
                         ],
                         [
                             'avatar' => 'avatar3.svg',
-                            'text' => 'Since 2011, Top Outsourcing Partners has consistently delivered a positive and proactive experience, supporting us in bookkeeping, accounting, internal audits, investigation, and compliance services. Their commitment to maintaining financial transparency, cost-effectiveness, and healthy records has strengthened our company's operational foundation. Their team\'s proactive approach has been a key factor in keeping our financial affairs compliant and risk-free.',
+                            'text' => 'Since 2011, Top Outsourcing Partners has consistently delivered a positive and proactive experience, supporting us in bookkeeping, accounting, internal audits, investigation, and compliance services. Their commitment to maintaining financial transparency, cost-effectiveness, and healthy records has strengthened our company\'s operational foundation. Their team\'s proactive approach has been a key factor in keeping our financial affairs compliant and risk-free.',
                             'author' => '— Ashok Yadav, Head of Finance, PDS Group'
                         ],
                         [
