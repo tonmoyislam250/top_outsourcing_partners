@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <!-- Success/Error Messages -->
+    <!-- Success/Error Messages
     @if(session('success'))
         <div class="alert alert-success">
             <i class="fas fa-check-circle"></i>
@@ -44,7 +44,7 @@
                 <i class="fas fa-times"></i>
             </button>
         </div>
-    @endif
+    @endif -->
 
     @if(session('error'))
         <div class="alert alert-error">

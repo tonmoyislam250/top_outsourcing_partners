@@ -6,7 +6,7 @@
     <section class="blogs-hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title" style="text-align: left;">
+                <h1 class="hero-title">
                     Insights & <span class="highlight">Innovation</span>
                 </h1>
                 <p class="hero-subtitle">
@@ -878,7 +878,6 @@
     flex-wrap: wrap;
     gap: 0.4rem;
     margin-bottom: 1rem;
-    justify-content: center;
 }
 
 .keyword-badge {
@@ -985,7 +984,6 @@
     color: white;
     margin-bottom: 1.5rem;
     line-height: 1.1;
-    text-align: left;
 }
 
 .newsletter-title .highlight {
