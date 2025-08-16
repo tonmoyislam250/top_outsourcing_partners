@@ -223,7 +223,7 @@
                                     <article class="content-card case-study-card">
                                         <div class="card-image">
                                             @if($caseStudy->image)
-                                                <img src="{{ asset('storage/' . $caseStudy->image) }}" alt="{{ $caseStudy->title }}" loading="lazy">
+                                                <img src="{{ $caseStudy->image }}" alt="{{ $caseStudy->title }}" loading="lazy">
                                             @else
                                                 <div class="placeholder-image">
                                                     <i class="fas fa-chart-line"></i>
