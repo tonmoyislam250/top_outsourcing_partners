@@ -1,6 +1,6 @@
 <div class="why-choose-us-section">
     <div class="container">
-        <h2>Why Choose Global Outsourcing Partners?</h2>
+        <h2>Why Choose Top Outsourcing Partners?</h2>
         <p>A structured learning path designed to take you from beginner to professional with real-world projects.</p>
 
         <div class="features">
