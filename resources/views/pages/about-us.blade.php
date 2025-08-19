@@ -206,7 +206,7 @@
         <p class="our-impact-desc">
             Through our Top outsourcing solutions, we have helped businesses reduce operational costs by up to 40%, improve efficiency by 30%, and scale operations to meet growing market demands. Our approach has consistently delivered measurable results, driving sustained growth for our clients.
         </p>
-        <div class="impact-charts">
+        <!-- <div class="impact-charts">
             <div class="impact-chart-card">
                 <h3>Cost Savings</h3>
                 <canvas id="costSavingsChart" height="350"></canvas>
@@ -215,7 +215,7 @@
                 <h3>Efficiency</h3>
                 <canvas id="efficiencyChart" height="350"></canvas>
             </div>
-        </div>
+        </div> -->
     </div>
 </section>
 
