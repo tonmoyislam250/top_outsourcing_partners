@@ -25,9 +25,9 @@
 
         <div class="footer-section footer-contact">
             <h4>Contact</h4>
-            <p>Address: 123 Global Solutions Drive, Innovation City, USA</p>
-            <p>Phone: +1 800 123 4567</p>
-            <p>Email: <a href="mailto:info@TopOutsourcingPartners.com">info@TopOutsourcingPartners.com</a></p>
+            <p>Address: 801 Travis Street, Suite 2101, Houston, Texas 77002, USA</p>
+            <p>Phone: +13467774586</p>
+            <p>Email: <a href="mailto:contact@TopOutsourcingPartners.com">contact@TopOutsourcingPartners.com</a></p>
             <a href="{{ url('/consult') }}" class="footer-button">Get in touch</a>
         </div>
     </div>
