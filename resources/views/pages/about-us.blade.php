@@ -223,7 +223,11 @@
 <section class="meet-team-section">
     <div class="container">
         <h2 class="meet-team-title">Meet Our Dynamic Team</h2>
-        <a href="{{ url('/team-members') }}" class="btn-primary meet-team-btn">See Team</a>
+        @auth
+            <a href="{{ route('admin.team-members.index') }}" class="btn-primary meet-team-btn">See Team</a>
+        @else
+            <a href="{{ url('/team-members') }}" class="btn-primary meet-team-btn">See Team</a>
+        @endauth
                 <div class="floating-container">
                     <div class="floating-box">
                         @foreach(range(1, 8) as $i)

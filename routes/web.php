@@ -9,6 +9,8 @@ use App\Http\Controllers\Auth\SignupController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\TeamMemberController;
+use App\Http\Controllers\SitemapController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/services/{slug}', [HomeController::class, 'show'])->name('services.show');
@@ -23,6 +25,8 @@ Route::get('/about-us', function () {
 Route::get('/team-members', function () {
     return view('pages/team-members');
 })->name('about-us');
+
+Route::get('/team-members/public', [TeamMemberController::class, 'show'])->name('team-members.show');
 
 Route::get('/services', function () {
     return view('pages/services');
@@ -61,6 +65,9 @@ Route::get('/retention', function () {
     return view('pages/retention');
 })->name('Data Retention & Deletion Policy');
 
+// Sitemap route
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+
 // Authentication routes
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
@@ -96,6 +103,18 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/blogs/{blog}/', [BlogController::class, 'getForEdit'])->name('admin.blogs.get-for-edit');
     Route::delete('/blogs/{blog}/ajax-delete', [BlogController::class, 'ajaxDestroy'])->name('blogs.ajax-destroy');
     Route::post('/admin/blogs/upload-image', [BlogController::class, 'uploadImage'])->name('admin.blogs.upload-image');
+    
+    // Team Members admin routes
+    Route::get('/admin/team-members', [TeamMemberController::class, 'index'])->name('admin.team-members.index');
+    Route::get('/admin/team-members/create', [TeamMemberController::class, 'create'])->name('admin.team-members.create');
+    Route::post('/admin/team-members', [TeamMemberController::class, 'store'])->name('admin.team-members.store');
+    Route::get('/admin/team-members/{teamMember}/edit', [TeamMemberController::class, 'edit'])->name('admin.team-members.edit');
+    Route::put('/admin/team-members/{teamMember}', [TeamMemberController::class, 'update'])->name('admin.team-members.update');
+    Route::delete('/admin/team-members/{teamMember}', [TeamMemberController::class, 'destroy'])->name('admin.team-members.destroy');
+    
+    // AJAX routes for team member management
+    Route::get('/admin/team-members/{teamMember}/edit-data', [TeamMemberController::class, 'getForEdit'])->name('admin.team-members.get-for-edit');
+    Route::delete('/admin/team-members/{teamMember}/ajax-delete', [TeamMemberController::class, 'ajaxDestroy'])->name('admin.team-members.ajax-destroy');
     
     // Newsletter admin routes
     Route::get('/admin/newsletter', [NewsletterController::class, 'adminIndex'])->name('admin.newsletter.index');

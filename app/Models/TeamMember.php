@@ -8,7 +8,9 @@ class TeamMember extends Model
 {
     protected $fillable = [
         'image',
+        'image_public_id',
         'modal_image',
+        'modal_image_public_id',
         'name',
         'title',
         'description',

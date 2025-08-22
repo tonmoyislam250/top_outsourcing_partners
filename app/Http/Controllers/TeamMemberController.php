@@ -133,9 +133,15 @@ class TeamMemberController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TeamMember $teamMember)
+    public function show(TeamMember $teamMember = null)
     {
-        return view('admin.team-members.show', compact('teamMember'));
+        if ($teamMember) {
+            return view('admin.team-members.show', compact('teamMember'));
+        } else {
+            // Public page showing all team members
+            $teamMembers = TeamMember::all();
+            return view('pages.team-members', compact('teamMembers'));
+        }
     }
 
     /**
