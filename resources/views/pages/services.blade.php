@@ -16,7 +16,7 @@
 
                     <div class="col-md-5 order-1 order-md-2">
                         <div class="hero-img-wrapper">
-                            <img src="{{ asset('images/services/service1.png') }}" alt="Business Growth Illustration" class="hero-img img-fluid">
+                            <img src="{{ asset('images/services/service1.webp') }}" alt="Business Growth Illustration" class="hero-img img-fluid">
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
 <section class="service-section animate__animated animate__fadeInUp bg-alt">
     <div class="container service-container">
         <div class="service-image animate__animated animate__zoomIn">
-            <img src="{{ asset('images/services/service2.png') }}" alt="Accounting & Finance Solutions">
+            <img src="{{ asset('images/services/service2.webp') }}" alt="Accounting & Finance Solutions">
         </div>
         <div class="service-text animate__animated animate__fadeInLeft">
             <h2>Accounting & Finance Solutions</h2>
@@ -75,7 +75,7 @@
             <a href="{{ url('services/ai-integration') }}" class="btn-primary">Explore Our AI Integration Services</a>
         </div>
         <div class="service-image animate__animated animate__zoomIn">
-            <img src="{{ asset('images/services/service3.png') }}" alt="AI Integration & Digital Transformation">
+            <img src="{{ asset('images/services/service3.webp') }}" alt="AI Integration & Digital Transformation">
         </div>
     </div>
 </section>
@@ -84,7 +84,7 @@
 <section class="service-section animate__animated animate__fadeInUp bg-alt">
     <div class="container service-container">
         <div class="service-image animate__animated animate__zoomIn">
-            <img src="{{ asset('images/services/service4.png') }}" alt="Third-Party Business Support">
+            <img src="{{ asset('images/services/service4.webp') }}" alt="Third-Party Business Support">
         </div>
         <div class="service-text animate__animated animate__fadeInLeft">
             <h2>Third-Party Business Support</h2>
@@ -121,7 +121,7 @@
             <a href="{{ url('services/corporate-training') }}" class="btn-primary">View Our Corporate Training Programs</a>
         </div>
         <div class="service-image animate__animated animate__zoomIn">
-            <img src="{{ asset('images/services/service5.png') }}" alt="Corporate Training & Development">
+            <img src="{{ asset('images/services/service5.webp') }}" alt="Corporate Training & Development">
         </div>
     </div>
 </section>
@@ -130,7 +130,7 @@
 <section class="service-section animate__animated animate__fadeInUp bg-alt">
     <div class="container service-container">
         <div class="service-image animate__animated animate__zoomIn">
-            <img src="{{ asset('images/services/service6.png') }}" alt="HR & Payroll Solutions">
+            <img src="{{ asset('images/services/service6.webp') }}" alt="HR & Payroll Solutions">
         </div>
         <div class="service-text animate__animated animate__fadeInLeft">
             <h2>HR & Payroll Solutions</h2>
@@ -215,7 +215,7 @@
                 <div class="points-row">
                     <div class="point-item">
                         <div class="why-choose-image">
-                            <img src="{{ asset('images/services/why-choose-us-illustration.png') }}" alt="Why Choose Us Illustration">
+                            <img src="{{ asset('images/services/why-choose-us-illustration.webp') }}" alt="Why Choose Us Illustration">
                         </div>
                     </div>
                     <div class="point-item">
@@ -236,7 +236,7 @@
     <div class="container bangladesh-container">
         <h2>Why Bangladesh? A Smart Business Decision!</h2>
         <div class="bangladesh-wrapper">
-            <img src="{{ asset('images/manager/map.png') }}" alt="Bangladesh Map" class="map-img">
+            <img src="{{ asset('images/manager/map.webp') }}" alt="Bangladesh Map" class="map-img">
             <div class="bangladesh-points">
                 <ul>
                     <li><strong>Save up to 70%</strong> compared to hiring locally in the US, UK, or Canada.</li>
