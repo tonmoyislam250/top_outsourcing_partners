@@ -18,7 +18,7 @@ class SitemapController extends Controller
         $sitemap .= '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9' . PHP_EOL;
         $sitemap .= '        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">' . PHP_EOL;
         
-        // Static pages
+        // Static pages with absolute URLs
         $staticPages = [
             ['url' => '/', 'priority' => '1.0', 'changefreq' => 'weekly'],
             ['url' => '/about-us', 'priority' => '0.8', 'changefreq' => 'monthly'],
@@ -57,10 +57,10 @@ class SitemapController extends Controller
             );
         }
         
-        // Dynamic blog posts
+        // Dynamic blog posts with proper URLs
         foreach ($blogs as $blog) {
             $sitemap .= $this->generateUrlEntry(
-                route('blogs.show', $blog->id),
+                url('/blogs/' . $blog->id),
                 $blog->updated_at->format('Y-m-d'),
                 'weekly',
                 '0.7'
@@ -70,7 +70,40 @@ class SitemapController extends Controller
         $sitemap .= '</urlset>' . PHP_EOL;
         
         return response($sitemap)
-            ->header('Content-Type', 'application/xml');
+            ->header('Content-Type', 'application/xml; charset=UTF-8')
+            ->header('Cache-Control', 'public, max-age=3600');
+    }
+    
+    /**
+     * Validate sitemap XML format
+     */
+    public function validate()
+    {
+        $sitemapContent = $this->index()->getContent();
+        
+        // Check if XML is valid
+        $dom = new \DOMDocument();
+        $dom->preserveWhiteSpace = false;
+        $dom->formatOutput = true;
+        
+        libxml_use_internal_errors(true);
+        $valid = $dom->loadXML($sitemapContent);
+        $errors = libxml_get_errors();
+        
+        if (!$valid || !empty($errors)) {
+            return response()->json([
+                'valid' => false,
+                'errors' => array_map(function($error) {
+                    return $error->message;
+                }, $errors)
+            ]);
+        }
+        
+        return response()->json([
+            'valid' => true,
+            'message' => 'Sitemap XML is valid and Google-ready',
+            'url_count' => substr_count($sitemapContent, '<url>')
+        ]);
     }
     
     private function generateUrlEntry($loc, $lastmod, $changefreq, $priority)

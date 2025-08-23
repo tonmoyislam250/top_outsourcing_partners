@@ -13,14 +13,14 @@ class GenerateSitemap extends Command
      *
      * @var string
      */
-    protected $signature = 'sitemap:generate {--url=http://localhost}';
+    protected $signature = 'sitemap:generate {--url=https://topoutsourcingpartners.com}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Generate a static sitemap.xml file';
+    protected $description = 'Generate a static sitemap.xml file with proper URLs for Google indexing';
 
     /**
      * Execute the console command.
@@ -68,17 +68,17 @@ class GenerateSitemap extends Command
         
         foreach ($allPages as $page) {
             $sitemap .= $this->generateUrlEntry(
-                $baseUrl . $page['url'],
+                rtrim($baseUrl, '/') . $page['url'],
                 now()->format('Y-m-d'),
                 $page['changefreq'],
                 $page['priority']
             );
         }
         
-        // Dynamic blog posts
+        // Dynamic blog posts with absolute URLs
         foreach ($blogs as $blog) {
             $sitemap .= $this->generateUrlEntry(
-                $baseUrl . '/blogs/' . $blog->id,
+                rtrim($baseUrl, '/') . '/blogs/' . $blog->id,
                 $blog->updated_at->format('Y-m-d'),
                 'weekly',
                 '0.7'

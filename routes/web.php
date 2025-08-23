@@ -65,8 +65,9 @@ Route::get('/retention', function () {
     return view('pages/retention');
 })->name('Data Retention & Deletion Policy');
 
-// Sitemap route
+// Sitemap routes
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+Route::get('/sitemap/validate', [SitemapController::class, 'validate'])->name('sitemap.validate');
 
 // Authentication routes
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');

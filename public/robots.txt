@@ -5,4 +5,4 @@ Disallow: /signup
 Disallow: /dashboard
 
 # Sitemap location
-Sitemap: /sitemap.xml
+Sitemap: https://topoutsourcingpartners.com/sitemap.xml

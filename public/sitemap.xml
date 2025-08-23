@@ -6,146 +6,146 @@
     
     <!-- Homepage -->
     <url>
-        <loc>/</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     
     <!-- Main Static Pages -->
     <url>
-        <loc>/about-us</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/about-us</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>/services</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/services</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
-        <loc>/contact</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/contact</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>/industries</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/industries</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>/solutions</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/solutions</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>/team-members</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/team-members</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>/team-members/public</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/team-members/public</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>/consult</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/consult</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <!-- Service Detail Pages -->
     <url>
-        <loc>/services/finance</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/services/finance</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>/services/ai-integration</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/services/ai-integration</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>/services/corporate-training</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/services/corporate-training</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>/services/third-party</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/services/third-party</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>/services/hr-pay</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/services/hr-pay</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <!-- Blog and Resources -->
     <url>
-        <loc>/blogs</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/blogs</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     
     <!-- Additional Pages -->
     <url>
-        <loc>/manager</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/manager</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>/out</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/out</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     
     <!-- Legal Pages -->
     <url>
-        <loc>/privacy-policy</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/privacy-policy</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
     <url>
-        <loc>/breach</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/breach</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
     <url>
-        <loc>/retention</loc>
-        <lastmod>2025-08-22</lastmod>
+        <loc>https://topoutsourcingpartners.com/retention</loc>
+        <lastmod>2025-08-23</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
