@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Corporate Training & Development Services | Top Outsourcing Partners')
+@section('meta_description', 'Upskill your workforce with Top Outsourcing Partners comprehensive corporate training and development programs. From technical skills to leadership development and industry-specific training - boost employee performance, retention, and drive organizational growth.')
+@section('meta_keywords', 'corporate training, employee development, workforce training, technical skills training, leadership development, professional development, skill enhancement, employee retention, organizational growth')
+
 @section('content')
 <section class="section finance-section">
 	<div class="container">

@@ -1,5 +1,11 @@
 @extends('layouts.app')
+
+@section('title', 'Outsourcing Solutions for Accounting Firms - Top Outsourcing Partners')
+@section('meta_description', 'Scale your accounting firm operations with Top Outsourcing Partners. We provide expert bookkeeping, accounting, and financial operations outsourcing so you can focus on client advisory and revenue-generating activities. Get your free consultation today.')
+@section('meta_keywords', 'accounting firm outsourcing, bookkeeping outsourcing, financial operations, accounting services, firm scaling, client advisory focus, revenue generation, accounting firm support')
+
 <link rel="stylesheet" href="{{ asset('css/out.css') }}">
+
 @section('content')
 
 <!-- Hero Section -->

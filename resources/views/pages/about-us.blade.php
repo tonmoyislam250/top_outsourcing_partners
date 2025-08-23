@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('title', 'About Us - Top Outsourcing Partners | Your Trusted Global Business Solutions Provider')
+@section('meta_description', 'Learn about Top Outsourcing Partners (TOP) - your dedicated partner for innovative, cost-effective outsourcing solutions. We help businesses achieve operational excellence, reduce costs up to 40%, and scale globally with expert finance, HR, and business support services.')
+@section('meta_keywords', 'about top outsourcing partners, business outsourcing company, global outsourcing solutions, operational excellence, cost reduction, business scaling, finance outsourcing, HR outsourcing, third-party services')
+
 @section('content')
 
 <!-- About Us Section -->

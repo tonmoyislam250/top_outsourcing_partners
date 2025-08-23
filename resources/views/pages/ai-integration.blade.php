@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'AI Integration Services for Business | Top Outsourcing Partners')
+@section('meta_description', 'Transform your business with AI integration services from Top Outsourcing Partners. Leverage cutting-edge AI automation, predictive analytics, intelligent workflows, and chatbot solutions to boost productivity, reduce costs, and stay competitive in the digital age.')
+@section('meta_keywords', 'AI integration, artificial intelligence, business automation, predictive analytics, intelligent workflows, chatbot solutions, AI transformation, digital transformation, productivity automation')
+
 @section('content')
 
 <section class="section finance-section">

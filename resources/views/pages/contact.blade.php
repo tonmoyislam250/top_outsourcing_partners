@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us')
+@section('title', 'Contact Us - Top Outsourcing Partners | Get Your Free Consultation Today')
+@section('meta_description', 'Contact Top Outsourcing Partners for your business outsourcing needs. Get a free consultation and discover how our expert solutions in finance, AI integration, corporate training, and third-party support can transform your business operations.')
+@section('meta_keywords', 'contact top outsourcing partners, free consultation, business outsourcing consultation, outsourcing inquiry, business solutions contact, get quote outsourcing')
 
 @section('content')
 <section class="contact-hero">

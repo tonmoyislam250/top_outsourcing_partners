@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Meet Our Team - Top Outsourcing Partners | Expert Professionals Driving Your Success')
+@section('meta_description', 'Meet the expert team at Top Outsourcing Partners. Our diverse group of professionals brings extensive experience in finance, technology, operations, and business development to deliver exceptional outsourcing solutions for your business growth.')
+@section('meta_keywords', 'top outsourcing partners team, expert professionals, business team, finance experts, technology specialists, operations team, business development, professional experience')
+
 @push('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 @endpush

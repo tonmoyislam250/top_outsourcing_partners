@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Solutions - Top Outsourcing Partners | Customized Business Outsourcing Solutions')
+@section('meta_description', 'Discover flexible outsourcing solutions at Top Outsourcing Partners. We provide customized teams, dedicated workforce management, and scalable business solutions tailored to your unique requirements. Choose from in-house teams or dedicated managed teams.')
+@section('meta_keywords', 'outsourcing solutions, customized teams, dedicated workforce, flexible outsourcing, scalable solutions, business requirements, in-house teams, managed teams, workforce solutions')
+
 @section('content')
 <section class="solutions-section">
     <div class="container">

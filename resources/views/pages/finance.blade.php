@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Finance & Accounting Outsourcing Services | Top Outsourcing Partners')
+@section('meta_description', 'Streamline your financial operations with Top Outsourcing Partners expert finance and accounting outsourcing services. From bookkeeping and payroll to AR/AP management and financial reporting - reduce costs, improve accuracy, and focus on strategic growth.')
+@section('meta_keywords', 'finance outsourcing, accounting outsourcing, bookkeeping services, payroll outsourcing, accounts receivable, accounts payable, financial reporting, cost reduction, accounting accuracy')
+
 @section('content')
 
 <section class="section finance-section">

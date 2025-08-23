@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('title', 'Employee Managerial Services - Top Outsourcing Partners | Dedicated Global Workforce')
+@section('meta_description', 'Build your dedicated global workforce with Top Outsourcing Partners employee managerial services. Get 100% dedicated teams, massive cost savings, seamless integration, and hassle-free team management for sustained business growth.')
+@section('meta_keywords', 'employee managerial services, dedicated global workforce, dedicated teams, cost savings, team management, global workforce, offshore teams, workforce optimization, team integration')
+
 <link rel="stylesheet" href="{{ asset('css/manager.css') }}">
 
 @section('content')

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Data Breach Policy & Procedures - Top Outsourcing Partners | Security & Compliance')
+@section('meta_description', 'Learn about Top Outsourcing Partners Data Breach Policy and Procedures. Understand our commitment to data security, incident response protocols, notification procedures, and compliance with GDPR and data protection regulations.')
+@section('meta_keywords', 'data breach policy, security procedures, incident response, data protection, GDPR compliance, data security, breach notification, security protocols')
+
 @section('content')
 <div class="policy-container">
     <div class="policy-content">

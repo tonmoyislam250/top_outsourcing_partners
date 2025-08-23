@@ -1,5 +1,23 @@
 @extends('layouts.app')
 
+@section('title', $blog->title . ' - Top Outsourcing Partners Blog')
+@section('meta_description')
+@php
+    $excerpt = strip_tags($blog->content);
+    $excerpt = Str::limit($excerpt, 155);
+@endphp
+{{ $excerpt }}
+@endsection
+@section('meta_keywords')
+@if($blog->keywords && count($blog->keywords) > 0)
+{{ implode(', ', $blog->keywords) }}, Top Outsourcing Partners, {{ $blog->formatted_type }}
+@else
+{{ $blog->formatted_type }}, Top Outsourcing Partners, business outsourcing, outsourcing insights
+@endif
+@endsection
+@section('og_type', 'article')
+@section('og_image', $blog->image ?? asset('images/og-default.jpg'))
+
 @section('content')
 <div class="modern-blog-container">
     <!-- Header Section -->

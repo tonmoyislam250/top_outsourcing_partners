@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Industries We Serve - Top Outsourcing Partners | Specialized Business Solutions')
+@section('meta_description', 'Top Outsourcing Partners serves diverse industries with specialized outsourcing solutions. From healthcare and finance to technology, manufacturing, retail, and beyond - discover how our industry-specific expertise can optimize your business operations.')
+@section('meta_keywords', 'industries we serve, industry-specific outsourcing, healthcare outsourcing, finance industry, technology outsourcing, manufacturing support, retail outsourcing, specialized business solutions')
+
 @section('content')
 <section class="industries-section">
 	<div class="container">

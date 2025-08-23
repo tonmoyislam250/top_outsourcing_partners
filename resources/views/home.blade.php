@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Top Outsourcing Partners - Smart Business Solutions for Global Growth')
+@section('meta_description', 'Transform your business with Top Outsourcing Partners. We provide expert accounting, finance, AI integration, corporate training, and third-party business support services. Scale efficiently, reduce costs, and focus on growth with our proven outsourcing solutions.')
+@section('meta_keywords', 'outsourcing solutions, business outsourcing, accounting outsourcing, finance outsourcing, AI integration, corporate training, third-party business support, cost-effective outsourcing, business growth, scalable solutions')
+
 @section('content')
 <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
     <div class="carousel-inner">

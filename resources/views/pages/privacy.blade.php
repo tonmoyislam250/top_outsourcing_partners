@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Privacy Policy - Top Outsourcing Partners | Data Protection & Privacy Rights')
+@section('meta_description', 'Read Top Outsourcing Partners Privacy Policy to understand how we collect, use, and protect your personal data. Learn about your privacy rights, data security measures, and our commitment to protecting your information in compliance with data protection laws.')
+@section('meta_keywords', 'privacy policy, data protection, personal data, privacy rights, data security, information protection, GDPR compliance, data collection')
+
 @section('content')
 <div class="privacy-container">
     <div class="privacy-content">

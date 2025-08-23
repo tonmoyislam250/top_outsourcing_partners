@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Blog Management - Top Outsourcing Partners Admin')
+@section('meta_description', 'Blog management dashboard for Top Outsourcing Partners administrators.')
+@section('robots', 'noindex, nofollow')
+
 @section('content')
 <div class="blog-pro-container">
     @auth

@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Schedule Consultation')
+@section('title', 'Schedule Free Consultation - Top Outsourcing Partners | Transform Your Business Today')
+@section('meta_description', 'Schedule your free consultation with Top Outsourcing Partners today. Discover how our expert outsourcing solutions can reduce costs, improve efficiency, and accelerate your business growth. Get personalized recommendations from our business experts.')
+@section('meta_keywords', 'free consultation, schedule consultation, business consultation, outsourcing consultation, cost reduction, efficiency improvement, business growth, expert recommendations')
 
 @section('content')
 

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Guest Blogs - Top Outsourcing Partners | Industry Insights & Innovation')
+@section('meta_description', 'Explore guest blog posts and expert insights from industry leaders at Top Outsourcing Partners. Discover innovative perspectives on business outsourcing, technology trends, and strategic growth from guest contributors and thought leaders.')
+@section('meta_keywords', 'guest blogs, industry insights, business outsourcing insights, technology trends, expert perspectives, thought leadership, innovation, strategic growth, guest contributors')
+
 @section('content')
 <div class="modern-blogs-container">
     <!-- Hero Section -->

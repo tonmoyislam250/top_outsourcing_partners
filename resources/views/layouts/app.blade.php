@@ -34,7 +34,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Top Outsourcing Partners</title>
+    <title>@yield('title', 'Top Outsourcing Partners')</title>
+    <meta name="description" content="@yield('meta_description', 'Top Outsourcing Partners provides cost-effective, scalable outsourcing solutions for businesses worldwide. From accounting & finance to AI integration, corporate training, and third-party business support - we help you streamline operations and drive growth.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'outsourcing, business solutions, accounting outsourcing, AI integration, corporate training, third-party support, cost-effective, scalable, business growth')">
+
+    {{-- Open Graph Meta Tags --}}
+    <meta property="og:title" content="@yield('title', 'Top Outsourcing Partners')">
+    <meta property="og:description" content="@yield('meta_description', 'Top Outsourcing Partners provides cost-effective, scalable outsourcing solutions for businesses worldwide. From accounting & finance to AI integration, corporate training, and third-party business support - we help you streamline operations and drive growth.')">
+    <meta property="og:type" content="@yield('og_type', 'website')">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="@yield('og_image', asset('images/og-default.jpg'))">
+    <meta property="og:site_name" content="Top Outsourcing Partners">
+
+    {{-- Twitter Card Meta Tags --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('title', 'Top Outsourcing Partners')">
+    <meta name="twitter:description" content="@yield('meta_description', 'Top Outsourcing Partners provides cost-effective, scalable outsourcing solutions for businesses worldwide. From accounting & finance to AI integration, corporate training, and third-party business support - we help you streamline operations and drive growth.')">
+    <meta name="twitter:image" content="@yield('og_image', asset('images/og-default.jpg'))">
+
+    {{-- Additional SEO Meta Tags --}}
+    <meta name="robots" content="@yield('robots', 'index, follow')">
+    <meta name="author" content="Top Outsourcing Partners">
+    <link rel="canonical" href="{{ url()->current() }}">
 
     <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     

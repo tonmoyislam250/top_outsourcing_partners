@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Login - Top Outsourcing Partners Admin')
+@section('meta_description', 'Login to Top Outsourcing Partners admin dashboard to manage your business outsourcing services and content.')
+@section('robots', 'noindex, nofollow')
+
 @section('content')
 <div class="quantum-auth-container">
     <div class="cosmic-background">

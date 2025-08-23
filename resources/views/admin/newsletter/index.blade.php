@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Newsletter Management - Top Outsourcing Partners Admin')
+@section('meta_description', 'Newsletter management dashboard for Top Outsourcing Partners administrators.')
+@section('robots', 'noindex, nofollow')
+
 @section('content')
 <div class="newsletter-container">
     <div class="newsletter-content">

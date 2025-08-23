@@ -1,10 +1,14 @@
 @extends('layouts.app')
 
+@section('title', 'Team Members Management - Top Outsourcing Partners Admin')
+@section('meta_description', 'Team members management dashboard for Top Outsourcing Partners administrators.')
+@section('robots', 'noindex, nofollow')
+
 @section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link rel="stylesheet" href="{{ asset('css/about.css') }}">
 
-<div class="container my-5 py-4">
+<div class="container my-5 py-4">>
     <div class="d-flex justify-content-between align-items-center mb-5">
         <h1 class="team-title">Team Members Management</h1>
         <div>

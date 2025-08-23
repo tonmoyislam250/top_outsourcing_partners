@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'HR & Payroll Services - Top Outsourcing Partners | Complete Human Resource Solutions')
+@section('meta_description', 'Streamline your HR operations with Top Outsourcing Partners comprehensive HR and payroll services. From employee management and payroll processing to compliance and benefits administration - focus on your core business while we handle your HR needs.')
+@section('meta_keywords', 'HR outsourcing, payroll services, human resource management, employee management, payroll processing, HR compliance, benefits administration, workforce management, HR solutions')
+
 @section('content')
 
 <section class="section finance-section">

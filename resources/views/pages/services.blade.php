@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('title', 'Services - Top Outsourcing Partners | Complete Business Outsourcing Solutions')
+@section('meta_description', 'Explore our comprehensive outsourcing services at Top Outsourcing Partners. From accounting & finance to AI integration, corporate training, and third-party business support - discover tailored solutions that drive efficiency, reduce costs, and accelerate your business growth.')
+@section('meta_keywords', 'outsourcing services, business solutions, accounting services, finance outsourcing, AI integration, corporate training, third-party support, business efficiency, cost reduction, scalable solutions')
+
 @section('content')
 
 

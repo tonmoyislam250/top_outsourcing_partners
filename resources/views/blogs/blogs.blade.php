@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Blog - Top Outsourcing Partners | Latest Insights & Industry Expertise')
+@section('meta_description', 'Explore Top Outsourcing Partners blog for the latest insights on business outsourcing, finance trends, AI integration, corporate training, and industry best practices. Stay informed with expert analysis and actionable business strategies.')
+@section('meta_keywords', 'outsourcing blog, business insights, finance trends, AI integration news, corporate training tips, industry best practices, business strategies, outsourcing expertise')
+
 @section('content')
 <div class="blog-nexus-container">
     <div class="blog-nexus-hero-section">

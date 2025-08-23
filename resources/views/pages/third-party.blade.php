@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Third-Party Business Support Services | Top Outsourcing Partners')
+@section('meta_description', 'Comprehensive third-party business support from Top Outsourcing Partners. Get expert HR outsourcing, legal process outsourcing, marketing & brand management, accounting services, customer support, and e-commerce solutions - all tailored to your business needs.')
+@section('meta_keywords', 'third-party business support, HR outsourcing, legal process outsourcing, marketing outsourcing, customer support outsourcing, e-commerce support, business process outsourcing, operational support')
+
 @section('content')
 
 <section class="section finance-section">

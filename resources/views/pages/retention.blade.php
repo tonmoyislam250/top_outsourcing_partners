@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Data Retention & Deletion Policy - Top Outsourcing Partners | Data Management & Compliance')
+@section('meta_description', 'Understand Top Outsourcing Partners Data Retention and Deletion Policy. Learn how we manage, store, and securely delete personal data in compliance with GDPR and data protection laws to ensure your information is handled responsibly.')
+@section('meta_keywords', 'data retention policy, data deletion, data management, GDPR compliance, data storage, information governance, data protection, secure deletion')
+
 @section('content')
 <div class="policy-container">
     <div class="policy-content">
