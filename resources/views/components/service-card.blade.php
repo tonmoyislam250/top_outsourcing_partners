@@ -4,5 +4,5 @@
     </div>
     <h3><strong>{{ $service['title'] }}</strong></h3>
     <p>{{ $service['description'] }}</p>
-    <a href="{{ route('services.show', $service['slug']) }}" class="btn-secondary">Learn More</a>
+    <a href="{{ route('services.show', $service['slug']) }}" class="btn-secondary">{{ $service['linkText'] ?? 'Learn More' }}</a>
 </div>
