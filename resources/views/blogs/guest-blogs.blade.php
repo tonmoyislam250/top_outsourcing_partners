@@ -5,7 +5,7 @@
 @section('meta_keywords', 'guest blogs, industry insights, business outsourcing insights, technology trends, expert perspectives, thought leadership, innovation, strategic growth, guest contributors')
 
 <!-- @push('styles')
-  @vite('resources/css/pages/guest-blogs.css')
+  @vite('resources/css/guest-blogs.css')
 @endpush -->
 
 @section('content')
