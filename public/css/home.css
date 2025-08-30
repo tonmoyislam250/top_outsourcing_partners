@@ -517,6 +517,12 @@
     flex-direction: row;
     width: 100%;
 }
+@media screen (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }    
+}
 
 .features-mt {
     margin-top: 3rem;
