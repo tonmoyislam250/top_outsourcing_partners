@@ -70,6 +70,12 @@
 .feature {
     text-align: left;
 }
+@media (max-width: 768px) {
+    .feature {
+        display: flex;
+        flex-direction: column;
+    }
+}
 .feature__img {
     width: auto;
     height: 375px;
