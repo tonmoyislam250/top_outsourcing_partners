@@ -4,9 +4,8 @@
 @section('meta_description', 'Explore guest blog posts and expert insights from industry leaders at Top Outsourcing Partners. Discover innovative perspectives on business outsourcing, technology trends, and strategic growth from guest contributors and thought leaders.')
 @section('meta_keywords', 'guest blogs, industry insights, business outsourcing insights, technology trends, expert perspectives, thought leadership, innovation, strategic growth, guest contributors')
 
-@push('styles')
-  @vite('resources/css/guest-blogs.css')
-@endpush
+
+<link rel="stylesheet" href="{{ asset('css/guest-blogs.css') }}">
 
 @section('content')
 

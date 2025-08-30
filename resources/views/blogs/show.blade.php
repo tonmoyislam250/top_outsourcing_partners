@@ -18,9 +18,9 @@
 @section('og_type', 'article')
 @section('og_image', $blog->image ?? asset('images/og-default.jpg'))
 
-@push('styles')
-  @vite('resources/css/blog-show.css')
-@endpush
+
+<link rel="stylesheet" href="{{ asset('css/blog-show.css') }}">
+
 
 @section('content')
 <div class="modern-blog-container">

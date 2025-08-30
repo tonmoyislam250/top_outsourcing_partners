@@ -4,9 +4,7 @@
 @section('meta_description', 'Blog management dashboard for Top Outsourcing Partners administrators.')
 @section('robots', 'noindex, nofollow')
 
-@push('styles')
-  @vite('resources/css/blogs.css')
-@endpush
+<link rel="stylesheet" href="{{ asset('css/blogs.css') }}">
 
 @section('content')
 <div class="blog-pro-container">
