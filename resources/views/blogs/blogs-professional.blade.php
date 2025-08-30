@@ -4,10 +4,9 @@
 @section('meta_description', 'Blog management dashboard for Top Outsourcing Partners administrators.')
 @section('robots', 'noindex, nofollow')
 
-{{-- Option A: if your layout has @stack('styles') --}}
-@push('styles')
+<!-- @push('styles')
   @vite('resources/css/admin/blogs.css')
-@endpush
+@endpush -->
 
 @section('content')
 <style>
