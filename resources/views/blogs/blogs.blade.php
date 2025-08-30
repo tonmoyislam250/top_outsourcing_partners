@@ -4,9 +4,9 @@
 @section('meta_description', 'Explore Top Outsourcing Partners blog for the latest insights on business outsourcing, finance trends, AI integration, corporate training, and industry best practices. Stay informed with expert analysis and actionable business strategies.')
 @section('meta_keywords', 'outsourcing blog, business insights, finance trends, AI integration news, corporate training tips, industry best practices, business strategies, outsourcing expertise')
 
-<!-- @push('styles')
-  @vite('resources/css/pages/blog-nexus.css')
-@endpush -->
+@push('styles')
+  @vite('resources/css/blog-nexus.css')
+@endpush
 
 @section('content')
 <div class="blog-nexus-container">
