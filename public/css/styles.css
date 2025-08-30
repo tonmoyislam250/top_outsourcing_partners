@@ -221,6 +221,10 @@ p {
         gap: 20px;
     }
     .feature-box {
+    text-align: center;
+    max-width: 100%;
+}
+    .feature-box {
         max-width: 100%;
     }
 
