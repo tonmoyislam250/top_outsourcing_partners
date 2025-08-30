@@ -64,7 +64,7 @@ a {
     cursor: pointer;
 }
 .container {
-    padding: 0;
+    padding: 20px 1rem;
 }
 
 /* Default Button Style */
