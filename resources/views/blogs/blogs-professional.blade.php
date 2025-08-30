@@ -4,7 +4,375 @@
 @section('meta_description', 'Blog management dashboard for Top Outsourcing Partners administrators.')
 @section('robots', 'noindex, nofollow')
 
+{{-- Option A: if your layout has @stack('styles') --}}
+@push('styles')
+  @vite('resources/css/admin/blogs.css')
+@endpush
+
 @section('content')
+<style>
+/* Admin Blog Management Styles (token-aligned) */
+:root {
+  /* optional neutrals used here */
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #e5e7eb;
+  --slate-600: #475569;
+  --slate-700: #334155;
+}
+
+/* Container */
+.blog-pro-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+  color: var(--ink);
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Header */
+.admin-dashboard-header {
+  background: var(--white);
+  border-bottom: 1px solid rgba(17,24,39,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  padding: 1.25rem 0;
+}
+.dashboard-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.dashboard-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--ink);
+}
+.admin-icon {
+  background: rgba(46,164,79,0.12); /* brand tint */
+  padding: 0.6rem;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  color: var(--brand-green);
+}
+.dashboard-subtitle {
+  color: var(--muted);
+  margin: 0.25rem 0 0 0;
+  font-size: 0.95rem;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.welcome-text { font-weight: 500; color: var(--ink); }
+.user-avatar {
+  width: 36px; height: 36px;
+  background: #f3f4f6;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  border: 1px solid rgba(17,24,39,0.08);
+}
+
+/* Header buttons */
+.logout-btn,
+.newsletter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 70px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+.logout-btn:hover,
+.logout-btn:focus-visible,
+.newsletter-btn:hover,
+.newsletter-btn:focus-visible {
+  background: var(--brand-green);
+  border-color: var(--brand-green);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+/* Alerts */
+.alert {
+  max-width: 1200px;
+  margin: 1rem auto 0;
+  padding: 12px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  border: 1px solid transparent;
+}
+.alert-success {
+  background: #e8f8e8;
+  border-color: rgba(46,164,79,0.25);
+  color: #0f5132;
+}
+.alert-error {
+  background: #fde8e8;
+  border-color: rgba(239,68,68,0.25);
+  color: #7f1d1d;
+}
+.alert-close {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.8;
+}
+.alert-close:hover { opacity: 1; }
+
+/* Layout */
+.blog-management-layout {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.table-section { order: 1; }
+.form-section { order: 2; }
+
+/* Cards */
+.pro-card {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid rgba(17,24,39,0.08);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.pro-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.10);
+}
+.card-header {
+  background: linear-gradient(180deg, #fafbfc 0%, #f3f4f6 100%);
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(17,24,39,0.08);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.card-title {
+  margin: 0; font-size: 1.1rem; font-weight: 700; color: var(--ink);
+  display: flex; align-items: center; gap: 10px;
+}
+.card-title i { color: var(--brand-green); }
+.header-stats { display: flex; gap: 10px; }
+.stat-badge {
+  background: var(--brand-green);
+  color: var(--white);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.card-body { padding: 20px; }
+.card-body.no-padding { padding: 0; }
+
+/* Form */
+.pro-form { display: flex; flex-direction: column; gap: 16px; }
+.form-row { display: flex; gap: 12px; }
+.form-group { flex: 1; }
+.form-label {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 6px; font-weight: 700; color: var(--ink);
+}
+.form-input, .form-textarea, select.form-input {
+  width: 100%; padding: 12px 14px;
+  border: 1px solid rgba(17,24,39,0.12);
+  border-radius: 12px;
+  background: #f9fafb;
+  font-size: 1rem; transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+.form-input:focus, .form-textarea:focus, select.form-input:focus {
+  outline: none;
+  border-color: var(--brand-green);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(46,164,79,0.12);
+}
+.form-input.error, .form-textarea.error { border-color: #ef4444; background: #fef2f2; }
+.error-message { color: #ef4444; font-size: 0.875rem; margin-top: 6px; display: block; }
+.form-help { color: var(--muted); }
+
+/* File Upload */
+.file-upload-area { position: relative; margin-bottom: 10px; }
+.file-input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.file-upload-label {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 22px; border: 1px dashed rgba(17,24,39,0.2);
+  border-radius: 12px; background: #f9fafb; transition: border-color 0.2s ease, background 0.2s ease;
+}
+.file-upload-label:hover { border-color: var(--brand-green); background: #f3faf5; }
+.upload-content { text-align: center; }
+.upload-icon { font-size: 1.6rem; color: var(--brand-green); margin-bottom: 6px; }
+.upload-text { display: block; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.upload-hint { color: var(--muted); font-size: 0.875rem; }
+.image-preview, .current-image { margin-top: 10px; text-align: center; }
+.current-image-container {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px; background: #f8fafc; border-radius: 12px; border: 1px solid rgba(17,24,39,0.08);
+}
+.current-image-info { text-align: left; flex: 1; }
+.image-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 2px; }
+.no-current-image {
+  padding: 20px; background: #f9fafb; border-radius: 12px;
+  border: 1px solid rgba(17,24,39,0.08); text-align: center; color: var(--muted);
+}
+.no-current-image i { font-size: 1.5rem; margin-bottom: 6px; display: block; }
+.preview-image {
+  max-width: 120px; max-height: 120px; border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); object-fit: cover;
+}
+.preview-caption { color: var(--muted); font-size: 0.875rem; margin-top: 6px; }
+.is-hidden { display: none !important; }
+
+/* Buttons (aligned with global a.btn-primary feel) */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 18px; border-radius: 12px; font-weight: 700;
+  cursor: pointer; transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  border: 1px solid transparent; background: #f3f4f6; color: var(--ink);
+}
+.btn:focus-visible { outline: 2px solid var(--brand-green); outline-offset: 2px; }
+.btn-primary { background: var(--ink); border-color: var(--ink); color: var(--white); }
+.btn-primary:hover { background: var(--brand-green); border-color: var(--brand-green); transform: translateY(-1px); }
+.btn-secondary { background: transparent; border: 1px solid var(--ink); color: var(--ink); }
+.btn-secondary:hover { background: var(--ink); color: var(--white); transform: translateY(-1px); }
+.btn-danger { background: #ef4444; border-color: #ef4444; color: var(--white); }
+.btn-danger:hover { background: #dc2626; border-color: #dc2626; transform: translateY(-1px); }
+.form-actions { display: flex; gap: 10px; margin-top: 8px; }
+
+/* Table */
+.pro-table-container { overflow-x: auto; }
+.pro-table { width: 100%; border-collapse: collapse; }
+.table-header { background: #f8fafc; }
+.table-header th {
+  padding: 14px; text-align: left; font-weight: 700; color: var(--ink);
+  border-bottom: 1px solid rgba(17,24,39,0.08); font-size: 0.85rem; letter-spacing: 0.02em; text-transform: uppercase;
+}
+.table-row { border-bottom: 1px solid rgba(17,24,39,0.06); transition: background-color 0.15s ease; }
+.table-row:hover { background: #f9fafb; }
+.table-row td { padding: 14px; vertical-align: middle; }
+.td-number { font-weight: 700; color: var(--muted); width: 60px; }
+.td-image { width: 80px; }
+.table-image {
+  width: 50px; height: 50px; object-fit: cover; border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.no-image {
+  width: 50px; height: 50px; background: #f3f4f6; border-radius: 8px;
+  display: grid; place-items: center; color: #9ca3af;
+}
+.title-content { max-width: 320px; }
+.blog-title { margin: 0 0 6px 0; font-size: 1rem; font-weight: 700; color: var(--ink); line-height: 1.4; }
+.blog-excerpt { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.td-date { min-width: 120px; }
+.date-text { display: block; font-weight: 700; color: var(--ink); }
+.time-text { display: block; font-size: 0.875rem; color: var(--muted); margin-top: 2px; }
+
+/* Type badges */
+.td-type { width: 140px; }
+.type-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 10px; border-radius: 999px; font-size: 0.85rem; font-weight: 700; white-space: nowrap; color: var(--white);
+}
+.type-badge.blog-post { background: #1d4ed8; }
+.type-badge.case-study { background: var(--brand-green); }
+
+/* Row actions */
+.action-buttons { display: flex; gap: 6px; }
+.action-btn {
+  width: 36px; height: 36px; border: none; border-radius: 8px; cursor: pointer;
+  display: grid; place-items: center; color: var(--white);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.view-btn { background: var(--brand-green); }
+.edit-btn { background: #d97706; }
+.delete-btn { background: #dc2626; }
+.action-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+
+/* Empty state */
+.empty-state { text-align: center; padding: 32px 16px; color: var(--muted); }
+.empty-icon { font-size: 2.5rem; margin-bottom: 8px; opacity: 0.6; }
+.empty-title { margin: 0 0 6px 0; color: var(--ink); }
+
+/* Modals */
+.pro-modal {
+  display: none; position: fixed; inset: 0; z-index: 1200;
+  padding: 24px; overflow-y: auto;
+}
+.modal-content {
+  position: relative; background: var(--white); border-radius: 16px;
+  max-width: 500px; margin: 0 auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.30);
+  border: 1px solid rgba(17,24,39,0.12);
+  display: flex; flex-direction: column;
+}
+.modal-large { max-width: 1000px; }
+.modal-small { max-width: 400px; }
+.modal-header {
+  padding: 16px 20px; border-bottom: 1px solid rgba(17,24,39,0.08);
+  display: flex; justify-content: space-between; align-items: center;
+  background: #f8fafc;
+}
+.modal-title { margin: 0; font-size: 1.1rem; font-weight: 700; color: var(--ink); }
+.modal-close {
+  background: none; border: none; font-size: 1.25rem; cursor: pointer;
+  color: var(--muted); padding: 6px; border-radius: 8px; transition: background 0.15s ease, color 0.15s ease;
+}
+.modal-close:hover { background: #f3f4f6; color: var(--ink); }
+.modal-body { padding: 20px; overflow-y: auto; }
+.modal-footer {
+  padding: 16px 20px; border-top: 1px solid rgba(17,24,39,0.08);
+  display: flex; gap: 10px; justify-content: flex-end; background: #f9fafb;
+}
+.modal-view-image {
+  max-width: 100%; height: auto; border-radius: 12px; margin-bottom: 12px; display: block;
+}
+.modal-date { color: var(--muted); margin-bottom: 8px; }
+.modal-text { color: var(--ink); }
+.text-justify { text-align: justify; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-header-content { flex-direction: column; gap: 10px; text-align: center; }
+  .header-actions { flex-direction: column; gap: 10px; }
+  .blog-management-layout { padding: 16px 10px; gap: 16px; }
+  .form-row { flex-direction: column; }
+  .action-buttons { flex-direction: column; }
+  .modal-content { margin: 1rem; max-width: calc(100% - 2rem); }
+}
+
+/* Accessibility polish if global CSS removed outlines */
+a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-green); outline-offset: 2px; }
+</style>
 <div class="blog-pro-container">
     @auth
     <!-- Professional Admin Dashboard Header -->
@@ -38,17 +406,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Success/Error Messages
-    @if(session('success'))
-        <div class="alert alert-success">
-            <i class="fas fa-check-circle"></i>
-            <span>{{ session('success') }}</span>
-            <button type="button" class="alert-close" onclick="this.parentElement.style.display='none'">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-    @endif -->
 
     @if(session('error'))
         <div class="alert alert-error">
@@ -225,7 +582,7 @@
                                 </div>
                                 
                                 <!-- Image Preview -->
-                                <div id="imagePreview" class="image-preview" style="display:none">
+                                <div id="imagePreview" class="image-preview is-hidden">
                                     <img id="previewImg" src="" alt="Preview" class="preview-image">
                                     <p class="preview-caption">Image Preview</p>
                                 </div>
@@ -302,7 +659,7 @@
             <div class="modal-body">
                 <div id="viewBlogImage" class="modal-image"></div>
                 <div id="viewBlogDate" class="modal-date"></div>
-                <div id="viewBlogContent" class="modal-text" style="text-align: justify;"></div>
+                <div id="viewBlogContent" class="modal-text text-justify"></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" onclick="closeModal('viewBlogModal')">Close</button>
@@ -355,7 +712,7 @@
                             </label>
                         </div>
                         <div id="editCurrentImage" class="current-image"></div>
-                        <div id="editImagePreview" class="image-preview" style="display:none">
+                        <div id="editImagePreview" class="image-preview is-hidden">
                             <img id="editPreviewImg" src="" alt="New Image Preview" class="preview-image">
                             <p class="preview-caption">New Image Preview</p>
                         </div>
@@ -458,11 +815,9 @@ function updateFormLabels(type) {
 
 // Modal management
 function openModal(modalId) {
-    document.getElementById(modalId).style.display = 'block';
-    // Don't disable body scrolling
-    
-    // Add animation
     const modal = document.getElementById(modalId);
+    modal.style.display = 'block';
+
     const content = modal.querySelector('.modal-content');
     content.style.transform = 'scale(0.9)';
     content.style.opacity = '0';
@@ -484,20 +839,14 @@ function closeModal(modalId) {
     
     setTimeout(() => {
         modal.style.display = 'none';
-        // Don't restore body overflow since we never disabled it
-        
-        // Clean up TinyMCE instance when closing edit modal
         if (modalId === 'editBlogModal' && tinymce.get('editContent')) {
             tinymce.get('editContent').remove();
         }
     }, 300);
 }
 
-// Removed window click event since there's no backdrop anymore
-
 // View blog modal
 function openViewModal(blogId) {
-    // Show loading state
     document.getElementById('viewBlogTitle').innerText = 'Loading...';
     document.getElementById('viewBlogContent').innerHTML = '<div class="loading-spinner"><i class="fas fa-spinner fa-spin"></i> Loading content...</div>';
     document.getElementById('viewBlogImage').innerHTML = '';
@@ -505,12 +854,7 @@ function openViewModal(blogId) {
     
     openModal('viewBlogModal');
     
-    // Fetch blog data using AJAX
-    fetch(`/blogs/${blogId}`, {
-        headers: {
-            'X-Requested-With': 'XMLHttpRequest'
-        }
-    })
+    fetch(`/blogs/${blogId}`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
     .then(response => response.json())
     .then(data => {
         document.getElementById('viewBlogTitle').innerText = data.blog.title;
@@ -519,7 +863,7 @@ function openViewModal(blogId) {
         
         if (data.imageUrl) {
             document.getElementById('viewBlogImage').innerHTML = 
-                `<img src="${data.imageUrl}" alt="${data.blog.title}" style="max-width: 100%; border-radius: 12px; margin-bottom: 1rem;">`;
+                `<img src="${data.imageUrl}" alt="${data.blog.title}" class="modal-view-image">`;
         } else {
             document.getElementById('viewBlogImage').innerHTML = '';
         }
@@ -533,29 +877,20 @@ function openViewModal(blogId) {
 
 // Edit blog modal
 function openEditModal(blogId) {
-    // Show loading state
     document.getElementById('editTitle').value = '';
     document.getElementById('editType').value = '';
     document.getElementById('editKeywords').value = '';
     document.getElementById('editCurrentImage').innerHTML = '';
-    document.getElementById('editImage').value = ''; // Clear file input
-    document.getElementById('editImagePreview').style.display = 'none'; // Hide new image preview
+    document.getElementById('editImage').value = '';
+    document.getElementById('editImagePreview').classList.add('is-hidden');
     document.getElementById('editBlogId').value = blogId;
     
-    // Remove existing TinyMCE instance if it exists
     if (tinymce.get('editContent')) {
         tinymce.get('editContent').remove();
     }
-    
-    // Clear the textarea
     document.getElementById('editContent').value = '';
-    
     openModal('editBlogModal');
-    
-    // Initialize TinyMCE for edit modal
     initializeTinyMCEForModal();
-    
-    // Fetch blog data
     fetchBlogDataForEdit(blogId);
 }
 
@@ -573,7 +908,7 @@ function initializeTinyMCEForModal() {
         toolbar: 'undo redo | blocks | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link image media table | code codesample | fullscreen preview | help',
         content_style: `
             body { 
-                font-family: Inter, Arial, sans-serif; 
+                font-family: "Plus Jakarta Sans", Inter, Arial, sans-serif; 
                 font-size: 14px;
                 line-height: 1.6;
                 color: #333;
@@ -582,17 +917,12 @@ function initializeTinyMCEForModal() {
                 padding: 1rem;
             }
             h1, h2, h3, h4, h5, h6 {
-                color: #2d3748;
+                color: #1f2937;
                 margin-top: 1.5em;
                 margin-bottom: 0.5em;
             }
-            p {
-                margin-bottom: 1em;
-            }
-            img {
-                max-width: 100%;
-                height: auto;
-            }
+            p { margin-bottom: 1em; }
+            img { max-width: 100%; height: auto; }
         `,
         branding: false,
         promotion: false,
@@ -605,69 +935,33 @@ function initializeTinyMCEForModal() {
         images_upload_handler: function (blobInfo, success, failure) {
             const xhr = new XMLHttpRequest();
             xhr.withCredentials = false;
-            
             const formData = new FormData();
             formData.append('file', blobInfo.blob(), blobInfo.filename());
-            
             xhr.open('POST', '/admin/blogs/upload-image');
             xhr.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
-            
             xhr.onload = function() {
-                if (xhr.status === 403) {
-                    failure('HTTP Error: ' + xhr.status, { remove: true });
-                    return;
-                }
-                
-                if (xhr.status < 200 || xhr.status >= 300) {
-                    failure('HTTP Error: ' + xhr.status);
-                    return;
-                }
-                
+                if (xhr.status === 403) { failure('HTTP Error: ' + xhr.status, { remove: true }); return; }
+                if (xhr.status < 200 || xhr.status >= 300) { failure('HTTP Error: ' + xhr.status); return; }
                 const json = JSON.parse(xhr.responseText);
-                
-                if (!json || typeof json.location != 'string') {
-                    failure('Invalid JSON: ' + xhr.responseText);
-                    return;
-                }
-                
+                if (!json || typeof json.location != 'string') { failure('Invalid JSON: ' + xhr.responseText); return; }
                 success(json.location);
             };
-            
-            xhr.onerror = function () {
-                failure('Image upload failed due to a XHR Transport error. Code: ' + xhr.status);
-            };
-            
+            xhr.onerror = function () { failure('Image upload failed due to a XHR Transport error. Code: ' + xhr.status); };
             xhr.send(formData);
         },
-        setup: function (editor) {
-            editor.on('change', function () {
-                editor.save();
-            });
-        }
+        setup: function (editor) { editor.on('change', function () { editor.save(); }); }
     });
 }
 
 function fetchBlogDataForEdit(blogId) {
-    // Fetch blog data using AJAX
-    fetch(`/admin/blogs/${blogId}/`, {
-        headers: {
-            'X-Requested-With': 'XMLHttpRequest'
-        }
-    })
+    fetch(`/admin/blogs/${blogId}/`, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
     .then(response => response.json())
     .then(data => {
         document.getElementById('editTitle').value = data.blog.title;
         document.getElementById('editType').value = data.blog.type;
         document.getElementById('editKeywords').value = data.blog.keywords ? data.blog.keywords.join(', ') : '';
         document.getElementById('editBlogForm').action = `/admin/blogs/${blogId}`;
-        
-        // Set content in TinyMCE editor
-        setTimeout(() => {
-            if (tinymce.get('editContent')) {
-                tinymce.get('editContent').setContent(data.blog.content || '');
-            }
-        }, 500);
-        
+        setTimeout(() => { if (tinymce.get('editContent')) { tinymce.get('editContent').setContent(data.blog.content || ''); } }, 500);
         if (data.imageUrl) {
             document.getElementById('editCurrentImage').innerHTML = 
                 `<div class="current-image-container">
@@ -693,42 +987,23 @@ function fetchBlogDataForEdit(blogId) {
 }
 
 function submitEditForm() {
-    // Ensure TinyMCE content is synced to textarea before submit
-    if (tinymce.get('editContent')) {
-        tinymce.get('editContent').save();
-    }
-    
+    if (tinymce.get('editContent')) { tinymce.get('editContent').save(); }
     const form = document.getElementById('editBlogForm');
     const formData = new FormData(form);
     const submitBtn = document.querySelector('#editBlogModal .btn-primary');
     const originalBtnText = submitBtn.innerHTML;
-    
-    // Show loading state
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Updating...';
     submitBtn.disabled = true;
-    
-    // Submit form via AJAX
     fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        }
+        method: 'POST', body: formData,
+        headers: { 'X-Requested-With': 'XMLHttpRequest', 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content') }
     })
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            // Close modal
             closeModal('editBlogModal');
-            
-            // Show success notification
             showNotification(data.message, 'success');
-            
-            // Reload page to show updated data
-            setTimeout(() => {
-                window.location.reload();
-            }, 1000);
+            setTimeout(() => { window.location.reload(); }, 1000);
         } else {
             showNotification(data.message || 'Failed to update blog', 'error');
         }
@@ -738,7 +1013,6 @@ function submitEditForm() {
         showNotification('Failed to update blog. Please try again.', 'error');
     })
     .finally(() => {
-        // Restore button state
         submitBtn.innerHTML = originalBtnText;
         submitBtn.disabled = false;
     });
@@ -752,8 +1026,6 @@ function openDeleteModal(blogId) {
 
 function deleteBlog() {
     const blogId = document.getElementById('deleteBlogId').value;
-    
-    // Send DELETE request using fetch
     fetch(`/blogs/${blogId}/ajax-delete`, {
         method: 'DELETE',
         headers: {
@@ -767,11 +1039,7 @@ function deleteBlog() {
         if (data.success) {
             showNotification(data.message, 'success');
             closeModal('deleteBlogModal');
-            
-            // Remove row from table or refresh page after short delay
-            setTimeout(() => {
-                window.location.reload();
-            }, 1000);
+            setTimeout(() => { window.location.reload(); }, 1000);
         } else {
             throw new Error(data.message);
         }
@@ -792,11 +1060,11 @@ function previewImage(input) {
         const reader = new FileReader();
         reader.onload = function(e) {
             previewImg.src = e.target.result;
-            preview.style.display = 'block';
+            preview.classList.remove('is-hidden');
         };
         reader.readAsDataURL(file);
     } else {
-        preview.style.display = 'none';
+        preview.classList.add('is-hidden');
         previewImg.src = '';
     }
 }
@@ -811,11 +1079,11 @@ function previewEditImage(input) {
         const reader = new FileReader();
         reader.onload = function(e) {
             previewImg.src = e.target.result;
-            preview.style.display = 'block';
+            preview.classList.remove('is-hidden');
         };
         reader.readAsDataURL(file);
     } else {
-        preview.style.display = 'none';
+        preview.classList.add('is-hidden');
         previewImg.src = '';
     }
 }
@@ -832,16 +1100,10 @@ function showNotification(message, type = 'info') {
         </button>
     `;
     
-    // Insert after header
     const header = document.querySelector('.admin-dashboard-header');
     header.insertAdjacentElement('afterend', notification);
     
-    // Auto remove after 5 seconds
-    setTimeout(() => {
-        if (notification.parentElement) {
-            notification.remove();
-        }
-    }, 5000);
+    setTimeout(() => { if (notification.parentElement) notification.remove(); }, 5000);
 }
 
 // Initialize TinyMCE editors on page load
@@ -851,7 +1113,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function initializeTinyMCE() {
     tinymce.init({
-        selector: '.tinymce-editor:not(#editContent)', // Exclude modal editor
+        selector: '.tinymce-editor:not(#editContent)',
         height: 400,
         menubar: true,
         plugins: [
@@ -863,7 +1125,7 @@ function initializeTinyMCE() {
         toolbar: 'undo redo | blocks | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link image media table | code codesample | fullscreen preview | help',
         content_style: `
             body { 
-                font-family: Inter, Arial, sans-serif; 
+                font-family: "Plus Jakarta Sans", Inter, Arial, sans-serif; 
                 font-size: 14px;
                 line-height: 1.6;
                 color: #333;
@@ -871,18 +1133,9 @@ function initializeTinyMCE() {
                 margin: 0 auto;
                 padding: 1rem;
             }
-            h1, h2, h3, h4, h5, h6 {
-                color: #2d3748;
-                margin-top: 1.5em;
-                margin-bottom: 0.5em;
-            }
-            p {
-                margin-bottom: 1em;
-            }
-            img {
-                max-width: 100%;
-                height: auto;
-            }
+            h1, h2, h3, h4, h5, h6 { color: #1f2937; margin-top: 1.5em; margin-bottom: 0.5em; }
+            p { margin-bottom: 1em; }
+            img { max-width: 100%; height: auto; }
         `,
         branding: false,
         promotion: false,
@@ -895,51 +1148,26 @@ function initializeTinyMCE() {
         images_upload_handler: function (blobInfo, success, failure) {
             const xhr = new XMLHttpRequest();
             xhr.withCredentials = false;
-            
             const formData = new FormData();
             formData.append('file', blobInfo.blob(), blobInfo.filename());
-            
             xhr.open('POST', '/admin/blogs/upload-image');
             xhr.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
-            
             xhr.onload = function() {
-                if (xhr.status === 403) {
-                    failure('HTTP Error: ' + xhr.status, { remove: true });
-                    return;
-                }
-                
-                if (xhr.status < 200 || xhr.status >= 300) {
-                    failure('HTTP Error: ' + xhr.status);
-                    return;
-                }
-                
+                if (xhr.status === 403) { failure('HTTP Error: ' + xhr.status, { remove: true }); return; }
+                if (xhr.status < 200 || xhr.status >= 300) { failure('HTTP Error: ' + xhr.status); return; }
                 const json = JSON.parse(xhr.responseText);
-                
-                if (!json || typeof json.location != 'string') {
-                    failure('Invalid JSON: ' + xhr.responseText);
-                    return;
-                }
-                
+                if (!json || typeof json.location != 'string') { failure('Invalid JSON: ' + xhr.responseText); return; }
                 success(json.location);
             };
-            
-            xhr.onerror = function () {
-                failure('Image upload failed due to a XHR Transport error. Code: ' + xhr.status);
-            };
-            
+            xhr.onerror = function () { failure('Image upload failed due to a XHR Transport error. Code: ' + xhr.status); };
             xhr.send(formData);
         },
-        setup: function (editor) {
-            editor.on('change', function () {
-                editor.save();
-            });
-        }
+        setup: function (editor) { editor.on('change', function () { editor.save(); }); }
     });
 }
 
 // Initialize page state
 document.addEventListener('DOMContentLoaded', function() {
-    // Clear create form if there's a success message about blog updates
     const successAlert = document.querySelector('.alert-success');
     if (successAlert) {
         const alertText = successAlert.textContent || '';
@@ -947,43 +1175,30 @@ document.addEventListener('DOMContentLoaded', function() {
             clearCreateForm();
         }
     }
-    
-    // Ensure form title is correct
     const formTitle = document.querySelector('.form-section .card-title');
     if (formTitle) {
         formTitle.innerHTML = '<i class="fas fa-plus-circle"></i> Create New Content';
     }
-    
-    // Reset form labels to default state
     updateFormLabels('');
-    
-    // Initialize TinyMCE
     initializeTinyMCE();
 });
 
 // Function to clear create form
 function clearCreateForm() {
-    // Clear regular form fields
     document.getElementById('title').value = '';
     document.getElementById('type').value = '';
     document.getElementById('keywords').value = '';
     document.getElementById('image').value = '';
-    
-    // Hide image preview
     const imagePreview = document.getElementById('imagePreview');
     if (imagePreview) {
-        imagePreview.style.display = 'none';
+        imagePreview.classList.add('is-hidden');
         document.getElementById('previewImg').src = '';
     }
-    
-    // Clear TinyMCE content
     setTimeout(() => {
         if (tinymce.get('content')) {
             tinymce.get('content').setContent('');
         }
     }, 500);
-    
-    // Reset form labels
     updateFormLabels('');
 }
 
@@ -992,847 +1207,14 @@ function validateForm() {
     const title = document.getElementById('title').value.trim();
     const type = document.getElementById('type').value;
     const content = tinymce.get('content') ? tinymce.get('content').getContent() : document.getElementById('content').value;
-    
-    console.log('Form validation:', {
-        title: title,
-        type: type,
-        content: content.substring(0, 100) + '...',
-        contentLength: content.length
-    });
-    
-    if (!title) {
-        alert('Please enter a title');
-        return false;
-    }
-    
-    if (!type) {
-        alert('Please select a content type');
-        return false;
-    }
-    
-    if (!content || content.trim() === '') {
-        alert('Please enter some content');
-        return false;
-    }
-    
-    // Save TinyMCE content before submission
-    if (tinymce.get('content')) {
-        tinymce.get('content').save();
-    }
-    
+
+    if (!title) { alert('Please enter a title'); return false; }
+    if (!type) { alert('Please select a content type'); return false; }
+    if (!content || content.trim() === '') { alert('Please enter some content'); return false; }
+    if (tinymce.get('content')) { tinymce.get('content').save(); }
     return true;
 }
 </script>
-
-<!-- Professional Blog Management Styles -->
-<style>
-/* Professional Blog Management System Styles */
-.blog-pro-container {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Dashboard Header */
-.admin-dashboard-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 2rem 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.dashboard-title {
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.admin-icon {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.75rem;
-    border-radius: 12px;
-    font-size: 1.5rem;
-}
-
-.dashboard-subtitle {
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0.5rem 0 0 0;
-}
-
-.header-actions {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.welcome-text {
-    font-weight: 500;
-}
-
-.user-avatar {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logout-form {
-    margin: 0;
-}
-
-.logout-btn {
-    background: rgba(255, 255, 255, 0.15);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.logout-btn:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-2px);
-}
-
-.newsletter-btn {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    margin-right: 1rem;
-}
-
-.newsletter-btn:hover {
-    background: linear-gradient(135deg, #1d4ed8, #1e40af);
-    transform: translateY(-2px);
-    text-decoration: none;
-    color: white;
-}
-
-.newsletter-btn span {
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-/* Alert Styles */
-.alert {
-    max-width: 1200px;
-    margin: 2rem auto 0;
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    position: relative;
-}
-
-.alert-success {
-    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-    border: 1px solid #34d399;
-    color: #065f46;
-}
-
-.alert-error {
-    background: linear-gradient(135deg, #fecaca, #fca5a5);
-    border: 1px solid #ef4444;
-    color: #7f1d1d;
-}
-
-.alert-close {
-    position: absolute;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: inherit;
-    opacity: 0.7;
-}
-
-.alert-close:hover {
-    opacity: 1;
-}
-
-/* Layout */
-.blog-management-layout {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* Reorder sections */
-.table-section {
-    order: 1;
-}
-
-.form-section {
-    order: 2;
-}
-
-/* Professional Cards */
-.pro-card {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.pro-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-}
-
-.table-section .pro-card:hover {
-    transform: none;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-}
-
-.card-header {
-    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid #e2e8f0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.card-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #2d3748;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.card-title i {
-    color: #667eea;
-}
-
-.header-stats {
-    display: flex;
-    gap: 1rem;
-}
-
-.stat-badge {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    font-weight: 500;
-}
-
-.card-body {
-    padding: 2rem;
-}
-
-.card-body.no-padding {
-    padding: 0;
-}
-
-/* Form Styles */
-.pro-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.form-row {
-    display: flex;
-    gap: 1rem;
-}
-
-.form-group {
-    flex: 1;
-}
-
-.form-label {
-    display: block;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-    color: #374151;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.form-input,
-.form-textarea {
-    width: 100%;
-    padding: 0.875rem 1rem;
-    border: 2px solid #e5e7eb;
-    border-radius: 12px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background: #f9fafb;
-}
-
-.form-input:focus,
-.form-textarea:focus {
-    outline: none;
-    border-color: #667eea;
-    background: white;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
-
-.form-input.error,
-.form-textarea.error {
-    border-color: #ef4444;
-    background: #fef2f2;
-}
-
-.error-message {
-    color: #ef4444;
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
-    display: block;
-}
-
-/* File Upload */
-.file-upload-area {
-    position: relative;
-    margin-bottom: 1rem;
-}
-
-.file-input {
-    position: absolute;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-}
-
-.file-upload-label {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    border: 2px dashed #d1d5db;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: #f9fafb;
-}
-
-.file-upload-label:hover {
-    border-color: #667eea;
-    background: #f0f4ff;
-}
-
-.upload-content {
-    text-align: center;
-}
-
-.upload-icon {
-    font-size: 2rem;
-    color: #667eea;
-    margin-bottom: 0.5rem;
-}
-
-.upload-text {
-    display: block;
-    font-weight: 600;
-    color: #374151;
-    margin-bottom: 0.25rem;
-}
-
-.upload-hint {
-    color: #6b7280;
-    font-size: 0.875rem;
-}
-
-.image-preview,
-.current-image {
-    margin-top: 1rem;
-    text-align: center;
-}
-
-.current-image-container {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background: #f8fafc;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
-}
-
-.current-image-info {
-    text-align: left;
-    flex: 1;
-}
-
-.image-note {
-    color: #6b7280;
-    font-size: 0.8rem;
-    display: block;
-    margin-top: 0.25rem;
-}
-
-.no-current-image {
-    padding: 2rem;
-    background: #f9fafb;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
-    text-align: center;
-    color: #6b7280;
-}
-
-.no-current-image i {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-.preview-image {
-    max-width: 120px;
-    max-height: 120px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
-}
-
-.preview-caption {
-    color: #6b7280;
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
-}
-
-/* Buttons */
-.form-actions {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.btn {
-    padding: 0.875rem 1.5rem;
-    border: none;
-    border-radius: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-}
-
-.btn-secondary {
-    background: #f3f4f6;
-    color: #374151;
-}
-
-.btn-secondary:hover {
-    background: #e5e7eb;
-    transform: translateY(-2px);
-}
-
-.btn-danger {
-    background: linear-gradient(135deg, #ef4444, #dc2626);
-    color: white;
-}
-
-.btn-danger:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
-}
-
-/* Table Styles */
-.pro-table-container {
-    overflow-x: auto;
-}
-
-.pro-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.table-header {
-    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-}
-
-.table-header th {
-    padding: 1rem;
-    text-align: left;
-    font-weight: 600;
-    color: #374151;
-    border-bottom: 2px solid #e5e7eb;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.table-row {
-    border-bottom: 1px solid #f3f4f6;
-    transition: all 0.2s ease;
-}
-
-.table-row:hover {
-    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-}
-
-.table-row td {
-    padding: 1rem;
-    vertical-align: middle;
-}
-
-.td-number {
-    font-weight: 600;
-    color: #6b7280;
-    width: 60px;
-}
-
-.td-image {
-    width: 80px;
-}
-
-.table-image {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.no-image {
-    width: 50px;
-    height: 50px;
-    background: #f3f4f6;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #9ca3af;
-}
-
-.title-content {
-    max-width: 300px;
-}
-
-.blog-title {
-    margin: 0 0 0.5rem 0;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #1f2937;
-    line-height: 1.4;
-}
-
-.blog-excerpt {
-    margin: 0;
-    color: #6b7280;
-    font-size: 0.875rem;
-    line-height: 1.4;
-}
-
-.td-date {
-    min-width: 120px;
-}
-
-.date-text {
-    display: block;
-    font-weight: 500;
-    color: #374151;
-}
-
-.time-text {
-    display: block;
-    font-size: 0.875rem;
-    color: #6b7280;
-    margin-top: 0.25rem;
-}
-
-/* Type Badges */
-.td-type {
-    width: 140px;
-}
-
-.type-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-.type-badge.blog-post {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    color: white;
-}
-
-.type-badge.case-study {
-    background: linear-gradient(135deg, #10b981, #047857);
-    color: white;
-}
-
-.type-badge i {
-    font-size: 0.875rem;
-}
-
-/* Action Buttons */
-.action-buttons {
-    display: flex;
-    gap: 0.5rem;
-    position: relative;
-    z-index: 1;
-}
-
-.action-btn {
-    width: 36px;
-    height: 36px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 500;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.view-btn {
-    background: linear-gradient(135deg, #10b981, #059669);
-    color: white;
-}
-
-.edit-btn {
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: white;
-}
-
-.delete-btn {
-    background: linear-gradient(135deg, #ef4444, #dc2626);
-    color: white;
-}
-
-.action-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    will-change: transform;
-}
-
-/* Ensure table section doesn't inherit transforms */
-.table-section {
-    transform: none;
-    will-change: auto;
-}
-
-/* Empty State */
-.empty-state {
-    text-align: center;
-    padding: 3rem 2rem;
-    color: #6b7280;
-}
-
-.empty-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    opacity: 0.5;
-}
-
-.empty-title {
-    margin: 0 0 0.5rem 0;
-    color: #374151;
-}
-
-.empty-text {
-    margin: 0;
-}
-
-/* Modal Styles */
-.pro-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-    padding: 2rem;
-    overflow-y: auto;
-}
-
-.modal-backdrop {
-    display: none; /* Remove backdrop */
-}
-
-.modal-content {
-    position: relative;
-    background: white;
-    border-radius: 16px;
-    max-width: 500px;
-    margin: 0 auto;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    border: 2px solid #e5e7eb;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    min-height: auto;
-}
-
-.modal-large {
-    max-width: 1000px; /* Increased from 800px */
-}
-
-.modal-small {
-    max-width: 400px;
-}
-
-.modal-header {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid #e5e7eb;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-}
-
-.modal-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #1f2937;
-}
-
-.modal-close {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #6b7280;
-    padding: 0.5rem;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-}
-
-.modal-close:hover {
-    background: #f3f4f6;
-    color: #374151;
-}
-
-.modal-body {
-    padding: 2rem;
-    overflow-y: auto;
-    overflow-x: hidden;
-    flex: 1;
-    max-height: none; /* Remove height restriction */
-}
-
-.modal-footer {
-    padding: 1.5rem 2rem;
-    border-top: 1px solid #e5e7eb;
-    display: flex;
-    gap: 1rem;
-    justify-content: flex-end;
-    background: #f9fafb;
-}
-
-.delete-confirmation {
-    text-align: center;
-    padding: 1rem 0;
-}
-
-.warning-icon {
-    font-size: 3rem;
-    color: #f59e0b;
-    margin-bottom: 1rem;
-}
-
-.warning-text {
-    color: #374151;
-    margin: 0;
-    line-height: 1.6;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .blog-management-layout {
-        padding: 1rem;
-        gap: 1.5rem;
-    }
-    
-    .dashboard-header-content {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
-    
-    .header-actions {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .form-row {
-        flex-direction: column;
-    }
-    
-    .action-buttons {
-        flex-direction: column;
-    }
-    
-    .modal-content {
-        margin: 1rem;
-        max-width: calc(100% - 2rem);
-    }
-}
-</style>
 @endsection
 
 @section('footer')
